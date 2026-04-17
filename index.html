@@ -10,75 +10,8 @@
   <link rel="stylesheet" href="css/common.css">
   <style>
 
-    /* ───── HEADER ───── */
-    .header { position: fixed; top: 0; left: 0; width: 100%; background: #E1E1E1; z-index: 1000; border-bottom: 1px solid #d8d5d0; }
-    .header-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 80px; height: 120px; max-width: 1440px; margin: 0 auto; }
-    /* @media (max-width: 1440px) {
-      .header-bar { padding: 0 160px 0 80px; }
-    } */
-    /* ───── LOGO ───── */
-    .logo { display: flex; align-items: center; gap: 25px; text-decoration: none; }
-    .logo-mark { display: flex; flex-direction: column; line-height: 1; }
-    .logo-mark img { max-width: 200px; object-fit: contain; }
-    .logo-meta { display: flex; flex-direction: column; gap: 2px; padding-top:7px;}
-    .logo-meta span { display: block; font-size: 16px; color: #000000; letter-spacing: 0.1px; line-height: 1.1; font-weight: 400;  transform: scaleX(0.95); transform-origin: left center;}
-
-    /* ───── ICONS ───── */
-    .header-icons { display: flex; align-items: center; gap: 8px; }
-    .icon-btn { background: none; border: none; cursor: pointer; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; color: #333; }
-    .icon-btn:hover { background: rgba(0,0,0,0.06); }
-    .icon-btn svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
-
-    /* 지난호 보기 버튼 */
-    .prev-issue-wrap { position: relative; margin-right: 16px; }
-    .btn-prev-issue { display: flex; align-items: center; gap: 6px; background: none; border: 1.5px solid #1a1a1a; border-radius: 999px; padding: 5px 20px; font-size: 14px; font-family: inherit; cursor: pointer; color: #1a1a1a; white-space: nowrap; transition: background 0.2s, color 0.2s; }
-    .btn-prev-issue:hover { background: #1a1a1a; color: #fff; }
-    .btn-prev-issue:hover svg { stroke: #fff; }
-    .icon-btn + .icon-btn { margin-left: -4px; } 
-
-    /* 드롭다운 */
-    .prev-issue-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: #fff; border: 1px solid #ddd; border-radius: 8px; min-width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,0.10); z-index: 999; overflow: hidden; }
-    .prev-issue-dropdown.open { display: block; }
-    .prev-issue-dropdown ul { list-style: none; padding: 8px 0; margin: 0; }
-    .prev-issue-dropdown ul li a { display: block; padding: 10px 20px; font-size: 14px; color: #333; text-decoration: none; transition: background 0.15s; }
-    .prev-issue-dropdown ul li a:hover { background: #f5f4f2; }
-    
-    /* ───── SEARCH BAR ───── */
-    .search-bar { max-height: 0; overflow: hidden; background: #edecea; transition: max-height 0.35s ease, padding 0.35s ease; border-top: none; }
-    .search-bar.open { max-height: 72px; border-top: 1px solid #d0cdc8; }
-    .search-bar-inner { display: flex; align-items: center; gap: 12px; padding: 14px 40px; max-width: 1440px; margin: 0 auto; }
-    .search-input { flex: 1; border: 1px solid #c0bdb8; border-radius: 24px; padding: 10px 20px 10px 44px; font-size: 14px; font-family: inherit; background: #f8f7f5; outline: none; color: #333; transition: border-color 0.2s; }
-    .search-input:focus { border-color: #888; }
-    .search-input-wrap { position: relative; flex: 1; display: flex; align-items: center; }
-    .search-input-icon { position: absolute; left: 14px; width: 18px; height: 18px; stroke: #888; fill: none; stroke-width: 1.8; stroke-linecap: round; }
-    .search-close-btn { background: none; border: none; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #555; flex-shrink: 0; transition: background 0.2s; }
-    .search-close-btn:hover { background: rgba(0,0,0,0.06); }
-    .search-close-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
-
-    /* ───── NAV SIDEBAR ───── */
-    .nav-sidebar { position: fixed; top: 0; right: 0; width: 280px; height: 100dvh; background: #E4E4E4; z-index: 1001; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
-    .nav-sidebar.open { transform: translateX(0); }
-    .nav-sidebar-head { display: flex; align-items: center; justify-content: flex-end; padding: 0 20px; height: 120px; flex-shrink: 0; }
-    .nav-close-btn { background: none; border: none; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #333; transition: background 0.2s; }
-    .nav-close-btn:hover { background: rgba(0,0,0,0.06); }
-    .nav-close-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .nav-body { flex: 1; padding: 30px 50px 30px; display: flex; flex-direction: column; gap: 32px; }
-    .nav-col h3 { font-size: 24px; font-weight: 700; color: #111; margin-bottom: 16px;  transform: scaleX(0.95); transform-origin: left center;}
-    .nav-col ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
-    .nav-col ul li a { font-size: 14px; color: #555; text-decoration: none; display: block; transition: color 0.15s;  transform: scaleX(0.95); transform-origin: left center;}
-    .nav-col ul li a:hover { color: #f06292; }
-    .nav-footer { padding: 20px 32px 32px; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
-    .btn-subscribe-outline { width: 145px; color: #1a1a1a; border: 1px solid #1a1a1a; padding: 4px 0 5px; font-size: 14px; font-family: inherit; cursor: pointer; border-radius: 999px; transition: background 0.2s, color 0.2s; font-weight: 500; letter-spacing: -0.7px;}
-    .btn-subscribe-outline:hover { background: #f0f0f0; }
-    .btn-prev { width: 145px; background: #1a1a1a; color: #fff; border: 2px solid #1a1a1a; padding: 4px 0 5px; font-size: 14px; font-family: inherit; cursor: pointer; border-radius: 999px; transition: background 0.2s, color 0.2s; letter-spacing: -0.7px;}
-    .btn-prev:hover { background: #333; border-color: #333;}
-
-    /* ───── OVERLAY BACKDROP ───── */
-    .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.2); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
-    .backdrop.show { opacity: 1; pointer-events: auto; }
-
     /* ───── CONTENT ───── */
-     main { padding-top: 100px; margin: 0 auto; color: #888; font-size: 14px; }
+     main { padding-top: 100px; margin: 0 auto; color: #888; font-size: 14px; overflow-x: hidden;}
 
     .sec { width: 100%; margin: 100px auto 0 !important; max-width: 1440px; padding: 0 80px 0}
 
@@ -195,63 +128,7 @@
       .bottom-banner-link-m { display: block; }
     }
 
-    /* ── 푸터 ── */
-    .footer { background: #93979A; }
-    .footer-inner { max-width: 1440px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-    .footer-sns { display: flex; align-items: center; gap: 0px; flex-shrink: 0; }
-    .footer-sns a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; transition: opacity 0.2s; }
-    .footer-sns a:hover { opacity: 0.7; }
-    .footer-sns svg { width: 22px; height: 22px; }
-    .footer-sns .sns-fill { fill: #ffffff; stroke: none; }
-    .footer-sns .sns-stroke { fill: none; stroke: #ffffff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .footer-logo img { max-width: 160px; object-fit: contain; }
-    .footer-info { flex: 1; font-size: 13px; color: #FFFFFF; line-height: 1.8; letter-spacing: -0.2px; }
 
-    @media (max-width: 1440px) {
-      .footer-inner {padding: 40px 40px; }
-    }
-    @media (max-width: 960px) {
-      .footer-inner {flex-direction: column;}
-    }
-    @media (max-width: 768px) {
-      .header-bar { height: 70px; padding: 0 20px 0 40px; }
-      .logo-mark img { max-width: 160px; }
-      .logo-divider, .logo-meta { display: none; }
-      .search-bar.open { max-height: 72px; }
-      .search-bar-inner { padding: 12px 20px; }
-      .nav-sidebar-head { height: 70px; }
-      .nav-body { padding: 28px 24px 20px; gap: 28px; }
-      .prev-issue-wrap { margin-right: 0px;}
-      .sec {margin: 50px auto 0 !important; padding: 0 40px;}
-       main { padding-top: 50px; }
-      .pc-br {display: none;}
-      .footer-inner { gap: 20px; }
-    }
-    @media (max-width: 480px) {
-      .sec {padding: 0 20px;}
-      .logo-mark img { max-width: 110px; }
-      .header-bar { height: 50px; padding: 0 10px 0 20px; }
-      .btn-prev-issue { padding: 2px 12px; font-size: 12px;}
-      .nav-sidebar { width: 100%; }
-      .nav-body {text-align: center;  padding: 0px 24px 20px;}
-      .nav-col h3 {font-size: 20px; margin-bottom: 12px;}
-      .btn-subscribe-outline {width: 100%;}
-      .btn-prev {width: 100%;}
-      .icon-btn { width: 30px; height: 30px; }
-      .icon-btn svg { width: 20px; height: 20px; }
-      .search-input { padding: 7px 20px 7px 40px; font-size: 12px;}
-      .search-bar-inner { padding: 7px 15px; }
-      .search-close-btn svg { width: 16px; height: 16px;}
-      .search-close-btn { width: 20px; height: 35px; }
-      .nav-close-btn { width: 30px; height: 30px; }
-      .nav-close-btn svg {width: 15px; height: 15px;}
-      .nav-sidebar-head { height: 60px; }
-      .footer-inner { padding: 30px 20px; }
-      .footer-logo img { max-width: 120px; }
-      .footer-info { font-size: 12px; }
-      .footer-sns svg { width: 20px; height: 20px; }
-      .footer-sns a {width: 40px; height: 40px;}
-    }
   </style>
 </head>
 <body>
@@ -644,150 +521,75 @@
 
   </main>
 
-  <script>
-    const searchBtn  = document.getElementById('searchBtn');
-    const searchBar  = document.getElementById('searchBar');
-    const searchInput = document.getElementById('searchInput');
-    const menuBtn    = document.getElementById('menuBtn');
-    const navSidebar = document.getElementById('navSidebar');
-    const navCloseBtn = document.getElementById('navCloseBtn');
-    const backdrop   = document.getElementById('backdrop');
-    const menuIcon   = document.getElementById('menuIcon');
-
-    const prevIssueBtn = document.getElementById('prevIssueBtn');
-    const prevIssueDropdown = document.getElementById('prevIssueDropdown');
-    const searchCloseBtn = document.getElementById('searchCloseBtn');
-
-
-    let searchOpen = false;
-    let menuOpen   = false;
-
-    searchCloseBtn.addEventListener('click', closeAll);
-    prevIssueBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      prevIssueDropdown.classList.toggle('open');
-    });
-
-    // 바깥 클릭 시 닫기
-    document.addEventListener('click', () => {
-      prevIssueDropdown.classList.remove('open');
-    });
-
-    /* ── close all ── */
-    function closeAll() {
-      searchOpen = false;
-      menuOpen   = false;
-      searchBar.classList.remove('open');
-      navSidebar.classList.remove('open');
-      backdrop.classList.remove('show');
-      navSidebar.setAttribute('aria-hidden', 'true');
-      searchBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      setMenuIcon(false);
-    }
-
-    /* ── hamburger icon morph ── */
-   function setMenuIcon(isOpen) {
-      menuIcon.innerHTML = `<line x1="3" y1="5.5" x2="19" y2="5.5"/><line x1="3" y1="12" x2="19" y2="12"/><line x1="3" y1="18.5" x2="19" y2="18.5"/>`;
-    }
-
-    /* ── search toggle ── */
-    searchBtn.addEventListener('click', () => {
-      if (menuOpen) { closeAll(); return; }
-      searchOpen = !searchOpen;
-      searchBar.classList.toggle('open', searchOpen);
-      backdrop.classList.toggle('show', searchOpen);
-      searchBtn.setAttribute('aria-expanded', searchOpen);
-      if (searchOpen) { setTimeout(() => searchInput.focus(), 300); }
-    });
-
-    /* ── menu toggle ── */
-    menuBtn.addEventListener('click', () => {
-      if (searchOpen) { closeAll(); return; }
-      menuOpen = !menuOpen;
-      navSidebar.classList.toggle('open', menuOpen);
-      backdrop.classList.toggle('show', menuOpen);
-      navSidebar.setAttribute('aria-hidden', !menuOpen);
-      menuBtn.setAttribute('aria-expanded', menuOpen);
-      setMenuIcon(menuOpen);
-    });
-
-    /* ── sidebar close btn ── */
-    navCloseBtn.addEventListener('click', closeAll);
-
-    /* ── backdrop / ESC close ── */
-    backdrop.addEventListener('click', closeAll);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
-
-    /* ── section02 ── */
-    const slider = document.getElementById('sec02Slider');
-    const bar = document.getElementById('sec02ProgressBar');
-
-    const origCards = Array.from(slider.querySelectorAll('.sec02-card'));
-    const total = origCards.length;
-    origCards.forEach(card => slider.appendChild(card.cloneNode(true)));
-
-    let current = 0;
-    let autoTimer;
-
-    function getCardW() { return slider.querySelectorAll('.sec02-card')[0].offsetWidth + 14; }
-
-    function slideTo(index, smooth = true) {
-      current = index;
-      slider.scrollTo({ left: index * getCardW(), behavior: smooth ? 'smooth' : 'instant' });
-      bar.style.width = ((current % total) / total * 100) + '%';
-    }
-
-    function startAuto() {
-      stopAuto();
-      autoTimer = setInterval(() => {
-        const next = current + 1;
-        slideTo(next);
-        if (next >= total) {
-          setTimeout(() => { current = next - total; slider.scrollTo({ left: current * getCardW(), behavior: 'instant' }); }, 500);
-        }
-      }, 3500);
-    }
-
-    function stopAuto() { clearInterval(autoTimer); }
-
-    slider.addEventListener('mouseenter', stopAuto);
-    slider.addEventListener('mouseleave', startAuto);
-    startAuto();
-
-    /* ── section03 ── */
-    ['sec03Track1', 'sec03Track2'].forEach(id => {
-      const track = document.getElementById(id);
-      track.innerHTML += track.innerHTML;
-    });
-
-    /* ── 하단 배너 고정/해제 ── */
-    const bottomBanner = document.getElementById('bottomBanner');
-    const footer = document.getElementById('footer');
-    function checkBannerPos() {
-      const footerRect = footer.getBoundingClientRect();
-      const bannerH = bottomBanner.offsetHeight;
-      if (footerRect.top < window.innerHeight) {
-        bottomBanner.style.position = 'absolute';
-        bottomBanner.style.bottom = 'auto';
-        bottomBanner.style.top = (footer.offsetTop - bannerH) + 'px';
-        bottomBanner.style.left = '0';
-      } else {
-        bottomBanner.style.position = 'fixed';
-        bottomBanner.style.top = 'auto';
-        bottomBanner.style.bottom = '0';
-        bottomBanner.style.left = '0';
-      }
-    }
-    
-    window.addEventListener('scroll', checkBannerPos);
-    window.addEventListener('resize', () => {
-      clearTimeout(window._resizeTimer);
-      window._resizeTimer = setTimeout(checkBannerPos, 100);
-    });
-    checkBannerPos();
-
-
-  </script>
+  <!-- 떠있는 메뉴-->
+  <div class="floating-buttons">
+      <div class="share-panel">
+          <button class="share-button url" data-href="#url" onclick="copy(this.dataset.href);">
+              URL
+          </button>
+          <button class="share-button" onclick="shareKakaoTalk(); return false;" target="_blank" title="카카오톡">
+              <img class="share-button-img" src="img/kakao-icon.png" alt="카카오톡" />
+          </button>
+          <button class="share-button"
+              onclick="window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer,width=600,height=400');"
+              title="인스타그램">
+              <img class="share-button-img" src="img/instagram-icon.png" alt="인스타" />
+          </button>
+          <button class="share-button"
+              onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+              target="_blank" title="페이스북">
+              <img class="share-button-img" src="img/facebook-icon.png" alt="페이스북" />
+          </button>
+          <button class="share-button"
+              onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+              target="_blank" title="스페이스">
+              <img class="share-button-img" src="img/x-icon.png" alt="스페이스" />
+          </button>
+          <button class="share-button"
+              onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url=' +encodeURIComponent(document.URL)+'&title='+encodeURIComponent(document.title), 'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+              target="_blank" title="블로그">
+              <img class="share-button-img" src="img/blog-icon.png" alt="블로그" />
+          </button>
+      </div>
+      <div class="share-wrap" id="shareWrap">
+          <div class="circle-button share-toggle" title="공유">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                      d="M15 20C14.1667 20 13.4583 19.7083 12.875 19.125C12.2917 18.5417 12 17.8333 12 17C12 16.9 12.025 16.6667 12.075 16.3L5.05 12.2C4.78333 12.45 4.475 12.646 4.125 12.788C3.775 12.93 3.4 13.0007 3 13C2.16667 13 1.45833 12.7083 0.875 12.125C0.291667 11.5417 0 10.8333 0 10C0 9.16667 0.291667 8.45833 0.875 7.875C1.45833 7.29167 2.16667 7 3 7C3.4 7 3.775 7.071 4.125 7.213C4.475 7.355 4.78333 7.55067 5.05 7.8L12.075 3.7C12.0417 3.58333 12.021 3.471 12.013 3.363C12.005 3.255 12.0007 3.134 12 3C12 2.16667 12.2917 1.45833 12.875 0.875C13.4583 0.291667 14.1667 0 15 0C15.8333 0 16.5417 0.291667 17.125 0.875C17.7083 1.45833 18 2.16667 18 3C18 3.83333 17.7083 4.54167 17.125 5.125C16.5417 5.70833 15.8333 6 15 6C14.6 6 14.225 5.929 13.875 5.787C13.525 5.645 13.2167 5.44933 12.95 5.2L5.925 9.3C5.95833 9.41667 5.97933 9.52933 5.988 9.638C5.99667 9.74667 6.00067 9.86733 6 10C5.99933 10.1327 5.99533 10.2537 5.988 10.363C5.98067 10.4723 5.95967 10.5847 5.925 10.7L12.95 14.8C13.2167 14.55 13.525 14.3543 13.875 14.213C14.225 14.0717 14.6 14.0007 15 14C15.8333 14 16.5417 14.2917 17.125 14.875C17.7083 15.4583 18 16.1667 18 17C18 17.8333 17.7083 18.5417 17.125 19.125C16.5417 19.7083 15.8333 20 15 20Z"
+                      fill="white" />
+              </svg>
+          </div>
+      </div>
+      <div id="subscribe-button" class="circle-button" title="구독">
+          <a href="https://www.nps.or.kr/jsppage/cyber_pr/subscribe/intro.jsp" class="subscribe-link"
+              onclick="window.open(this.href, '_blank', 'noopener,noreferrer,width=700,height=500'); return false;"
+              target="_blank" title="구독">
+              <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1277_5754)">
+                      <path
+                          d="M4.5659 16L4.5659 10.7909H0L0 8.01497L11.7224 8.01497V10.7909H7.04465L7.04465 16L4.5659 16ZM8.26251 7.46664L8.65842 2.89154L0.460463 2.89154L0.460463 0.239868L11.2491 0.239868L10.6466 7.47093L8.2539 7.47093L8.26251 7.46664Z"
+                          fill="white" />
+                      <path
+                          d="M19.0188 7.40241L23.7224 7.40241V9.7842L12 9.7842V7.40241L16.6778 7.40241V5.86024L12.5207 5.86024V0L23.1845 0V2.24471L14.9909 2.24471V3.56412L23.2491 3.56412V5.86024L19.0188 5.86024V7.40241ZM12.525 13.0913V10.778L23.1888 10.778V16.0043L20.7961 16.0043V13.0913L12.5207 13.0913H12.525Z"
+                          fill="white" />
+                  </g>
+                  <defs>
+                      <clipPath id="clip0_1277_5754">
+                          <rect width="24" height="16" fill="white" />
+                      </clipPath>
+                  </defs>
+              </svg>
+          </a>
+      </div>
+      <div class="circle-button" title="맨 위로" id="scrollToTopBtn">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M13.7499 24.375V9.8925L8.12492 15.5175L6.35742 13.75L14.9999 5.1075L23.6424 13.75L21.8749 15.5175L16.2499 9.8925V24.375H13.7499Z"
+                  fill="white" />
+          </svg>
+      </div>
+  </div>
+  
+  <script src="js/common.js"></script>
 </body>
 </html>

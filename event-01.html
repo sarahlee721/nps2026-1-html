@@ -12,22 +12,8 @@
 
 <style>
 
-
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream1.otf') format('opentype'); font-weight: 100; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream2.otf') format('opentype'); font-weight: 200; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream3.otf') format('opentype'); font-weight: 300; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream4.otf') format('opentype'); font-weight: 400; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream5.otf') format('opentype'); font-weight: 500; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream6.otf') format('opentype'); font-weight: 600; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream7.otf') format('opentype'); font-weight: 700; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream8.otf') format('opentype'); font-weight: 800; }
-  @font-face { font-family: 'SCDream'; src: url('font/SCDream9.otf') format('opentype'); font-weight: 900; }
-  @font-face { font-family: 'NewYork'; src: url('font/NewYork.otf') format('opentype'); }
-  @font-face { font-family: 'WavvePADO'; src: url('./font/WavvePADO-Regular.otf') format('opentype');}
-
-  .Wavve { font-family: 'WavvePADO', sans-serif;}
   /* ── WRAPPER ── */
-  .page {margin: 0 auto; background: #9fd8f1; overflow: hidden; }
+  .page { background: #9fd8f1; }
   .bottom-bg { position: relative; background-image: url('img/event-01/bg-bottom.png'); background-size: 200%; background-position: top center; background-repeat: no-repeat; margin-top: -20%; z-index: 1;}
 
 
@@ -37,13 +23,13 @@
 
   /* ── HERO SECTION ── */
   .hero { text-align: center; padding: 40px 24px 30px; }
-  .hero-quote { font-family: 'SCDream'; font-size: 35px; font-weight: 900; color: #1155a3; margin-bottom: 20px; letter-spacing: -0.5px;}
-  .hero-title { font-family: 'SCDream'; font-size: clamp(22px, 5vw, 32px); font-weight: 700; color: #251e1c; line-height: 1.35;  letter-spacing: -0.5px; margin-bottom: 50px; word-break: keep-all; }
+  .hero-quote { font-family: 'SCDream'; font-size: 35px; font-weight: 900; color: #1155a3; margin-bottom: 20px; letter-spacing: -0.8px;}
+  .hero-title { font-family: 'SCDream'; font-size: clamp(20px, 5vw, 32px); font-weight: 700; color: #251e1c; line-height: 1.35;  letter-spacing: -0.5px; margin-bottom: 50px; word-break: keep-all; }
   .hero-desc { font-size: 16px; line-height: 1.5; font-weight: 700; color: #1155a3; margin-bottom: 50px; }
 
   /* ── PRIZE CARD ── */
   .prize-wrap { display: flex; justify-content: center; margin-bottom: 50px; }
-  .prize-wrap img { width: min(320px, 80vw);  }
+  .prize-wrap img { width: min(320px, 55vw);  }
 
   /* ── SECTION LABEL ── */
   .section-label { display: inline-block; background: #fff; letter-spacing: -0.5px; border-radius: 50px; border: 1px solid #251e1c; padding: 2px 20px 3px; font-size: 14px; font-weight: 500; color: #1a2a4a; margin-bottom: 5px; }
@@ -68,7 +54,7 @@
   /* ── SUBSCRIBE BTN ── */
   .subscribe-wrap { display: flex; flex-direction: column; align-items: center; gap: 30px; margin: 35px 0 40px; }
   .subscribe-btn { background: #0060AF; color: #fff; border: none; border-radius: 50px; padding: 5px 30px; font-size: 20px; font-weight: 400; cursor: pointer; font-family: inherit; }
-  .subscribe-desc { font-size: 14px; font-weight: 700; color: #0161AC; }
+  .subscribe-desc { font-size: 14px; font-weight: 700; color: #0161AC; animation: pulse 2s ease-in-out infinite; }
 
   /* ── ILLUSTRATION SECTION ── */
   .illust-section { position: relative; padding: 40px 24px 0; }
@@ -128,7 +114,6 @@
     0%   { opacity: 1; transform: translateY(0) scale(1); }
     100% { opacity: 0; transform: translateY(-40px) scale(0.95); }
   }
-
   /* 또는 아래로 가라앉으며 페이드 */
   .illust-section.exit-down {
     animation: exitDown 0.6s ease forwards;
@@ -160,7 +145,14 @@
     100% { opacity: 1; transform: translateX(-40%) scale(1); }
   }
 
-
+  @keyframes ingredientToPot {
+    0%   { transform: scale(1); opacity: 1; }
+    60%  { transform: translate(var(--tx), var(--ty)) scale(0.6); opacity: 0.8; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+  }
+  .ingredient-to-pot {
+    animation: ingredientToPot 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+  }
   /* forwards 제거 */
   #stage-three.show .illust-pot    { animation: zajanPot   0.7s ease; }
   #stage-three.show .illust-steam  { animation: zajanSteam 0.6s 0.25s ease; opacity: 0; }
@@ -168,8 +160,8 @@
   #stage-three.show .illust-person { animation: zajan 0.6s 0.35s ease; opacity: 0; }
 
   /* ── NOTES ── */
-  .notes-section { padding: clamp(150px, 25vw, 400px) 28px 30px; max-width: 1150px; margin: 0 auto; }
-  .notes-section p { font-size: 12px; font-weight: 300; color: #FEFEFE; line-height: 2; margin-bottom: 2px; text-align: center;}
+  .notes-section { padding: clamp(150px, 25vw, 400px) 28px 80px; max-width: 1150px; margin: 0 auto; }
+  .notes-section p { font-size: 14px; font-weight: 300; color: #FEFEFE; line-height: 1.8; margin-bottom: 2px; text-align: left;}
   .notes-section p::before { content: '·'; margin-right: 4px; }
   .divider { height: 0.5px; background: #FEFEFE; margin: 20px 0; }
 
@@ -178,11 +170,12 @@
   .thumb-card { border-radius: 0; overflow: hidden; aspect-ratio: 16/4; background-size: cover; background-position: center; }
   .thumb-bg-1 { background-image: url('img/event-01/prev.jpg'); }
   .thumb-bg-2 { background-image: url('img/event-01/next.jpg'); }
-  .thumb-card-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2)); }
+  .thumb-card-inner { width: 100%; height: 100%; display: flex; align-items: center; gap:20px; padding: 16px 24px; background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2)); }
+  .thumb-card-inner.right {justify-content: flex-end;}
   .thumb-text { display: flex; flex-direction: column; gap: 4px; }
   .thumb-title { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.4; text-decoration: underline; }
   .thumb-tag { font-size: 10px; color: #ccc; }
-  .thumb-arrow { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; flex-shrink: 0; line-height: 1; }
+  .thumb-arrow { width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1; }
 
   @keyframes floatSlow { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-12px); } }
   @keyframes floatMid { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
@@ -202,6 +195,7 @@
     .thumb-section { padding: 0 16px 24px; gap: 8px; }
     .footer { flex-direction: column; align-items: flex-start; }
     .prize-card { padding: 12px 16px; gap: 10px; min-width: unset; width: 90%; }
+    .hero-title { margin-bottom: 30px;};
   }
 
   .event-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; overflow: auto; }
@@ -277,10 +271,122 @@
     .unlucky-modal .form-description { font-size: 18px; }
     .event-ended-modal .form-title { font-size: 20px; }
     .close-button.Wavve {font-size: 20px !important;}
+    .notes-section p {font-size: 12px; line-height: 1.5;}
+    .hero-desc { font-size: 12px; margin-bottom: 40px;}
   }
+    @media (max-width: 768px) {
+      .thumb-section { grid-template-columns: 1fr; gap: 25px;}
+    }
 </style>
 </head>
 <body>
+
+<header class="header" id="header">
+  <div class="header-bar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="img/logo.png" alt="국민연금 로고">
+      </div>
+      <div class="logo-meta">
+        <span>2026 상반기</span>
+        <span>VOL.205</span>
+      </div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+
+      <!-- 지난호 보기 드롭다운 -->
+      <div class="prev-issue-wrap">
+        <button class="btn-prev-issue" id="prevIssueBtn">
+          지난호 보기
+        </button>
+        <div class="prev-issue-dropdown" id="prevIssueDropdown">
+          <ul>
+            <li><a href="#">2025 하반기 VOL.204</a></li>
+            <li><a href="#">2025 상반기 VOL.203</a></li>
+            <li><a href="#">2024 하반기 VOL.202</a></li>
+            <li><a href="#">2024 상반기 VOL.201</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="searchBtn" aria-label="검색">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" id="menuIcon">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="12" x2="19" y2="12"/>
+        <line x1="3" y1="18" x2="19" y2="18"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar" id="searchBar">
+  <div class="search-bar-inner">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+    </div>
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- NAV SIDEBAR -->
+<nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+  <div class="nav-sidebar-head">
+    <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <div class="nav-body">
+    <div class="nav-col">
+      <h3>우리의 연금</h3>
+      <ul>
+        <li><a href="#">NPS 뉴스</a></li>
+        <li><a href="#">NPS 칼럼</a></li>
+        <li><a href="#">NPS 키워드 톱보기</a></li>
+        <li><a href="#">연금 생애 설계 가이드</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>트렌드 뷰</h3>
+      <ul>
+        <li><a href="#">모두의 여행</a></li>
+        <li><a href="#">꼬리에 꼬리를 무는 문화탐구</a></li>
+        <li><a href="#">그린 시그널</a></li>
+        <li><a href="#">지갑의 온도</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>열린 마당</h3>
+      <ul>
+        <li><a href="event-01.html">오픈 이벤트</a></li>
+        <li><a href="#">독자의 목소리</a></li>
+        <li><a href="#">초성 퀴즈</a></li>
+        <li><a href="#">OX 퀴즈</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav-footer">
+  <button class="btn-subscribe-outline">웹진 구독하기</button>
+  <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+  <button class="btn-prev">지난호 보기</button>
+</div>
+</nav>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+
 <div class="page">
 
   <!-- TOP PILL -->
@@ -411,7 +517,12 @@
     <div class="thumb-section">
       <div class="thumb-card thumb-bg-1">
         <div class="thumb-card-inner">
-          <div class="thumb-arrow">&#8249;</div>
+          <div class="thumb-arrow">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+              <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
+              <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <div class="thumb-text">
             <p class="thumb-title">연금 생에 설계 가이드</p>
             <p class="thumb-tag">자동가입 여부 확인</p>
@@ -420,13 +531,18 @@
         </div>
       </div>
       <div class="thumb-card thumb-bg-2">
-        <div class="thumb-card-inner">
+        <div class="thumb-card-inner right">
           <div class="thumb-text">
             <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
             <p class="thumb-tag">자동가입 여부 확인</p>
             <p class="thumb-tag">자동가입 여부 확인</p>
           </div>
-          <div class="thumb-arrow">&#8250;</div>
+          <div class="thumb-arrow">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+              <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
+              <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -553,6 +669,33 @@
         <button type="button" class="close-button Wavve" onclick="hideModal('eventEndedModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 20px;">닫기</button>
     </div>
 </div>
+<!-- 푸터 -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="내겔에 국민연금">
+    </div>
+    <div class="footer-info">
+      국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+      국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+      등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+      205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+      © nps.or.kr. All rights reserved.
+    </div>
+    <div class="footer-sns">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
 
 <script>AOS.init({ once: true });</script>
 <script>
@@ -610,53 +753,69 @@ document.getElementById('phone-last').addEventListener('input', function() { thi
 
   // 재료 클릭 이벤트
   stageOne.querySelectorAll('[data-modal]').forEach(img => {
-    img.addEventListener('click', function () {
-      pendingModal = this.dataset.modal;
+  img.addEventListener('click', function () {
+    pendingModal = this.dataset.modal;
+    const clicked = this;
 
-      // 클릭된 재료 팡! → stage one 페이드아웃
-      this.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-      this.style.transform  = 'scale(1.5)';
-      this.style.opacity    = '0';
+    // 냄비 위치 계산
+    const pot = stageOne.querySelector('.illust-pot');
+    const potRect = pot.getBoundingClientRect();
+    const imgRect = clicked.getBoundingClientRect();
+
+    const tx = (potRect.left + potRect.width  / 2) - (imgRect.left + imgRect.width  / 2);
+    const ty = (potRect.top  + potRect.height / 2) - (imgRect.top  + imgRect.height / 2);
+
+    // CSS 변수로 목적지 전달 후 애니메이션
+    clicked.style.setProperty('--tx', tx + 'px');
+    clicked.style.setProperty('--ty', ty + 'px');
+    clicked.style.position = 'absolute'; // transform 기준 고정
+    clicked.classList.add('ingredient-to-pot');
+
+    // 0.5초 후 stage one 퇴장 + stage two 즉시 등장 (겹치게)
+    setTimeout(() => {
+      stageOne.classList.add('exit-up');
+
+      // stage two를 fade-out 시작과 동시에 표시
+      playStageTwo();
 
       setTimeout(() => {
-        stageOne.classList.add('exit-up');
-        setTimeout(() => {
-          stageOne.style.display = 'none';
-          playStageTwo();
-        }, 600);
-      }, 300);
-    });
+        stageOne.style.display = 'none';
+      }, 600);
+    }, 500);
+  });
+});
+
+function playStageTwo() {
+  stageTwo.style.display = 'block';
+  stageTwo.style.opacity = '0';
+
+  const pot = stageTwo.querySelector('.illust-pot');
+  const others = [...stageTwo.querySelectorAll('img')].filter(img => !img.classList.contains('illust-pot'));
+
+  stageTwo.querySelectorAll('img').forEach(img => {
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.4s ease';
   });
 
-  function playStageTwo() {
-    stageTwo.style.display = 'block';
+  // stage two 전체를 즉시 페이드인
+  requestAnimationFrame(() => {
+    stageTwo.style.transition = 'opacity 0.3s ease';
+    stageTwo.style.opacity = '1';
+  });
 
-    const pot = stageTwo.querySelector('.illust-pot');
-    const others = [...stageTwo.querySelectorAll('img')].filter(img => !img.classList.contains('illust-pot'));
+  setTimeout(() => { pot.style.opacity = '1'; }, 50);
+  others.forEach((img, i) => {
+    setTimeout(() => { img.style.opacity = '1'; }, 200 + i * 150);
+  });
 
-    // 모든 이미지 먼저 투명하게
-    stageTwo.querySelectorAll('img').forEach(img => {
-      img.style.opacity = '0';
-      img.style.transition = 'opacity 0.4s ease';
-    });
-
-    // pot 제일 먼저
-    setTimeout(() => { pot.style.opacity = '1'; }, 50);
-
-    // 나머지는 pot 이후 순차 등장
-    others.forEach((img, i) => {
-      setTimeout(() => { img.style.opacity = '1'; }, 200 + i * 150); // ← 250 → 150
-    });
-
-    // 4초 후 stage three (필요하면 줄여도 됨)
+  setTimeout(() => {
+    stageTwo.classList.add('fade-out');
     setTimeout(() => {
-      stageTwo.classList.add('fade-out');
-      setTimeout(() => {
-        stageTwo.style.display = 'none';
-        playStageThree();
-      }, 600);
-    }, 4000);
-  }
+      stageTwo.style.display = 'none';
+      playStageThree();
+    }, 600);
+  }, 4000);
+}
 
   function playStageThree() {
     boyangTitle.style.display = 'block';
@@ -689,5 +848,7 @@ document.getElementById('phone-last').addEventListener('input', function() { thi
   }
 })();
 </script>
+<script src="js/common.js"></script>
+
 </body>
 </html>
