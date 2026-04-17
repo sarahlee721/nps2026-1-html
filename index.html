@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내곁에 국민연금</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+
+    /* ───── HEADER ───── */
+    .header { position: fixed; top: 0; left: 0; width: 100%; background: #E1E1E1; z-index: 1000; border-bottom: 1px solid #d8d5d0; }
+    .header-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 80px; height: 120px; max-width: 1440px; margin: 0 auto; }
+    /* @media (max-width: 1440px) {
+      .header-bar { padding: 0 160px 0 80px; }
+    } */
+    /* ───── LOGO ───── */
+    .logo { display: flex; align-items: center; gap: 25px; text-decoration: none; }
+    .logo-mark { display: flex; flex-direction: column; line-height: 1; }
+    .logo-mark img { max-width: 200px; object-fit: contain; }
+    .logo-meta { display: flex; flex-direction: column; gap: 2px; padding-top:7px;}
+    .logo-meta span { display: block; font-size: 16px; color: #000000; letter-spacing: 0.1px; line-height: 1.1; font-weight: 400;  transform: scaleX(0.95); transform-origin: left center;}
+
+    /* ───── ICONS ───── */
+    .header-icons { display: flex; align-items: center; gap: 8px; }
+    .icon-btn { background: none; border: none; cursor: pointer; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; color: #333; }
+    .icon-btn:hover { background: rgba(0,0,0,0.06); }
+    .icon-btn svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* 지난호 보기 버튼 */
+    .prev-issue-wrap { position: relative; margin-right: 16px; }
+    .btn-prev-issue { display: flex; align-items: center; gap: 6px; background: none; border: 1.5px solid #1a1a1a; border-radius: 999px; padding: 5px 20px; font-size: 14px; font-family: inherit; cursor: pointer; color: #1a1a1a; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+    .btn-prev-issue:hover { background: #1a1a1a; color: #fff; }
+    .btn-prev-issue:hover svg { stroke: #fff; }
+    .icon-btn + .icon-btn { margin-left: -4px; } 
+
+    /* 드롭다운 */
+    .prev-issue-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: #fff; border: 1px solid #ddd; border-radius: 8px; min-width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,0.10); z-index: 999; overflow: hidden; }
+    .prev-issue-dropdown.open { display: block; }
+    .prev-issue-dropdown ul { list-style: none; padding: 8px 0; margin: 0; }
+    .prev-issue-dropdown ul li a { display: block; padding: 10px 20px; font-size: 14px; color: #333; text-decoration: none; transition: background 0.15s; }
+    .prev-issue-dropdown ul li a:hover { background: #f5f4f2; }
+    
+    /* ───── SEARCH BAR ───── */
+    .search-bar { max-height: 0; overflow: hidden; background: #edecea; transition: max-height 0.35s ease, padding 0.35s ease; border-top: none; }
+    .search-bar.open { max-height: 72px; border-top: 1px solid #d0cdc8; }
+    .search-bar-inner { display: flex; align-items: center; gap: 12px; padding: 14px 40px; max-width: 1440px; margin: 0 auto; }
+    .search-input { flex: 1; border: 1px solid #c0bdb8; border-radius: 24px; padding: 10px 20px 10px 44px; font-size: 14px; font-family: inherit; background: #f8f7f5; outline: none; color: #333; transition: border-color 0.2s; }
+    .search-input:focus { border-color: #888; }
+    .search-input-wrap { position: relative; flex: 1; display: flex; align-items: center; }
+    .search-input-icon { position: absolute; left: 14px; width: 18px; height: 18px; stroke: #888; fill: none; stroke-width: 1.8; stroke-linecap: round; }
+    .search-close-btn { background: none; border: none; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #555; flex-shrink: 0; transition: background 0.2s; }
+    .search-close-btn:hover { background: rgba(0,0,0,0.06); }
+    .search-close-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    /* ───── NAV SIDEBAR ───── */
+    .nav-sidebar { position: fixed; top: 0; right: 0; width: 280px; height: 100dvh; background: #E4E4E4; z-index: 1001; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
+    .nav-sidebar.open { transform: translateX(0); }
+    .nav-sidebar-head { display: flex; align-items: center; justify-content: flex-end; padding: 0 20px; height: 120px; flex-shrink: 0; }
+    .nav-close-btn { background: none; border: none; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #333; transition: background 0.2s; }
+    .nav-close-btn:hover { background: rgba(0,0,0,0.06); }
+    .nav-close-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .nav-body { flex: 1; padding: 30px 50px 30px; display: flex; flex-direction: column; gap: 32px; }
+    .nav-col h3 { font-size: 24px; font-weight: 700; color: #111; margin-bottom: 16px;  transform: scaleX(0.95); transform-origin: left center;}
+    .nav-col ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+    .nav-col ul li a { font-size: 14px; color: #555; text-decoration: none; display: block; transition: color 0.15s;  transform: scaleX(0.95); transform-origin: left center;}
+    .nav-col ul li a:hover { color: #f06292; }
+    .nav-footer { padding: 20px 32px 32px; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
+    .btn-subscribe-outline { width: 145px; color: #1a1a1a; border: 1px solid #1a1a1a; padding: 4px 0 5px; font-size: 14px; font-family: inherit; cursor: pointer; border-radius: 999px; transition: background 0.2s, color 0.2s; font-weight: 500; letter-spacing: -0.7px;}
+    .btn-subscribe-outline:hover { background: #f0f0f0; }
+    .btn-prev { width: 145px; background: #1a1a1a; color: #fff; border: 2px solid #1a1a1a; padding: 4px 0 5px; font-size: 14px; font-family: inherit; cursor: pointer; border-radius: 999px; transition: background 0.2s, color 0.2s; letter-spacing: -0.7px;}
+    .btn-prev:hover { background: #333; border-color: #333;}
+
+    /* ───── OVERLAY BACKDROP ───── */
+    .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.2); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
+    .backdrop.show { opacity: 1; pointer-events: auto; }
+
+    /* ───── CONTENT ───── */
+     main { padding-top: 100px; margin: 0 auto; color: #888; font-size: 14px; }
+
+    .sec { width: 100%; margin: 100px auto 0 !important; max-width: 1440px; padding: 0 80px 0}
+
+    .sec01-card { background: #FDEFEF; display: flex; align-items: stretch; overflow: hidden; min-height: 380px; position: relative; }
+    .sec01-card-left { position: relative; width: 35%; flex-shrink: 0; display: flex; flex-direction: column; padding: 40px 0 40px 30px; overflow: hidden; }
+    .sec01-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.3px; margin-bottom: 40px; flex-shrink: 0; }
+    .sec01-nps-grid { position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap:20px; padding-left:30px; }
+    .sec01-nps-grid img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+    .sec01-photo { position: absolute; top: 0; left: 0; width: 50%; height: 50%; border-radius: 10px; overflow: hidden; z-index: 2; }
+    .sec01-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sec01-card-right { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px 44px 40px 100px; gap: 16px; }
+    .sec01-badge { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #333; border-radius: 999px; padding: 1px 18px; font-family: 'Jost', sans-serif; font-weight: 700; font-size: 20px; background-color: #FEFEFE; color: #333; letter-spacing: -1.5px; width: fit-content; }
+    .sec01-title { font-size: 30px; font-weight: 700; color: #111; line-height: 1.4; letter-spacing: -0.5px; word-break: keep-all; }
+
+    .sec02-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; padding-right: 80px; }
+    .sec02 { width: 100%; margin-left: -80px; padding-left: 80px; width: calc(100% + 80px); }
+    .sec02-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; padding-right: 80px; padding-left: 0; }
+    .sec02-slider { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 24px; padding-right: 80px; }
+    .sec02-slider::-webkit-scrollbar { display: none; }
+    .sec02-card { position: relative; flex-shrink: 0; width: calc((100% - 28px - 48px) / 3); height: 500px; border-radius: 30px; overflow: hidden; cursor: pointer; scroll-snap-align: start; }
+    .sec02-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .sec02-card:hover .sec02-card-img { transform: scale(1.05); }
+    .sec02-card-circle { position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%); width: 280px; height: 280px; border-radius: 50%; background: #F4A6B3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: bottom 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease; z-index: 2; opacity: 0.8; }
+    .sec02-card:hover .sec02-card-circle { bottom: 60px; opacity: 1; }
+    .sec02-card-circle-text { font-size: 20px; font-weight: 600; color: #fff; text-align: center; line-height: 1.55; letter-spacing: -0.3px; word-break: keep-all; max-width: 200px; padding-bottom: 40px;}
+    .sec02-card-btn { font-weight: 600; font-size: 12px; color: #F4A6B3; background-color: #FFF; border: 1.5px solid #fff; border-radius: 999px; padding: 2% 12px; cursor: pointer; letter-spacing:-1px; opacity: 0; transform: translateY(6px); transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; }
+    .sec02-card:hover .sec02-card-btn { opacity: 1; transform: translateY(0); }
+    .sec02-card:hover .sec02-card-circle-text {padding-bottom: 0px;}
+    .sec02-card-deco { position: absolute; left: 50%; bottom: -270px; transform: translateX(-50%); width: 380px; height: 380px; border-radius: 50%; background: #F4A6B3; z-index: 1; opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
+    .sec02-card:hover .sec02-card-deco { opacity: 1; }
+    .sec02-progress-wrap { margin-top: 4px; padding-right: 80px; height: 3px; background: #ddd; border-radius: 99px; overflow: hidden; }
+    .sec02-progress-bar { height: 100%; width: 0%; background: #333; border-radius: 99px; transition: width 0.15s linear; }
+
+    .sec03 { margin-top: 100px !important; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
+    .sec03-track { display: flex; gap: 20px; width: max-content; }
+    .sec03-row1 { overflow: hidden; }
+    .sec03-row1 .sec03-track { animation: sec03-left 28s linear infinite; }
+    .sec03-row2 { overflow: hidden; }
+    .sec03-row2 .sec03-track { animation: sec03-right 32s linear infinite; }
+    @keyframes sec03-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes sec03-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+    .sec03-pill { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 10px 40px; white-space: nowrap; flex-shrink: 0; text-decoration: none;}
+    .sec03-pill.long { padding: 10px 80px !important;}
+    .sec03-pill.toolong { padding: 10px 110px !important;}
+    .sec03-pill span { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -0.4px; }
+    .sec03-pill img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+    .sec03-circle { display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; width: 64px; height: 64px; flex-shrink: 0; text-decoration: none;}
+    .sec03-circle img { width: 100%; height: 100%; object-fit: contain; }
+    .sec03-pink { background: linear-gradient(135deg, #f9a8b8 0%, #f06292 100%); }
+    .sec03-purple { background: linear-gradient(135deg, #c084fc 0%, #818cf8 100%); }
+    .sec03-green { background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%); }
+    .sec03-teal { background: linear-gradient(135deg, #5eead4 0%, #0ea5e9 100%); }
+    .sec03-blue { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); }
+    .sec03-mint { background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%); }
+
+    .sec04 { background-color: #FDF7E7; margin-top: 100px !important;}
+    .sec04-inner { max-width: 1440px; margin: 0 auto; padding: 50px 80px 100px; }
+    .sec04-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; }
+    .sec04-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sec04-card { background: transparent; border-radius: 0; overflow: visible; text-decoration: none; display: flex; flex-direction: column; gap: 0; }
+    .sec04-card-img-wrap { max-height:400px; position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; border-radius: 20px; }
+    .sec04-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+    .sec04-card-body { padding: 20px 50px 28px; margin-top: -60px; position: relative; z-index: 2;}
+    .sec04-card-inner { background-color: #ffffff; display: flex; flex-direction: column; border-radius: 16px; padding: 30px;}
+    .sec04-card:hover .sec04-card-img-wrap img { transform: scale(1.05); }
+    .sec04-card-badge { display: inline-flex; align-items: center; border: 1.5px solid #000; border-radius: 999px; padding: 0px 20px; font-size: 16px; color: #000000; width: fit-content; letter-spacing: -0.2px; font-weight: 500; margin-bottom: 25px;}
+    .sec04-card-category { margin-left:5px; font-size: 18px; color: #000000; font-weight: 400; letter-spacing: -0.2px; }
+    .sec04-card-title { margin-left:5px; font-size: 22px; font-weight: 700; color: #111; line-height: 1.45; letter-spacing: -0.5px; word-break: keep-all; }
+
+    .sec05 { width: 100%; padding-bottom: 200px !important;}
+    .sec05-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; }
+    .sec05-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .sec05-card { position: relative; border-radius: 20px; overflow: hidden; text-decoration: none; aspect-ratio: 3/5; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .sec05-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.45s ease; z-index: 1; }
+    .sec05-card:hover .sec05-card-bg { opacity: 1; }
+    .sec05-card-title { position: relative; z-index: 2; font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.4px; }
+    .sec05-c1 { background: #f06292; }
+    .sec05-c2 { background: #5c3d72; }
+    .sec05-c3 { background: #4a7c59; }
+    .sec05-c4 { background: #7b85a8; }
+
+    .bottom-banner { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 900; height: 100px; overflow: visible; }
+    .bottom-banner-bg { position: absolute; inset: 0; z-index: 0; background: url('img/main/bottom-bg.png') center / cover no-repeat; }
+    .bottom-banner-inner { position: relative; z-index: 1; margin: 0 auto; padding: 0; height: 100%; display: flex; align-items: center; }
+    .bottom-banner-left { display: flex; align-items: flex-end; align-self: flex-end; flex-shrink: 0; }
+    .bottom-banner-char { height: 118px; object-fit: contain; display: block; }
+    .bottom-banner-texts { flex: 1; padding: 0 32px; display: flex; flex-direction: column; gap: 5px; }
+    .bottom-banner-title { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.5px; white-space: nowrap; }
+    .bottom-banner-desc { font-size: 17px; font-weight: 400; color: #fff; letter-spacing: -0.3px; white-space: nowrap; }
+    .bottom-banner-btn-link { flex-shrink: 0; display: block; line-height: 0; transition: opacity 0.2s, transform 0.2s; }
+    .bottom-banner-btn-link:hover { opacity: 0.85; }
+    .bottom-banner-btn-img { height: 100px; width: 370px; object-fit: contain; }
+
+    /* 기존 유지 (1400px 이상) */
+    .bottom-banner { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 900; height: 100px; overflow: visible; }
+    .bottom-banner-bg { position: absolute; inset: 0; z-index: 0; background: url('img/main/bottom-bg.png') center / cover no-repeat; }
+
+    /* 모바일 전용 요소 - 기본 숨김 */
+    .bottom-banner-bg-m { display: none; position: absolute; inset: 0; z-index: 0; background: url('img/main/bottom-bg-m.png') center / 100% 100% no-repeat; }
+    .bottom-banner-overlay-m { display: none; position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
+    .bottom-banner-link-m { display: none; position: absolute; top: 0; right: 0; width: 30%; height: 100%; z-index: 2; }
+
+    @media (max-width: 1400px) {
+      /* 데스크탑 요소 숨기기 */
+      .bottom-banner-bg { display: none; }
+      .bottom-banner-inner { display: none; }
+
+      /* 비율 유지 - height 고정 해제, aspect-ratio로 대체 */
+      .bottom-banner { height: auto; aspect-ratio: 1440 / 150; overflow: hidden; }
+
+      /* 모바일 요소 보이기 */
+      .bottom-banner-bg-m { display: block; background-size: 100% 100%; }
+      .bottom-banner-overlay-m { display: block; }
+      .bottom-banner-link-m { display: block; }
+    }
+
+    /* ── 푸터 ── */
+    .footer { background: #93979A; }
+    .footer-inner { max-width: 1440px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .footer-sns { display: flex; align-items: center; gap: 0px; flex-shrink: 0; }
+    .footer-sns a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; transition: opacity 0.2s; }
+    .footer-sns a:hover { opacity: 0.7; }
+    .footer-sns svg { width: 22px; height: 22px; }
+    .footer-sns .sns-fill { fill: #ffffff; stroke: none; }
+    .footer-sns .sns-stroke { fill: none; stroke: #ffffff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-logo img { max-width: 160px; object-fit: contain; }
+    .footer-info { flex: 1; font-size: 13px; color: #FFFFFF; line-height: 1.8; letter-spacing: -0.2px; }
+
+    @media (max-width: 1440px) {
+      .footer-inner {padding: 40px 40px; }
+    }
+    @media (max-width: 960px) {
+      .footer-inner {flex-direction: column;}
+    }
+    @media (max-width: 768px) {
+      .header-bar { height: 70px; padding: 0 20px 0 40px; }
+      .logo-mark img { max-width: 160px; }
+      .logo-divider, .logo-meta { display: none; }
+      .search-bar.open { max-height: 72px; }
+      .search-bar-inner { padding: 12px 20px; }
+      .nav-sidebar-head { height: 70px; }
+      .nav-body { padding: 28px 24px 20px; gap: 28px; }
+      .prev-issue-wrap { margin-right: 0px;}
+      .sec {margin: 50px auto 0 !important; padding: 0 40px;}
+       main { padding-top: 50px; }
+      .pc-br {display: none;}
+      .footer-inner { gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .sec {padding: 0 20px;}
+      .logo-mark img { max-width: 110px; }
+      .header-bar { height: 50px; padding: 0 10px 0 20px; }
+      .btn-prev-issue { padding: 2px 12px; font-size: 12px;}
+      .nav-sidebar { width: 100%; }
+      .nav-body {text-align: center;  padding: 0px 24px 20px;}
+      .nav-col h3 {font-size: 20px; margin-bottom: 12px;}
+      .btn-subscribe-outline {width: 100%;}
+      .btn-prev {width: 100%;}
+      .icon-btn { width: 30px; height: 30px; }
+      .icon-btn svg { width: 20px; height: 20px; }
+      .search-input { padding: 7px 20px 7px 40px; font-size: 12px;}
+      .search-bar-inner { padding: 7px 15px; }
+      .search-close-btn svg { width: 16px; height: 16px;}
+      .search-close-btn { width: 20px; height: 35px; }
+      .nav-close-btn { width: 30px; height: 30px; }
+      .nav-close-btn svg {width: 15px; height: 15px;}
+      .nav-sidebar-head { height: 60px; }
+      .footer-inner { padding: 30px 20px; }
+      .footer-logo img { max-width: 120px; }
+      .footer-info { font-size: 12px; }
+      .footer-sns svg { width: 20px; height: 20px; }
+      .footer-sns a {width: 40px; height: 40px;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header-bar">
+
+      <!-- LOGO -->
+      <a href="#" class="logo">
+        <div class="logo-mark">
+         <img src="img/logo.png" alt="국민연금 로고">
+        </div>
+        <div class="logo-meta">
+          <span>2026 상반기</span>
+          <span>VOL.205</span>
+        </div>
+      </a>
+
+      <!-- ICONS -->
+      <div class="header-icons">
+
+        <!-- 지난호 보기 드롭다운 -->
+        <div class="prev-issue-wrap">
+          <button class="btn-prev-issue" id="prevIssueBtn">
+            지난호 보기
+          </button>
+          <div class="prev-issue-dropdown" id="prevIssueDropdown">
+            <ul>
+              <li><a href="#">2025 하반기 VOL.204</a></li>
+              <li><a href="#">2025 상반기 VOL.203</a></li>
+              <li><a href="#">2024 하반기 VOL.202</a></li>
+              <li><a href="#">2024 상반기 VOL.201</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="icon-btn" id="searchBtn" aria-label="검색">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+       <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+        <svg viewBox="0 0 24 24" id="menuIcon">
+          <line x1="3" y1="6" x2="19" y2="6"/>
+          <line x1="3" y1="12" x2="19" y2="12"/>
+          <line x1="3" y1="18" x2="19" y2="18"/>
+        </svg>
+      </button>
+      </div>
+    </div>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar" id="searchBar">
+    <div class="search-bar-inner">
+      <div class="search-input-wrap">
+        <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+      </div>
+      <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+        <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      </button>
+    </div>
+  </div>
+  </header>
+
+  <!-- NAV SIDEBAR -->
+  <nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+    <div class="nav-sidebar-head">
+      <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+        <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      </button>
+    </div>
+    <div class="nav-body">
+      <div class="nav-col">
+        <h3>우리의 연금</h3>
+        <ul>
+          <li><a href="#">NPS 뉴스</a></li>
+          <li><a href="#">NPS 칼럼</a></li>
+          <li><a href="#">NPS 키워드 톱보기</a></li>
+          <li><a href="#">연금 생애 설계 가이드</a></li>
+        </ul>
+      </div>
+      <div class="nav-col">
+        <h3>트렌드 뷰</h3>
+        <ul>
+          <li><a href="#">모두의 여행</a></li>
+          <li><a href="#">꼬리에 꼬리를 무는 문화탐구</a></li>
+          <li><a href="#">그린 시그널</a></li>
+          <li><a href="#">지갑의 온도</a></li>
+        </ul>
+      </div>
+      <div class="nav-col">
+        <h3>열린 마당</h3>
+        <ul>
+          <li><a href="event-01.html">오픈 이벤트</a></li>
+          <li><a href="#">독자의 목소리</a></li>
+          <li><a href="#">초성 퀴즈</a></li>
+          <li><a href="#">OX 퀴즈</a></li>
+        </ul>
+      </div>
+    </div>
+   <div class="nav-footer">
+    <button class="btn-subscribe-outline">웹진 구독하기</button>
+    <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+    <button class="btn-prev">지난호 보기</button>
+  </div>
+  </nav>
+
+  <!-- BACKDROP -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- DEMO CONTENT -->
+  <main>
+    <div class="sec sec01">
+      <div class="sec01-card">
+
+        <!-- 왼쪽: 라벨 + NPS 레터 스택 + 포토 -->
+        <div class="sec01-card-left">
+
+          <p class="sec01-label">NPS 뉴스</p>
+
+          <div class="sec01-nps-grid">
+            <img src="img/main/n.png" alt="N">
+            <img src="img/main/p.png" alt="P">
+            <img src="img/main/s.png" alt="S">
+            <img src="img/main/o.png" alt="O">
+  
+          </div>
+        </div>
+
+        <!-- 오른쪽: 뱃지 + 제목 -->
+        <div class="sec01-card-right">
+          <span class="sec01-badge">NEWS 1</span>
+          <h3 class="sec01-title">
+            국민연금,<br>
+            2025년 세계 주요 연기금 중<br>
+            최고 수준 운용수익률 달성
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="sec sec02">
+      <p class="sec02-label">우리의 연금</p>
+  
+      <div class="sec02-slider" id="sec02Slider">
+  
+        <div class="sec02-card">
+          <img class="sec02-card-img" src="img/main/sec02-01.jpg" alt="">
+          <div class="sec02-card-circle">
+            <p class="sec02-card-circle-text">국민연금공단, <br> 공공기관 경영실적평가 <br>'우수(A)' 등급 획득</p>
+            <button class="sec02-card-btn">NOTICE</button>
+          </div>
+          <div class="sec02-card-deco"></div>
+        </div>
+  
+        <div class="sec02-card">
+          <img class="sec02-card-img" src="img/main/sec02-02.jpg" alt="">
+          <div class="sec02-card-circle">
+            <p class="sec02-card-circle-text">퇴사 후, <br>연금은 어떻게 <br>달라질까</p>
+            <button class="sec02-card-btn">NOTICE</button>
+          </div>
+          <div class="sec02-card-deco"></div>
+        </div>
+  
+        <div class="sec02-card">
+          <img class="sec02-card-img" src="img/main/sec02-03.jpg" alt="">
+          <div class="sec02-card-circle">
+            <p class="sec02-card-circle-text">연기연금 <br>키워드 <br>알아보기</p>
+            <button class="sec02-card-btn">NOTICE</button>
+          </div>
+          <div class="sec02-card-deco"></div>
+        </div>
+  
+        <div class="sec02-card">
+          <img class="sec02-card-img" src="img/main/sec02-04.jpg" alt="">
+          <div class="sec02-card-circle">
+            <p class="sec02-card-circle-text">노후 준비, 지금 시작해도 늦지 않아요</p>
+            <button class="sec02-card-btn">NOTICE</button>
+          </div>
+          <div class="sec02-card-deco"></div>
+        </div>
+
+  
+      </div>
+  
+      <div class="sec02-progress-wrap">
+        <div class="sec02-progress-bar" id="sec02ProgressBar"></div>
+      </div>
+    </div>
+    <div class="sec03">
+    
+      <!-- ── 행 1 ── -->
+      <div class="sec03-row1">
+        <div class="sec03-track" id="sec03Track1">
+          <a href="#" class="sec03-pill sec03-pink">
+            <span>경영실적평가 우수 등급</span>
+            <img src="img/main/sec03-01.png" alt="">
+            <img src="img/main/sec03-02.png" alt="">
+            <img src="img/main/sec03-03.png" alt="">
+          </a>
+          <a href="#" class="sec03-circle sec03-pink"><img src="img/main/sec03-04.png" alt=""></a>
+          <a href="#" class="sec03-pill sec03-teal long">
+            <span>증가율</span>
+            <img src="img/main/sec03-05.png" alt="">
+            <img src="img/main/sec03-06.png" alt="">
+          </a>
+          <a href="#" class="sec03-pill sec03-green"><span>늦게 받기</span></a>
+          <!-- <a href="#" class="sec03-pill sec03-blue">
+            <span>수익률 달성</span>
+            <img src="img/main/sec03-07.png" alt="">
+          </a>
+          <a href="#" class="sec03-circle sec03-teal"><img src="img/main/sec03-08.png" alt=""></a>
+          <a href="#" class="sec03-pill sec03-purple">
+            <span>국민연금</span>
+            <img src="img/main/sec03-09.png" alt="">
+          </a> 
+          <a href="#" class="sec03-pill sec03-mint"><span>운용수익</span></a>
+          -->
+        </div>
+      </div>
+
+      <!-- ── 행 2 ── -->
+      <div class="sec03-row2">
+        <div class="sec03-track" id="sec03Track2">
+          <a href="#" class="sec03-pill toolong sec03-green"><span>근로 병행</span></a>
+          <a href="#" class="sec03-pill toolong sec03-purple">
+            <span>수령 전략</span>
+            <img src="img/main/sec03-07.png" alt="">
+          </a>
+          <a href="#" class="sec03-circle sec03-teal"><img src="img/main/sec03-08.png" alt=""></a>
+          <a href="#" class="sec03-circle sec03-mint"><img src="img/main/sec03-09.png" alt=""></a>
+          <a href="#" class="sec03-pill sec03-blue">
+            <span>연기연금</span>
+            <img src="img/main/sec03-10.png" alt="">
+          </a>
+          <!-- <a href="#" class="sec03-pill sec03-pink">
+            <span>노후 설계</span>
+            <img src="img/main/sec03-11.png" alt="">
+          </a>
+          <a href="#" class="sec03-pill sec03-teal"><span>공공기관 평가</span></a>
+          <a href="#" class="sec03-circle sec03-purple"><img src="img/main/sec03-12.png" alt=""></a> -->
+        </div>
+      </div>
+    
+    </div>
+    <div class="sec04">
+      <div class="sec04-inner">
+        <p class="sec04-label">트렌드 뷰</p>
+
+        <div class="sec04-grid">
+
+          <a href="#" class="sec04-card">
+            <div class="sec04-card-img-wrap">
+              <img src="img/main/sec04-01.png" alt="">
+            </div>
+            <div class="sec04-card-body">
+              <div class="sec04-card-inner"> 
+                <span class="sec04-card-badge">모두의 여행</span>
+                <p class="sec04-card-category">부모님과 유럽 횡단 '환장' 안 하는 법</p>
+                <h3 class="sec04-card-title">바르셀로나</h3>
+              </div>
+            
+            </div>
+          </a>
+
+          <a href="#" class="sec04-card">
+            <div class="sec04-card-img-wrap">
+              <img src="img/main/sec04-02.png" alt="">
+              <img src="img/main/sec04-02.png" alt="">
+            </div>
+            <div class="sec04-card-body">
+              <div class="sec04-card-inner"> 
+                <span class="sec04-card-badge">꼬리에 꼬리를 무는 문화탐구</span>
+                <h3 class="sec04-card-title">클래식 재유행과<br>'조용한 취향'의 확산</h3>
+              </div>
+
+            </div>
+          </a>
+
+          <a href="#" class="sec04-card">
+            <div class="sec04-card-img-wrap">
+              <img src="img/main/sec04-03.png" alt="">
+              <img src="img/main/sec04-03.png" alt="">
+            </div>
+            <div class="sec04-card-body">
+              <div class="sec04-card-inner"> 
+                <span class="sec04-card-badge">그린 시그널</span>
+                <p class="sec04-card-title">세탁기의 비밀:</p>
+                <h3 class="sec04-card-title">"깨끗해질수록 아픈 바다"</h3>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="sec04-card">
+            <div class="sec04-card-img-wrap">
+              <img src="img/main/sec04-04.png" alt="">
+            </div>
+            <div class="sec04-card-body">
+              <div class="sec04-card-inner"> 
+                <span class="sec04-card-badge">지갑의 온도</span>
+                <h3 class="sec04-card-title">작은 돈의 반란 '나눠서 꾸준히'가 <br>새로운 투자 문법이 되다</h3>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+        
+    </div>
+    <div class="sec sec05">
+      <p class="sec05-label">열린 마당</p>
+
+      <div class="sec05-grid">
+
+        <a href="#" class="sec05-card sec05-c1">
+          <img class="sec05-card-bg" src="img/main/sec05-01.png" alt="">
+          <span class="sec05-card-title">오픈 이벤트</span>
+        </a>
+
+        <a href="#" class="sec05-card sec05-c2">
+          <img class="sec05-card-bg" src="img/main/sec05-02.png" alt="">
+          <span class="sec05-card-title">독자의 목소리</span>
+        </a>
+
+        <a href="#" class="sec05-card sec05-c3">
+          <img class="sec05-card-bg" src="img/main/sec05-03.png" alt="">
+          <span class="sec05-card-title">초성 퀴즈</span>
+        </a>
+
+        <a href="#" class="sec05-card sec05-c4">
+          <img class="sec05-card-bg" src="img/main/sec05-04.png" alt="">
+          <span class="sec05-card-title">OX 퀴즈</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- 하단 배너 -->
+    <div class="bottom-banner" id="bottomBanner">
+      <!-- 데스크탑 배경 -->
+      <div class="bottom-banner-bg"></div>
+
+      <!-- 모바일 배경 -->
+      <div class="bottom-banner-bg-m"></div>
+      <!-- 모바일 오버레이 이미지 (구독하기 버튼 포함 이미지) -->
+      <img class="bottom-banner-overlay-m" src="img/main/bottom-right-m.png" alt="">
+      <!-- 모바일 a링크 - 오른쪽 30%만 -->
+      <a class="bottom-banner-link-m" href="https://구독링크.com" target="_blank" rel="noopener noreferrer" aria-label="구독하기"></a>
+
+      <!-- 데스크탑 내부 -->
+      <div class="bottom-banner-inner">
+        <div class="bottom-banner-left">
+          <img class="bottom-banner-char" src="img/main/bottom-left.png" alt="캐릭터">
+        </div>
+        <div class="bottom-banner-texts">
+          <span class="bottom-banner-title">내 곁에 국민연금</span>
+          <span class="bottom-banner-desc">국민연금의 새로운 소식을 가장 먼저 받아보세요!</span>
+        </div>
+        <a class="bottom-banner-btn-link" href="https://구독링크.com" target="_blank" rel="noopener noreferrer" aria-label="구독하기">
+          <img class="bottom-banner-btn-img" src="img/main/bottom-right.png" alt="구독하기">
+        </a>
+      </div>
+    </div>
+
+
+    <!-- 푸터 -->
+    <footer class="footer" id="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="img/logo.png" alt="내겔에 국민연금">
+        </div>
+        <div class="footer-info">
+          국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+          국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+          등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+          205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+          © nps.or.kr. All rights reserved.
+        </div>
+       <div class="footer-sns">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const searchBtn  = document.getElementById('searchBtn');
+    const searchBar  = document.getElementById('searchBar');
+    const searchInput = document.getElementById('searchInput');
+    const menuBtn    = document.getElementById('menuBtn');
+    const navSidebar = document.getElementById('navSidebar');
+    const navCloseBtn = document.getElementById('navCloseBtn');
+    const backdrop   = document.getElementById('backdrop');
+    const menuIcon   = document.getElementById('menuIcon');
+
+    const prevIssueBtn = document.getElementById('prevIssueBtn');
+    const prevIssueDropdown = document.getElementById('prevIssueDropdown');
+    const searchCloseBtn = document.getElementById('searchCloseBtn');
+
+
+    let searchOpen = false;
+    let menuOpen   = false;
+
+    searchCloseBtn.addEventListener('click', closeAll);
+    prevIssueBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      prevIssueDropdown.classList.toggle('open');
+    });
+
+    // 바깥 클릭 시 닫기
+    document.addEventListener('click', () => {
+      prevIssueDropdown.classList.remove('open');
+    });
+
+    /* ── close all ── */
+    function closeAll() {
+      searchOpen = false;
+      menuOpen   = false;
+      searchBar.classList.remove('open');
+      navSidebar.classList.remove('open');
+      backdrop.classList.remove('show');
+      navSidebar.setAttribute('aria-hidden', 'true');
+      searchBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      setMenuIcon(false);
+    }
+
+    /* ── hamburger icon morph ── */
+   function setMenuIcon(isOpen) {
+      menuIcon.innerHTML = `<line x1="3" y1="5.5" x2="19" y2="5.5"/><line x1="3" y1="12" x2="19" y2="12"/><line x1="3" y1="18.5" x2="19" y2="18.5"/>`;
+    }
+
+    /* ── search toggle ── */
+    searchBtn.addEventListener('click', () => {
+      if (menuOpen) { closeAll(); return; }
+      searchOpen = !searchOpen;
+      searchBar.classList.toggle('open', searchOpen);
+      backdrop.classList.toggle('show', searchOpen);
+      searchBtn.setAttribute('aria-expanded', searchOpen);
+      if (searchOpen) { setTimeout(() => searchInput.focus(), 300); }
+    });
+
+    /* ── menu toggle ── */
+    menuBtn.addEventListener('click', () => {
+      if (searchOpen) { closeAll(); return; }
+      menuOpen = !menuOpen;
+      navSidebar.classList.toggle('open', menuOpen);
+      backdrop.classList.toggle('show', menuOpen);
+      navSidebar.setAttribute('aria-hidden', !menuOpen);
+      menuBtn.setAttribute('aria-expanded', menuOpen);
+      setMenuIcon(menuOpen);
+    });
+
+    /* ── sidebar close btn ── */
+    navCloseBtn.addEventListener('click', closeAll);
+
+    /* ── backdrop / ESC close ── */
+    backdrop.addEventListener('click', closeAll);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+    /* ── section02 ── */
+    const slider = document.getElementById('sec02Slider');
+    const bar = document.getElementById('sec02ProgressBar');
+
+    const origCards = Array.from(slider.querySelectorAll('.sec02-card'));
+    const total = origCards.length;
+    origCards.forEach(card => slider.appendChild(card.cloneNode(true)));
+
+    let current = 0;
+    let autoTimer;
+
+    function getCardW() { return slider.querySelectorAll('.sec02-card')[0].offsetWidth + 14; }
+
+    function slideTo(index, smooth = true) {
+      current = index;
+      slider.scrollTo({ left: index * getCardW(), behavior: smooth ? 'smooth' : 'instant' });
+      bar.style.width = ((current % total) / total * 100) + '%';
+    }
+
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(() => {
+        const next = current + 1;
+        slideTo(next);
+        if (next >= total) {
+          setTimeout(() => { current = next - total; slider.scrollTo({ left: current * getCardW(), behavior: 'instant' }); }, 500);
+        }
+      }, 3500);
+    }
+
+    function stopAuto() { clearInterval(autoTimer); }
+
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+    startAuto();
+
+    /* ── section03 ── */
+    ['sec03Track1', 'sec03Track2'].forEach(id => {
+      const track = document.getElementById(id);
+      track.innerHTML += track.innerHTML;
+    });
+
+    /* ── 하단 배너 고정/해제 ── */
+    const bottomBanner = document.getElementById('bottomBanner');
+    const footer = document.getElementById('footer');
+    function checkBannerPos() {
+      const footerRect = footer.getBoundingClientRect();
+      const bannerH = bottomBanner.offsetHeight;
+      if (footerRect.top < window.innerHeight) {
+        bottomBanner.style.position = 'absolute';
+        bottomBanner.style.bottom = 'auto';
+        bottomBanner.style.top = (footer.offsetTop - bannerH) + 'px';
+        bottomBanner.style.left = '0';
+      } else {
+        bottomBanner.style.position = 'fixed';
+        bottomBanner.style.top = 'auto';
+        bottomBanner.style.bottom = '0';
+        bottomBanner.style.left = '0';
+      }
+    }
+    
+    window.addEventListener('scroll', checkBannerPos);
+    window.addEventListener('resize', () => {
+      clearTimeout(window._resizeTimer);
+      window._resizeTimer = setTimeout(checkBannerPos, 100);
+    });
+    checkBannerPos();
+
+
+  </script>
+</body>
+</html>
