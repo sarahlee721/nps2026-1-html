@@ -123,7 +123,7 @@ ul, ol { list-style: none; }
   .footer-inner { gap: 20px; }
 }
 @media (max-width: 480px) {
-  .floating-buttons { bottom: 8% !important; }
+  .floating-buttons { bottom: 10% !important; }
   .sec {padding: 0 20px;}
   .page {margin: 50px auto 0; }
   .logo-mark img { max-width: 110px; }
