@@ -107,6 +107,7 @@ ul, ol { list-style: none; }
   .footer-inner {flex-direction: column;}
 }
 @media (max-width: 768px) {
+  /* .floating-buttons { bottom: 8% !important; } */
   .header-bar { height: 70px; padding: 0 20px 0 40px; }
   .logo-mark img { max-width: 160px; }
   .logo-divider, .logo-meta { display: none; }
@@ -116,7 +117,7 @@ ul, ol { list-style: none; }
   .nav-body { padding: 28px 24px 20px; gap: 28px; }
   .prev-issue-wrap { margin-right: 0px;}
   .sec {margin: 50px auto 0 !important; padding: 0 40px;}
-  main { padding-top: 50px; }
+   main { padding-top: 50px; }
   .page {margin: 70px auto 0; }
   .pc-br {display: none;}
   .footer-inner { gap: 20px; }

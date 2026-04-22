@@ -13,270 +13,209 @@
 <style>
 
   /* ── WRAPPER ── */
-  .page { background: #9fd8f1; }
-  .bottom-bg { position: relative; background-image: url('img/event-01/bg-bottom.png'); background-size: 200%; background-position: top center; background-repeat: no-repeat; margin-top: -20%; z-index: 1;}
-
-
-  /* ── TOP PILL BUTTON ── */
-  .top-pill-wrap { display: flex; justify-content: flex-end; padding: 70px 50px 50px; max-width: 940px; margin:0 auto;}
-  .top-pill {  display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 50%; padding: 13px 35px; font-size: 18px; font-weight: 600; color: #1a2a4a; border: 1px solid #1a2a4a; cursor: pointer; white-space: nowrap; }
-
-  /* ── HERO SECTION ── */
-  .hero { text-align: center; padding: 40px 24px 30px; }
-  .hero-quote { font-family: 'SCDream'; font-size: 35px; font-weight: 900; color: #1155a3; margin-bottom: 20px; letter-spacing: -0.8px;}
-  .hero-title { font-family: 'SCDream'; font-size: clamp(20px, 5vw, 32px); font-weight: 700; color: #251e1c; line-height: 1.35;  letter-spacing: -0.5px; margin-bottom: 50px; word-break: keep-all; }
-  .hero-desc { font-size: 16px; line-height: 1.5; font-weight: 700; color: #1155a3; margin-bottom: 50px; }
+  #event-01 { background: #9fd8f1; }
+  #event-01 .bottom-bg { position: relative; background-image: url('img/event-01/bg-bottom.png'); background-size: 200%; background-position: top center; background-repeat: no-repeat; margin-top: -20%; z-index: 1;}
+  #event-01 .top-pill-wrap { display: flex; justify-content: flex-end; padding: 70px 50px 50px; max-width: 940px; margin:0 auto;}
+  #event-01 .top-pill {  display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 50%; padding: 13px 35px; font-size: 18px; font-weight: 600; color: #1a2a4a; border: 1px solid #1a2a4a; cursor: pointer; white-space: nowrap; }
+  #event-01 .hero { text-align: center; padding: 40px 24px 30px; }
+  #event-01 .hero-quote { font-family: 'SCDream'; font-size: 35px; font-weight: 900; color: #1155a3; margin-bottom: 20px; letter-spacing: -0.8px;}
+  #event-01 .hero-title { font-family: 'SCDream'; font-size: clamp(20px, 5vw, 32px); font-weight: 700; color: #251e1c; line-height: 1.35;  letter-spacing: -0.5px; margin-bottom: 50px; word-break: keep-all; }
+  #event-01 .hero-desc { font-size: 16px; line-height: 1.5; font-weight: 700; color: #1155a3; margin-bottom: 50px; }
 
   /* ── PRIZE CARD ── */
-  .prize-wrap { display: flex; justify-content: center; margin-bottom: 50px; }
-  .prize-wrap img { width: min(320px, 55vw);  }
-
-  /* ── SECTION LABEL ── */
-  .section-label { display: inline-block; background: #fff; letter-spacing: -0.5px; border-radius: 50px; border: 1px solid #251e1c; padding: 2px 20px 3px; font-size: 14px; font-weight: 500; color: #1a2a4a; margin-bottom: 5px; }
+  #event-01 .prize-wrap { display: flex; justify-content: center; margin-bottom: 50px; }
+  #event-01 .prize-wrap img { width: min(320px, 55vw);  }
+  #event-01 .section-label { display: inline-block; background: #fff; letter-spacing: -0.5px; border-radius: 50px; border: 1px solid #251e1c; padding: 2px 20px 3px; font-size: 14px; font-weight: 500; color: #1a2a4a; margin-bottom: 5px; }
 
   /* ── STEPS ── */
-  .steps-section { text-align: center;  margin-bottom: 32px; }
-  .steps-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; padding: 0 24px; margin: 50px 0 70px;}
-  .step-item { display: flex; flex-direction: column; align-items: center; width: 100px; }
-  .step-circle { width: 130px; height: 130px; border-radius: 50%; background-image: url('img/event-01/number-circle.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
-  .step-num { font-family: 'NewYork', serif; font-size: 40px; font-weight: 400; color: #1a2a4a; line-height: 1; }
-  .step-text { font-size: 12px; font-weight: 500; color: #1a2a4a; text-align: center; line-height: 1.2; letter-spacing: -0.5px; }
-
-  @media (max-width: 768px) {
-    .steps-grid { display: grid; grid-template-columns: repeat(2, 130px);  gap: 24px;justify-content: center; gap:20px; }
-    .step-item { width: 130px;}
-  }
+  #event-01 .steps-section { text-align: center;  margin-bottom: 32px; }
+  #event-01 .steps-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; padding: 0 24px; margin: 50px 0 70px;}
+  #event-01 .step-item { display: flex; flex-direction: column; align-items: center; width: 100px; }
+  #event-01 .step-circle { width: 130px; height: 130px; border-radius: 50%; background-image: url('img/event-01/number-circle.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+  #event-01 .step-num { font-family: 'NewYork', serif; font-size: 40px; font-weight: 400; color: #1a2a4a; line-height: 1; }
+  #event-01 .step-text { font-size: 12px; font-weight: 500; color: #1a2a4a; text-align: center; line-height: 1.2; letter-spacing: -0.5px; }
 
   /* ── INFO ROWS ── */
-  .info-section { text-align: center; margin-bottom: 20px;  }
-  .info-date { font-size: 14px; font-weight: 500; color: #1a2a4a; margin-top: 8px; }
+  #event-01 .info-section { text-align: center; margin-bottom: 20px;  }
+  #event-01 .info-date { font-size: 14px; font-weight: 500; color: #1a2a4a; margin-top: 8px; }
 
   /* ── SUBSCRIBE BTN ── */
-  .subscribe-wrap { display: flex; flex-direction: column; align-items: center; gap: 30px; margin: 35px 0 40px; }
-  .subscribe-btn { background: #0060AF; color: #fff; border: none; border-radius: 50px; padding: 5px 30px; font-size: 20px; font-weight: 400; cursor: pointer; font-family: inherit; }
-  .subscribe-desc { font-size: 14px; font-weight: 700; color: #0161AC; animation: pulse 2s ease-in-out infinite; }
+  #event-01 .subscribe-wrap { display: flex; flex-direction: column; align-items: center; gap: 30px; margin: 35px 0 40px; }
+  #event-01 .subscribe-btn { background: #0060AF; color: #fff; border: none; border-radius: 50px; padding: 5px 30px; font-size: 20px; font-weight: 400; cursor: pointer; font-family: inherit; }
+  #event-01 .subscribe-desc { font-size: 14px; font-weight: 700; color: #0161AC; animation: pulse 2s ease-in-out infinite; }
 
   /* ── ILLUSTRATION SECTION ── */
-  .illust-section { position: relative; padding: 40px 24px 0; }
-  .boyang-title { margin-bottom: 10px; max-width: 350px; margin: 0 auto; animation: pulse 2s ease-in-out infinite; }
-  .boyang-title img { width: 100%; padding:0 60px;}
-  .illust-container { position: relative; height: min(500px, 70vw); display: flex; justify-content: center; align-items: flex-end; max-width: 700px; margin: 0 auto; }
-  .illust-section.one .illust-pot { position: absolute; bottom: 15%; left: 51%; transform: translateX(-50%); width: 62%; z-index: 2; }
+  #event-01 .illust-section { position: relative; padding: 40px 24px 0; }
+  #event-01 .boyang-title { margin-bottom: 10px; max-width: 350px; margin: 0 auto; animation: pulse 2s ease-in-out infinite; }
+  #event-01 .boyang-title img { width: 100%; padding:0 60px;}
+  #event-01 .illust-container { position: relative; height: min(500px, 70vw); display: flex; justify-content: center; align-items: flex-end; max-width: 700px; margin: 0 auto; }
+  #event-01 .illust-section.one .illust-pot { position: absolute; bottom: 15%; left: 51%; transform: translateX(-50%); width: 62%; z-index: 2; }
 
-  .illust-section .illust-garlic { position: absolute; bottom: 80%; left: 32%; width: 31%; z-index: 3; }
-  .illust-section .illust-ginseng { position: absolute; bottom: 25%; left: 0%; width: 28%; z-index: 3; }
-  .illust-section .illust-abalone { position: absolute; bottom: 62%; left: 1%; width: 29%; z-index: 3; }
-  .illust-section .illust-chicken { position: absolute; bottom: 12%; right: 0%; width: 35%; z-index: 3; }
-  .illust-section .illust-chestnuts { position: absolute; bottom: 61%; right: 1%; width: 28%; z-index: 3; }
+  #event-01 .illust-section .illust-garlic { position: absolute; bottom: 80%; left: 32%; width: 31%; z-index: 3; }
+  #event-01 .illust-section .illust-ginseng { position: absolute; bottom: 25%; left: 0%; width: 28%; z-index: 3; }
+  #event-01 .illust-section .illust-abalone { position: absolute; bottom: 62%; left: 1%; width: 29%; z-index: 3; }
+  #event-01 .illust-section .illust-chicken { position: absolute; bottom: 12%; right: 0%; width: 35%; z-index: 3; }
+  #event-01 .illust-section .illust-chestnuts { position: absolute; bottom: 61%; right: 1%; width: 28%; z-index: 3; }
 
-  .illust-section .illust-women { position: absolute; bottom: 40%; left: 3%; transform: translateX(-40%); width: 30%; z-index: 2; opacity: 0.85 }
-  .illust-section .illust-ginseng2 { position: absolute; bottom: 85%; left: 38%; width: 16%; z-index: 3; }
-  .illust-section .illust-abalone2 { position: absolute; bottom: 88%; left: 57%; width: 10%; z-index: 3; }
-  .illust-section .illust-chestnuts2 { position: absolute; bottom: 70%; right: 42%; width: 21%; z-index: 3; }
-  .illust-section .illust-men { position: absolute; bottom: 35%; right: 8%; width: 25%; z-index: 3; }
-  .illust-section .illust-smoke { position: absolute; bottom: 58%; right: 40%; width: 13%; z-index: 3; }
-  .illust-section.two .illust-pot { width: 65%; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 2; }
+  #event-01 .illust-section .illust-women { position: absolute; bottom: 40%; left: 3%; transform: translateX(-40%); width: 30%; z-index: 2; opacity: 0.85 }
+  #event-01 .illust-section .illust-ginseng2 { position: absolute; bottom: 85%; left: 38%; width: 16%; z-index: 3; }
+  #event-01 .illust-section .illust-abalone2 { position: absolute; bottom: 88%; left: 57%; width: 10%; z-index: 3; }
+  #event-01 .illust-section .illust-chestnuts2 { position: absolute; bottom: 70%; right: 42%; width: 21%; z-index: 3; }
+  #event-01 .illust-section .illust-men { position: absolute; bottom: 35%; right: 8%; width: 25%; z-index: 3; }
+  #event-01 .illust-section .illust-smoke { position: absolute; bottom: 58%; right: 40%; width: 13%; z-index: 3; }
+  #event-01 .illust-section.two .illust-pot { width: 65%; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 2; }
   
-
-  .illust-section .illust-steam { position: absolute; bottom: 55%; left: 50%; transform: translateX(-40%); width: 30%; z-index: 3; opacity: 0.85 }
-  .illust-section .illust-kimchi { position: absolute; bottom: 4%; left: 4%; width: 20%; z-index: 3; }
-  .illust-section .illust-person { position: absolute; bottom: 5%; right: 2%; width: 25%; z-index: 3; }
-  .illust-section.three .illust-pot { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70%; z-index: 2; }
+  #event-01 .illust-section .illust-steam { position: absolute; bottom: 55%; left: 50%; transform: translateX(-40%); width: 30%; z-index: 3; opacity: 0.85 }
+  #event-01 .illust-section .illust-kimchi { position: absolute; bottom: 4%; left: 4%; width: 20%; z-index: 3; }
+  #event-01 .illust-section .illust-person { position: absolute; bottom: 5%; right: 2%; width: 25%; z-index: 3; }
+  #event-01 .illust-section.three .illust-pot { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70%; z-index: 2; }
   
   /* ── 재료 hover/클릭 효과 ── */
-  #stage-one [data-modal] {
-    cursor: pointer;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
-  }
-  #stage-one [data-modal]:hover {
-    transform: scale(1.15) translateY(-10px) !important;
-    filter: drop-shadow(0 8px 18px rgba(17,85,163,0.4));
-    animation-play-state: paused !important;
-  }
-  #stage-one .illust-garlic:hover {
-    transform: scale(1.15) translateY(-10px) !important;
-  }
-
-  /* ── stage fade in/out ── */
-  .illust-section { transition: opacity 0.6s ease; }
-  .illust-section.fade-out { opacity: 0; }
+  #event-01 [data-modal] { cursor: pointer; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;}
+  #event-01 [data-modal]:hover { transform: scale(1.15) translateY(-10px) !important; filter: drop-shadow(0 8px 18px rgba(17,85,163,0.4)); animation-play-state: paused !important; }
+  #event-01 .illust-garlic:hover { transform: scale(1.15) translateY(-10px) !important; }
 
   /* ── stage-three 짜잔 bounce ── */
-  @keyframes zajan {
-  0%   { opacity: 0; transform: scale(0.75); }
-  70%  { transform: scale(1.07); }
-  100% { opacity: 1; transform: scale(1); }
-  }
-  .illust-section.exit-up {
-    animation: exitUp 0.6s ease forwards;
-  }
-  @keyframes exitUp {
-    0%   { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: 0; transform: translateY(-40px) scale(0.95); }
-  }
-  /* 또는 아래로 가라앉으며 페이드 */
-  .illust-section.exit-down {
-    animation: exitDown 0.6s ease forwards;
-  }
-  @keyframes exitDown {
-    0%   { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: 0; transform: translateY(30px) scale(0.95); }
-  }
-  @keyframes slideOutUpFade {
-    0%   { transform: translate3d(-40%, -10%, 0); opacity: 1; }
-    60%  { transform: translate3d(-40%, -55%, 0); opacity: 0.8; }
-    100% { transform: translate3d(-40%, -60%, 0); opacity: 0; }
-  }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50%       { transform: scale(1.08); }
-  }
-  .slideOutUpFade {
-      animation: slideOutUpFade 3s infinite;
-  }
-  @keyframes zajanPot {
-    0%   { opacity: 0; transform: translateX(-50%) scale(0.75); }
-    70%  { transform: translateX(-50%) scale(1.07); }
-    100% { opacity: 1; transform: translateX(-50%) scale(1); }
-  }
-  @keyframes zajanSteam {
-    0%   { opacity: 0; transform: translateX(-40%) scale(0.75); }
-    70%  { transform: translateX(-40%) scale(1.07); }
-    100% { opacity: 1; transform: translateX(-40%) scale(1); }
-  }
-
-  @keyframes ingredientToPot {
-    0%   { transform: scale(1); opacity: 1; }
-    60%  { transform: translate(var(--tx), var(--ty)) scale(0.6); opacity: 0.8; }
-    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
-  }
-  .ingredient-to-pot {
-    animation: ingredientToPot 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
-  }
-  /* forwards 제거 */
-  #stage-three.show .illust-pot    { animation: zajanPot   0.7s ease; }
-  #stage-three.show .illust-steam  { animation: zajanSteam 0.6s 0.25s ease; opacity: 0; }
-  #stage-three.show .illust-kimchi { animation: zajan 0.6s 0.15s ease; opacity: 0; }
-  #stage-three.show .illust-person { animation: zajan 0.6s 0.35s ease; opacity: 0; }
-
-  /* ── NOTES ── */
-  .notes-section { padding: clamp(150px, 25vw, 400px) 28px 80px; max-width: 1150px; margin: 0 auto; }
-  .notes-section p { font-size: 14px; font-weight: 300; color: #FEFEFE; line-height: 1.8; margin-bottom: 2px; text-align: left;}
-  .notes-section p::before { content: '·'; margin-right: 4px; }
-  .divider { height: 0.5px; background: #FEFEFE; margin: 20px 0; }
-
-  /* ── THUMB CARDS ── */
-  .thumb-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 0 24px 32px; max-width: 1150px; margin: 0 auto; }
-  .thumb-card { border-radius: 0; overflow: hidden; aspect-ratio: 16/4; background-size: cover; background-position: center; }
-  .thumb-bg-1 { background-image: url('img/event-01/prev.jpg'); }
-  .thumb-bg-2 { background-image: url('img/event-01/next.jpg'); }
-  .thumb-card-inner { width: 100%; height: 100%; display: flex; align-items: center; gap:20px; padding: 16px 24px; background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2)); }
-  .thumb-card-inner.right {justify-content: flex-end;}
-  .thumb-text { display: flex; flex-direction: column; gap: 4px; }
-  .thumb-title { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.4; text-decoration: underline; }
-  .thumb-tag { font-size: 10px; color: #ccc; }
-  .thumb-arrow { width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1; }
-
+  @keyframes zajan { 0% { opacity: 0; transform: scale(0.75); } 70% { transform: scale(1.07); } 100% { opacity: 1; transform: scale(1); } }
+  @keyframes exitUp { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-40px) scale(0.95); } }
+  @keyframes exitDown { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(30px) scale(0.95); } }
+  @keyframes slideOutUpFade { 0% { transform: translate3d(-40%, -10%, 0); opacity: 1; } 60% { transform: translate3d(-40%, -55%, 0); opacity: 0.8; } 100% { transform: translate3d(-40%, -60%, 0); opacity: 0; } }
+  @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  @keyframes zajanPot { 0% { opacity: 0; transform: translateX(-50%) scale(0.75); } 70% { transform: translateX(-50%) scale(1.07); } 100% { opacity: 1; transform: translateX(-50%) scale(1); } }
+  @keyframes zajanSteam { 0% { opacity: 0; transform: translateX(-40%) scale(0.75); } 70% { transform: translateX(-40%) scale(1.07); } 100% { opacity: 1; transform: translateX(-40%) scale(1); } }
+  @keyframes ingredientToPot { 0% { transform: scale(1); opacity: 1; } 60% { transform: translate(var(--tx), var(--ty)) scale(0.6); opacity: 0.8; } 100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; } }
   @keyframes floatSlow { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-12px); } }
   @keyframes floatMid { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
   @keyframes floatFast { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-  .float-slow { animation: floatSlow 4s ease-in-out infinite; }
-  .float-mid { animation: floatMid 3s ease-in-out infinite; }
-  .float-fast { animation: floatFast 3.5s ease-in-out infinite; }
-  .float-so { animation: floatFast 4.5s ease-in-out infinite; }
-  .float-sofast { animation: floatFast 1s ease-in-out infinite; }
-  .float-soofast { animation: floatFast 1.4s ease-in-out infinite; }
 
+
+  #event-01 .illust-section { transition: opacity 0.6s ease; }
+  #event-01 .illust-section.fade-out { opacity: 0; }
+  #event-01 .illust-section.exit-up { animation: exitUp 0.6s ease forwards; }
+  #event-01 .illust-section.exit-down { animation: exitDown 0.6s ease forwards;}
+  #event-01 .slideOutUpFade { animation: slideOutUpFade 3s infinite; }
+  #event-01 .ingredient-to-pot { animation: ingredientToPot 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;}
+  #event-01 #stage-three.show .illust-pot    { animation: zajanPot   0.7s ease; }
+  #event-01 #stage-three.show .illust-steam  { animation: zajanSteam 0.6s 0.25s ease; opacity: 0; }
+  #event-01 #stage-three.show .illust-kimchi { animation: zajan 0.6s 0.15s ease; opacity: 0; }
+  #event-01 #stage-three.show .illust-person { animation: zajan 0.6s 0.35s ease; opacity: 0; }
+  #event-01 .float-slow { animation: floatSlow 4s ease-in-out infinite; }
+  #event-01 .float-mid { animation: floatMid 3s ease-in-out infinite; }
+  #event-01 .float-fast { animation: floatFast 3.5s ease-in-out infinite; }
+  #event-01 .float-so { animation: floatFast 4.5s ease-in-out infinite; }
+  #event-01 .float-sofast { animation: floatFast 1s ease-in-out infinite; }
+  #event-01 .float-soofast { animation: floatFast 1.4s ease-in-out infinite; }
+
+  /* ── NOTES ── */
+  #event-01 .notes-section { padding: clamp(150px, 25vw, 400px) 28px 80px; max-width: 1150px; margin: 0 auto; }
+  #event-01 .notes-section p { font-size: 14px; font-weight: 300; color: #FEFEFE; line-height: 1.8; margin-bottom: 2px; text-align: left;}
+  #event-01 .notes-section p::before { content: '·'; margin-right: 4px; }
+  #event-01 .divider { height: 0.5px; background: #FEFEFE; margin: 20px 0; }
+
+  /* ── THUMB CARDS ── */
+  #event-01 .thumb-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 0 24px 32px; max-width: 1150px; margin: 0 auto; }
+  #event-01 .thumb-card { border-radius: 0; overflow: hidden; aspect-ratio: 16/4; background-size: cover; background-position: center; }
+  #event-01 .thumb-bg-1 { background-image: url('img/event-01/prev.jpg'); }
+  #event-01 .thumb-bg-2 { background-image: url('img/event-01/next.jpg'); }
+  #event-01 .thumb-card-inner { width: 100%; height: 100%; display: flex; align-items: center; gap:20px; padding: 16px 24px; background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2)); }
+  #event-01 .thumb-card-inner.right {justify-content: flex-end;}
+  #event-01 .thumb-text { display: flex; flex-direction: column; gap: 4px; }
+  #event-01 .thumb-title { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.4; text-decoration: underline; }
+  #event-01 .thumb-tag { font-size: 10px; color: #ccc; }
+  #event-01 .thumb-arrow { width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 1; }
+
+  #event-01 .event-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; overflow: auto; }
+  #event-01 .event-modal .modal-content { background-color: white; padding: 20px; border-radius: 8px; max-width: 70%; height: auto; position: relative; max-height: 90vh; overflow-y: auto; box-sizing: border-box; }
+  #event-01 .event-modal .close-button { position: absolute; top: 10px; right: 10px; padding: 5px; font-size: 1.5em; font-weight: bold; line-height: 1; cursor: pointer; border: none; background: none; color: black; opacity: 0.7; }
+  #event-01 .event-modal .close-button:hover { opacity: 1; }
+  #event-01 .event-result { text-align: center; padding: 40px 50px 30px; background-image: url('../img/event-01/firecracker.png'); background-repeat: no-repeat; background-position: center top; background-size: contain; }
+  #event-01 .event-result .result-message { font-weight: 400; font-size: 40px; line-height: 100%; margin-bottom: 10px; color: #0086DD; }
+  #event-01 .event-result .sub-message { font-weight: 400; font-size: 24px; line-height: 100%; margin-bottom: 30px; }
+  #event-01 .event-result .gift-img { width: 90%; height: auto; margin-bottom: 10px; }
+  #event-01 .event-result .gift-card { padding: 10px 90px; border-radius: 5px; border: 1px solid #ccc; font-weight: 400; font-size: 15px; line-height: 100%; }
+  #event-01 .event-result .instruction { margin-top: 20px; font-weight: 400; font-size: 18px; }
+  #event-01 .event-result .notice { margin-top: 10px; font-size: 15px; font-weight: 400; }
+  #event-01 .event-result .submit-button { background-color: #1563C2; color: white; padding: 5px 30px; border: none; border-radius: 999px; margin-top: 20px; font-size: 25px; width: 200px; }
+  #event-01 .event-result .submit-button:hover { background-color: #0086DD; }
+  #event-01 .event-result .lucky-img {margin-bottom:10px;}
+  #event-01 .info-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2600; overflow: auto; }
+  #event-01 .info-modal .modal-content { background-color: white; padding: 20px; border-radius: 8px; max-width: 90%; width: 500px; max-height: 90vh; overflow-y: auto; box-sizing: border-box; position: relative; }
+  #event-01 .info-modal .close-button { position: absolute; top: 10px; right: 10px; padding: 5px; font-size: 1.5em; font-weight: bold; line-height: 1; cursor: pointer; border: none; background: none; color: black; opacity: 0.7; }
+  #event-01 .info-modal .form-title { text-align: center; margin-bottom: 20px; }
+  #event-01 .info-form { padding: 20px; margin: 0 auto; text-align: center; }
+  #event-01 .info-form .form-title { font-size: 24px; color: #0086DD; text-align: center; margin-bottom: 10px; font-weight: 400; }
+  #event-01 .info-form .form-description { font-weight: 400; text-align: center; margin-bottom: 15px; font-size: 15px; }
+  #event-01 .form-group { display: flex; margin-bottom: 15px; align-items: center; }
+  #event-01 .form-group .phone, #event-01 .form-group .email, #event-01 .form-group .name { width: 90px; margin-right: 15px; text-align: left; flex-shrink: 0; font-size: 15px; font-weight: 500; }
+  #event-01 .form-group .name-input, .form-group .email-input { flex-grow: 1; height: 35px; border: 2px solid #ccc; border-radius: 5px; padding: 5px; font-size: 15px; font-weight: 500; min-width: 0; box-sizing: border-box; }
+  #event-01 .form-group .phone-inputs { flex-grow: 1; display: flex; align-items: center; }
+  #event-01 .phone-group .phone-select, .phone-group .phone-input { font-size: 14px; height: 35px; border: 2px solid #ccc; border-radius: 5px; padding: 5px; }
+  #event-01 .form-group .name-input:focus, .form-group .email-input:focus, .form-group .phone-select:focus, .form-group .phone-input:focus { outline: none; border-color: #0086DD; box-shadow: 0 0 5px rgba(0, 134, 221, 0.5); }
+  #event-01 .phone-group .phone-select { width: 100px; height: 35px; font-size: 15px; padding: 0px 10px; background-repeat: no-repeat; background-image: url('../img/event-page/select-arrow.svg'); background-position: right 2px center; }
+  #event-01 .phone-group .phone-option { font-size: 16px; padding: 10px; }
+  #event-01 .phone-group .phone-input { width: 40%; box-sizing: border-box; }
+  #event-01 .phone-group .hyphen { display: inline-block; width: auto; text-align: center; font-size: 16px; margin: 0 5px; height: 35px; line-height: 35px; flex-shrink: 0; }
+  #event-01 .info-form .agreement-title { margin-top: 20px; font-size: 15px; font-weight: 500; text-align: left; }
+  #event-01 .info-form .agreement-group { margin-top: 10px; padding: 15px; border-radius: 4px; background-color: #F2F2F2; max-height: 150px; overflow-x: auto; text-align: left; }
+  #event-01 .info-form .agreement-group .agreement-subtitle { font-size: 14px; font-weight: 500; color: #333; margin-bottom: 5px; }
+  #event-01 .info-form .agreement-group .agreement-text { font-size: 14px; color: #666; margin-bottom: 8px; }
+  #event-01 .info-modal .checkbox-row { display: flex; align-items: center; justify-items: center; gap: 8px; margin-top: 15px; cursor: pointer; user-select: none; }
+  #event-01 .info-modal .styled-checkbox { position: absolute; opacity: 0; }
+  #event-01 .info-modal .checkbox-label { position: relative; cursor: pointer; padding: 0; display: inline-flex; align-items: center; font-size: 15px; font-weight: 500; }
+  #event-01 .info-modal .checkbox-label:before { content: ''; margin-right: 5px; display: inline-block; vertical-align: text-top; width: 20px; height: 20px; background: white; border: 2px solid #ccc; vertical-align: middle; box-sizing: border-box; border-radius: 5px; }
+  #event-01 .info-modal .styled-checkbox:checked + .checkbox-label:before { background: #0086DD; }
+  #event-01 .info-modal .styled-checkbox:checked + .checkbox-label:after { content: ''; position: absolute; left: 5px; top: 10px; background: white; width: 2px; height: 2px; box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white; transform: rotate(45deg); }
+  #event-01 .info-modal .submit-button { background-color: #1563C2; color: white; padding: 5px 30px; border: none; border-radius: 999px; margin: 20px auto 0 auto; font-size: 25px; width: 200px; }
+  #event-01 .info-modal .submit-button:hover { background-color: #0086DD; }
+  #event-01 .registration-complete-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; }
+  #event-01 .registration-complete-modal .modal-content { background-color: #fff; padding: 40px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 80%; max-width: 480px; }
+  #event-01 .registration-complete-modal .form-title { font-weight: 400; font-size: 40px; margin-bottom: 20px; color: #0086DD; }
+  #event-01 .registration-complete-modal .form-description1 { font-size: 18px; margin-bottom: 10px; font-weight: 400; line-height: 1.3; }
+  #event-01 .registration-complete-modal .form-description2 { font-size: 15px; margin-bottom: 20px; font-weight: 400; }
+  #event-01 .registration-complete-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 10px; }
+  #event-01 .registration-complete-modal .close-button:hover { background-color: #969696; }
+  #event-01 .unlucky-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; }
+  #event-01 .unlucky-modal .modal-content { background-color: #fff; padding: 40px 20px 50px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 90%; max-width: 450px; }
+  #event-01 .unlucky-modal .form-title { font-size: 40px; color: #0086DD; margin-bottom:15px;}
+  #event-01 .unlucky-modal .unlucky-img { width: 90%; padding-bottom: 30px; margin: 0 auto; }
+  #event-01 .unlucky-modal .form-description { font-size: 24px; margin-bottom: 20px; color: #333; }
+  #event-01 .unlucky-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 10px; cursor: pointer; transition: background-color 0.3s ease; }
+  #event-01 .unlucky-modal .close-button:hover { background-color: #969696; }
+  #event-01 .already-applied-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000; }
+  #event-01 .already-applied-modal .modal-content { background-color: #fff; padding: 45px 40px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 80%; max-width: 400px; }
+  #event-01 .already-applied-modal .form-title { font-size: 24px; }
+  #event-01 .already-applied-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease; }
+  #event-01 .already-applied-modal .close-button:hover { background-color: #969696; }
+  #event-01 .event-ended-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000; }
+  #event-01 .event-ended-modal .modal-content { background-color: #fff; padding: 30px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 80%; max-width: 400px; }
+  #event-01 .event-ended-modal .form-title { font-size: 24px; }
+  #event-01 .event-ended-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease; }
+  #event-01 .event-ended-modal .close-button:hover { background-color: #969696; }
+  
+  @media (max-width: 768px) {
+    #event-01 .thumb-section { grid-template-columns: 1fr; gap: 25px;}
+    #event-01 .top-pill-wrap {justify-content: center; padding: 50px 50px 10px; }
+    #event-01 .steps-grid { display: grid; grid-template-columns: repeat(2, 130px); justify-content: center; gap:15px; }
+    #event-01 .step-item { width: 120px;}
+  }
   /* ── RESPONSIVE ── */
   @media (max-width: 480px) {
-    .top-pill { font-size: 11px; padding: 6px 14px; }
-    .hero { padding: 28px 20px 20px; }
-    .hero-quote { font-size: 15px; }
-    .thumb-section { padding: 0 16px 24px; gap: 8px; }
-    .footer { flex-direction: column; align-items: flex-start; }
-    .prize-card { padding: 12px 16px; gap: 10px; min-width: unset; width: 90%; }
-    .hero-title { margin-bottom: 30px;};
+    #event-01 .top-pill { font-size: 11px; padding: 6px 14px; }
+    #event-01 .hero { padding: 28px 20px 20px; }
+    #event-01 .hero-quote { font-size: 20px; }
+    #event-01 .thumb-section { padding: 0 16px 24px; gap: 8px; }
+    #event-01 .footer { flex-direction: column; align-items: flex-start; }
+    #event-01 .prize-card { padding: 12px 16px; gap: 10px; min-width: unset; width: 90%; }
+    #event-01 .hero-title { margin-bottom: 30px;};
+
+    #event-01 .unlucky-modal .form-title { font-size: 25px; margin-bottom: 10px;}
+    #event-01 .unlucky-modal .form-description { font-size: 18px; }
+    #event-01 .event-ended-modal .form-title { font-size: 20px; }
+    #event-01 .close-button.Wavve {font-size: 20px !important;}
+    #event-01 .notes-section p {font-size: 12px; line-height: 1.5;}
+    #event-01 .hero-desc { font-size: 12px; margin-bottom: 40px;}
   }
 
-  .event-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; overflow: auto; }
-  .event-modal .modal-content { background-color: white; padding: 20px; border-radius: 8px; max-width: 70%; height: auto; position: relative; max-height: 90vh; overflow-y: auto; box-sizing: border-box; }
-  .event-modal .close-button { position: absolute; top: 10px; right: 10px; padding: 5px; font-size: 1.5em; font-weight: bold; line-height: 1; cursor: pointer; border: none; background: none; color: black; opacity: 0.7; }
-  .event-modal .close-button:hover { opacity: 1; }
-  .event-result { text-align: center; padding: 40px 50px 30px; background-image: url('../img/event-01/firecracker.png'); background-repeat: no-repeat; background-position: center top; background-size: contain; }
-  .event-result .result-message { font-weight: 400; font-size: 40px; line-height: 100%; margin-bottom: 10px; color: #0086DD; }
-  .event-result .sub-message { font-weight: 400; font-size: 24px; line-height: 100%; margin-bottom: 30px; }
-  .event-result .gift-img { width: 90%; height: auto; margin-bottom: 10px; }
-  .event-result .gift-card { padding: 10px 90px; border-radius: 5px; border: 1px solid #ccc; font-weight: 400; font-size: 15px; line-height: 100%; }
-  .event-result .instruction { margin-top: 20px; font-weight: 400; font-size: 18px; }
-  .event-result .notice { margin-top: 10px; font-size: 15px; font-weight: 400; }
-  .event-result .submit-button { background-color: #1563C2; color: white; padding: 5px 30px; border: none; border-radius: 999px; margin-top: 20px; font-size: 25px; width: 200px; }
-  .event-result .submit-button:hover { background-color: #0086DD; }
-  .event-result .lucky-img {margin-bottom:10px;}
-  .info-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2600; overflow: auto; }
-  .info-modal .modal-content { background-color: white; padding: 20px; border-radius: 8px; max-width: 90%; width: 500px; max-height: 90vh; overflow-y: auto; box-sizing: border-box; position: relative; }
-  .info-modal .close-button { position: absolute; top: 10px; right: 10px; padding: 5px; font-size: 1.5em; font-weight: bold; line-height: 1; cursor: pointer; border: none; background: none; color: black; opacity: 0.7; }
-  .info-modal .form-title { text-align: center; margin-bottom: 20px; }
-  .info-form { padding: 20px; margin: 0 auto; text-align: center; }
-  .info-form .form-title { font-size: 24px; color: #0086DD; text-align: center; margin-bottom: 10px; font-weight: 400; }
-  .info-form .form-description { font-weight: 400; text-align: center; margin-bottom: 15px; font-size: 15px; }
-  .form-group { display: flex; margin-bottom: 15px; align-items: center; }
-  .form-group .phone, .form-group .email, .form-group .name { width: 90px; margin-right: 15px; text-align: left; flex-shrink: 0; font-size: 15px; font-weight: 500; }
-  .form-group .name-input, .form-group .email-input { flex-grow: 1; height: 35px; border: 2px solid #ccc; border-radius: 5px; padding: 5px; font-size: 15px; font-weight: 500; min-width: 0; box-sizing: border-box; }
-  .form-group .phone-inputs { flex-grow: 1; display: flex; align-items: center; }
-  .phone-group .phone-select, .phone-group .phone-input { font-size: 14px; height: 35px; border: 2px solid #ccc; border-radius: 5px; padding: 5px; }
-  .form-group .name-input:focus, .form-group .email-input:focus, .form-group .phone-select:focus, .form-group .phone-input:focus { outline: none; border-color: #0086DD; box-shadow: 0 0 5px rgba(0, 134, 221, 0.5); }
-  .phone-group .phone-select { width: 100px; height: 35px; font-size: 15px; padding: 0px 10px; background-repeat: no-repeat; background-image: url('../img/event-page/select-arrow.svg'); background-position: right 2px center; }
-  .phone-group .phone-option { font-size: 16px; padding: 10px; }
-  .phone-group .phone-input { width: 40%; box-sizing: border-box; }
-  .phone-group .hyphen { display: inline-block; width: auto; text-align: center; font-size: 16px; margin: 0 5px; height: 35px; line-height: 35px; flex-shrink: 0; }
-  .info-form .agreement-title { margin-top: 20px; font-size: 15px; font-weight: 500; text-align: left; }
-  .info-form .agreement-group { margin-top: 10px; padding: 15px; border-radius: 4px; background-color: #F2F2F2; max-height: 150px; overflow-x: auto; text-align: left; }
-  .info-form .agreement-group .agreement-subtitle { font-size: 14px; font-weight: 500; color: #333; margin-bottom: 5px; }
-  .info-form .agreement-group .agreement-text { font-size: 14px; color: #666; margin-bottom: 8px; }
-  .info-modal .checkbox-row { display: flex; align-items: center; justify-items: center; gap: 8px; margin-top: 15px; cursor: pointer; user-select: none; }
-  .info-modal .styled-checkbox { position: absolute; opacity: 0; }
-  .info-modal .checkbox-label { position: relative; cursor: pointer; padding: 0; display: inline-flex; align-items: center; font-size: 15px; font-weight: 500; }
-  .info-modal .checkbox-label:before { content: ''; margin-right: 5px; display: inline-block; vertical-align: text-top; width: 20px; height: 20px; background: white; border: 2px solid #ccc; vertical-align: middle; box-sizing: border-box; border-radius: 5px; }
-  .info-modal .styled-checkbox:checked + .checkbox-label:before { background: #0086DD; }
-  .info-modal .styled-checkbox:checked + .checkbox-label:after { content: ''; position: absolute; left: 5px; top: 10px; background: white; width: 2px; height: 2px; box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white; transform: rotate(45deg); }
-  .info-modal .submit-button { background-color: #1563C2; color: white; padding: 5px 30px; border: none; border-radius: 999px; margin: 20px auto 0 auto; font-size: 25px; width: 200px; }
-  .info-modal .submit-button:hover { background-color: #0086DD; }
-  .registration-complete-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; }
-  .registration-complete-modal .modal-content { background-color: #fff; padding: 40px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 80%; max-width: 480px; }
-  .registration-complete-modal .form-title { font-weight: 400; font-size: 40px; margin-bottom: 20px; color: #0086DD; }
-  .registration-complete-modal .form-description1 { font-size: 18px; margin-bottom: 10px; font-weight: 400; line-height: 1.3; }
-  .registration-complete-modal .form-description2 { font-size: 15px; margin-bottom: 20px; font-weight: 400; }
-  .registration-complete-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 10px; }
-  .registration-complete-modal .close-button:hover { background-color: #969696; }
-  .unlucky-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 2500; }
-  .unlucky-modal .modal-content { background-color: #fff; padding: 40px 20px 50px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 90%; max-width: 450px; }
-  .unlucky-modal .form-title { font-size: 40px; color: #0086DD; margin-bottom:15px;}
-  .unlucky-modal .unlucky-img { width: 90%; padding-bottom: 30px; margin: 0 auto; }
-  .unlucky-modal .form-description { font-size: 24px; margin-bottom: 20px; color: #333; }
-  .unlucky-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 10px; cursor: pointer; transition: background-color 0.3s ease; }
-  .unlucky-modal .close-button:hover { background-color: #969696; }
-  .already-applied-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000; }
-  .already-applied-modal .modal-content { background-color: #fff; padding: 45px 40px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 80%; max-width: 400px; }
-  .already-applied-modal .form-title { font-size: 24px; }
-  .already-applied-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease; }
-  .already-applied-modal .close-button:hover { background-color: #969696; }
-  .event-ended-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000; }
-  .event-ended-modal .modal-content { background-color: #fff; padding: 30px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); text-align: center; width: 80%; max-width: 400px; }
-  .event-ended-modal .form-title { font-size: 24px; }
-  .event-ended-modal .close-button { color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease; }
-  .event-ended-modal .close-button:hover { background-color: #969696; }
-      /* ── RESPONSIVE ── */
-  @media (max-width: 480px) {
-    .unlucky-modal .form-title { font-size: 25px; margin-bottom: 10px;}
-    .unlucky-modal .form-description { font-size: 18px; }
-    .event-ended-modal .form-title { font-size: 20px; }
-    .close-button.Wavve {font-size: 20px !important;}
-    .notes-section p {font-size: 12px; line-height: 1.5;}
-    .hero-desc { font-size: 12px; margin-bottom: 40px;}
-  }
-    @media (max-width: 768px) {
-      .thumb-section { grid-template-columns: 1fr; gap: 25px;}
-    }
 </style>
 </head>
 <body>
@@ -388,7 +327,7 @@
 <div class="backdrop" id="backdrop"></div>
 
 
-<div class="page">
+<div class="page" id="event-01">
 
   <!-- TOP PILL -->
   <div class="top-pill-wrap">
@@ -487,8 +426,8 @@
     <!-- illust-section.three + boyang-title: 처음엔 숨김 -->
     <div class="boyang-title" id="boyang-title" style="display:none;">
       <img src="img/event-01/boyang.png" alt="보양이닭">
-      </div>
-      <div class="illust-section three" id="stage-three" style="display:none;">
+    </div>
+    <div class="illust-section three" id="stage-three" style="display:none;">
       <div class="illust-container">
           <img class="illust-steam slideOutUpFade"  src="img/event-01/03-04.png">
           <img class="illust-kimchi float-mid"  src="img/event-01/03-03.png">
@@ -499,177 +438,179 @@
       
 
 
-  <div class="bottom-bg">
-    <!-- NOTES -->
-    <div class="notes-section">
-      <p>&lt;내 곁에 국민연금&gt; 구독자가 아닌 경우, 차후에 당첨이 취소되오니 반드시 구독 후 이벤트에 참여해 주세요.</p>
-      <p>본 이벤트는 같은 이메일 주소, 같은 IP, 같은 이름, 같은 전화번호를 포함해 한 번만 응모 가능하며, 중복 참여는 불가능합니다.</p>
-      <div class="divider"></div>
-      <p>&lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</p>
-      <p>본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</p>
-      <p>이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</p>
-      <p>부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</p>
-      <p>많은 분께 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루어집니다.</p>
-      <p>당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기합니다.</p>
-      <p>정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</p>
+    <div class="bottom-bg">
+      <!-- NOTES -->
+      <div class="notes-section">
+        <p>&lt;내 곁에 국민연금&gt; 구독자가 아닌 경우, 차후에 당첨이 취소되오니 반드시 구독 후 이벤트에 참여해 주세요.</p>
+        <p>본 이벤트는 같은 이메일 주소, 같은 IP, 같은 이름, 같은 전화번호를 포함해 한 번만 응모 가능하며, 중복 참여는 불가능합니다.</p>
+        <div class="divider"></div>
+        <p>&lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</p>
+        <p>본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</p>
+        <p>이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</p>
+        <p>부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</p>
+        <p>많은 분께 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루어집니다.</p>
+        <p>당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기합니다.</p>
+        <p>정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</p>
+      </div>
+
+      <!-- THUMB CARDS -->
+      <div class="thumb-section">
+        <div class="thumb-card thumb-bg-1">
+          <div class="thumb-card-inner">
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
+                <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="thumb-text">
+              <p class="thumb-title">연금 생에 설계 가이드</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+          </div>
+        </div>
+        <div class="thumb-card thumb-bg-2">
+          <div class="thumb-card-inner right">
+            <div class="thumb-text">
+              <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
+                <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- THUMB CARDS -->
-    <div class="thumb-section">
-      <div class="thumb-card thumb-bg-1">
-        <div class="thumb-card-inner">
-          <div class="thumb-arrow">
-            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
-              <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
-              <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+    <div id="eventModal" class="event-modal">
+      <div class="modal-content">
+          <button type="button" class="close-button" aria-label="닫기">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path 
+                  d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" 
+                  fill="#000000" 
+                  stroke="#000000" 
+                  stroke-width="1"
+                  />
+              </svg>
+          </button>
+          <div class="event-result">
+              <h2 class="result-message Wavve">축하합니다!</h2>
+              <img class="lucky-img" src="img/event-01/lucky-img.png" alt="/Lucky!">
+              <p class="sub-message Wavve">이벤트에 당첨되셨습니다.</p>
+              <div class="gift-card">
+                  <img class="gift-img" src="img/event-01/gift-coupon-real.png" alt="스타벅스 5천원 상품권" />
+                  <div>5천원 상당의 커피 기프티콘</div>
+              </div>
+              <p class="instruction Wavve">폼을 작성하여 제출해주세요.<br/>제출한 번호로 개별 연락드릴 예정입니다.</p>
+              <p class="notice">*경품 발송 시, &lt;내 곁에 국민연금>의 구독자가 <br/> 아닐 경우 당첨이 취소됩니다.</p>
+              <button type="button" class="submit-button Wavve">클릭!</button>
           </div>
-          <div class="thumb-text">
-            <p class="thumb-title">연금 생에 설계 가이드</p>
-            <p class="thumb-tag">자동가입 여부 확인</p>
-            <p class="thumb-tag">자동가입 여부 확인</p>
-          </div>
-        </div>
       </div>
-      <div class="thumb-card thumb-bg-2">
-        <div class="thumb-card-inner right">
-          <div class="thumb-text">
-            <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
-            <p class="thumb-tag">자동가입 여부 확인</p>
-            <p class="thumb-tag">자동가입 여부 확인</p>
+  </div>
+  <div id="infoModal" class="info-modal">
+      <div class="modal-content">
+          <button type="button" class="close-button" aria-label="닫기">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path 
+                  d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" 
+                  fill="#000000" 
+                  stroke="#000000" 
+                  stroke-width="1"
+                  />
+              </svg>
+          </button>
+          <div class="info-form">
+              <h2 class="form-title Wavve">당첨자 정보</h2>
+              <p class="form-description">폼을 작성하여 제출해주세요.<br/>제출한 번호로 개별 연락드릴 예정입니다. <br/>
+              *경품 발송 시,  &lt;내 곁에 국민연금>의 구독자가 <br/> 아닐 경우 당첨이 취소됩니다.</p>
+              <div class="form-group">
+                  <label class="name" for="name">성명</label>
+                  <input class="name-input" type="text" id="name" name="name">
+              </div>
+              <div class="form-group phone-group">
+                  <label class="phone" for="phone">휴대폰 번호</label>
+                  <div class="phone-inputs">
+                      <select class="phone-select" id="phone-prefix" name="phone-prefix">
+                          <option class="phone-option" value="010">010</option>
+                          <option class="phone-option" value="011">011</option>
+                          <option class="phone-option" value="016">016</option>
+                          <option class="phone-option" value="017">017</option>
+                          <option class="phone-option" value="018">018</option>
+                          <option class="phone-option" value="019">019</option>
+                      </select>
+                      <span class="hyphen">-</span>
+                      <input class="phone-input" type="tel" id="phone-mid" name="phone-mid" maxlength="4" >
+                      <span class="hyphen">-</span>
+                      <input class="phone-input" type="tel" id="phone-last" name="phone-last" maxlength="4" >
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="email" for="email">E-mail</label>
+                  <input class="email-input" type="email" id="email" name="email">
+              </div>
+              <h3 class="agreement-title">개인정보정책 및 이용약관 동의</h3>
+              <div class="agreement-group">
+                  <div class="agreement-content">
+                      <h4 class="agreement-subtitle">개인정보 수집 및 이용 동의</h4>
+                      <p class="agreement-text">수집하는 개인정보 항목: 이름, 연락처, 이메일
+                      <br/> 수집 및 이용 목적: 이벤트 참여자 확인 및 당첨 안내
+                      <br/> 보유 및 이용 기간: 당첨자 발표 후 1개월</p>
+
+                      <h4 class="agreement-subtitle">개인정보 제3자 제공 동의</h4>
+                      <p class="agreement-text">동의를 거부할 수 있으나, 이 경우 이벤트 참여가 불가능합니다.
+                      <br/> 제공받는 자의 이용 목적: 이름, 연락처, 이메일
+                      <br/> 제공하는 항목: 이름, 연락처, 이메일
+                      <br/> 제공받는 자의 보유 및 이용 기간:
+                      <br/> 보유 및 이용기간: 당첨자 발표 후 1개월</p>
+                  </div>
+              </div>
+              <div class="checkbox-row">
+                  <input class="styled-checkbox" id="checkbox-label" type="checkbox" value="html" />
+                  <label class="checkbox-label" for="checkbox-label">동의합니다</label>
+              </div>
+              <button type="submit" class="submit-button Wavve">등록!</button>
           </div>
-          <div class="thumb-arrow">
-            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
-              <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
-              <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
+  <div id="registrationCompleteModal" class="registration-complete-modal">
+      <div class="modal-content">
+          <h2 class="form-title Wavve">등록 완료</h2>
+          <p class="form-description1 Wavve">정상적으로 제출되었습니다.<br/> 제출한 번호로 개별 연락드릴 예정입니다.<br/>감사합니다.</p>
+          <p class="form-description2"> *경품 발송 시, &lt;내 곁에 국민연금&gt;의 구독자가 <br/>아닐 경우 당첨이 취소됩니다.</p>
+          <button type="button" class="close-button Wavve" onclick="hideModal('registrationCompleteModal')">닫기</button>
+      </div>
+  </div>
+  <div id="unluckyModal" class="unlucky-modal">
+      <div class="modal-content">
+          <img class="unlucky-img" src="img/event-01/boom.png" alt="Unlucky!">
+          <h2 class="form-title Wavve">당첨되지 않았습니다!</h2>
+          <p class="form-description Wavve">다음에 다시 참여해주세요.</p>
+          <button type="button" class="close-button Wavve" onclick="hideModal('unluckyModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 10px;">확인</button>
+      </div>
+  </div>
+  <div id="alreadyAppliedModal" class="already-applied-modal custom-modal">
+      <div class="modal-content">
+          <h2 class="form-title Wavve">이미 응모하셨습니다.</h2>
+          <button type="button" class="close-button Wavve" onclick="hideModal('alreadyAppliedModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 30px;">확인</button>
+      </div>
+  </div>
+  <div id="eventEndedModal" class="event-ended-modal custom-modal">
+      <div class="modal-content">
+          <h2 class="form-title Wavve" >당첨 정원이 충족돼<br/>이벤트가 종료됐습니다.</h2>
+          <button type="button" class="close-button Wavve" onclick="hideModal('eventEndedModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 30px;">닫기</button>
+      </div>
   </div>
 
 </div>
 
-<div id="eventModal" class="event-modal">
-    <div class="modal-content">
-        <button type="button" class="close-button" aria-label="닫기">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path 
-                d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" 
-                fill="#000000" 
-                stroke="#000000" 
-                stroke-width="1"
-                />
-            </svg>
-        </button>
-        <div class="event-result">
-            <h2 class="result-message Wavve">축하합니다!</h2>
-            <img class="lucky-img" src="img/event-01/lucky-img.png" alt="/Lucky!">
-            <p class="sub-message Wavve">이벤트에 당첨되셨습니다.</p>
-            <div class="gift-card">
-                <img class="gift-img" src="img/event-01/gift-coupon-real.png" alt="스타벅스 5천원 상품권" />
-                <div>5천원 상당의 커피 기프티콘</div>
-            </div>
-            <p class="instruction Wavve">폼을 작성하여 제출해주세요.<br/>제출한 번호로 개별 연락드릴 예정입니다.</p>
-            <p class="notice">*경품 발송 시, &lt;내 곁에 국민연금>의 구독자가 <br/> 아닐 경우 당첨이 취소됩니다.</p>
-            <button type="button" class="submit-button Wavve">클릭!</button>
-        </div>
-    </div>
-</div>
-<div id="infoModal" class="info-modal">
-    <div class="modal-content">
-        <button type="button" class="close-button" aria-label="닫기">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path 
-                d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" 
-                fill="#000000" 
-                stroke="#000000" 
-                stroke-width="1"
-                />
-            </svg>
-        </button>
-        <div class="info-form">
-            <h2 class="form-title Wavve">당첨자 정보</h2>
-            <p class="form-description">폼을 작성하여 제출해주세요.<br/>제출한 번호로 개별 연락드릴 예정입니다. <br/>
-            *경품 발송 시,  &lt;내 곁에 국민연금>의 구독자가 <br/> 아닐 경우 당첨이 취소됩니다.</p>
-            <div class="form-group">
-                <label class="name" for="name">성명</label>
-                <input class="name-input" type="text" id="name" name="name">
-            </div>
-            <div class="form-group phone-group">
-                <label class="phone" for="phone">휴대폰 번호</label>
-                <div class="phone-inputs">
-                    <select class="phone-select" id="phone-prefix" name="phone-prefix">
-                        <option class="phone-option" value="010">010</option>
-                        <option class="phone-option" value="011">011</option>
-                        <option class="phone-option" value="016">016</option>
-                        <option class="phone-option" value="017">017</option>
-                        <option class="phone-option" value="018">018</option>
-                        <option class="phone-option" value="019">019</option>
-                    </select>
-                    <span class="hyphen">-</span>
-                    <input class="phone-input" type="tel" id="phone-mid" name="phone-mid" maxlength="4" >
-                    <span class="hyphen">-</span>
-                    <input class="phone-input" type="tel" id="phone-last" name="phone-last" maxlength="4" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="email" for="email">E-mail</label>
-                <input class="email-input" type="email" id="email" name="email">
-            </div>
-            <h3 class="agreement-title">개인정보정책 및 이용약관 동의</h3>
-            <div class="agreement-group">
-                <div class="agreement-content">
-                    <h4 class="agreement-subtitle">개인정보 수집 및 이용 동의</h4>
-                    <p class="agreement-text">수집하는 개인정보 항목: 이름, 연락처, 이메일
-                    <br/> 수집 및 이용 목적: 이벤트 참여자 확인 및 당첨 안내
-                    <br/> 보유 및 이용 기간: 당첨자 발표 후 1개월</p>
 
-                    <h4 class="agreement-subtitle">개인정보 제3자 제공 동의</h4>
-                    <p class="agreement-text">동의를 거부할 수 있으나, 이 경우 이벤트 참여가 불가능합니다.
-                    <br/> 제공받는 자의 이용 목적: 이름, 연락처, 이메일
-                    <br/> 제공하는 항목: 이름, 연락처, 이메일
-                    <br/> 제공받는 자의 보유 및 이용 기간:
-                    <br/> 보유 및 이용기간: 당첨자 발표 후 1개월</p>
-                </div>
-            </div>
-            <div class="checkbox-row">
-                <input class="styled-checkbox" id="checkbox-label" type="checkbox" value="html" />
-                <label class="checkbox-label" for="checkbox-label">동의합니다</label>
-            </div>
-            <button type="submit" class="submit-button Wavve">등록!</button>
-        </div>
-    </div>
-</div>
-<div id="registrationCompleteModal" class="registration-complete-modal">
-    <div class="modal-content">
-        <h2 class="form-title Wavve">등록 완료</h2>
-        <p class="form-description1 Wavve">정상적으로 제출되었습니다.<br/> 제출한 번호로 개별 연락드릴 예정입니다.<br/>감사합니다.</p>
-        <p class="form-description2"> *경품 발송 시, &lt;내 곁에 국민연금&gt;의 구독자가 <br/>아닐 경우 당첨이 취소됩니다.</p>
-        <button type="button" class="close-button Wavve" onclick="hideModal('registrationCompleteModal')">닫기</button>
-    </div>
-</div>
-<div id="unluckyModal" class="unlucky-modal">
-    <div class="modal-content">
-        <img class="unlucky-img" src="img/event-01/boom.png" alt="Unlucky!">
-        <h2 class="form-title Wavve">당첨되지 않았습니다!</h2>
-        <p class="form-description Wavve">다음에 다시 참여해주세요.</p>
-        <button type="button" class="close-button Wavve" onclick="hideModal('unluckyModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 10px;">확인</button>
-    </div>
-</div>
-<div id="alreadyAppliedModal" class="already-applied-modal custom-modal">
-    <div class="modal-content">
-        <h2 class="form-title Wavve">이미 응모하셨습니다.</h2>
-        <button type="button" class="close-button Wavve" onclick="hideModal('alreadyAppliedModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 30px;">확인</button>
-    </div>
-</div>
-<div id="eventEndedModal" class="event-ended-modal custom-modal">
-    <div class="modal-content">
-        <h2 class="form-title Wavve" >당첨 정원이 충족돼<br/>이벤트가 종료됐습니다.</h2>
-        <button type="button" class="close-button Wavve" onclick="hideModal('eventEndedModal')" style="color: #FFFFFF; background-color: #B2B2B2; padding: 5px 30px; border: none; border-radius: 999px; font-size: 25px; width: 200px; margin-top: 30px;">닫기</button>
-    </div>
-</div>
 <!-- 푸터 -->
 <footer class="footer" id="footer">
   <div class="footer-inner">
