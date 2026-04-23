@@ -45,6 +45,22 @@
     main .sec02-progress-wrap { margin-top: 4px; padding-right: 80px; height: 3px; background: #ddd; border-radius: 99px; overflow: hidden; }
     main .sec02-progress-bar { height: 100%; width: 0%; background: #333; border-radius: 99px; transition: width 0.15s linear; }
 
+    @media (max-width: 768px) {
+      main .sec { padding: 0 40px}
+      main .sec01-title { font-size: 20px; }
+      main .sec01-badge { font-size: 16px; }
+      main .sec02 { margin: 0; width: 100%; padding: 0 40px; }
+      main .sec02-card-circle-text { padding-bottom: -20px; font-size: 18px; }
+      main .sec02-card:hover .sec02-card-circle { bottom:10px; }
+      main .sec02-card-circle { width: 240px; height: 240px; bottom: -90px; }
+      main .sec02-card-deco {width: 300px; height: 300px; bottom: -200px; }
+      main .sec02-card-circle { gap: 15px; }
+      main .sec02-label { font-size: 22px; padding-right: 0; margin-bottom: 20px; }
+      main .sec02-slider { flex-direction: column; overflow-x: visible; scroll-snap-type: none; padding-right: 0; padding-bottom: 0; gap: 16px; cursor: default !important; }
+      main .sec02-card { width: 100%; height: 260px;  border-radius: 20px; scroll-snap-align: none; }
+      main .sec02-progress-wrap { display: none; }
+    }
+
     main .sec03 { margin-top: 100px !important; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
     main .sec03-track { display: flex; gap: 20px; width: max-content; }
     main .sec03-row1 { overflow: hidden; }
@@ -92,6 +108,31 @@
     main .sec05-c2 { background: #5c3d72; }
     main .sec05-c3 { background: #4a7c59; }
     main .sec05-c4 { background: #7b85a8; }
+
+    @media (max-width: 768px) {
+      main .sec { margin: 0 auto !important; }
+      main .sec01-label { margin-bottom: 20px; font-size: 22px; }
+      main .sec01-card-left { width: 100%; padding: 30px; }
+      main .sec01-card { flex-direction: column; min-height: auto; }
+      main .sec04-grid { grid-template-columns: 1fr; }
+      main .sec02-slider {flex-direction: column; padding-right: 0;}
+      main .sec01-nps-grid { padding: 30px;}
+      main .sec01-card-right { padding: 30px; text-align: center; align-items: center; }
+      main .sec04-inner { padding: 40px; }
+      main .sec04-label { font-size: 22px; }
+      main .sec04-card-body { padding: 20px 15px 28px; }
+      main .sec04-card-inner { padding: 20px; }
+      main .sec04-card-badge { font-size: 14px; margin-bottom: 10px;}
+      main .sec04-card-category { font-size: 14px; }
+      main .sec04-card-title { font-size: 18px; }
+      main .sec05-label { font-size: 22px; }
+      main .sec05-grid { grid-template-columns: 1fr 1fr; }
+      main .sec05-card { aspect-ratio: 3 / 2; }
+    } 
+    @media (max-width: 480px) {
+      main .sec01-nps-grid { padding: 0px;}
+      main .sec05-grid { grid-template-columns: 1fr; }
+    }
 
     .bottom-banner { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 900; height: 100px; overflow: visible; }
     .bottom-banner-bg { position: absolute; inset: 0; z-index: 0; background: url('img/main/bottom-bg.png') center / cover no-repeat; }
@@ -605,13 +646,16 @@
       const bar    = document.getElementById('sec02ProgressBar');
       if (!slider || !bar) return;
 
-      // 원본 카드 수집
       const origCards = Array.from(slider.querySelectorAll('.sec02-card'));
-      const N = origCards.length; // 4
+      const N = origCards.length;
 
-      // 앞뒤로 복제본 1세트씩 추가 → [clone][original][clone] 총 3세트
-      [...origCards].reverse().forEach(c => slider.insertBefore(c.cloneNode(true), slider.firstChild));
-      [...origCards].forEach(c => slider.appendChild(c.cloneNode(true)));
+      const isMobile = () => window.innerWidth <= 768; // ← 기준
+
+      // ── 데스크탑만 복제본 삽입 ──
+      if (!isMobile()) {
+        [...origCards].reverse().forEach(c => slider.insertBefore(c.cloneNode(true), slider.firstChild));
+        [...origCards].forEach(c => slider.appendChild(c.cloneNode(true)));
+      }
 
       let autoTimer;
       let isDragging  = false;
@@ -621,22 +665,24 @@
       let isJumping   = false;
 
       function getCardW() {
-        return slider.querySelectorAll('.sec02-card')[0].offsetWidth + 14;
+        return slider.querySelectorAll('.sec02-card')[0].offsetWidth + (isMobile() ? 12 : 14);
       }
 
-      // 시작 위치 = 중간(원본) 세트 첫 카드
       function initScroll() {
-        slider.scrollLeft = N * getCardW();
+        // 모바일은 처음부터 시작, 데스크탑은 중간 세트로
+        slider.scrollLeft = isMobile() ? 0 : N * getCardW();
       }
 
       function updateBar() {
-        const idx = Math.round(slider.scrollLeft / getCardW()) % N;
-        bar.style.width = ((idx < 0 ? idx + N : idx) / N * 100) + '%';
+        const totalCards = isMobile() ? N : N * 3;
+        const scrollableW = slider.scrollWidth - slider.clientWidth;
+        const ratio = scrollableW > 0 ? slider.scrollLeft / scrollableW : 0;
+        bar.style.width = (ratio * 100) + '%';
       }
 
-      // 경계 감지 → 순간이동 (사용자 체감 없음)
+      // ── 무한루프: 데스크탑만 ──
       function checkLoop() {
-        if (isJumping) return;
+        if (isMobile() || isJumping) return;
         const cardW = getCardW();
         const idx   = Math.round(slider.scrollLeft / cardW);
         if (idx < N) {
@@ -651,19 +697,32 @@
         updateBar();
       }
 
-      slider.addEventListener('scroll', checkLoop, { passive: true });
+      slider.addEventListener('scroll', () => {
+        checkLoop();
+        if (isMobile()) updateBar(); // 모바일은 여기서 bar 업데이트
+      }, { passive: true });
 
-      // 자동 재생 (scrollLeft 기준으로 cardW씩 이동)
+      // ── 자동재생: 모바일은 끝에 닿으면 처음으로 ──
       function startAuto() {
         stopAuto();
         autoTimer = setInterval(() => {
-          slider.scrollTo({ left: slider.scrollLeft + getCardW(), behavior: 'smooth' });
-        }, 3500);
+          if (isMobile()) {
+            const atEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5;
+            slider.scrollTo({
+              left: atEnd ? 0 : slider.scrollLeft + getCardW(),
+              behavior: atEnd ? 'auto' : 'smooth' // 끝→처음은 순간이동
+            });
+          } else {
+            slider.scrollTo({ left: slider.scrollLeft + getCardW(), behavior: 'smooth' });
+          }
+        }, isMobile() ? 2800 : 3500);
       }
+
       function stopAuto() { clearInterval(autoTimer); }
 
-      // ── 마우스 드래그 ──
+      // 마우스 드래그
       slider.addEventListener('mousedown', (e) => {
+        if (isMobile()) return;
         e.preventDefault();
         isDragging  = true;
         didDrag     = false;
@@ -673,6 +732,8 @@
         slider.style.scrollSnapType = 'none';
         stopAuto();
       });
+      slider.addEventListener('mouseenter', () => { if (!isMobile()) stopAuto(); });
+      slider.addEventListener('mouseleave', () => { if (!isDragging && !isMobile()) startAuto(); });
 
       window.addEventListener('mouseup', () => {
         if (!isDragging) return;
@@ -683,7 +744,6 @@
         slider.scrollTo({ left: nearest, behavior: 'smooth' });
         startAuto();
       });
-
       window.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
         const walk = (e.pageX - slider.offsetLeft - dragStartX) * 1.2;
@@ -691,21 +751,15 @@
         slider.scrollLeft = dragScrollL - walk;
         updateBar();
       });
-
-      // 드래그 중 클릭 방지
-      slider.addEventListener('click', (e) => {
-        if (didDrag) e.stopPropagation();
-      }, true);
-
+      slider.addEventListener('click', (e) => { if (didDrag) e.stopPropagation(); }, true);
       slider.addEventListener('mouseenter', stopAuto);
       slider.addEventListener('mouseleave', () => { if (!isDragging) startAuto(); });
 
-      // ── 터치 스와이프 ──
+      // 터치
       slider.addEventListener('touchstart', () => {
         slider.style.scrollSnapType = 'none';
         stopAuto();
       }, { passive: true });
-
       slider.addEventListener('touchend', () => {
         slider.style.scrollSnapType = 'x mandatory';
         const nearest = Math.round(slider.scrollLeft / getCardW()) * getCardW();
@@ -715,8 +769,10 @@
 
       slider.style.cursor = 'grab';
 
-      // 초기화 (레이아웃 완료 후 실행)
-      function init() { initScroll(); startAuto(); }
+      function init() {
+        initScroll();
+        if (!isMobile()) startAuto(); // 모바일은 자동재생 없음
+      }
       document.readyState === 'complete' ? init() : window.addEventListener('load', init);
 
     })();
@@ -752,5 +808,7 @@
       window._resizeTimer = setTimeout(checkBannerPos, 100);
     });
     checkBannerPos();
+
+  
   </script>
 </html>
