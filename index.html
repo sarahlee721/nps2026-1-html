@@ -45,22 +45,6 @@
     main .sec02-progress-wrap { margin-top: 4px; padding-right: 80px; height: 3px; background: #ddd; border-radius: 99px; overflow: hidden; }
     main .sec02-progress-bar { height: 100%; width: 0%; background: #333; border-radius: 99px; transition: width 0.15s linear; }
 
-    @media (max-width: 768px) {
-      main .sec { padding: 0 40px}
-      main .sec01-title { font-size: 20px; }
-      main .sec01-badge { font-size: 16px; }
-      main .sec02 { margin: 0; width: 100%; padding: 0 40px; }
-      main .sec02-card-circle-text { padding-bottom: -20px; font-size: 18px; }
-      main .sec02-card:hover .sec02-card-circle { bottom:10px; }
-      main .sec02-card-circle { width: 240px; height: 240px; bottom: -90px; }
-      main .sec02-card-deco {width: 300px; height: 300px; bottom: -200px; }
-      main .sec02-card-circle { gap: 15px; }
-      main .sec02-label { font-size: 22px; padding-right: 0; margin-bottom: 20px; }
-      main .sec02-slider { flex-direction: column; overflow-x: visible; scroll-snap-type: none; padding-right: 0; padding-bottom: 0; gap: 16px; cursor: default !important; }
-      main .sec02-card { width: 100%; height: 260px;  border-radius: 20px; scroll-snap-align: none; }
-      main .sec02-progress-wrap { display: none; }
-    }
-
     main .sec03 { margin-top: 100px !important; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
     main .sec03-track { display: flex; gap: 20px; width: max-content; }
     main .sec03-row1 { overflow: hidden; }
@@ -110,14 +94,26 @@
     main .sec05-c4 { background: #7b85a8; }
 
     @media (max-width: 768px) {
-      main .sec { margin: 0 auto !important; }
+      main .sec { padding: 50px 40px 0; margin: 0 auto !important; }
+      main .sec01-title { font-size: 20px; }
+      main .sec01-badge { font-size: 16px; }
       main .sec01-label { margin-bottom: 20px; font-size: 22px; }
       main .sec01-card-left { width: 100%; padding: 30px; }
       main .sec01-card { flex-direction: column; min-height: auto; }
-      main .sec04-grid { grid-template-columns: 1fr; }
-      main .sec02-slider {flex-direction: column; padding-right: 0;}
       main .sec01-nps-grid { padding: 30px;}
       main .sec01-card-right { padding: 30px; text-align: center; align-items: center; }
+      main .sec02-slider {flex-direction: column; padding-right: 0;}
+      main .sec02 { margin: 0; width: 100%; }
+      main .sec02-card-circle-text { padding-bottom: -20px; font-size: 18px; }
+      main .sec02-card:hover .sec02-card-circle { bottom:-5px; }
+      main .sec02-card-circle { width: 240px; height: 240px; bottom: -90px; }
+      main .sec02-card-deco {width: 300px; height: 300px; bottom: -240px; }
+      main .sec02-card-circle { gap: 15px; }
+      main .sec02-label { font-size: 22px; padding-right: 0; margin-bottom: 20px; }
+      main .sec02-slider { flex-direction: column; overflow-x: visible; scroll-snap-type: none; padding-right: 0; padding-bottom: 0; gap: 16px; cursor: default !important; }
+      main .sec02-card { width: 100%; height: 260px;  border-radius: 20px; scroll-snap-align: none; }
+      main .sec02-progress-wrap { display: none; }
+      main .sec04-grid { grid-template-columns: 1fr; }
       main .sec04-inner { padding: 40px; }
       main .sec04-label { font-size: 22px; }
       main .sec04-card-body { padding: 20px 15px 28px; }
