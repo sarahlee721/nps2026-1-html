@@ -598,4 +598,159 @@
   
   <script src="js/common.js"></script>
 </body>
+  <script>
+    /* ── section02 슬라이더 (진짜 무한 루프) ── */
+    (function () {
+      const slider = document.getElementById('sec02Slider');
+      const bar    = document.getElementById('sec02ProgressBar');
+      if (!slider || !bar) return;
+
+      // 원본 카드 수집
+      const origCards = Array.from(slider.querySelectorAll('.sec02-card'));
+      const N = origCards.length; // 4
+
+      // 앞뒤로 복제본 1세트씩 추가 → [clone][original][clone] 총 3세트
+      [...origCards].reverse().forEach(c => slider.insertBefore(c.cloneNode(true), slider.firstChild));
+      [...origCards].forEach(c => slider.appendChild(c.cloneNode(true)));
+
+      let autoTimer;
+      let isDragging  = false;
+      let dragStartX  = 0;
+      let dragScrollL = 0;
+      let didDrag     = false;
+      let isJumping   = false;
+
+      function getCardW() {
+        return slider.querySelectorAll('.sec02-card')[0].offsetWidth + 14;
+      }
+
+      // 시작 위치 = 중간(원본) 세트 첫 카드
+      function initScroll() {
+        slider.scrollLeft = N * getCardW();
+      }
+
+      function updateBar() {
+        const idx = Math.round(slider.scrollLeft / getCardW()) % N;
+        bar.style.width = ((idx < 0 ? idx + N : idx) / N * 100) + '%';
+      }
+
+      // 경계 감지 → 순간이동 (사용자 체감 없음)
+      function checkLoop() {
+        if (isJumping) return;
+        const cardW = getCardW();
+        const idx   = Math.round(slider.scrollLeft / cardW);
+        if (idx < N) {
+          isJumping = true;
+          slider.scrollLeft += N * cardW;
+          isJumping = false;
+        } else if (idx >= N * 2) {
+          isJumping = true;
+          slider.scrollLeft -= N * cardW;
+          isJumping = false;
+        }
+        updateBar();
+      }
+
+      slider.addEventListener('scroll', checkLoop, { passive: true });
+
+      // 자동 재생 (scrollLeft 기준으로 cardW씩 이동)
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(() => {
+          slider.scrollTo({ left: slider.scrollLeft + getCardW(), behavior: 'smooth' });
+        }, 3500);
+      }
+      function stopAuto() { clearInterval(autoTimer); }
+
+      // ── 마우스 드래그 ──
+      slider.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        isDragging  = true;
+        didDrag     = false;
+        dragStartX  = e.pageX - slider.offsetLeft;
+        dragScrollL = slider.scrollLeft;
+        slider.style.cursor = 'grabbing';
+        slider.style.scrollSnapType = 'none';
+        stopAuto();
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        slider.style.cursor = 'grab';
+        slider.style.scrollSnapType = 'x mandatory';
+        const nearest = Math.round(slider.scrollLeft / getCardW()) * getCardW();
+        slider.scrollTo({ left: nearest, behavior: 'smooth' });
+        startAuto();
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const walk = (e.pageX - slider.offsetLeft - dragStartX) * 1.2;
+        if (Math.abs(walk) > 5) didDrag = true;
+        slider.scrollLeft = dragScrollL - walk;
+        updateBar();
+      });
+
+      // 드래그 중 클릭 방지
+      slider.addEventListener('click', (e) => {
+        if (didDrag) e.stopPropagation();
+      }, true);
+
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', () => { if (!isDragging) startAuto(); });
+
+      // ── 터치 스와이프 ──
+      slider.addEventListener('touchstart', () => {
+        slider.style.scrollSnapType = 'none';
+        stopAuto();
+      }, { passive: true });
+
+      slider.addEventListener('touchend', () => {
+        slider.style.scrollSnapType = 'x mandatory';
+        const nearest = Math.round(slider.scrollLeft / getCardW()) * getCardW();
+        slider.scrollTo({ left: nearest, behavior: 'smooth' });
+        startAuto();
+      }, { passive: true });
+
+      slider.style.cursor = 'grab';
+
+      // 초기화 (레이아웃 완료 후 실행)
+      function init() { initScroll(); startAuto(); }
+      document.readyState === 'complete' ? init() : window.addEventListener('load', init);
+
+    })();
+
+    /* ── section03 ── */
+    ['sec03Track1', 'sec03Track2'].forEach(id => {
+      const track = document.getElementById(id);
+      track.innerHTML += track.innerHTML;
+    });
+
+    /* ── 하단 배너 고정/해제 ── */
+    const bottomBanner = document.getElementById('bottomBanner');
+    const footer       = document.getElementById('footer');
+
+    function checkBannerPos() {
+      const footerRect = footer.getBoundingClientRect();
+      const bannerH    = bottomBanner.offsetHeight;
+      if (footerRect.top < window.innerHeight) {
+        bottomBanner.style.position = 'absolute';
+        bottomBanner.style.bottom   = 'auto';
+        bottomBanner.style.top      = (footer.offsetTop - bannerH) + 'px';
+        bottomBanner.style.left     = '0';
+      } else {
+        bottomBanner.style.position = 'fixed';
+        bottomBanner.style.top      = 'auto';
+        bottomBanner.style.bottom   = '0';
+        bottomBanner.style.left     = '0';
+      }
+    }
+    window.addEventListener('scroll', checkBannerPos);
+    window.addEventListener('resize', () => {
+      clearTimeout(window._resizeTimer);
+      window._resizeTimer = setTimeout(checkBannerPos, 100);
+    });
+    checkBannerPos();
+  </script>
 </html>
