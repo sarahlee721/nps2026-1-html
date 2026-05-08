@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPS 칼럼</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- AOS 라이브러리 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="css/common.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+#sub-02 .mob-br { display: none; }
+#sub-02 { width: 100%; padding: 15px 50px 0; box-sizing: border-box; }
+#sub-02 .nps-wrap { max-width: 980px; margin: 0 auto; position: relative; display: grid; grid-template-columns: 2fr 3fr; grid-template-rows: auto auto auto; max-width: 960px; margin: 0 auto; }
+#sub-02 .nps-wrap::before { content: ''; position: absolute; left: 38%; top: 0; bottom: 0; width: 1px; background: #6A6A6A; }
+#sub-02 .nps-label-wrap { grid-column: 2; grid-row: 1; padding: 100px 0 150px 70px; }
+#sub-02 .nps-label { font-size: 17px; font-weight: 700; color: #222222; letter-spacing: 0.05em; margin: 0 0 4px 0; }
+#sub-02 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 12px 0 6px 0; }
+#sub-02 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
+#sub-02 .title-wrap { grid-column: 1 / 3; grid-row: 2; text-align: center; padding: 0 0 5px 0; position: relative; z-index: 1; background: #fff; }
+#sub-02 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; word-break: keep-all; }
+#sub-02 .body-wrap { grid-column: 2; min-width: 0; }
+#sub-02 .body-wrap.one { grid-row: 3; padding: 70px 0 70px 70px; }
+#sub-02 .body-wrap.two { grid-row: 5; padding: 50px 0 75px 40px; }
+#sub-02 .body-wrap.two .img { width: 100%; margin: 70px 0; }
+#sub-02 .body-wrap.three { grid-row: 6; padding: 20px 0 75px 40px; }
+#sub-02 .body-wrap.four { grid-row: 7; padding: 20px 0 125px 40px; }
+#sub-02 .text { font-size: 18px; line-height: 1.9; margin: 0; letter-spacing: -0.5px; }
+#sub-02 .text.pink { color: #FF8EA8; font-weight: 500; }
+#sub-02 .img-wrap { grid-column: 1 / 3; grid-row: 4; text-align: center; padding: 0; position: relative; z-index: 1; background: #fff; }
+#sub-02 .img-wrap img {width: 100%;}
+#sub-02 .quote-wrap { grid-column: 1;  min-width: 0;}
+#sub-02 .quote-mob { display: none; }
+#sub-02 .quote-wrap.one { grid-row: 5; padding: 450px 50px 80px 0; }
+#sub-02 .quote-wrap.two { grid-row: 6; padding: 20px 50px 80px 0; }
+#sub-02 .quote-wrap.three { grid-row: 7; padding: 150px 50px 80px 0; }
+#sub-02 .quote-mark { width: 40px; display: block; margin-bottom: 16px; }
+#sub-02 .quote-text { font-size: 24px; font-weight: 500; color: #FF8EA8; line-height: 1.6;  letter-spacing: -0.03em; font-family: 'Noto Serif KR', serif; margin: 0; }
+
+
+#sub-02 .table-wrap { grid-column: 1 / 3; grid-row: 8; padding: 0 0 5px 0; position: relative; z-index: 1; }
+#sub-02 .step-wrap { display: flex; flex-direction: column; gap: 30px; background-color: #FFFEEE; border: solid 1px #000000; padding: 50px; }
+#sub-02 .roadmap-title { display: inline-block; background: #FF8EA8; color: #fff; font-size: 18px; font-weight: 500; padding: 6px 30px; border-radius: 20px; margin-bottom: 30px; }
+#sub-02 .step-row { display: flex; justify-content: flex-start;  align-items: flex-start; gap: 70px; margin-bottom: 30px; }
+#sub-02 .step-badge { width: 85px; height: 85px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #FF8EA8; color: #fff; border-radius: 50%; font-size: 18px; font-weight: 500; text-align: center; line-height: 1.4; }
+#sub-02 .step-label { font-size: 18px; font-weight: 700; color: #222222; margin-top: 8px; text-align: center; min-width: 80px; }
+#sub-02 .step-wrapper { display: flex; flex-direction: column; align-items: center; min-width: 115px;}
+#sub-02 .step-content { display: flex;  justify-content: center; gap:75px; }
+#sub-02 .step-content .img { width: 250px; height: auto; object-fit: contain;}
+#sub-02 .step-content ul { list-style: none; padding: 0; margin: 0; }
+#sub-02 .step-content ul li { font-size: 18px; font-weight: 600; color: #222222; line-height: 2; padding-left: 12px; position: relative; }
+#sub-02 .step-content ul li::before { content: '·'; position: absolute; left: 0;  font-weight: 900; }
+#sub-02 .step-content img { width: 250px; object-fit: contain;}
+#sub-02 .step-images { display: flex; align-items: center; gap: 10px; margin-left: 0; }
+#sub-02 .step-images img { object-fit: contain; }
+#sub-02 .step-images .arrow { font-size: 20px; color: #FF8EA8; font-weight: 700; }
+#sub-02 .step-options { flex: 1; display: flex; gap: 16px; justify-content: flex-start; flex: unset; }
+#sub-02 .option { align-items: flex-start; text-align: left; flex: 0 1 auto; }
+#sub-02 .option-flex { display: flex; align-items: flex-end; gap:20px; }
+#sub-02 .option.mob {display: none; }
+#sub-02 .option img { width: 55px; height: 55px; object-fit: contain; margin-bottom: 8px; }
+#sub-02 .option strong { font-size: 18px; color: #222222; font-weight: 700; margin-bottom: 6px; display: block; }
+#sub-02 .option p { font-size: 18px; color: #222222; margin: 2px 0; line-height: 1.6; }
+#sub-02 .step3-content { display: flex; justify-content: center; gap:30px;}
+#sub-02 .step3-content .text{ display: flex;  flex-direction: column; }
+#sub-02 .step3-content strong { font-size: 18px; color: #222222; font-weight: 700; display: block; margin-bottom: 6px; }
+#sub-02 .step3-content p { font-size: 18px; color: #222222; margin: 3px 0; line-height: 1.7; }
+#sub-02 .step3-images { display: flex; align-items: center; gap: 20px; margin-left: 0; }
+#sub-02 .step3-images img { width: 100px; height: 100px; object-fit: contain; }
+#sub-02 .step-key-points { width: 100%; display: flex; gap: 12px; align-items: flex-start; }
+#sub-02 .key-point { flex: 1; flex-direction: column; display: flex; align-items: center; gap: 8px; }
+#sub-02 .key-point img { width: 52px; height: 52px; object-fit: contain; }
+#sub-02 .key-point p { font-size: 18px; text-align: center; color: #222222; margin: 0; line-height: 1.6; font-weight: 600; word-break: keep-all; }
+#sub-02 .divider { width: 1px; align-self: stretch; margin: 0 10px; }
+
+
+#sub-02 .thumb-wrap { grid-column: 1 / 3; grid-row: 9; padding: 130px 0 100px; position: relative; z-index: 1; }
+#sub-02 .thumb-section {padding:0 }
+
+@media (max-width: 1000px) {
+  #sub-02 .step-row {gap: 20px;}
+  #sub-02 .step-content {gap: 20px;}
+  #sub-02 .step-wrap {padding: 50px 30px; }
+}
+
+@media (max-width: 768px) {
+  #sub-02 .mob-br { display: block; }
+  #sub-02 .pc-br { display: none; }
+  #sub-02 { padding: 15px 20px 0; }
+
+  /* 그리드 → 단일 컬럼 */
+  #sub-02 .nps-wrap { 
+    display: flex; 
+    flex-direction: column; 
+  }
+
+  /* 세로 구분선 제거 */
+  #sub-02 .nps-wrap::before { display: none; }
+
+  /* 라벨 영역 */
+  #sub-02 .nps-label-wrap { padding: 40px 0 20px 0;width: 300px; margin: 0 auto; }
+
+  /* 제목 */
+  #sub-02 .title { font-size: 26px; font-weight: 500;}
+  #sub-02 .title-wrap { padding: 0 0 20px 0; }
+
+  /* 본문 영역 - 패딩 초기화 */
+  #sub-02 .body-wrap.one { padding: 0 0 30px 0; }
+  #sub-02 .text.pink {font-weight: 400;}
+  #sub-02 .body-wrap.two { padding: 30px 0 30px 0; }
+  #sub-02 .body-wrap.two .img { width: 100%;  height: 340px; object-fit: cover; margin: 30px 0; }
+  #sub-02 .body-wrap.three { padding: 20px 0 30px 0; }
+  #sub-02 .body-wrap.four { padding: 20px 0 50px 0; }
+  #sub-02 .text { font-size: 16px; letter-spacing: -0.7px;}
+
+  /* 인용구 - 패딩 초기화 및 순서 조정 */
+  #sub-02 .quote-wrap.pc { padding: 30px 0 30px 0; display: none;}
+  #sub-02 .quote-mob { display: block; padding: 0 15px 40px;}
+  #sub-02 .quote-wrap.two { padding: 20px 15px 20px 15px; }
+  #sub-02 .quote-wrap.three { padding: 10px 0 10px 0; }
+  #sub-02 .quote-wrap.three img {width: 100%; height: 340px; object-fit: cover; object-position: center;}
+  #sub-02 .quote-text { font-size: 18px; }
+
+  /* 로드맵 테이블 */
+  #sub-02 .table-wrap {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+  #sub-02 .roadmap-title { width: fit-content; }
+  #sub-02 .step-wrap { padding: 30px 20px; gap: 20px; border: none; background-color: #FFFFFF;}
+  #sub-02 .step-row { flex-direction: column; gap: 16px; align-items: center; }
+  #sub-02 .step-wrapper { flex-direction: column; align-items: center; gap: 12px; min-width: unset; }
+  #sub-02 .step-badge { flex-shrink: 0; }
+  #sub-02 .step-label { margin-top: 0; font-size: 16px; }
+  #sub-02 .step-content { flex-direction: column-reverse; gap: 16px; }
+  #sub-02 .step-content ul li { font-size: 16px; }
+  #sub-02 .step-content img { width: 200px; margin:0 auto;}
+
+  /* STEP 2 옵션 */
+  #sub-02 .step-options { flex-direction: column; gap: 16px; }
+  #sub-02 .divider { width: 100%; height: 1px; margin: 4px 0; }
+  #sub-02 .option p, #sub-02 .option strong { font-size: 16px; }
+  #sub-02 .option-flex { display: flex; align-items: flex-end; gap:20px; }
+  #sub-02 .option.mob {display: block; }
+  #sub-02 .option.pc {display: none; }
+    #sub-02 .option-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  #sub-02 .option-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #sub-02 .option-mob-img {
+    display: block;
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+  }
+
+
+  /* STEP 3 */
+  #sub-02 .step3-content { flex-direction: column-reverse; gap: 16px; }
+  #sub-02 .step3-content p, #sub-02 .step3-content strong { font-size: 16px; }
+  #sub-02 .step3-images img { width: 80px; height: 80px; }
+
+  /* STEP 4 핵심 기준 */
+  #sub-02 .step-key-points { flex-wrap: wrap; gap: 16px; }
+  #sub-02 .key-point { flex: 0 0 calc(50% - 8px); }
+  #sub-02 .key-point p { font-size: 15px; }
+
+  /* 썸네일 */
+  #sub-02 .thumb-wrap { padding: 60px 0 60px; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-bar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="img/logo.png" alt="국민연금 로고">
+      </div>
+      <div class="logo-meta">
+        <span>2026 상반기</span>
+        <span>VOL.205</span>
+      </div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+
+      <!-- 지난호 보기 드롭다운 -->
+      <div class="prev-issue-wrap">
+        <button class="btn-prev-issue" id="prevIssueBtn">
+          지난호 보기
+        </button>
+        <div class="prev-issue-dropdown" id="prevIssueDropdown">
+          <ul>
+            <li><a href="#">2025 하반기 VOL.204</a></li>
+            <li><a href="#">2025 상반기 VOL.203</a></li>
+            <li><a href="#">2024 하반기 VOL.202</a></li>
+            <li><a href="#">2024 상반기 VOL.201</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="searchBtn" aria-label="검색">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" id="menuIcon">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="12" x2="19" y2="12"/>
+        <line x1="3" y1="18" x2="19" y2="18"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar" id="searchBar">
+  <div class="search-bar-inner">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+    </div>
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- NAV SIDEBAR -->
+<nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+  <div class="nav-sidebar-head">
+    <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <div class="nav-body">
+    <div class="nav-col">
+      <h3>우리의 연금</h3>
+      <ul>
+        <li><a href="#">NPS 뉴스</a></li>
+        <li><a href="#">NPS 칼럼</a></li>
+        <li><a href="#">NPS 키워드 톱보기</a></li>
+        <li><a href="#">연금 생애 설계 가이드</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>트렌드 뷰</h3>
+      <ul>
+        <li><a href="#">모두의 여행</a></li>
+        <li><a href="#">꼬리에 꼬리를 무는 문화탐구</a></li>
+        <li><a href="#">그린 시그널</a></li>
+        <li><a href="#">지갑의 온도</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>열린 마당</h3>
+      <ul>
+        <li><a href="event-01.html">오픈 이벤트</a></li>
+        <li><a href="#">독자의 목소리</a></li>
+        <li><a href="#">초성 퀴즈</a></li>
+        <li><a href="#">OX 퀴즈</a></li>
+      </ul>
+    </div>
+    <div class="nav-footer">
+      <button class="btn-subscribe-outline">웹진 구독하기</button>
+      <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+      <button class="btn-prev">지난호 보기</button>
+    </div>
+  </div>
+
+</nav>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+
+<div class="page" id="sub-02">
+
+ <div class="nps-wrap">
+ 
+    <div class="nps-label-wrap">
+      <p class="nps-label">NPS 칼럼</p>
+      <div class="nps-label-line"></div>
+      <p class="nps-author">write. 서한기 연합뉴스 기자</p>
+    </div>
+ 
+    <div class="title-wrap">
+      <h2 class="title">
+        퇴사 후 멈춰 선 <br class="mob-br">당신의 연금에<br>
+        다시 숨을 불어넣는 법
+      </h2>
+    </div>
+ 
+    <div class="body-wrap one">
+      <p class="text pink">
+        사직서를 던지고 회사를 나오던 날의 공기를 기억하는가. 시원하기도 하고 한편으로는 앞날에 대한 걱정으로 마음이 무거웠을 것이다. 퇴사라는 큰 변화를 맞이하면 우리 삶의 많은 것들이 바뀌지만, 그중에서도 가장 먼저, 그리고 조용히 바뀌는 것이 바로 국민연금이다. 보이지 않는 곳에서 우리 노후를 지탱하는 이 소중한 권리를 어떻게 관리해야 할지 하나씩 짚어본다.
+      </p>
+    </div>
+
+    <div class="img-wrap">
+      <img src="img/sub/sub02-01.png" alt="퇴사 후 연금 관리 이미지">
+    </div>
+
+    <div class="quote-wrap one pc">
+      <img class="quote-mark" src="img/sub/quotes-left.png" alt="">
+      <p class="quote-text">
+        회사 지원이 사라지니 체감하는 무게는 두 배가 된다. 퇴사 후 건강보험료 고지서와 함께 날아온 연금보험료 고지서를 보고 당황하는 이유가 여기에 있다.
+      </p>
+    </div>
+
+    <div class="body-wrap two">
+      <div class="text">
+        <b>‘사업장에서 지역으로’ 이름표가 바뀐다</b><br>
+        직장에 다닐 때는 매달 월급봉투에서 연금이 알아서 빠져나갔다. 이때 당신의 이름표는 사업장가입자였다. 회사가 보험료의 절반을 부담해 주니 큰 부담을 느끼지 못했을 수도 있다. 하지만 퇴사하면 상황이 달라진다. 이제는 지역가입자라는 새 이름표를 달게 된다.<br>
+        가장 큰 변화는 보험료를 오롯이 본인이 모두 부담해야 한다는 점이다. 국민연금법 제9조에 따르면 국내에 거주하는 18세 이상 60세 미만의 국민 중 사업장가입자가 아닌 사람은 지역가입자가 된다. 소득의 9.5%(2026년 현재)를 보험료로 내야 하는데, 회사 지원이 사라지니 체감하는 무게는 두 배가 된다. 퇴사 후 건강보험료 고지서와 함께 날아온 연금보험료 고지서를 보고 당황하는 이유가 여기에 있다. 하지만 이것은 누군가를 괴롭히기 위한 고지서가 아니라 노후가 끊기지 않도록 보내는 국가의 신호로 이해할 필요가 있다.
+       <br><br><br class="pc-br"><br class="pc-br">
+       <div class="quote-mob">
+        <img class="quote-mark" src="img/sub/quotes-left.png" alt="">
+        <p class="quote-text">
+          회사 지원이 사라지니 체감하는 무게는 두 배가 된다. 퇴사 후 건강보험료 고지서와 함께 날아온 연금보험료 고지서를 보고 당황하는 이유가 여기에 있다.
+        </p>
+       </div>
+        <b>납부예외의 달콤한 유혹과 함정</b><br>
+        당장 수입이 끊겼는데 매달 수십만 원의 보험료를 내기는 쉽지 않다. 이때 납부예외라는 제도가 있다. 소득이 없는 기간 동안 보험료 납부를 잠시 미뤄주는 장치다. 국민연금법 제91조에 근거한 이 제도는 당장의 경제적 부담을 줄여주는 단비 같은 존재다. 실직이나 휴직 등으로 보험료를 낼 수 없는 사유가 발생했을 때 신청할 수 있다.<br>
+        하지만 납부예외는 공짜가 아니다. 연금을 내지 않는 기간만큼 나중에 받을 연금액은 줄어든다. 국민연금의 원리는 단순하다. 많이 낼수록, 그리고 무엇보다 오래 낼수록 많이 받는다. 납부예외 기간은 가입기간에 산입되지 않는다. 이는 노후에 받을 연금 수령액이 생각보다 크게 줄어들 수 있다는 뜻이다. 당장 숨통은 트이지만, 미래의 내가 받을 혜택을 미리 끌어다 쓰는 셈이라는 점을 기억해야 한다.
+      </div>
+      <img class="img" src="img/sub/sub02-02.png" alt="납부예외 이미지" >
+      <p class="text">
+        <b>스스로를 지키는 힘, 임의가입과 임의계속가입</b><br>
+          소득이 없어도 연금을 계속 유지하고 싶다면 어떻게 해야 할까. 여기서 전문가들이 추천하는 전략은 임의가입 제도다. 소득이 없어 가입 의무가 없는 경우에도 스스로 신청해 연금을 계속 낼 수 있다. 주로 전업주부들이 많이 활용하지만, 퇴사 후 잠시 쉬는 사람에게도 유용한 방패가 된다. 최저 보험료인 약 9.6만 원만 내더라도 가입기간을 계속 늘려갈 수 있기 때문이다.<br>
+          또한 만 60세가 되었지만 최소 가입기간 10년(120개월)을 채우지 못했거나 연금액을 더 늘리고 싶다면 임의계속가입 제도를 활용할 수 있다. 65세까지 가입기간을 연장해 노후의 질을 높이는 방법이다. 국민연금 가입 지위를 유지하고 가입기간을 확보하는 것은 장기적으로 개인의 생존권을 지키는 가장 강력한 수단이다.
+      </p>
+    </div>
+
+    <div class="quote-wrap two">
+      <img class="quote-mark" src="img/sub/quotes-left.png" alt="">
+      <p class="quote-text">
+        만 60세가 되었지만 최소 가입기간 10년(120개월)을 채우지 못했거나 연금액을 더 늘리고 싶다면 임의계속가입 제도를 활용할 수 있다. 
+      </p>
+    </div>
+
+    <div class="body-wrap three">
+      <p class="text">
+        <b>공백을 메우는 마법, 추후납부 전략</b><br>
+        퇴사 후 한동안 보험료를 내지 못해 가입기간에 공백이 생겼다면 어떻게 해야 할까. 너무 낙심할 필요는 없다. 추후납부(추납)라는 비장의 카드가 있다. 과거 납부예외 기간의 보험료를 나중에 소득이 생겼을 때 한꺼번에 내는 제도다. 마치 멈췄던 시계를 다시 돌리는 것과 같다. <br>
+        추후납부는 단순히 밀린 돈을 내는 것 이상의 가치가 있다. 추납하면 그 기간만큼 가입기간이 복구되는데 이는 연금액 산정에 있어 복리 효과와 유사한 이득으로 돌아온다. 특히 재취업 후에 과거의 공백을 메우려는 분들이 늘고 있는 이유도 이 제도의 수익비가 매우 높기 때문이다. 다만 2020년 말 관련법 개정으로 추후납부 가능 기간은 최대 119개월로 제한되었다. 이는 제도의 형평성을 맞추기 위한 법적 장치다. 추후납부 보험료는 현재 보험료 수준으로 산정되므로 본인의 경제 상황에 맞춰 영리하게 계획을 세워야 한다. 목돈이 들어가는 만큼 신중해야 하지만 가입기간 1개월의 가치는 단순한 금액 그 이상이라는 사실을 잊지 말자.
+      </p>
+    </div>
+
+    <div class="quote-wrap three">
+      <img src="img/sub/sub02-03.png" alt="" style="width: 100%;">
+    </div>
+
+    <div class="body-wrap four">
+      <p class="text">
+        <b>연금은 돈이 아니라 시간이다</b><br>
+        연금은 단순한 금융 상품이 아니다. 연금은 우리가 젊은 날에 흘린 땀방울을 미래의 나에게 보내는 가장 따뜻한 편지다. 퇴사 후 찾아오는 연금의 변화를 귀찮은 행정 절차나 부담스러운 고지서 문제로만 치부하지 말자. 그것은 당신이 우리 사회의 일원으로서 당당히 노후를 준비하고 있다는 증거다. 많은 사람이 연금의 수익률이나 고갈론을 걱정한다. 하지만 국민연금만큼 물가 상승률을 정확히 반영해 내 돈의 가치를 지켜주는 제도는 드물다.<br>
+        퇴사 후 공백기가 길어질 것 같다면 단돈 몇만 원이라도 좋으니 가입기간을 유지하려는 노력이 필요하다. 국민연금은 금액보다 기간이 더 중요하기 때문이다. 하루라도 빨리 가입하고 하루라도 더 오래 유지하는 것이 노후 준비의 핵심이다.<br>
+        지금, 이 순간에도 퇴사 후의 삶을 고민하며 밤잠을 설치고 있을 사람들에게 말하고 싶다. 지금 당신이 연금을 위해 고민하는 이 시간이 20년 뒤 당신의 노후를 평온하게 만들어줄 것이다. 제도는 복잡해 보이지만 본질은 하나다. 내가 나를 끝까지 책임진다는 약속이다. 그리고 국가는 그 약속이 지켜지도록 돕는 든든한 조력자다.<br>
+        새로운 시작 앞에 선 모든 이들을 응원한다. 퇴사 후의 공백이 인생의 구멍이 아니라 더 큰 도약을 위한 쉼표가 되기를 바란다. 국민연금은 그 쉼표 뒤에 이어질 당신의 긴 인생 문장을 든든하게 받쳐주는 마침표가 되어줄 것이다. 어려움이 있다면 혼자 고민하지 마시고 공단의 문을 두드려라. 그것이 당신의 권리를 지키는 가장 빠른 길이다. 퇴사 후 가입 유형 전환이나 본인의 예상 연금액이 궁금하시다면 국민연금공단 홈페이지의 ‘내연금 알아보기’ 서비스를 활용해 보는 것은 어떨까?
+      </p>
+    </div>
+    
+    <div class="table-wrap">
+      
+      <!-- 타이틀 -->
+      <div class="roadmap-title">퇴사 후, 연금 관리 로드맵</div>
+    
+      <div class="step-wrap">
+        <!-- STEP 1 -->
+        <div class="step-row">
+          <div class="step-wrapper">
+            <div class="step-badge">STEP 1</div>
+            <div class="step-label">가입자 전환</div>
+          </div>
+          <div class="step-content">
+            <ul>
+              <li>사업장가입자 → 지역가입자</li>
+              <li>보험료: 본인 100% 부담</li>
+              <li>보험료율: 소득의 9.5%(2026년 기준)</li>
+            </ul>
+           <img src="img/sub/sub-02-mini01.png" alt="사업장가입자">
+          </div>
+        </div>
+      
+        <!-- STEP 2 -->
+        <div class="step-row">
+          <div class="step-wrapper">
+            <div class="step-badge">STEP 2</div>
+            <div class="step-label">선택의 갈림길</div>
+          </div>
+          <div class="step-options">
+            <div class="option pc">
+              <div class="option-flex">
+                <strong>납부예외</strong>
+                <img src="img/sub/sub-02-mini02.png" alt="납부예외">
+              </div>
+              <p>→ 부담 ↓</p>
+              <p>→ 가입기간 인정 X</p>
+            </div>
+            <div class="option mob">
+              <div class="option-flex">
+                <div class="option-text">
+                  <strong>납부예외</strong>
+                  <p>→ 부담 ↓</p>
+                  <p>→ 가입기간 인정 X</p>
+                </div>
+                <img class="option-mob-img" src="img/sub/sub-02-mini02.png" alt="납부예외">
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="option pc">
+              <div class="option-flex">
+                <strong>임의가입</strong>
+                <img src="img/sub/sub-02-mini03.png" alt="임의가입">
+              </div>
+              <p>→ 가입기간 유지</p>
+              <p>→ 최소 보험료 가능</p>
+            </div>
+            <div class="option mob">
+              <div class="option-flex">
+                <div class="option-text">
+                  <strong>임의가입</strong>
+                  <p>→ 가입기간 유지</p>
+                  <p>→ 최소 보험료 가능</p>
+                </div>
+                <img class="option-mob-img" src="img/sub/sub-02-mini03.png" alt="임의가입">
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="option pc">
+              <div class="option-flex">
+                <strong>임의계속가입</strong>
+                <img src="img/sub/sub-02-mini04.png" alt="임의계속가입">
+              </div>
+              <p>→ 가입기간 연장(60세 이후)</p>
+            </div>
+            <div class="option mob">
+              <div class="option-flex">
+                <div class="option-text">
+                  <strong>임의계속가입</strong>
+                  <p>→ 가입기간 연장(60세 이후)</p>
+                </div>
+                <img class="option-mob-img" src="img/sub/sub-02-mini04.png" alt="임의계속가입">
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- STEP 3 -->
+        <div class="step-row">
+          <div class="step-wrapper">
+            <div class="step-badge">STEP 3</div>
+            <div class="step-label">공백 복구 방법</div>
+          </div>
+          <div class="step3-content">
+            <div class="text">
+              <strong>· 추후납부(추납)</strong>
+              <p>→ 과거 가입기간 복구</p>
+              <p>→ 연금 수령액 증가</p>
+            </div>
+            <div class="step3-images">
+              <img src="img/sub/sub-02-mini05.png" alt="추후납부1">
+              <img src="img/sub/sub-02-mini06.png" alt="추후납부2">
+            </div>
+
+          </div>
+       
+        </div>
+      
+        <!-- STEP 4 -->
+        <div class="step-row">
+          <div class="step-wrapper">
+            <div class="step-badge">STEP 4</div>
+            <div class="step-label">핵심 기준</div>
+          </div>
+          <div class="step-key-points">
+            <div class="key-point">
+              <img src="img/sub/sub-02-mini07.png" alt="가입기간">
+              <p>가입기간이 길수록 <br>수령액 증가</p>
+            </div>
+            <div class="key-point">
+              <img src="img/sub/sub-02-mini08.png" alt="납부예외기간">
+              <p>납부예외 기간은 <br> 가입기간 미인정</p>
+            </div>
+            <div class="key-point">
+              <img src="img/sub/sub-02-mini09.png" alt="최소가입기간">
+              <p>최소 가입기간 <br>10년(120개월) <br>필요</p>
+            </div>
+            <div class="key-point">
+              <img src="img/sub/sub-02-mini10.png" alt="가입유지">
+              <p>가입 유지가 <br>가장 중요한 전략</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="thumb-wrap">
+      <!-- THUMB CARDS -->
+      <div class="thumb-section">
+        <div class="thumb-card thumb-bg-1">
+          <div class="thumb-card-inner">
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
+                <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="thumb-text">
+              <p class="thumb-title">연금 생에 설계 가이드</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+          </div>
+        </div>
+        <div class="thumb-card thumb-bg-2">
+          <div class="thumb-card-inner right">
+            <div class="thumb-text">
+              <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="1.5"/>
+                <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+<!-- 푸터 -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="내겔에 국민연금">
+    </div>
+    <div class="footer-info">
+      국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+      국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+      등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+      205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+      © nps.or.kr. All rights reserved.
+    </div>
+    <div class="footer-sns">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>AOS.init({ once: true });</script>
+<script>
+
+</script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
