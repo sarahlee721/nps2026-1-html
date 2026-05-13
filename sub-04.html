@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연금 생애 설계 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- AOS 라이브러리 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="css/common.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+#sub-04 .mob-br { display: none; }
+#sub-04 { width: 100%; box-sizing: border-box; }
+#sub-04 .nps-wrap { max-width: 980px; margin: 0 auto; margin: 0 auto; }
+#sub-04 .nps-label-wrap { padding: 140px 0 60px 0; max-width: 200px; margin: 0 auto; }
+#sub-04 .nps-label { font-size: 17px; font-weight: 700; color: #222222; letter-spacing: 0.05em; margin: 0 0 4px 0; }
+#sub-04 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
+#sub-04 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
+#sub-04 .badge { display: inline-block; background: #FF8EA8; color: #fff; font-size: 19px; font-weight: 600; padding: 6px 12px; border-radius: 999px; }
+#sub-04 .title-wrap { grid-column: 1 / 3; grid-row: 2; text-align: left; padding: 0 0 5px 0; position: relative; z-index: 1; background: #fff; }
+#sub-04 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; word-break: keep-all; }
+#sub-04 .section-divider { border: none; border-top: 1px solid #222; margin: 30px 0; }
+#sub-04 .nps-desc-wrap { text-align: right; padding: 0 0 60px 0; }
+#sub-04 .nps-desc { max-width: 530px; font-size: 18px; color: #FF8EA8; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 600; text-align: left;}
+#sub-04 .nps-desc strong { font-weight: 700; }
+#sub-04 .body-wrap { }
+
+
+/* ====== 반응형 ====== */
+@media (max-width: 768px) {
+  #sub-04 .pc-br { display: none; }
+  #sub-04 .mob-br { display: block; }
+  #sub-04 .nps-label-wrap { padding: 60px 0 80px 0; }
+  #sub-04 .nps-label { font-size: 16px;}
+  #sub-04 .nps-author { font-size: 16px; }
+  #sub-04 .title { font-size: 26px; font-weight: 500; }
+  #sub-04 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%;}
+  #sub-04 .nps-desc-wrap { text-align: left; padding: 20px 0 40px 0; }
+  #sub-04 .section-divider { display: none; }
+}
+ 
+#sub-04 .check-wrap { max-width: 1080px; margin: 0 auto; padding: 60px 20px; }
+#sub-04 .check-title { text-align: center; font-size: 24px; font-weight: 700; color: #222; margin-bottom: 40px; }
+#sub-04 .check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+#sub-04 .check-card { background: #FFE4EA; border-radius: 16px; padding: 28px 20px 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+#sub-04 .check-icon { width: 28px; height: 28px; background: url('img/sub/04/check.png') no-repeat center / contain; display: block; }
+#sub-04 .check-card img { width: 80px; height: 80px; object-fit: contain; align-self: center; }
+#sub-04 .check-card hr { width: 100%; border: none; border-top: 1px solid #e0a0aa; margin: 0; }
+#sub-04 .check-card p { font-size: 15px; color: #333; line-height: 1.7; text-align: center; width: 100%; }
+#sub-04 .check-card small { font-size: 12px; color: #888; }
+
+@media (max-width: 768px) {
+  #sub-04 .check-grid { grid-template-columns: 1fr; }
+  #sub-04 .check-card { align-items: center; text-align: center; }
+}
+ 
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-bar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="img/logo.png" alt="국민연금 로고">
+      </div>
+      <div class="logo-meta">
+        <span>2026 상반기</span>
+        <span>VOL.205</span>
+      </div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+
+      <!-- 지난호 보기 드롭다운 -->
+      <div class="prev-issue-wrap">
+        <button class="btn-prev-issue" id="prevIssueBtn">
+          지난호 보기
+        </button>
+        <div class="prev-issue-dropdown" id="prevIssueDropdown">
+          <ul>
+            <li><a href="#">2025 하반기 VOL.204</a></li>
+            <li><a href="#">2025 상반기 VOL.203</a></li>
+            <li><a href="#">2024 하반기 VOL.202</a></li>
+            <li><a href="#">2024 상반기 VOL.201</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="searchBtn" aria-label="검색">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" id="menuIcon">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="12" x2="19" y2="12"/>
+        <line x1="3" y1="18" x2="19" y2="18"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar" id="searchBar">
+  <div class="search-bar-inner">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+    </div>
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- NAV SIDEBAR -->
+<nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+  <div class="nav-sidebar-head">
+    <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <div class="nav-body">
+    <div class="nav-col">
+      <h3>우리의 연금</h3>
+      <ul>
+        <li><a href="sub-01.html">NPS 뉴스</a></li>
+        <li><a href="sub-02.html">NPS 칼럼</a></li>
+        <li><a href="sub-03.html">NPS 키워드 돋보기</a></li>
+        <li><a href="sub-04.html">연금 생애 설계 가이드</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>트렌드 뷰</h3>
+      <ul>
+        <li><a href="sub-05.html">모두의 여행</a></li>
+        <li><a href="sub-06.html">꼬리에 꼬리를 무는 문화탐구</a></li>
+        <li><a href="sub-07.html">그린 시그널</a></li>
+        <li><a href="sub-08.html">지갑의 온도</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>열린 마당</h3>
+      <ul>
+        <li><a href="event-01.html">오픈 이벤트</a></li>
+        <li><a href="event-02.html">독자의 목소리</a></li>
+        <li><a href="event-03.html">초성 퀴즈</a></li>
+        <li><a href="event-04.html">OX 퀴즈</a></li>
+      </ul>
+    </div>
+    <div class="nav-footer">
+      <button class="btn-subscribe-outline">웹진 구독하기</button>
+      <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+      <button class="btn-prev">지난호 보기</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+
+<div class="page" id="sub-04">
+
+ <div class="nps-wrap">
+ 
+    <div class="nps-label-wrap">
+      <p class="nps-label">연금 생애 설계 가이드</p>
+      <div class="nps-label-line"></div>
+      <p class="nps-author">write. 편집실</p>
+    </div>
+ 
+    <div class="title-wrap">
+      <span class="badge">시작 단계 (2030)</span>
+      <h2 class="title">
+        2030 연금 ‘갓생’ 살기 <br>
+        사회초년생이 꼭 알아야 할
+        <br class="mob-br">
+        국민연금 4가지
+      </h2>
+    </div>
+    <hr class="section-divider">
+    <div class="body-wrap">
+       <div class="nps-desc-wrap">
+          <p class="nps-desc">
+            설레는 첫 급여 명세서를 받아든 순간, 내 연금은 차곡차곡 쌓이기 시작한다. 하지만 안타깝게도 많은 사회초년생들이 이 중요한 시작을 인지하지 못한 채 무심코 흘려보내곤 한다. 국민연금은 ‘아주 먼 미래를 위한 막연한 준비’가 아니라 ‘지금 이 순간부터 전략적으로 관리하고 키워나가야 하는 소중한 자산’이다. 갓생 사는 스마트한 사회초년생이라면 이미 시작된 내 연금 상태부터 점검해보자. 복잡한 제도 설명 대신, 지금 당장 확인하고 챙겨야 할 핵심만 짚어본다.
+          </p>
+        </div>
+        
+      <div class="check-wrap">
+        <h2 class="check-title">지금 내 연금 상태, 바로 체크해보자</h2>
+        <div class="check-grid">
+
+          <div class="check-card">
+            <span class="check-icon"></span>
+            <img src="img/sub/04/mini01.png" alt="">
+            <hr>
+            <p>청년 생애 첫 보험료<br>지원 제도를 알고있다<br><small>(2027년에 만 18세가 되는 청년부터 해당)</small></p>
+          </div>
+
+          <div class="check-card">
+            <span class="check-icon"></span>
+            <img src="img/sub/04/mini02.png" alt="">
+            <hr>
+            <p>현재 국민연금에<br>가입되어 있다</p>
+          </div>
+
+          <div class="check-card">
+            <span class="check-icon"></span>
+            <img src="img/sub/04/mini03.png" alt="">
+            <hr>
+            <p>최근 6개월 내<br>납부이력을 확인한 적 있다</p>
+          </div>
+
+          <div class="check-card">
+            <span class="check-icon"></span>
+            <img src="img/sub/04/mini04.png" alt="">
+            <hr>
+            <p>퇴사 등으로 소득이 없을 때<br>납부예외 제도를<br>활용할 수 있다는 사실을 알고 있다</p>
+          </div>
+
+          <div class="check-card">
+            <span class="check-icon"></span>
+            <img src="img/sub/04/mini05.png" alt="">
+            <hr>
+            <p>군복무·출산크레딧<br>혜택을 확인했다</p>
+          </div>
+
+          <div class="check-card">
+            <span class="check-icon"></span>
+            <img src="img/sub/04/mini06.png" alt="">
+            <hr>
+            <p>예상 연금액을<br>한 번이라도 조회해봤다</p>
+          </div>
+
+        </div>
+      </div>
+      </div>
+
+ </div>
+
+
+
+
+      <div class="thumb-wrap">
+      <!-- THUMB CARDS -->
+      <div class="thumb-section">
+        <div class="thumb-card thumb-bg-1">
+          <div class="thumb-card-inner">
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+                <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="thumb-text">
+              <p class="thumb-title">연금 생에 설계 가이드</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+          </div>
+        </div>
+        <div class="thumb-card thumb-bg-2">
+          <div class="thumb-card-inner right">
+            <div class="thumb-text">
+              <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+                <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- 푸터 -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="내겔에 국민연금">
+    </div>
+    <div class="footer-info">
+      국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+      국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+      등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+      205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+      © nps.or.kr. All rights reserved.
+    </div>
+    <div class="footer-sns">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>AOS.init({ once: true });</script>
+<script>
+
+  function openModal(id) {
+    var overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+ 
+  function closeModal(id) {
+    var overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+ 
+  function handleOverlayClick(event, id) {
+    if (event.target === document.getElementById(id)) {
+      closeModal(id);
+    }
+  }
+ 
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('#sub-04 .modal-overlay.is-open').forEach(function(el) {
+        el.classList.remove('is-open');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+
+</script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
