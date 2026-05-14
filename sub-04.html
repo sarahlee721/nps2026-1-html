@@ -35,10 +35,10 @@
 @media (max-width: 768px) {
   #sub-04 .pc-br { display: none; }
   #sub-04 .mob-br { display: block; }
-  #sub-04 .nps-label-wrap { padding: 60px 0 80px 0; }
+  #sub-04 .nps-label-wrap { margin: 70px auto 40px; }
   #sub-04 .nps-label { font-size: 16px;}
   #sub-04 .nps-author { font-size: 16px; }
-  #sub-04 .title { font-size: 26px; font-weight: 500; }
+  #sub-04 .title { font-size: 26px; font-weight: 500; margin-bottom: 30px;  }
   #sub-04 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%;}
   #sub-04 .nps-desc-wrap { text-align: left; padding: 20px 0 40px 0; }
   #sub-04 .section-divider { display: none; }
@@ -60,8 +60,8 @@
 @media (max-width: 768px) {
   #sub-04 .check-grid { grid-template-columns: 1fr; }
   #sub-04 .check-card { align-items: center; text-align: center; }
+  #sub-04 .badge { font-size: 16px; margin-bottom: 20px;}
 }
-
 
 #sub-04 .content-section { display: flex; flex-direction: column; gap: 70px; margin-bottom: 100px; }
 #sub-04 .content-item { display: flex;  gap: clamp(30px, 3vw, 80px); align-items: flex-start; }
@@ -524,35 +524,6 @@
 
 <script>AOS.init({ once: true });</script>
 <script>
-
-  function openModal(id) {
-    var overlay = document.getElementById(id);
-    if (!overlay) return;
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
- 
-  function closeModal(id) {
-    var overlay = document.getElementById(id);
-    if (!overlay) return;
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
- 
-  function handleOverlayClick(event, id) {
-    if (event.target === document.getElementById(id)) {
-      closeModal(id);
-    }
-  }
- 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('#sub-04 .modal-overlay.is-open').forEach(function(el) {
-        el.classList.remove('is-open');
-      });
-      document.body.style.overflow = '';
-    }
-  });
 
 </script>
 <script src="js/common.js"></script>

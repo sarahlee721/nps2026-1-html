@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꼬리에 꼬리를 무는 문화탐구</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- AOS 라이브러리 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="css/common.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+#sub-06 { width: 100%; padding:0;} 
+#sub-06 .mob-br { display: none; }
+#sub-06 { width: 100%; box-sizing: border-box; }
+#sub-06 .nps-wrap { }
+#sub-06 .nps-wrap-inner { max-width: 1080px; margin: 0 auto; padding: 0 50px; }
+#sub-06 .nps-label-wrap { padding: 140px 0 60px 0; max-width: 250px; margin: 0 auto; }
+#sub-06 .nps-label { font-size: 17px; font-weight: 700; color: #222222; letter-spacing: 0.05em; margin: 0 0 4px 0; }
+#sub-06 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
+#sub-06 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
+#sub-06 .title-wrap { grid-column: 1 / 3; grid-row: 2; text-align: center; padding: 0 50px 5px 50px; position: relative; z-index: 1; background: #fff; }
+#sub-06 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; word-break: keep-all; }
+#sub-06 .section-divider { border: none; border-top: 1px solid #222; margin: 30px auto; max-width: 980px; }
+#sub-06 .nps-desc-wrap { text-align: right; padding: 0 50px 60px 50px; }
+#sub-06 .nps-desc { max-width: 530px; font-size: 18px; color: #D9421C; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 600; text-align: left;}
+#sub-06 .nps-desc strong { font-weight: 700; }
+#sub-06 .body-wrap { }
+#sub-06 .mx-width-680 { max-width: 680px; margin: 100px auto 0; }
+#sub-06 .thumb-wrap { background-color: #FFEFB9; }
+#sub-06 .thumb-section { padding: 130px 50px 100px; }
+
+/* ====== 반응형 ====== */
+@media (max-width: 768px) {
+  #sub-06 .pc-br { display: none; }
+  #sub-06 .mob-br { display: block; }
+  #sub-06 .nps-label-wrap { margin: 70px auto 40px; }
+  #sub-06 .nps-label { font-size: 16px;}
+  #sub-06 .nps-author { font-size: 16px; }
+  #sub-06 .title { font-size: 26px; font-weight: 500; margin-bottom: 40px; }
+  #sub-06 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%; padding: 0 20px 40px 20px; }
+  #sub-06 .nps-desc-wrap { text-align: left; padding: 20px 0 40px 0; }
+  #sub-06 .section-divider { display: none; }
+  #sub-06 .nps-wrap-inner { padding: 0;}
+  #sub-06 .title-wrap { padding: 10px 20px 5px 20px; }
+  #sub-06 .thumb-section { padding: 70px 20px 30px; }
+}
+ 
+
+
+/* 아티클 섹션 */
+#sub-06 .article-wrap { }
+#sub-06 .article-img-wrap { width: 100%; overflow: hidden; margin-bottom: 28px; }
+#sub-06 .article-img-wrap img { width: 100%; height: auto; display: block; }
+#sub-06 .article-content { padding: 0; }
+#sub-06 .article-subtitle { font-size: 24px; font-weight: 600; color: #222222; margin: 75px 0 0 0; line-height: 1.5; }
+#sub-06 .article-body p { font-size: 18px; color: #222222; line-height: 1.85; margin-bottom: 16px; word-break: keep-all; }
+#sub-06 .article-body p:last-child { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  #sub-05 .nps-wrap-inner { padding: 0 20px;}
+  #sub-05 .title-wrap { padding: 10px 20px 5px 20px; }
+  #sub-06 .article-content { padding: 0 20px; }
+}
+
+#sub-06 .yellow-box { position: relative; background-color: #FFEFB9;  padding: 100px 0 160px; margin-top: 140px; }
+#sub-06 .yellow-box .inner { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 60px; z-index: 2; }
+#sub-06 .yellow-box .title-deco { display: block; max-width: 360px; margin: 0 auto 10px; }
+#sub-06 .yellow-box .title { font-size: 26px; font-weight: 700; text-align: center; margin-bottom: 60px; color: #333; }
+#sub-06 .yellow-box .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+#sub-06 .yellow-box .cal { height: 240px; background-color: #fff; border-radius: 12px; }
+#sub-06 .yellow-box .inst { position: absolute; pointer-events: none; z-index: 1; }
+#sub-06 .yellow-box .inst-violin { width: 220px; top: 75px; left: -45px; }
+#sub-06 .yellow-box .inst-horn { width: 450px; top: 40px; right: -15px; }
+#sub-06 .yellow-box .inst-piano { width: 570px; bottom: 200px; left: -70px; }
+#sub-06 .yellow-box .inst-trombone { width: 270px; bottom: 100px; right: -31px; transform: rotate(6deg); transform-origin: center center; }
+
+/* 768px */
+@media (max-width: 768px) {
+  #sub-06 .yellow-box { padding: 110px 0 50px; margin-top: 60px; }
+  #sub-06 .yellow-box .inner { padding: 0 20px; }
+  #sub-06 .yellow-box .title { font-size: 20px; margin-bottom: 40px; }
+
+  #sub-06 .yellow-box .cal { height: 180px; }
+  #sub-06 .yellow-box .inst-violin { width: 300px; top: 1000px; left: -100px; }
+  #sub-06 .yellow-box .inst-horn { width: 200px; top: 25px; right: -15px; }
+  #sub-06 .yellow-box .inst-piano { width: 300px; bottom: 500px; left: -50px; transform: rotate(60deg); }
+  #sub-06 .yellow-box .inst-trombone { width: 200px; bottom: 1000px; right: -20px;  }
+}
+ 
+
+ /* 달력 카드 */
+ 
+#sub-06 .yellow-box .cal { height: auto; padding: 0; background: transparent; border-radius: 0; }
+#sub-06 .yellow-box .cal-top { width: 100%; display: block; }
+#sub-06 .yellow-box .cal-body { background: url('/img/sub/06/note-middle.png') repeat-y center top; background-size: 100% auto; padding: 20px 20px 0px; }
+#sub-06 .yellow-box .cal-bottom { width: 100%; display: block; }
+
+/* 날짜 뱃지 */
+#sub-06 .yellow-box .cal-badge { background: #D9421C; border-radius: 100px; padding: 8px 16px; text-align: center; margin-bottom: 30px; display: flex; flex-direction: column; justify-content: center; }
+#sub-06 .yellow-box .cal-date { display: block; font-size: 18px; font-weight: 500; color: #fff; margin: 0; line-height: 1.4; }
+#sub-06 .yellow-box .cal-venue { display: block; font-size: 18px; font-weight: 500; color: #fff; margin: 2px 0 0; line-height: 1.4; }
+
+/* 제목 */
+#sub-06 .yellow-box .cal-title { display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 30px;}
+#sub-06 .yellow-box .cal-title h3 { white-space: nowrap; margin: 0 auto; font-size: 21px;font-weight: bold; display: inline-block; box-shadow: inset 0 -8px 0 #FFF600; line-height: 1.6; }
+#sub-06 .yellow-box .cal-desc { font-size: 14px; color: #444; line-height: 1.7; margin: 0; word-break: keep-all; }
+
+@media (max-width: 1080px) {
+  #sub-06 .yellow-box .grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* 모바일 */
+@media (max-width: 768px) {
+ #sub-06 .yellow-box .title-deco { max-width: 300px; }
+}
+@media (max-width: 650px) {
+  #sub-06 .yellow-box .grid { grid-template-columns: repeat(1, 1fr); gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-bar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="img/logo.png" alt="국민연금 로고">
+      </div>
+      <div class="logo-meta">
+        <span>2026 상반기</span>
+        <span>VOL.205</span>
+      </div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+
+      <!-- 지난호 보기 드롭다운 -->
+      <div class="prev-issue-wrap">
+        <button class="btn-prev-issue" id="prevIssueBtn">
+          지난호 보기
+        </button>
+        <div class="prev-issue-dropdown" id="prevIssueDropdown">
+          <ul>
+            <li><a href="#">2025 하반기 VOL.204</a></li>
+            <li><a href="#">2025 상반기 VOL.203</a></li>
+            <li><a href="#">2024 하반기 VOL.202</a></li>
+            <li><a href="#">2024 상반기 VOL.201</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="searchBtn" aria-label="검색">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" id="menuIcon">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="12" x2="19" y2="12"/>
+        <line x1="3" y1="18" x2="19" y2="18"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar" id="searchBar">
+  <div class="search-bar-inner">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+    </div>
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- NAV SIDEBAR -->
+<nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+  <div class="nav-sidebar-head">
+    <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <div class="nav-body">
+    <div class="nav-col">
+      <h3>우리의 연금</h3>
+      <ul>
+        <li><a href="sub-01.html">NPS 뉴스</a></li>
+        <li><a href="sub-02.html">NPS 칼럼</a></li>
+        <li><a href="sub-03.html">NPS 키워드 돋보기</a></li>
+        <li><a href="sub-04.html">연금 생애 설계 가이드</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>트렌드 뷰</h3>
+      <ul>
+        <li><a href="sub-05.html">모두의 여행</a></li>
+        <li><a href="sub-06.html">꼬리에 꼬리를 무는 문화탐구</a></li>
+        <li><a href="sub-07.html">그린 시그널</a></li>
+        <li><a href="sub-08.html">지갑의 온도</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>열린 마당</h3>
+      <ul>
+        <li><a href="event-01.html">오픈 이벤트</a></li>
+        <li><a href="event-02.html">독자의 목소리</a></li>
+        <li><a href="event-03.html">초성 퀴즈</a></li>
+        <li><a href="event-04.html">OX 퀴즈</a></li>
+      </ul>
+    </div>
+    <div class="nav-footer">
+      <button class="btn-subscribe-outline">웹진 구독하기</button>
+      <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+      <button class="btn-prev">지난호 보기</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+
+<div class="page" id="sub-06">
+
+ <div class="nps-wrap">
+ 
+    <div class="nps-label-wrap nps-wrap-inner">
+      <p class="nps-label">꼬리에 꼬리를 무는 문화탐구</p>
+      <div class="nps-label-line"></div>
+      <p class="nps-author">write. 정덕현 대중문화평론가</p>
+    </div>
+ 
+    <div class="title-wrap nps-wrap-inner">
+      <h2 class="title">
+        클래식? <br class="mob-br">이젠 가장 트렌디한 취향! <br>
+        조용함이 트렌드가 되는 순간
+      </h2>
+    </div>
+    <hr class="section-divider">
+    <div class="body-wrap">
+       <div class="nps-desc-wrap nps-wrap-inner">
+          <p class="nps-desc">
+            똑똑하게 미루면 연금액이 최대 36%까지 늘어난다. 지금 당장 받는 것보다
+            더 큰 내일을 설계하고 싶다면 '연기연금'의 5가지 핵심 키워드에서 그 해답을 찾을 수 있다.
+          </p>
+        </div>
+        
+    </div>
+
+    <div class="article-wrap nps-wrap-inner">
+
+      <div class="article-img-wrap">
+        <img src="img/sub/06/01.png" alt="클래식 공연 사진1">
+      </div>
+
+      <div class="article-content">
+        <h3 class="article-subtitle">2030세대를 취향 저격한 클래식</h3>
+        <div class="article-body">
+          <p>특정 계층이나 중장년층의 전유물? 혹은 고루하고 접근하기 어려운 예술? 과거 클래식 음악에 덧씌워지곤 하던 이런 이미지는 여전히 유효할까. 그렇지 않다. 예술경영지원센터가 발표한 ‘2024 공연시장 티켓판매 현황 보고서’에 따르면, 클래식 음악 장르는 대중음악 콘서트와 뮤지컬에 이어 전체 공연 시장에서 티켓 파워 3위를 기록할 정도로 괄목할 만한 성장을 이루었다. 그런데 이러한 성장을 주도하는 핵심 관객층이 눈에 띈다. 중장년층이 아니라 2030세대다. 이들에게 클래식은 남들과는 차별화된 자신만의 ‘희소한 취향’이다. 모두가 스마트폰으로 가볍게 스낵 컬처(snack culture, 짧은 시간에 간편하게 즐기는 콘텐츠 소비 형태로, 상황이나 장소에 구애받지 않고 가볍게 소비할 수 있는 문화)의 도파민에 빠져 있을 때, 이들은 클래식의 조용하고 고양된 세계로 들어간다. 그곳에는 모두에게 똑같은 디지털 경험과는 다른 나만의 경험이 있기 때문이다. 최근 클래식 공연의 ‘피켓팅(피 튀기는 티켓팅)’은 아이돌 그룹 공연을 방불케 한다. 신드롬을 일으키고 있는 피아니스트 임윤찬의 경우, 단 30초 만에 공연 티켓 전석이 매진되는 일도 벌어진다. 2022년 윤이상 국제 음악 콩쿠르에서 1위를 차지한 천재 첼리스트 한재민의 경우도 마찬가지다. 2025년 1월에 열린 ‘2025 경기아트센터 신년음악회’에서 한재민과 피아니스트 겸 지휘자 김선욱과의 협연 역시 팬들의 뜨거운 예매 열기를 불러일으키기도 했다. 클래식이 이처럼 팬덤 현상을 만들어내고 있는 건 그 소비층이 2030세대로 젊어진 이유도 있지만, 클래식 아티스트들 역시 과거의 거장들과 달리 유튜브 라이브나 소셜 미디어를 통해 자신의 연습 과정과 음악적 고뇌를 대중들과 가감 없이 공유하는 친밀함을 보여주기 때문이다.
+          <br> 관객층이 젊어지면서 그 눈높이에 맞춰 공연의 기획 방식도 진화하고 있다. 엄숙한 무대를 벗어나 공감각적 몰입을 극대화한 공연들이 각광받고 있는 것이다. 대표적인 사례가 국내 최대 몰입형 미디어아트 극장인 ‘빛의 시어터’에서 개최된 ‘클래식 위크엔즈(CLASSIC WEEKENDS)’ 페스티벌이다. 1500평 공간과 21m 층고를 꽉 채운 360도 미디어아트 프로젝션 맵핑(건물이나 공간 표면에 영상을 투사해 입체적으로 구현하는 영상 기술)이 결합된 이 공연은 정상급 아티스트들의 연주와 더불어 환상적인 빛의 향연이 펼쳐졌다. 디지털 영상에 익숙한 현 관객들을 맞아 클래식 공연도 보다 새롭고 세련된 방식을 시도하고 있는 것이다.</p>
+        </div>
+      </div>
+
+      <div class="article-img-wrap mx-width-680">
+        <img src="img/sub/06/02.png" alt="클래식 공연 사진2">
+      </div>
+
+      <div class="article-content">
+        <h3 class="article-subtitle">남들 다 가는 여행이 결국 답이다</h3>
+        <div class="article-body">
+          <p>이런 상황 속에서 당신이 부모님과의 스페인 여행을 고민하고 있다면, 이미 늦었는지도 모른다. 2014년 전국의 자녀들에게 엄청난 과제를 남긴 <꽃보다 할배> 스페인 편을 시작으로, 자식과의 스페인 여행을 상상하는 대한민국 부모님들은 기하급수적으로 늘었다. 넘쳐나는 콘텐츠만큼 부모님 주변에는 스페인 다녀온 것을 자랑하는 친구들로 넘쳐날 것이다. 여기서 어리석게 ‘현지인만 아는’, ‘여행 고수만 아는’ 키워드에 꽂혀서 아직 한국에 알려지지 않은 도시로 우회하는 전략은 슬기롭지 못하다.
+            <br> 효도 관광은 귀국 후, 자식들이 없을 때 완성된다. 친구들의 스페인 여행 토크에 자연스럽게 참여할 수 있을 때, 내가 다녀온 장소가 TV에 나올 때, 한국의 스페인 식당에서 아는 척할 수 있을 때. 여러분은 그제야 비로소 효자가 된다. 여행 중에는 다리 아픈 부모를 스페인 한복판에 두고 가고도 남을 천하의 불효자 취급을 받을 가능성이 높다. 하지만 귀국과 함께 급속도로 모든 기억은 미화되고, 자식 자랑의 장이 열리는 순간 부모님은 여행지에서와 입장을 바꿀 것이다. “하몽 맛있잖아. 우리 딸이 그렇게 먹어봐야 된다면서 직접 썰어 주는 데를 데려갔었거든. 처음에는 비리고 이상해도 돌아오니까 그렇게 생각이 나.” 그러므로 당신은 스페인에 가긴 가야 한다. 늦었어도 남들 가는 곳은 다 가야 한다.</p>
+        </div>
+      </div>
+
+      <div class="article-img-wrap mx-width-680">
+        <img src="img/sub/06/03.png" alt="클래식 공연 사진3">
+      </div>
+
+      <div class="article-content">
+        <h3 class="article-subtitle">국제 콩쿠르를 휩쓰는 K-클래식의 탄생</h3>
+        <div class="article-body">
+          <p>클래식이 ‘조용한 취향’을 찾는 대중에게 매력적인 콘텐츠가 될 수 있었던 또 다른 강력한 요인은 바로 국제 무대를 제패하고 있는 K-클래식 젊은 아티스트들의 눈부신 활약이다. 최근 수년간 한국의 클래식 아티스트들이 거둔 성과는 전 악기와 성악 부문에 걸쳐 이뤄지는 압도적인 양상을 보여줬다. 그리고 이들의 예술적 성취는 거대한 팬덤 형성과 공연장 매진 사태를 일으키는 원동력이 되고 있다.
+            <br> 최근 몇 년간의 성과만 봐도 독보적이다. 2023년 세계 3대 콩쿠르 중 하나인 러시아 차이콥스키 국제 콩쿠르에서는 김계희(바이올린 1위), 이영은(첼로 1위), 최연수(성악 1위)가 나란히 정상에 오르며 무려 3개 부문을 동시 석권하는 쾌거를 이루었고, 2024년 정통 클래식 본고장 독일의 ARD 국제 음악 콩쿠르에서는 박사무엘이 성악 부문 1위를 차지했으며, 스위스 제네바 국제 콩쿠르에서는 성악 부문 김정래(2위)와 작곡 부문 유상민(3위)이 두각을 나타냈다. 또한, 2024년 제오르제 에네스쿠 국제 콩쿠르 바이올린 부문에서는 이현정이 역대 최연소 준우승이라는 경이로운 기록을 세웠고, 최지은은 2024년 이탈리아 부세토 베르디 국제 성악 콩쿠르 우승에 이어 2025년 스페인 프란치스코 비냐스 국제 성악 콩쿠르까지 연이어 석권하는 놀라운 기량을 보여줬다. 한편 이미 세계 무대에서 입지를 굳힌 피아니스트 조성진 역시 꾸준한 활동을 이어가고 있다. 2026년 3월 통영국제음악제를 비롯해 해외 주요 공연장에서 리사이틀을 이어가며 K-클래식의 위상을 확장하고 있다.</p>
+        </div>
+      </div>
+
+
+      <div class="article-img-wrap mx-width-680">
+        <img src="img/sub/06/04.png" alt="클래식 공연 사진4">
+      </div>
+
+
+       <div class="article-content">
+        <h3 class="article-subtitle" >&nbsp;</h3>
+        <div class="article-body">
+          <p>올해 클래식 시장은 이러한 ‘조용한 취향’과 높아진 예술적 눈높이를 가진 관객들에 맞춰 전례 없이 다양해질 전망이다. 예술의 전당의 올해 라인업은 이러한 클래식 시장의 성장을 단적으로 보여준다. 세계적인 신드롬을 일으키고 있는 임윤찬 피아노 리사이틀(5월)은 물론이고, 세계적인 피아노 거장들을 엄선해 집중 조명하는 SAC 월드스타시리즈(5월, 6월, 9월), 20세기 바이올린 역사의 산증인인 거장 핀커스 주커만과 KG필하모닉의 협연(5월), 러시아를 대표하는 두 피아니스트 미로슬라브 꿀띠쉐프와 세르게이 타라소프의 협연(6월) 등등 다채로운 스펙트럼의 공연들이 펼쳐질 예정이다.
+            <br> 최근 클래식 음악의 재유행과 확산 현상은, 단기적인 레트로 마케팅이나 소수 문화 애호가들의 과시적 소비가 만들어낸 일시적인 유행이 아니다. 그보다는 도파민 과잉의 시대에 정서적인 안정과 균형을 지켜내려는 반작용에 가깝다. 디톡스에 대한 대중들의 요구는 현대의 속도와 소음, 자극과 정반대에 위치한 클래식 음악에 눈을 돌리게 만들었다. 정신없이 돌아가고 소비되는 디지털 사회 속에서 클래식은 자극 없이 인간 내면의 가장 깊은 곳을 조용히 어루만진다. 클래식이 제공하는 고요한 시간과 정서적 위로는 파편화된 현대인들의 삶에 균형을 잡아주는 치유의 힘을 발휘한다. 그래서 디지털 사회에 이미 깊숙이 들어와있는 우리에게 현재 불고 있는 클래식 열풍은 일회적인 유행 그 이상이 될 가능성이 높다. 클래식이라는 조용한 취향이 지금 가장 트렌디한 취향이면서, 앞으로도 확산될 하나의 문화가 될 거라 여겨지는 이유다.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="yellow-box">
+ 
+      <!-- 배경 악기 이미지 -->
+      <img class="inst inst-violin"   src="/img/sub/06/instrument02.png" alt="">
+      <img class="inst inst-horn"     src="/img/sub/06/instrument01.png" alt="">
+      <img class="inst inst-piano"    src="/img/sub/06/instrument03.png" alt="">
+      <img class="inst inst-trombone" src="/img/sub/06/instrument04.png" alt="">
+    
+      <!-- 본문 컨텐츠 -->
+      <div class="inner">
+        <img class="title-deco" src="/img/sub/06/deco.png" alt="제목 데코">
+        <h2 class="title">지금 놓치면 안 될 클래식 공연</h2>
+    
+        <!-- 달력 레이아웃 (이미지 추후 삽입) -->
+        <div class="grid">
+
+          <!-- 1 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">6월 9일</span>
+                <span class="cal-venue">예술의전당 콘서트홀</span>
+              </div>
+              <div class="cal-title">
+                <h3>미로슬라브 꿀띠쉐프 X</h3>
+                <h3>세르게이 타라소프</h3>
+              </div>
+              <p class="cal-desc">러시아 피아니즘의 정수를 보여주는 두 거장이 만나 라흐마니노프의 폭발적인 에너지를 선보입니다. 세 개의 협주곡을 한자리에서 조망하며 러시아 음악 특유의 압도적인 스케일을 선사할 예정입니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 2 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">6월 18~21일</span>
+                <span class="cal-venue">예술의전당 오페라극장</span>
+              </div>
+              <div class="cal-title">
+                <h3>국립오페라단</h3>
+                <h3><피터 그라임스></h3>
+              </div>
+              <p class="cal-desc">20세기 오페라의 걸작이자 국내 초연작으로, 집단 폭력 앞에 놓인 개인의 고립을 서늘하게 그려냅니다. 차가운 바다를 닮은 강렬한 음악과 현대적인 연출이 만나 숨 막히는 몰입감을 선사합니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 3 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">6월 24일</span>
+                <span class="cal-venue">예술의전당 IBK챔버홀</span>
+              </div>
+              <div class="cal-title">
+                <h3>2026 SAC 월드스타시리즈 -</h3>
+                <h3>존 오코너 리사이틀</h3>
+              </div>
+              <p class="cal-desc">베토벤 해석의 권위자 존 오코너가 전하는 깊이 있고 서정적인 피아니즘을 만날 수 있는 무대입니다. 베토벤부터 아일랜드 작곡가 존 필드의 녹턴까지, 정통 클래식의 단단한 아름다움을 전합니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 4 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">7월 14일, 19일</span>
+                <span class="cal-venue">롯데콘서트홀</span>
+              </div>
+              <div class="cal-title">
+                <h3>조성진 리사이틀 &</h3>
+                <h3>체임버 콘서트</h3>
+              </div>
+              <p class="cal-desc">2026 상주 음악가로 선정된 조성진이 베를린 필 주역들과의 실내악(14일) 및 독주회(19일)를 가집니다. 바흐부터 쇼팽까지 아우르는 방대한 프로그램으로 롯데콘서트홀 개관 10주년의 정점을 장식합니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 5 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">7월 23~8월 2일</span>
+                <span class="cal-venue">평창 알펜시아 콘서트홀,<br> 대관령연명</span>
+              </div>
+                <div class="cal-title">
+                <h3>2026 평창대관령음악제</h3>
+                <h3><계승과 혁신></h3>
+              </div>
+              <p class="cal-desc">양성원 예술감독이 이끄는 이번 축제는 클래식의 전통과 현대적 변주를 'Legacy and Innovation'이라는 주제로 풀어냅니다. 에스메 콰르텟 등 세계적 아티스트들이 대관령의 시원한 바람 속에 강렬한 연주를 펼칩니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 6 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">9월 30일</span>
+                <span class="cal-venue">예술의전당 IBK챔버홀</span>
+              </div>
+              <div class="cal-title">
+                <h3 style="font-size: 18px;">2026 SAC 월드스타시리즈 -</h3>
+                <h3 style="font-size: 18px; letter-spacing: -1px;">알렉산더 가지예프 피아노 리사이틀</h3>
+              </div>
+              <p class="cal-desc">쇼팽 콩쿠르 우승자이자 철학적 해석으로 정평이 난 가지예프가 선보이는 밀도 높은 피아노 독주 무대입니다. 도파민 넘치는 일상에서 벗어나 사색과 영감을 선사하는 '디톡스' 같은 선율을 만날 수 있습니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 7 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">10월 6일</span>
+                <span class="cal-venue">롯데콘서트홀</span>
+              </div>
+              <div class="cal-title">
+                <h3>올리비에 라트리 &</h3>
+                <h3>이신영 포핸즈 오르간 무대</h3>
+              </div>
+              <p class="cal-desc">파리 노트르담 대성당의 상임 오르가니스트인 거장 라트리와 이신영 부부가 선보이는 특별한 듀오 무대입니다. 네 손이 만드는 웅장한 사운드를 통해 파이프 오르간이 지닌 입체적인 음향의 극치를 보여줍니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 8 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">10월 22일</span>
+                <span class="cal-venue">롯데콘서트홀</span>
+              </div>
+              <div class="cal-title">
+                <h3>헬싱키 필하모닉 오케스트라</h3>
+                <h3>내한 공연</h3>
+              </div>
+              <p class="cal-desc">창단 144년 만에 첫 내한하는 핀란드 명문 악단이 지휘자 사라스테와 바이올리니스트 양인모와 함께 상륙합니다. 북유럽 클래식의 정수를 담은 시벨리우스의 선율로 깊어가는 가을밤의 정취를 더할 예정입니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+          <!-- 9 -->
+          <div class="cal">
+            <img class="cal-top" src="/img/sub/06/note-top.png" alt="">
+            <div class="cal-body">
+              <div class="cal-badge">
+                <span class="cal-date">11월 7일~8일</span>
+                <span class="cal-venue">예술의전당 콘서트홀</span>
+              </div>
+              <div class="cal-title">
+                <h3>마린 알솝 & 필라델피아</h3>
+                <h3>오케스트라</h3>
+              </div>
+              <p class="cal-desc">거장 지휘자 마린 알솝과 미국 명문 악단 필라델피아가 내한하여 2026년 클래식 시장의 대미를 장식합니다. 특히 피아니스트 임윤찬과의 협연이 예정되어 있어 올해 가장 뜨거운 피날레가 될 것으로 기대됩니다.</p>
+            </div>
+            <img class="cal-bottom" src="/img/sub/06/note-bottom.png" alt="">
+          </div>
+
+        </div>
+      </div>
+    
+    </div>
+
+ </div>
+
+
+
+
+    <div class="thumb-wrap">
+      <!-- THUMB CARDS -->
+      <div class="thumb-section">
+        <div class="thumb-card thumb-bg-1">
+          <div class="thumb-card-inner">
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+                <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="thumb-text">
+              <p class="thumb-title">연금 생에 설계 가이드</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+          </div>
+        </div>
+        <div class="thumb-card thumb-bg-2">
+          <div class="thumb-card-inner right">
+            <div class="thumb-text">
+              <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+              <p class="thumb-tag">자동가입 여부 확인</p>
+            </div>
+            <div class="thumb-arrow">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+                <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- 푸터 -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="내곁에 국민연금">
+    </div>
+    <div class="footer-info">
+      국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+      국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+      등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+      205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+      © nps.or.kr. All rights reserved.
+    </div>
+    <div class="footer-sns">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>AOS.init({ once: true });</script>
+<script>
+
+function setCalEqualHeights() {
+    const grid = document.querySelector('#sub-06 .yellow-box .grid');
+    if (!grid) return;
+
+    const cals = Array.from(grid.querySelectorAll('.cal'));
+    if (!cals.length) return;
+
+    // CSS 브레이크포인트와 일치
+    const width = window.innerWidth;
+    let perRow = 3;
+    if (width <= 650) perRow = 1;
+    else if (width <= 1080) perRow = 2;
+
+    // 높이 초기화
+    cals.forEach(cal => {
+        ['cal-badge', 'cal-title', 'cal-desc'].forEach(cls => {
+            const el = cal.querySelector('.' + cls);
+            if (el) el.style.height = 'auto';
+        });
+    });
+
+    // reflow 강제 후 높이 측정
+    void grid.offsetHeight;
+
+    for (let i = 0; i < cals.length; i += perRow) {
+        const row = cals.slice(i, i + perRow);
+
+        ['cal-badge', 'cal-title', 'cal-desc'].forEach(cls => {
+            let max = 0;
+            row.forEach(cal => {
+                const el = cal.querySelector('.' + cls);
+                if (el) max = Math.max(max, el.offsetHeight);
+            });
+            row.forEach(cal => {
+                const el = cal.querySelector('.' + cls);
+                if (el) el.style.height = max + 'px';
+            });
+        });
+    }
+}
+
+// 폰트 로드 후 실행 (폰트 로드 전후로 높이 달라질 수 있음)
+window.addEventListener('load', setCalEqualHeights);
+document.fonts.ready.then(setCalEqualHeights);
+
+// resize debounce
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setCalEqualHeights, 100);
+});
+
+</script>
+<script src="js/common.js"></script>
+
+</body>
+</html>

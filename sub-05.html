@@ -1211,38 +1211,6 @@
 <script>AOS.init({ once: true });</script>
 <script>
 
-  function openModal(id) {
-    var overlay = document.getElementById(id);
-    if (!overlay) return;
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
- 
-  function closeModal(id) {
-    var overlay = document.getElementById(id);
-    if (!overlay) return;
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
- 
-  function handleOverlayClick(event, id) {
-    if (event.target === document.getElementById(id)) {
-      closeModal(id);
-    }
-  }
- 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('#sub-05 .modal-overlay.is-open').forEach(function(el) {
-        el.classList.remove('is-open');
-      });
-      document.body.style.overflow = '';
-    }
-  });
-
-
-
-
   (function () {
   var container = document.getElementById('sliderContainer');
   var track     = document.getElementById('sliderTrack');
