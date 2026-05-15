@@ -22,9 +22,9 @@
 #sub-06 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
 #sub-06 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
 #sub-06 .title-wrap { grid-column: 1 / 3; grid-row: 2; text-align: center; padding: 0 50px 5px 50px; position: relative; z-index: 1; background: #fff; }
-#sub-06 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; word-break: keep-all; }
+#sub-06 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0;  }
 #sub-06 .section-divider { border: none; border-top: 1px solid #222; margin: 30px auto; max-width: 980px; }
-#sub-06 .nps-desc-wrap { text-align: right; padding: 0 50px 60px 50px; }
+#sub-06 .nps-desc-wrap { text-align: right; padding: 0 50px 80px 50px; }
 #sub-06 .nps-desc { max-width: 530px; font-size: 18px; color: #D9421C; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 600; text-align: left;}
 #sub-06 .nps-desc strong { font-weight: 700; }
 #sub-06 .body-wrap { }
@@ -36,11 +36,11 @@
 @media (max-width: 768px) {
   #sub-06 .pc-br { display: none; }
   #sub-06 .mob-br { display: block; }
-  #sub-06 .nps-label-wrap { margin: 70px auto 40px; }
+  #sub-06 .nps-label-wrap { margin: 70px auto 15px; }
   #sub-06 .nps-label { font-size: 16px;}
   #sub-06 .nps-author { font-size: 16px; }
   #sub-06 .title { font-size: 26px; font-weight: 500; margin-bottom: 40px; }
-  #sub-06 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%; padding: 0 20px 40px 20px; }
+  #sub-06 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%; padding: 0 20px 60px 20px; }
   #sub-06 .nps-desc-wrap { text-align: left; padding: 20px 0 40px 0; }
   #sub-06 .section-divider { display: none; }
   #sub-06 .nps-wrap-inner { padding: 0;}
@@ -55,14 +55,15 @@
 #sub-06 .article-img-wrap { width: 100%; overflow: hidden; margin-bottom: 28px; }
 #sub-06 .article-img-wrap img { width: 100%; height: auto; display: block; }
 #sub-06 .article-content { padding: 0; }
-#sub-06 .article-subtitle { font-size: 24px; font-weight: 600; color: #222222; margin: 75px 0 0 0; line-height: 1.5; }
-#sub-06 .article-body p { font-size: 18px; color: #222222; line-height: 1.85; margin-bottom: 16px; word-break: keep-all; }
+#sub-06 .article-subtitle { font-size: 24px; font-weight: 600; color: #222222; margin-top: 75px; line-height: 1.5; }
+#sub-06 .article-body p { font-size: 18px; color: #222222; line-height: 1.85; margin-bottom: 16px;  }
 #sub-06 .article-body p:last-child { margin-bottom: 0; }
 
 @media (max-width: 768px) {
   #sub-05 .nps-wrap-inner { padding: 0 20px;}
   #sub-05 .title-wrap { padding: 10px 20px 5px 20px; }
   #sub-06 .article-content { padding: 0 20px; }
+  #sub-06 .article-subtitle { margin-top: 50px; }
 }
 
 #sub-06 .yellow-box { position: relative; background-color: #FFEFB9;  padding: 100px 0 0 30px; margin-top: 140px; }
@@ -71,10 +72,10 @@
 #sub-06 .yellow-box .title { font-size: 26px; font-weight: 700; text-align: center; margin-bottom: 60px; color: #333; }
 #sub-06 .yellow-box .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 #sub-06 .yellow-box .inst { position: absolute; pointer-events: none; z-index: 1; }
-#sub-06 .yellow-box .inst-violin { width: 220px; top: 75px; left: -45px; }
+#sub-06 .yellow-box .inst-violin { width: 300px; top: 280px; left: -60px; }
 #sub-06 .yellow-box .inst-horn { width: 450px; top: 40px; right: -15px; }
-#sub-06 .yellow-box .inst-piano { width: 570px; bottom: 200px; left: -70px; }
-#sub-06 .yellow-box .inst-trombone { width: 270px; bottom: 100px; right: -31px; transform: rotate(6deg); transform-origin: center center; }
+#sub-06 .yellow-box .inst-piano { width: 750px; bottom: 300px; left: -70px; }
+#sub-06 .yellow-box .inst-trombone { width: 400px; bottom: -10px; right: -40px; transform: rotate(6deg); transform-origin: center center; }
 #sub-06 .yellow-box .explan { font-size: 16px; color: #535353; margin-top: 30px; text-align: center;}
 
 
@@ -92,12 +93,14 @@
 /* 제목 */
 #sub-06 .yellow-box .cal-title { display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 30px;}
 #sub-06 .yellow-box .cal-title h3 { white-space: nowrap; margin: 0 auto; font-size: 21px;font-weight: bold; display: inline-block; box-shadow: inset 0 -8px 0 #FFF600; line-height: 1.6; }
-#sub-06 .yellow-box .cal-desc { font-size: 14px; color: #444; line-height: 1.7; margin: 0; word-break: keep-all; }
+#sub-06 .yellow-box .cal-desc { font-size: 14px; color: #444; line-height: 1.7; margin: 0; }
 
 
 @media (max-width: 1080px) {
-  #sub-06 .yellow-box .grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
-
+  #sub-06 .yellow-box .grid { grid-template-columns: repeat(2, 1fr); }
+  #sub-06 .yellow-box .inst-piano { width: 500px; }
+  #sub-06 .yellow-box .inst-horn { width: 350px; top: 600px; }
+#sub-06 .mx-width-680 { margin: 50px auto 0; }
 }
 
 /* 768px */
@@ -109,8 +112,8 @@
 
   #sub-06 .yellow-box .inst-violin { width: 300px; top: 1000px; left: -100px; }
   #sub-06 .yellow-box .inst-horn { width: 200px; top: 25px; right: -15px; }
-  #sub-06 .yellow-box .inst-piano { width: 300px; bottom: 500px; left: -50px; transform: rotate(60deg); }
-  #sub-06 .yellow-box .inst-trombone { width: 200px; bottom: 1000px; right: -20px;  }
+  #sub-06 .yellow-box .inst-piano { width: 300px; bottom: 500px; left: -50px; transform: rotate(45deg); }
+  #sub-06 .yellow-box .inst-trombone { width: 300px; bottom: 750px; right: -70px;  }
 }
  
 @media (max-width: 650px) {
@@ -248,8 +251,7 @@
     <div class="body-wrap">
        <div class="nps-desc-wrap nps-wrap-inner">
           <p class="nps-desc">
-            똑똑하게 미루면 연금액이 최대 36%까지 늘어난다. 지금 당장 받는 것보다
-            더 큰 내일을 설계하고 싶다면 '연기연금'의 5가지 핵심 키워드에서 그 해답을 찾을 수 있다.
+            클래식은 어딘가 고전적인 취향처럼 여겨져 왔지만 최근 들어 이러한 인식은 바뀌고 있다. 2030세대의 클래식에 대한 열광을 보면 현재 클래식이 가장 트렌디한 취향이 되었다는 것을 실감하게 된다.
           </p>
         </div>
         
@@ -274,10 +276,10 @@
       </div>
 
       <div class="article-content">
-        <h3 class="article-subtitle">남들 다 가는 여행이 결국 답이다</h3>
+        <h3 class="article-subtitle">숏폼 시대의 반작용, <br class="mob-br">‘디톡스 문화’로서의 클래식</h3>
         <div class="article-body">
-          <p>이런 상황 속에서 당신이 부모님과의 스페인 여행을 고민하고 있다면, 이미 늦었는지도 모른다. 2014년 전국의 자녀들에게 엄청난 과제를 남긴 <꽃보다 할배> 스페인 편을 시작으로, 자식과의 스페인 여행을 상상하는 대한민국 부모님들은 기하급수적으로 늘었다. 넘쳐나는 콘텐츠만큼 부모님 주변에는 스페인 다녀온 것을 자랑하는 친구들로 넘쳐날 것이다. 여기서 어리석게 ‘현지인만 아는’, ‘여행 고수만 아는’ 키워드에 꽂혀서 아직 한국에 알려지지 않은 도시로 우회하는 전략은 슬기롭지 못하다.
-            <br> 효도 관광은 귀국 후, 자식들이 없을 때 완성된다. 친구들의 스페인 여행 토크에 자연스럽게 참여할 수 있을 때, 내가 다녀온 장소가 TV에 나올 때, 한국의 스페인 식당에서 아는 척할 수 있을 때. 여러분은 그제야 비로소 효자가 된다. 여행 중에는 다리 아픈 부모를 스페인 한복판에 두고 가고도 남을 천하의 불효자 취급을 받을 가능성이 높다. 하지만 귀국과 함께 급속도로 모든 기억은 미화되고, 자식 자랑의 장이 열리는 순간 부모님은 여행지에서와 입장을 바꿀 것이다. “하몽 맛있잖아. 우리 딸이 그렇게 먹어봐야 된다면서 직접 썰어 주는 데를 데려갔었거든. 처음에는 비리고 이상해도 돌아오니까 그렇게 생각이 나.” 그러므로 당신은 스페인에 가긴 가야 한다. 늦었어도 남들 가는 곳은 다 가야 한다.</p>
+          <p>최근 불고 있는 클래식 열풍의 원인에는 아이러니하게도 현 사회의 ‘도파민 과잉’ 현상이 자리 잡고 있다. 즉각적이고 강렬한 자극을 쉴 새 없이 쏟아내는 15초 남짓한 숏폼 콘텐츠의 홍수는 심리적 피로감을 불러일으킨다. 그래서 디지털 네이티브인 2030세대들은 그 반작용으로 디톡스 문화를 찾기 시작했다. 일부러 스마트폰을 맡겨 일정 시간 동안 사용할 수 없게 하는 북카페를 찾고, 귓속말을 포함한 일체의 대화를 전면 금지하고 포스트잇 필담만 허용하는 카페에서 조용한 시간을 보낸다. 기꺼이 비용을 지불하고서라도 소음과 자극이 차단된 ‘고요함’과 ‘정적’의 시간을 가지려는 것이다.
+            <br> 클래식 음악은 이들이 선택할 수 있는 가장 우아하고 완벽한 ‘느린 콘텐츠’로 급부상했다. 보다 깊게 파고들어야 더 깊이 있게 이해할 수 있는 클래식의 특징은 이들이 좋아하는 것을 깊게 파고들어가는 ‘디깅(Digging) 문화’와도 맞물려 힘을 발휘했다. 곡의 구조와 감정선을 이해하기 위해 작곡가 특유의 작품 번호(비발디의 RV, 베토벤의 WoO, 모차르트의 K 등)를 학습하고, 악장 간의 유기적인 서사를 인지해 음악을 듣는 식이다. 한편 클래식 선율은 복잡하고 불안한 현대인들의 내면을 차분히 가라앉히는 치유의 매개체이기도 하다. 낮 동안 과도하게 자극받은 신경계를 어루만지는 몽환적이고 서정적인 ‘녹턴(야상곡)’, 인간의 근원적인 슬픔을 소재로 거대한 철학적 사유를 제공하는 ‘레퀴엠(진혼곡)’, 억눌린 감정의 분출을 돕는 오페라의 ‘아리아’ 등은 상처받고 지친 우리들에게 강력한 정서적 안식과 카타르시스를 선사한다.</p>
         </div>
       </div>
 
@@ -286,7 +288,7 @@
       </div>
 
       <div class="article-content">
-        <h3 class="article-subtitle">국제 콩쿠르를 휩쓰는 K-클래식의 탄생</h3>
+        <h3 class="article-subtitle">국제 콩쿠르를 휩쓰는 <br class="mob-br">K-클래식의 탄생</h3>
         <div class="article-body">
           <p>클래식이 ‘조용한 취향’을 찾는 대중에게 매력적인 콘텐츠가 될 수 있었던 또 다른 강력한 요인은 바로 국제 무대를 제패하고 있는 K-클래식 젊은 아티스트들의 눈부신 활약이다. 최근 수년간 한국의 클래식 아티스트들이 거둔 성과는 전 악기와 성악 부문에 걸쳐 이뤄지는 압도적인 양상을 보여줬다. 그리고 이들의 예술적 성취는 거대한 팬덤 형성과 공연장 매진 사태를 일으키는 원동력이 되고 있다.
             <br> 최근 몇 년간의 성과만 봐도 독보적이다. 2023년 세계 3대 콩쿠르 중 하나인 러시아 차이콥스키 국제 콩쿠르에서는 김계희(바이올린 1위), 이영은(첼로 1위), 최연수(성악 1위)가 나란히 정상에 오르며 무려 3개 부문을 동시 석권하는 쾌거를 이루었고, 2024년 정통 클래식 본고장 독일의 ARD 국제 음악 콩쿠르에서는 박사무엘이 성악 부문 1위를 차지했으며, 스위스 제네바 국제 콩쿠르에서는 성악 부문 김정래(2위)와 작곡 부문 유상민(3위)이 두각을 나타냈다. 또한, 2024년 제오르제 에네스쿠 국제 콩쿠르 바이올린 부문에서는 이현정이 역대 최연소 준우승이라는 경이로운 기록을 세웠고, 최지은은 2024년 이탈리아 부세토 베르디 국제 성악 콩쿠르 우승에 이어 2025년 스페인 프란치스코 비냐스 국제 성악 콩쿠르까지 연이어 석권하는 놀라운 기량을 보여줬다. 한편 이미 세계 무대에서 입지를 굳힌 피아니스트 조성진 역시 꾸준한 활동을 이어가고 있다. 2026년 3월 통영국제음악제를 비롯해 해외 주요 공연장에서 리사이틀을 이어가며 K-클래식의 위상을 확장하고 있다.</p>
@@ -300,7 +302,7 @@
 
 
        <div class="article-content">
-        <h3 class="article-subtitle" >&nbsp;</h3>
+        <h3 class="article-subtitle" style="margin-top:0">&nbsp;</h3>
         <div class="article-body">
           <p>올해 클래식 시장은 이러한 ‘조용한 취향’과 높아진 예술적 눈높이를 가진 관객들에 맞춰 전례 없이 다양해질 전망이다. 예술의 전당의 올해 라인업은 이러한 클래식 시장의 성장을 단적으로 보여준다. 세계적인 신드롬을 일으키고 있는 임윤찬 피아노 리사이틀(5월)은 물론이고, 세계적인 피아노 거장들을 엄선해 집중 조명하는 SAC 월드스타시리즈(5월, 6월, 9월), 20세기 바이올린 역사의 산증인인 거장 핀커스 주커만과 KG필하모닉의 협연(5월), 러시아를 대표하는 두 피아니스트 미로슬라브 꿀띠쉐프와 세르게이 타라소프의 협연(6월) 등등 다채로운 스펙트럼의 공연들이 펼쳐질 예정이다.
             <br> 최근 클래식 음악의 재유행과 확산 현상은, 단기적인 레트로 마케팅이나 소수 문화 애호가들의 과시적 소비가 만들어낸 일시적인 유행이 아니다. 그보다는 도파민 과잉의 시대에 정서적인 안정과 균형을 지켜내려는 반작용에 가깝다. 디톡스에 대한 대중들의 요구는 현대의 속도와 소음, 자극과 정반대에 위치한 클래식 음악에 눈을 돌리게 만들었다. 정신없이 돌아가고 소비되는 디지털 사회 속에서 클래식은 자극 없이 인간 내면의 가장 깊은 곳을 조용히 어루만진다. 클래식이 제공하는 고요한 시간과 정서적 위로는 파편화된 현대인들의 삶에 균형을 잡아주는 치유의 힘을 발휘한다. 그래서 디지털 사회에 이미 깊숙이 들어와있는 우리에게 현재 불고 있는 클래식 열풍은 일회적인 유행 그 이상이 될 가능성이 높다. 클래식이라는 조용한 취향이 지금 가장 트렌디한 취향이면서, 앞으로도 확산될 하나의 문화가 될 거라 여겨지는 이유다.</p>
