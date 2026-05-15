@@ -20,7 +20,7 @@
 #sub-03 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
 #sub-03 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
 #sub-03 .title-wrap { grid-column: 1 / 3; grid-row: 2; text-align: center; padding: 0 0 5px 0; position: relative; z-index: 1; background: #fff; }
-#sub-03 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; word-break: keep-all; }
+#sub-03 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; }
 #sub-03 .section-divider { border: none; border-top: 1px solid #222; margin: 30px 0; }
 #sub-03 .nps-desc-wrap { text-align: right; padding: 0 0 60px 0; }
 #sub-03 .nps-desc { max-width: 530px; font-size: 18px; color: #2215C9; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 600; text-align: left;}
@@ -115,7 +115,8 @@
 #sub-03 .modal-overlay.is-open { opacity: 1; pointer-events: all; }
  
 /* 모달 카드 공통 */
-#sub-03 .modal-card { position: relative; background: #fff; border-radius: 50px; padding: 30px 0; width: 100%; max-width: 430px; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.20); transform: translateY(16px) scale(0.97); transition: transform 0.25s ease; border: 1px solid #000000; min-height: 470px;}
+#sub-03 .modal-card { position: relative; background: #fff; border-radius: 50px; padding: 30px 0; width: 100%; max-width: 430px; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.20); transform: translateY(16px) scale(0.97); transition: transform 0.25s ease; border: 1px solid #000000; min-height: 470px; scrollbar-width: none; -ms-overflow-style: none;}
+#sub-03 .modal-card::-webkit-scrollbar { display: none; }
 #sub-03 .modal-overlay.is-open .modal-card { transform: translateY(0) scale(1); }
  
 /* 모달 닫기 버튼 */
@@ -181,7 +182,7 @@
  
 /* 체크포인트 모달 안내 텍스트 */
 #sub-03 .modal-important-title { font-size: 17px; font-weight: 800; color: #1a4a6a; margin: 0 0 8px 0; letter-spacing: -0.02em; }
-#sub-03 .modal-important-body { font-size: 18px; line-height: 1.7; margin: 5px 0 20px 0; word-break: keep-all; }
+#sub-03 .modal-important-body { font-size: 18px; line-height: 1.7; margin: 5px 0 20px 0; }
  
 /* ====== 반응형 모달 ====== */
 @media (max-width: 768px) {
