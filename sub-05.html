@@ -33,10 +33,11 @@
 #sub-05 .body-wrap { }
 
 /* ====== 반응형 ====== */
-@media (max-width: 1280px) {
+@media (max-width: 768px) {
+  #sub-05 .nps-wrap-inner { padding: 0 20px; }
   #sub-05 .pc-br { display: none; }
   #sub-05 .mob-br { display: block; }
-  #sub-05 .nps-label-wrap { padding: 60px 0 80px 0; max-width: 300px;}
+  #sub-05 .nps-label-wrap { padding: 60px 0 10px 0 !important; max-width: 300px;}
   #sub-05 .nps-label { font-size: 16px;}
   #sub-05 .nps-author { font-size: 16px; }
   #sub-05 .title { font-size: 26px; font-weight: 500; }
@@ -51,7 +52,7 @@
 #sub-05 .article-img-wrap img { width: 100%; height: auto; display: block; }
 #sub-05 .article-content { padding: 0; }
 #sub-05 .article-subtitle { font-size: 24px; font-weight: 700; color: #222222; margin: 60px 0 5px 0; line-height: 1.5; }
-#sub-05 .article-body p { font-size: 18px; color: #222222; line-height: 1.85; margin-bottom: 16px; word-break: keep-all; }
+#sub-05 .article-body p { font-size: 18px; color: #222222; line-height: 1.85; margin-bottom: 16px; }
 #sub-05 .article-body p:last-child { margin-bottom: 0; }
 #sub-05 .article-img-double { display: flex; gap: 12px; margin: 70px 0; }
 #sub-05 .article-img-double .article-img-item { flex: 1; overflow: hidden; }
@@ -62,7 +63,6 @@
   #sub-05 .article-img-double { flex-direction: column; margin: 50px 0; }
   #sub-05 .article-img-double .article-img-item { height: 260px; }
   #sub-05 .article-img-wrap.two { margin: 50px 0; }
-  #sub-05 .nps-wrap-inner { padding: 0 20px;}
   #sub-05 .title-wrap { padding: 10px 20px 5px 20px; }
 }
 
@@ -81,7 +81,7 @@
 #sub-05 .card:nth-child(5) { grid-column: 2 / 4; }
 
 /* ── Card ── */
-#sub-05 .card { background: #fff; border-radius: 15px; padding: 45px 35px 30px; position: relative; box-shadow: 0 2px 12px rgba(0, 0, 0, .06); transition: transform .25s, box-shadow .25s; }
+#sub-05 .card { background: #fff; border-radius: 15px; padding: 45px 35px 30px; position: relative; transition: transform .25s, box-shadow .25s; }
 #sub-05 .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0, 0, 0, .10); }
 #sub-05 .card-icon { width: auto; height: 53px; position: absolute; top: 30px; right: 30px; object-fit: contain; }
 #sub-05 .card-icon.one { top: 46px; }
@@ -105,7 +105,7 @@
 /* ── 고정 헤더 ── */
 #sub-05 .section-header { text-align: center; margin-bottom: 36px; }
 #sub-05 .section-header .spain-emblem { display: block; width: 80px; margin: 0 auto 14px; }
-#sub-05 .section-header .sub-text { font-size: 24px; color: #222222; line-height: 1.75; font-weight: 600; }
+#sub-05 .section-header .sub-text { font-size: 24px; color: #222222; line-height: 1.5; font-weight: 600; margin-top: 20px; }
 #sub-05 .section-header .main-title { font-size: 34px; font-weight: 700; color: #222222; letter-spacing: -0.5px; }
  
 /* ── 슬라이더 래퍼 ── */
@@ -114,20 +114,20 @@
 /* ── 화살표 ── */
 #sub-05 .arrow-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background: #000; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: box-shadow 0.2s, opacity 0.2s; }
 #sub-05 .arrow-btn:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.28); }
-#sub-05 .arrow-btn.prev { left: 0; }
-#sub-05 .arrow-btn.next { right: 0; }
+#sub-05 .arrow-btn.prev { left: 4px; }
+#sub-05 .arrow-btn.next { right: 4px; }
 #sub-05 .arrow-btn.disabled { opacity: 0.3; pointer-events: none; }
 #sub-05 .arrow-btn svg { width: 30px; height: 33px; display: block; }
  
 /* ── 흰 카드 & 슬라이드 ── */
-#sub-05 .slider-container { overflow: hidden; background: #fff; border-radius: 20px;}
+#sub-05 .slider-container { overflow: hidden; background: #FFFFFF; border-radius: 20px;}
 #sub-05 .slider-track { display: flex; transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
 #sub-05 .slide { flex-shrink: 0; flex-grow: 0;  border-radius: 20px; }
  
 /* ─────────────────────────────────
    SLIDE 1 : 지도 이미지
 ───────────────────────────────── */
-#sub-05 .slide-map { line-height: 0; display: flex; background: #ECFFC7; }
+#sub-05 .slide-map { line-height: 0; display: flex; background: #ECFFC7; display: flex; justify-content: center; align-items: center;}
 #sub-05 .slide-map img { width: 100%; height: auto; display: block; border-radius: 0; object-fit: contain; }
  
 /* ─────────────────────────────────
@@ -137,37 +137,43 @@
  
 /* 좌측: 이미지 + 정보 아이콘 */
 #sub-05 .detail-left { flex: 0 0 435px; }
-#sub-05 .detail-img-wrap { width: 100%; border-radius: 20px; overflow: hidden; aspect-ratio: 16 / 9; background: #cdd5db; }
+#sub-05 .detail-img-wrap { width: 100%; border-radius: 20px; overflow: hidden; aspect-ratio: 16 / 11; background: #cdd5db; }
 #sub-05 .detail-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 #sub-05 .detail-info-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+#sub-05 .detail-info-list.mob { display: none; }
+
+#sub-05 .detail-info-list.mob .info-icon-wrap { width: 25px; height: 25px; }
+#sub-05 .detail-info-list.mob .info-icon-wrap svg { width: 16px; height:16px; }
 #sub-05 .info-row { display: flex; align-items: center; gap: 10px; font-size: 16px; color: #222222; line-height: 1.55; letter-spacing: -0.5px; }
-#sub-05 .info-icon-wrap { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+#sub-05 .info-icon-wrap { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 #sub-05 .info-icon-wrap.clock { background: #00ABBA; }
 #sub-05 .info-icon-wrap.pin { background: #00ABBA; }
 #sub-05 .info-icon-wrap.money { background: #00ABBA; }
-#sub-05 .info-icon-wrap svg { width: 26px; height:26px; display: block; }
+#sub-05 .info-icon-wrap svg { width: 24px; height:24px; display: block; }
  
 /* 우측: 텍스트 */
 #sub-05 .detail-right { flex: 1; padding-top: 2px; }
-#sub-05 .detail-sub-label { font-size: 19px; color: #222222; margin-bottom: 5px; font-weight: 600; }
-#sub-05 .detail-place-name { font-size: 26px; font-weight: 600; color: #00ABBA; margin-bottom: 40px; line-height: 1.35; letter-spacing: -0.3px; }
+#sub-05 .detail-sub-label-pc { font-size: 18px; color: #222222; margin-bottom: 5px; font-weight: 600; }
+#sub-05 .detail-place-name-pc { font-size: 23px; font-weight: 600; color: #00ABBA; margin-bottom: 20px; line-height: 1.35; letter-spacing: -0.3px; }
+#sub-05 .detail-sub-label-mob { display: none; font-size: 15px; color: #222222; margin-bottom: 2px; font-weight: 600; }
+#sub-05 .detail-place-name-mob { display: none; font-size: 21px; font-weight: 600; color: #00ABBA; margin-bottom: 20px; line-height: 1.35; letter-spacing: -0.3px;}
 #sub-05 .detail-desc { font-size: 17px; color: #222222; line-height: 1.7; margin-bottom: 30px; font-weight: 600;}
-#sub-05 .tip-title { font-size: 17px; font-weight: 600; color: #0099c0; margin-bottom: 8px; border-bottom: 1px solid;}
+#sub-05 .tip-title { font-size: 17px; font-weight: 500; color: #0099c0; margin-bottom: 8px; border-bottom: 1px solid;}
 #sub-05 .tip-text { font-size: 17px; color: #222222; line-height: 1.78; }
  
 /* ── 도트 ── */
 #sub-05 .slider-dots { display: flex; justify-content: center; gap: 7px; margin-top: 22px; }
 #sub-05 .dot { width: 8px; height: 8px; border-radius: 50%; background: #c0c0c0; cursor: pointer; border: none; padding: 0; transition: background 0.25s, transform 0.25s; }
 #sub-05 .dot.active { background: #444; transform: scale(1.3); }
+#sub-05 .mobile-map { display: none; padding: 0 30px; background: #FFFFFF; margin-bottom: -5px; }
+#sub-05 .mobile-map img { width: 100%; height: auto;}
+#sub-05 .slider-dots { display: none; }
 
-
+/* ── Responsive ── */
 @media (max-width: 1080px) {
   #sub-05 .people-left { left: 80px; }
   #sub-05 .people-right { right: 80px; }
   #sub-05 .sky-header { padding: 0 0 210px 0; }
-}
-/* ── Responsive ── */
-@media (max-width: 1080px) {
   #sub-05 .people-left { top: 100px; left: 50%; transform: translateX(-50%);width: 170px; }
   #sub-05 .people-right { display: none; }
   #sub-05 .wrapper { padding: 50px 0 40px; }
@@ -175,14 +181,47 @@
   #sub-05 .header h1 { font-size: 20px; }
   #sub-05 .grid { grid-template-columns: 1fr; gap: 12px; }
   #sub-05 .card:nth-child(4), #sub-05 .card:nth-child(5) { grid-column: auto; }
-  #sub-05 .slider-outer { padding: 0 100px; }
-  #sub-05 .arrow-btn.next { right: 35px; }
-  #sub-05 .arrow-btn.prev { left: 35px; }
+  /* #sub-05 .slider-outer { padding: 0 100px; } */
+  #sub-05 .detail-left { flex: 0 0 300px; }
+  #sub-05 .slider-container {min-height: 500px;}
+
 }
+
+
 
 @media (max-width: 768px) {
   #sub-05 .grid { padding: 0 20px;}
   #sub-05 .thumb-section  { padding: 0 20px; }
+  #sub-05 .arrow-btn.next { right: 35px; }
+  #sub-05 .arrow-btn.prev { left: 35px; }
+
+  #sub-05 .green-wrapper {background: #FFFFFF;}
+  #sub-05 .mobile-map { display: block; }
+  #sub-05 .section-header .sub-text  { font-size: 15px; }
+  #sub-05 .section-header .main-title { font-size: 22px; }
+  #sub-05 .slider-outer { padding: 0 30px; }
+  #sub-05 .slider-container { border-radius: 0 !important; background: #D4F1FF; }
+  #sub-05 .slide-detail { flex-direction: column; gap: 0; padding: 20px 20px 30px; background: #D4F1FF;}
+  #sub-05 .detail-left { display: contents;}
+  #sub-05 .detail-img-wrap { order: 1; aspect-ratio: 16 / 9; margin-bottom: 20px;}
+  #sub-05 .detail-right { order: 2;}
+  /* #sub-05 .detail-info-list { order: 3; margin-top: 16px; gap: 10px;} */
+  #sub-05 .detail-sub-label-pc  { display: none; }
+  #sub-05 .detail-place-name-pc { display: none; }
+  #sub-05 .detail-sub-label-mob { display: block; }
+  #sub-05 .detail-place-name-mob { display: block; }
+  #sub-05 .detail-desc       { font-size: 15px; margin-bottom: 20px; }
+  #sub-05 .tip-title         { font-size: 14px; }
+  #sub-05 .tip-text          { font-size: 14px; }
+  #sub-05 .info-row          { font-size: 13px; }
+  #sub-05 .detail-info-list.pc { display: none; }
+  #sub-05 .detail-info-list.mob { display: flex; gap: 5px; margin-bottom: 50px; }
+  #sub-05 .tip-title {  border-bottom: none; border-top: 1px solid #000000; padding-top: 7px; }
+  #sub-05 .arrow-btn { width: 15px; height: 15px;}
+  #sub-05 .arrow-btn.prev { left: 7px; }
+  #sub-05 .arrow-btn.next { right: 7px; } 
+  #sub-05 .thumb-wrap { background-color: #FFFFFF; }
+
 }
 
 </style>
@@ -468,7 +507,10 @@
         <p class="sub-text">환장에서 환상으로<br>부모님을 '자랑 타임'의 주인공으로 만드는</p>
         <h2 class="main-title">바르셀로나 필수 명소</h2>
       </div>
-  
+      <!-- 모바일 전용 정적 지도 (데스크탑에서는 hidden) -->
+      <div class="mobile-map">
+        <img src="img/sub/05/map-mob.png" alt="바르셀로나 필수 명소 지도"/>
+      </div>
       <!-- 슬라이더 -->
       <div class="slider-outer">
         <button class="arrow-btn prev disabled" id="prevBtn" aria-label="이전">
@@ -492,11 +534,13 @@
             ══════════════════════════════ -->
             <div class="slide">
               <div class="slide-detail">
+                  <p class="detail-sub-label-mob">도시를 내려다보는 가장 여유로운 시작</p>
+                  <h3 class="detail-place-name-mob">구엘 공원 (Park Güell)</h3>
                 <div class="detail-left">
                   <div class="detail-img-wrap">
                     <img src="img/sub/05/slide02.png" alt="구엘 공원"/>
                   </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list pc">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -548,9 +592,59 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">도시를 내려다보는 가장 여유로운 시작</p>
-                  <h3 class="detail-place-name">구엘 공원 (Park Güell)</h3>
+                  <p class="detail-sub-label-pc">도시를 내려다보는 가장 여유로운 시작</p>
+                  <h3 class="detail-place-name-pc">구엘 공원 (Park Güell)</h3>
                   <p class="detail-desc">가우디가 자연을 훼손하지 않고 조성한 전원 도시 프로젝트다. 직선보다는 곡선을 활용하고, 버려진 타일을 재활용한 '트렌카디스' 기법의 벤치는 세계에서 가장 긴 의자로 유명하다. 동화 속에 들어온 듯한 경비실 건물과 공원의 상징인 도마뱀 분수는 부모님의 카메라 셔터를 멈추지 않게 할 것이다.</p>
+                  <ul class="detail-info-list mob">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong>  09:30~19:30 (시즌별로 종료 시간 상이)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong>  08024 Barcelona, Spain (인도 지형)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong>  일반 10€ (현장 구매는 거의 불가하므로 사전 예약 필수)</span>
+                    </li>
+                  </ul>
                   <p class="tip-title">TIP</p>
                   <p class="tip-text">정문(아래쪽)으로 입장하지 마라. 택시를 타고 '파르크 구엘(Parc Güell) 동쪽 입구' 혹은 가장 높은 곳에 내려서 아래로 내려오며 관람하는 동선을 짜야 한다. 부모님의 무릎 컨디션을 지키면서 바르셀로나 시내와 지중해를 한눈에 내려다보는 여유를 누릴 수 있다.</p>
                 </div>
@@ -563,11 +657,13 @@
             ══════════════════════════════ -->
             <div class="slide">
               <div class="slide-detail">
+                <p class="detail-sub-label-mob">외계 행성을 닮은 거대한 돌의 파도</p>
+                <h3 class="detail-place-name-mob">카사 밀라 (Casa Milà)</h3>
                 <div class="detail-left">
                   <div class="detail-img-wrap">
                     <img src="img/sub/05/slide03.png" alt="카사 밀라"/>
                   </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list pc">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -619,9 +715,59 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">외계 행성을 닮은 거대한 돌의 파도</p>
-                  <h3 class="detail-place-name">카사 밀라 (Casa Milà)</h3>
+                  <p class="detail-sub-label-pc">외계 행성을 닮은 거대한 돌의 파도</p>
+                  <h3 class="detail-place-name-pc">카사 밀라 (Casa Milà)</h3>
                   <p class="detail-desc">'라 페드레라(채석장)'라는 별칭을 가진 이 건물은 물결치는 듯한 외관 덕분에 완공 당시에는 비난받았으나 현재는 가우디 건축의 정수로 꼽힌다. 특히 투구를 쓴 기사들을 형상화한 옥상의 굴뚝들은 마치 외계 행성에 온 듯한 착각을 불러일으킨다. 직선이 하나도 없는 거대한 돌덩이 건물의 위용을 감상할 수 있다.</p>
+                  <ul class="detail-info-list mob">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong>  09:00~20:30 (야간 투어 별도 운영)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong>  Pg. de Gràcia, 92, 08008 Barcelona, Spain</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong>  일반 약 25~28€</span>
+                    </li>
+                  </ul>
                   <p class="tip-title">TIP</p>
                   <p class="tip-text">옥상에 올라가면 저 멀리 사그라다 파밀리아가 한눈에 들어오는 포토존이 있다. 이곳에서 부모님께 "우리가 다음에 갈 곳이 저기예요"라고 말하며 사진을 남겨라. 내부 엘리베이터가 매우 잘 되어 있어 옥상까지 부모님을 모시고 이동하기가 매우 쾌적하다.</p>
                 </div>
@@ -634,11 +780,13 @@
             ══════════════════════════════ -->
             <div class="slide">
               <div class="slide-detail">
+                <p class="detail-sub-label-mob">바닷속 전설이 살아 숨 쉬는 집</p>
+                <h3 class="detail-place-name-mob">카사 바트요 (Casa Batlló)</h3>
                 <div class="detail-left">
                   <div class="detail-img-wrap">
                     <img src="img/sub/05/slide04.png" alt="카사 바트요"/>
                   </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list pc">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -690,9 +838,59 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">바닷속 전설이 살아 숨 쉬는 집</p>
-                  <h3 class="detail-place-name">카사 바트요 (Casa Batlló)</h3>
+                  <p class="detail-sub-label-pc">바닷속 전설이 살아 숨 쉬는 집</p>
+                  <h3 class="detail-place-name-pc">카사 바트요 (Casa Batlló)</h3>
                   <p class="detail-desc">'뼈의 집'이라는 별명답게 건물의 기둥은 해골을 연상시키며, 알록달록한 외벽은 용의 비늘처럼 빛난다. 바르셀로나의 수호성인이 용을 물리친 전설을 건축으로 형상화했다. 내부로 들어가면 바닷속을 유영하는 듯한 푸른 타일의 중정과 기발한 채광 설계에 감탄하게 된다.</p>
+                  <ul class="detail-info-list mob">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 09:00~20:00 (시즌별 연장 운영)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> Pg. de Gràcia, 43, 08007 Barcelona, Spain</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong> 일반 약 35€ (입장권 등급별 차등)</span>
+                    </li>
+                  </ul>
                   <p class="tip-title">TIP</p>
                   <p class="tip-text">입장권 등급 중 증강현실(AR) 가이드가 포함된 옵션을 선택하라. 부모님께 태블릿 화면을 비추면 과거 가우디가 구상했던 가구가 마법처럼 살아 움직인다. 텍스트 설명보다 시각적 재미에 훨씬 즐거워하시는 부모님의 모습을 볼 수 있다.</p>
                 </div>
@@ -705,11 +903,13 @@
             ══════════════════════════════ -->
             <div class="slide">
               <div class="slide-detail">
+                <p class="detail-sub-label-mob">2,000년 역사의 시간을 걷는 산책</p>
+                <h3 class="detail-place-name-mob" style="letter-spacing: -1.3px;">바르셀로나 대성당(Catedral de Barcelona)</h3>
                 <div class="detail-left">
                   <div class="detail-img-wrap">
                     <img src="img/sub/05/slide05.png" alt="바르셀로나 대성당"/>
                   </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list pc">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -741,7 +941,7 @@
                           </defs>
                         </svg>
                       </span>
-                      <span><strong>장소</strong>Plaça de la Seu, s/n, 08002 Barcelona, Spain</span>
+                      <span><strong>장소</strong> Plaça de la Seu, s/n, 08002 Barcelona, Spain</span>
                     </li>
                     <li class="info-row">
                       <span class="info-icon-wrap money">
@@ -761,26 +961,10 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">2,000년 역사의 시간을 걷는 산책</p>
-                  <h3 class="detail-place-name">바르셀로나 대성당(Catedral de Barcelona)</h3>
+                  <p class="detail-sub-label-pc">2,000년 역사의 시간을 걷는 산책</p>
+                  <h3 class="detail-place-name-pc" style="letter-spacing: -1.3px;">바르셀로나 대성당(Catedral de Barcelona)</h3>
                   <p class="detail-desc">13세기부터 150년에 걸쳐 완성된 고딕 양식의 정수다. 화려한 가우디 건축과는 또 다른 장엄하고 엄숙한 분위기를 풍긴다. 성당 내부의 정원에는 13마리의 거위가 살고 있는데, 이는 성당의 수호성인 에우랄리아를 상징한다. 주변 고딕 지구(Barri Gòtic)의 미로 같은 골목은 중세 유럽의 정취를 그대로 간직하고 있다.</p>
-                  <p class="tip-title">TIP</p>
-                  <p class="tip-text">고딕 지구의 돌길은 부모님의 발목에 무리가 간다. 골목 분위기를 즐기되, 이동은 과감하게 ‘인력거 투어(Trixi)’를 예약해라. 편안하게 앉아 중세의 골목을 유람하는 경험은 부모님께 “진짜 대접받고 있다”는 느낌을 가장 강하게 주는 코스다.</p>
-                </div>
-              </div>
-            </div>
-  
-  
-            <!-- ══════════════════════════════
-                SLIDE 6 : 몬주익 언덕
-            ══════════════════════════════ -->
-            <div class="slide">
-              <div class="slide-detail">
-                <div class="detail-left">
-                  <div class="detail-img-wrap">
-                    <img src="img/sub/05/slide06.png" alt="몬주익 언덕"/>
-                  </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list mob">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -794,7 +978,75 @@
                           </defs>
                         </svg>
                       </span>
-                      <span><strong>시간</strong>케이블카 10:00~19:00(시즌별 상이)</span>
+                      <span><strong>시간</strong> 09:30~18:30 (관광 목적 입장 시간)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> Plaça de la Seu, s/n, 08002 Barcelona, Spain</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong> 성당 입장료 약 9€</span>
+                    </li>
+                  </ul>
+                  <p class="tip-title">TIP</p>
+                  <p class="tip-text">고딕 지구의 돌길은 부모님의 발목에 무리가 간다. 골목 분위기를 즐기되, 이동은 과감하게 ‘인력거 투어(Trixi)’를 예약해라. 편안하게 앉아 중세의 골목을 유람하는 경험은 부모님께 “진짜 대접받고 있다”는 느낌을 가장 강하게 주는 코스다.</p>
+                </div>
+              </div>
+            </div>
+  
+  
+            <!-- ══════════════════════════════
+                SLIDE 6 : 몬주익 언덕
+            ══════════════════════════════ -->
+            <div class="slide">
+              <div class="slide-detail">
+                <p class="detail-sub-label-mob">지중해와 도시를 품는 가장 높은 시선</p>
+                <h3 class="detail-place-name-mob">몬주익 언덕(Parc de Montjuïc)</h3>
+                <div class="detail-left">
+                  <div class="detail-img-wrap">
+                    <img src="img/sub/05/slide06.png" alt="몬주익 언덕"/>
+                  </div>
+                  <ul class="detail-info-list pc">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 케이블카 10:00~19:00(시즌별 상이)</span>
                     </li>
                     <li class="info-row">
                       <span class="info-icon-wrap pin">
@@ -832,26 +1084,10 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">지중해와 도시를 품는 가장 높은 시선</p>
-                  <h3 class="detail-place-name">몬주익 언덕(Parc de Montjuïc)</h3>
+                  <p class="detail-sub-label-pc">지중해와 도시를 품는 가장 높은 시선</p>
+                  <h3 class="detail-place-name-pc">몬주익 언덕(Parc de Montjuïc)</h3>
                   <p class="detail-desc">도시 전체와 항구를 조망하기 가장 좋은 장소이자 바르셀로나 올림픽의 주 무대였다. 몬주익 성부터 카탈루냐 미술관까지 넓게 펼쳐져 있어 현지인들에게도 사랑받는 휴식처다. 해 질 녘 미술관 앞 광장에서 펼쳐지는 매직 분수 쇼는 전 세계에서 가장 아름다운 야경 중 하나로 꼽힌다.</p>
-                  <p class="tip-title">TIP</p>
-                  <p class="tip-text">성까지 걸어 올라가지 마라. 반드시 케이블카(Telefèric)를 이용해야 한다. 공중에서 지중해 항구와 바르셀로나 시내를 한눈에 담는 파노라마 뷰는 그 자체로 여행의 하이라이트가 된다. 내려올 때는 일몰 시간에 맞춰 하차하여 분수 쇼까지 감상하는 일정이 완벽하다.</p>
-                </div>
-              </div>
-            </div>
-  
-  
-            <!-- ══════════════════════════════
-                SLIDE 7 : 보케리아 시장
-            ══════════════════════════════ -->
-            <div class="slide">
-              <div class="slide-detail">
-                <div class="detail-left">
-                  <div class="detail-img-wrap">
-                    <img src="img/sub/05/slide07.png" alt="보케리아 시장"/>
-                  </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list mob">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -865,7 +1101,75 @@
                           </defs>
                         </svg>
                       </span>
-                      <span><strong>시간</strong>08:00~20:30(일요일 휴무)</span>
+                      <span><strong>시간</strong> 케이블카 10:00~19:00(시즌별 상이)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> 08038 Barcelona, Spain</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong> 케이블카 왕복 약 15€ / 몬주익 성 입장료 약 9€</span>
+                    </li>
+                  </ul>
+                  <p class="tip-title">TIP</p>
+                  <p class="tip-text">성까지 걸어 올라가지 마라. 반드시 케이블카(Telefèric)를 이용해야 한다. 공중에서 지중해 항구와 바르셀로나 시내를 한눈에 담는 파노라마 뷰는 그 자체로 여행의 하이라이트가 된다. 내려올 때는 일몰 시간에 맞춰 하차하여 분수 쇼까지 감상하는 일정이 완벽하다.</p>
+                </div>
+              </div>
+            </div>
+  
+  
+            <!-- ══════════════════════════════
+                SLIDE 7 : 보케리아 시장
+            ══════════════════════════════ -->
+            <div class="slide">
+              <div class="slide-detail">
+                <p class="detail-sub-label-mob">오감을 깨우는 스페인의 부엌</p>
+                <h3 class="detail-place-name-mob">보케리아 시장(Mercat de la Boqueria)</h3>
+                <div class="detail-left">
+                  <div class="detail-img-wrap">
+                    <img src="img/sub/05/slide07.png" alt="보케리아 시장"/>
+                  </div>
+                  <ul class="detail-info-list pc">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 08:00~20:30(일요일 휴무)</span>
                     </li>
                     <li class="info-row">
                       <span class="info-icon-wrap pin">
@@ -903,9 +1207,59 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">오감을 깨우는 스페인의 부엌</p>
-                  <h3 class="detail-place-name">보케리아 시장(Mercat de la Boqueria)</h3>
+                  <p class="detail-sub-label-pc">오감을 깨우는 스페인의 부엌</p>
+                  <h3 class="detail-place-name-pc">보케리아 시장(Mercat de la Boqueria)</h3>
                   <p class="detail-desc">람블라스 거리 중간에 위치한 800년 역사의 전통 시장이다. 신선한 과일, 해산물, 하몽 등 스페인의 모든 식재료가 이곳에 모인다. 현지인들이 식재료를 사고 간단하게 타파스를 즐기는 생동감 넘치는 바르셀로나의 에너지를 가장 가까이서 느낄 수 있는 곳이다.</p>
+                  <ul class="detail-info-list mob">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 08:00~20:30(일요일 휴무)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> La Rambla, 91, 08001 Barcelona, Spain</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong> 입장 무료</span>
+                    </li>
+                  </ul>
                   <p class="tip-title">TIP</p>
                   <p class="tip-text">입구 근처는 관광객으로 붐벼 정신이 없다. 일단 부모님을 모시고 시장 중앙으로 깊숙이 들어가라. 안쪽의 해산물 바(Bar)에서 갓 구운 요리를 맛보거나, 1~2€ 하는 생과일 주스를 부모님 손에 들려드려라. 달콤한 주스 한 모금에 부모님의 여행 피로가 순식간에 녹아내릴 것이다.</p>
                 </div>
@@ -918,11 +1272,13 @@
             ══════════════════════════════ -->
             <div class="slide">
               <div class="slide-detail">
+                <p class="detail-sub-label-mob">꽃으로 빚은 세계에서 가장 아름다운 공연장</p>
+                <h3 class="detail-place-name-mob" style="letter-spacing: -2.3px;">카탈루냐 음악당(Palau de la Música Catalana)</h3>
                 <div class="detail-left">
                   <div class="detail-img-wrap">
                     <img src="img/sub/05/slide08.png" alt="카탈루냐 음악당"/>
                   </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list pc">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -974,9 +1330,59 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">꽃으로 빚은 세계에서 가장 아름다운 공연장</p>
-                  <h3 class="detail-place-name">카탈루냐 음악당(Palau de la Música Catalana)</h3>
+                  <p class="detail-sub-label-pc">꽃으로 빚은 세계에서 가장 아름다운 공연장</p>
+                  <h3 class="detail-place-name-pc" style="letter-spacing: -2.3px;">카탈루냐 음악당(Palau de la Música Catalana)</h3>
                   <p class="detail-desc">가우디의 라이벌이었던 몬타네르가 설계한 모더니즘 건축의 걸작이다. '꽃의 건축가'라는 별명답게 건물 안팎이 화려한 꽃무늬 타일로 가득하며, 천장의 스테인드글라스 역돔은 세계에서 가장 아름다운 천장으로 꼽힌다. 2026년에는 가우디 서거 100주기를 기념하는 특별 공연들이 이곳에서 열린다.</p>
+                  <ul class="detail-info-list mob">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 투어 09:00~15:30 (공연 시간 별도)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> C/ de Sant Pere Més Alt, 6, 08003 Barcelona, Spain</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금</strong> 셀프 가이드 투어 약 16~20€</span>
+                    </li>
+                  </ul>
                   <p class="tip-title">TIP</p>
                   <p class="tip-text">낮의 투어도 좋지만 가능하다면 저녁 공연 티켓을 예매해라. 조명이 켜진 음악당 내부에서 직접 음악을 듣는 경험은 부모님께 이번 여행의 품격이 다르다는 확신을 심어준다. 2층 테라스의 화려한 꽃기둥 사이는 부모님이 가장 좋아하실 포토 스팟이다.</p>
                 </div>
@@ -989,11 +1395,13 @@
             ══════════════════════════════ -->
             <div class="slide">
               <div class="slide-detail">
+                <p class="detail-sub-label-mob">지중해의 바람과 함께 쉼표를 찍는 시간</p>
+                <h3 class="detail-place-name-mob">바르셀로네타 해변(Barceloneta Beach)</h3>
                 <div class="detail-left">
                   <div class="detail-img-wrap">
                     <img src="img/sub/05/slide09.png" alt="바르셀로네타 해변"/>
                   </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list pc">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1045,26 +1453,10 @@
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">지중해의 바람과 함께 쉼표를 찍는 시간</p>
-                  <h3 class="detail-place-name">바르셀로네타 해변(Barceloneta Beach)</h3>
+                  <p class="detail-sub-label-pc">지중해의 바람과 함께 쉼표를 찍는 시간</p>
+                  <h3 class="detail-place-name-pc">바르셀로네타 해변(Barceloneta Beach)</h3>
                   <p class="detail-desc">과거 어촌 마을이 올림픽을 계기로 세련된 휴양지로 변모한 곳이다. 황금빛 백사장과 푸른 바다를 따라 산책로가 길게 이어져 있다. 해안선을 따라 늘어선 레스토랑에서는 신선한 해산물 요리와 스페인의 상징인 빠에야를 즐기며 여유로운 지중해의 낭만을 만끽할 수 있다.</p>
-                  <p class="tip-title">TIP</p>
-                  <p class="tip-text">뙤약볕 아래 모래사장을 걷는 대신 해변이 보이는 테라스 레스토랑 치링기토(Chiringuito) 자리를 예약해라. 시원한 샹그리아 한 잔과 빠에야를 즐기며 바다를 감상하는 시간은 투어에 지친 부모님께 최고의 휴식이자 여행을 완성하는 마침표가 된다.</p>
-                </div>
-              </div>
-            </div>
-  
-  
-            <!-- ══════════════════════════════
-                SLIDE 10 : 람블라스 거리
-            ══════════════════════════════ -->
-            <div class="slide">
-              <div class="slide-detail">
-                <div class="detail-left">
-                  <div class="detail-img-wrap">
-                    <img src="img/sub/05/slide10.png" alt="람블라스 거리"/>
-                  </div>
-                  <ul class="detail-info-list">
+                  <ul class="detail-info-list mob">
                     <li class="info-row">
                       <span class="info-icon-wrap clock">
                          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1078,7 +1470,7 @@
                           </defs>
                         </svg>
                       </span>
-                      <span><strong>시간</strong>상시 개방(상점 및 식당은 보통 10:00~22:00)</span>
+                      <span><strong>시간</strong> 24시간 개방(레스토랑은 보통 13:00~24:00)</span>
                     </li>
                     <li class="info-row">
                       <span class="info-icon-wrap pin">
@@ -1096,7 +1488,7 @@
                           </defs>
                         </svg>
                       </span>
-                      <span><strong>장소</strong>La Rambla, Barcelona</span>
+                      <span><strong>장소</strong> 08003 Barcelona, Spain</span>
                     </li>
                     <li class="info-row">
                       <span class="info-icon-wrap money">
@@ -1111,14 +1503,132 @@
                           </defs>
                         </svg>
                       </span>
-                      <span><strong>요금</strong>무료</span>
+                      <span><strong>요금</strong> 입장 무료</span>
+                    </li>
+                  </ul>
+                  <p class="tip-title">TIP</p>
+                  <p class="tip-text">뙤약볕 아래 모래사장을 걷는 대신 해변이 보이는 테라스 레스토랑 치링기토(Chiringuito) 자리를 예약해라. 시원한 샹그리아 한 잔과 빠에야를 즐기며 바다를 감상하는 시간은 투어에 지친 부모님께 최고의 휴식이자 여행을 완성하는 마침표가 된다.</p>
+                </div>
+              </div>
+            </div>
+  
+  
+            <!-- ══════════════════════════════
+                SLIDE 10 : 람블라스 거리
+            ══════════════════════════════ -->
+            <div class="slide">
+              <div class="slide-detail">
+                <p class="detail-sub-label-mob">모든 동선이 결국 지나가는 바르셀로나의 중심</p>
+                <h3 class="detail-place-name-mob">람블라스 거리(La Rambla)</h3>
+                <div class="detail-left">
+                  <div class="detail-img-wrap">
+                    <img src="img/sub/05/slide10.png" alt="람블라스 거리"/>
+                  </div>
+                  <ul class="detail-info-list pc">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 상시 개방(상점 및 식당은 보통 10:00~22:00)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> La Rambla, Barcelona</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금 </strong>무료</span>
                     </li>
                   </ul>
                 </div>
                 <div class="detail-right">
-                  <p class="detail-sub-label">모든 동선이 결국 지나가는 바르셀로나의 중심</p>
-                  <h3 class="detail-place-name">람블라스 거리(La Rambla)</h3>
+                  <p class="detail-sub-label-pc">모든 동선이 결국 지나가는 바르셀로나의 중심</p>
+                  <h3 class="detail-place-name-pc">람블라스 거리(La Rambla)</h3>
                   <p class="detail-desc">카탈루냐 광장(Plaça de Catalunya)에서 항구까지 이어지는 약 1.2km의 보행자 전용 도로다. 거리 예술가들의 퍼포먼스와 꽃집, 상점들이 끊임없이 이어지며 바르셀로나의 활기찬 리듬을 가장 날것 그대로 느낄 수 있는 공간이다. 거리 곳곳에 가우디가 디자인한 가로등과 미로(Miró)의 모자이크 바닥화가 숨어 있어 걷는 재미를 더한다.</p>
+                  <ul class="detail-info-list mob">
+                    <li class="info-row">
+                      <span class="info-icon-wrap clock">
+                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3446)">
+                          <path d="M23.7005 13.4935V12.5065H26C25.9228 10.5048 25.3989 8.61336 24.5166 6.94252L22.5205 8.0895L22.0297 7.23478L24.0259 6.0878C22.9782 4.41697 21.5555 2.99979 19.8846 1.95758L18.7432 3.95928L17.8884 3.4685L19.0299 1.46681C17.3646 0.595546 15.4897 0.0716861 13.499 0V2.29947H12.512V0C10.5103 0.0716861 8.61888 0.60106 6.94804 1.48335L8.09502 3.47953L7.2403 3.97031L6.09332 1.97413C4.42248 3.02185 3.0053 4.44454 1.9631 6.11538L3.95928 7.25684L3.4685 8.11156L1.46681 6.9701C0.595546 8.64093 0.0716861 10.5158 0 12.5065H2.29947V13.4935H0C0.0772004 15.4952 0.60106 17.3866 1.48335 19.0575L3.47953 17.9105L3.97031 18.7652L1.97413 19.9122C3.02185 21.583 4.44454 23.0002 6.11538 24.0424L7.25684 22.0407L8.11156 22.5315L6.96458 24.5332C8.6299 25.4045 10.5048 25.9283 12.4954 26V23.7005H13.4825V26C15.4842 25.9283 17.3701 25.3989 19.0464 24.5166L17.8995 22.5205L18.7542 22.0297L19.9012 24.0259C21.572 22.9782 22.9892 21.5555 24.0314 19.8846L22.0297 18.7432L22.5205 17.8884L24.5222 19.0299C25.3934 17.3646 25.9118 15.4897 25.989 13.499H23.6895L23.7005 13.4935ZM20.0721 19.2505C19.8295 19.5372 19.3994 19.5703 19.1071 19.3277L13.3336 14.4199C13.2123 14.4585 13.0855 14.4861 12.9476 14.4861C12.5561 14.4861 12.2087 14.3097 11.9716 14.0339L6.80467 17.0282C6.66129 17.1109 6.47381 17.0613 6.39109 16.9179C6.30838 16.7745 6.35801 16.5871 6.50138 16.5043L11.6959 13.4935C11.6738 13.3998 11.6573 13.3005 11.6573 13.2013C11.6573 12.7381 11.8999 12.341 12.2638 12.1094V6.82672C12.2638 6.45175 12.5671 6.14295 12.9476 6.14295C13.3281 6.14295 13.6314 6.45175 13.6314 6.82672V12.1094C13.9953 12.3355 14.238 12.7381 14.238 13.2013C14.238 13.2674 14.2269 13.3226 14.2214 13.3832C15.8206 14.7453 19.9949 18.291 19.9949 18.291C20.1548 18.4288 20.2375 18.6163 20.2375 18.8093C20.2375 18.9637 20.1824 19.1236 20.0721 19.2505Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3446">
+                          <rect width="26" height="26" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>시간</strong> 상시 개방(상점 및 식당은 보통 10:00~22:00)</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap pin">
+                        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3448)">
+                          <path d="M12.6824 17.2723H22.5504L21.2821 15.1463C21.0737 14.8124 20.7436 14.6016 20.3787 14.6016H13.9507L12.665 17.2723H12.6824Z" fill="white"/>
+                          <path d="M12.6817 18.5039L11.0312 23.002H23.8527C24.7561 23.002 25.2946 22.0005 24.8256 21.2274L23.1925 18.5039H12.6817Z" fill="white"/>
+                          <path d="M12.6819 14.6016H4.86401C4.46442 14.6016 4.09959 14.8124 3.89111 15.1638L0.155876 21.3136C-0.295826 22.0515 0.242742 23.0003 1.09403 23.0003H9.24205L12.6646 14.6016H12.6819Z" fill="white"/>
+                          <path d="M12.5084 0C8.65158 0 5.52441 3.16272 5.52441 7.04584C5.52441 10.929 12.4911 18.6952 12.4911 18.6952C12.4911 18.6952 19.4577 10.929 19.4577 7.04584C19.4577 3.16272 16.3479 0 12.5084 0ZM12.5084 8.59205C11.1186 8.59205 9.97195 7.44996 9.97195 6.02674C9.97195 4.60351 11.1012 3.46142 12.5084 3.46142C13.9157 3.46142 15.0449 4.60351 15.0449 6.02674C15.0449 7.44996 13.9157 8.59205 12.5084 8.59205Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3448">
+                          <rect width="25" height="23" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>장소</strong> La Rambla, Barcelona</span>
+                    </li>
+                    <li class="info-row">
+                      <span class="info-icon-wrap money">
+                        <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_246_3454)">
+                          <path d="M5.50215 9.66872C6.34146 10.574 8.33716 11.171 9.45624 11.8451C10.7618 12.5578 11.8436 13.4052 12.4591 14.7727C13.9326 18.4322 11.7131 22.1302 7.75897 22.3613V25H5.72597V22.3421C2.14491 21.9761 0 19.7034 0 16.0054H4.28981C4.28981 17.7966 5.01722 19.0485 6.75179 19.0678C8.63558 19.2026 9.10187 16.641 8.11334 15.4468C7.32999 14.5031 5.16643 13.906 4.066 13.2704C2.7604 12.5963 1.65997 11.7296 1.08178 10.3814C-0.391679 6.62558 2.01435 3.02388 5.98709 2.7735V0H8.02009V2.81202C9.56815 3.04314 10.7991 3.71726 11.6758 4.79584C12.571 5.87442 13 7.26117 13 8.91757H8.69153C8.69153 8.01233 8.52367 7.29969 8.18795 6.81818C7.08752 5.33513 4.8307 6.16333 4.97991 8.12789C4.97991 8.76348 5.14778 9.28351 5.5208 9.66872H5.50215Z" fill="white"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_246_3454">
+                          <rect width="13" height="25" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                      </span>
+                      <span><strong>요금 </strong>무료</span>
+                    </li>
+                  </ul>
                   <p class="tip-title">TIP</p>
                   <p class="tip-text">목적지로 두기보다 이동 동선에 포함시켜 낮 시간대에 가볍게 즐겨라. 소매치기가 극성인 구역이므로 부모님의 가방이 앞으로 와 있는지 수시로 체크해야 한다. 거리 테라스 식당은 가성비가 낮으니 식사는 인근 레알 광장이나 골목 안쪽 맛집을 공략하는 것이 영리한 선택이다.</p>
                 </div>
@@ -1210,72 +1720,112 @@
 
 <script>AOS.init({ once: true });</script>
 <script>
-
-  (function () {
+(function () {
   var container = document.getElementById('sliderContainer');
   var track     = document.getElementById('sliderTrack');
   var prevBtn   = document.getElementById('prevBtn');
   var nextBtn   = document.getElementById('nextBtn');
   var dotsWrap  = document.getElementById('sliderDots');
   var slides    = track.querySelectorAll('.slide');
-  var total     = slides.length;
-  var current   = 0;
+  var total     = slides.length;   // 10 (지도 포함)
   var busy      = false;
- 
-  /* 컨테이너 폭 기준으로 각 슬라이드 폭 고정 */
+  var current   = 0;
+
+  function isMob() { return window.innerWidth <= 768; }
+
+  /* 슬라이드 폭 설정 */
   function setWidths() {
-    var w = container.offsetWidth;
-    track.style.width = (w * total) + 'px';
-    slides.forEach(function (s) { s.style.width = w + 'px'; });
+    var w   = container.offsetWidth;
+    var mob = isMob();
+
+    if (mob) {
+      /* 슬라이드 0(지도) → 폭 0, 숨김 */
+      slides[0].style.cssText = 'flex:0 0 0px;width:0;overflow:hidden;padding:0;';
+      /* 나머지 슬라이드 */
+      for (var i = 1; i < total; i++) {
+        slides[i].style.cssText = 'flex:0 0 ' + w + 'px;width:' + w + 'px;';
+      }
+      track.style.width = (w * (total - 1)) + 'px';
+      if (current < 1) current = 1;          // 최초 진입 시 index 1부터
+    } else {
+      slides.forEach(function (s) { s.style.cssText = ''; s.style.width = w + 'px'; });
+      track.style.width = (w * total) + 'px';
+    }
+    updateUI();
   }
- 
-  setWidths();
-  window.addEventListener('resize', setWidths);
- 
-  /* 도트 생성 */
-  slides.forEach(function (_, i) {
-    var dot = document.createElement('button');
-    dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', (i + 1) + '번 슬라이드');
-    dot.addEventListener('click', function () { goTo(i); });
-    dotsWrap.appendChild(dot);
-  });
- 
+
+  /* 도트 생성 (모바일: 지도 도트 제외) */
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    var start = isMob() ? 1 : 0;
+    for (var i = start; i < total; i++) {
+      (function (idx) {
+        var dot = document.createElement('button');
+        dot.className = 'dot';
+        dot.setAttribute('aria-label', (idx - start + 1) + '번 슬라이드');
+        dot.addEventListener('click', function () { goTo(idx); });
+        dotsWrap.appendChild(dot);
+      })(i);
+    }
+  }
+
   function updateUI() {
-    track.style.transform = 'translateX(-' + (current * container.offsetWidth) + 'px)';
-    dotsWrap.querySelectorAll('.dot').forEach(function (d, i) { d.classList.toggle('active', i === current); });
-    prevBtn.classList.toggle('disabled', current === 0);
+    var mob   = isMob();
+    var start = mob ? 1 : 0;
+    /* 트랙 이동: 모바일은 지도 슬라이드 폭이 0이라 offset = current - 1 */
+    var offset = mob ? (current - 1) : current;
+    track.style.transform = 'translateX(-' + (offset * container.offsetWidth) + 'px)';
+
+    dotsWrap.querySelectorAll('.dot').forEach(function (d, i) {
+      d.classList.toggle('active', i === current - start);
+    });
+
+    prevBtn.classList.toggle('disabled', current <= start);
     nextBtn.classList.toggle('disabled', current === total - 1);
+
+    container.style.borderRadius = (!mob && current === 0) ? '0' : '20px';
+    container.style.background   = mob ? '#ECFFC7' : '#FFFFFF';
+    track.style.background       = (!mob && current === 0) ? '#ECFFC7' : '#FFFFFF';  // ← 추가
   }
- 
+
   function goTo(i) {
     if (busy) return;
-    i = Math.max(0, Math.min(i, total - 1));
+    var start = isMob() ? 1 : 0;
+    i = Math.max(start, Math.min(i, total - 1));
     if (i === current) return;
     busy = true;
     current = i;
     updateUI();
     setTimeout(function () { busy = false; }, 460);
   }
- 
+
+  /* 초기화 */
+  buildDots();
+  setWidths();
+
+  /* 리사이즈 (PC↔모바일 전환 대응) */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { buildDots(); setWidths(); }, 100);
+  });
+
   prevBtn.addEventListener('click', function () { goTo(current - 1); });
   nextBtn.addEventListener('click', function () { goTo(current + 1); });
- 
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowLeft')  goTo(current - 1);
     if (e.key === 'ArrowRight') goTo(current + 1);
   });
- 
+
   var tx = 0;
   track.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
   track.addEventListener('touchend',   function (e) {
     var diff = tx - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
   }, { passive: true });
- 
-  updateUI();
-})();
 
+})();
 </script>
 <script src="js/common.js"></script>
 

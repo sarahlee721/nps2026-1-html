@@ -35,7 +35,7 @@
 @media (max-width: 768px) {
   #sub-04 .pc-br { display: none; }
   #sub-04 .mob-br { display: block; }
-  #sub-04 .nps-label-wrap { margin: 70px auto 40px; }
+  #sub-08 .nps-label-wrap { margin: 70px auto 20px; }
   #sub-04 .nps-label { font-size: 16px;}
   #sub-04 .nps-author { font-size: 16px; }
   #sub-04 .title { font-size: 26px; font-weight: 500; margin-bottom: 30px;  }
@@ -58,9 +58,10 @@
 
 
 @media (max-width: 768px) {
+  #sub-04 .check-title { font-size: 21px; }
   #sub-04 .check-grid { grid-template-columns: 1fr; }
   #sub-04 .check-card { align-items: center; text-align: center; }
-  #sub-04 .badge { font-size: 16px; margin-bottom: 20px;}
+  #sub-04 .badge { font-size: 16px; margin-bottom: 20px; padding: 6px 8px; font-weight: 500;}
 }
 
 #sub-04 .content-section { display: flex; flex-direction: column; gap: 70px; margin-bottom: 100px; }
@@ -73,10 +74,9 @@
 #sub-04 .content-title { font-size: 24px; font-weight: 700; line-height: 1.6; }
 #sub-04 .content-desc { font-size: 18px; line-height: 1.9; margin-bottom: 30px; }
 
-#sub-04 .quiz-box { background: #f7f7f7; border-radius: 12px; padding: 8px 20px; }
 #sub-04 .quiz-box hr { border: none; border-top: 1px solid #e0e0e0; margin: 0; }
 #sub-04 .quiz-item input[type="checkbox"] { display: none; }
-#sub-04 .quiz-box { background: #f7f7f7; border-radius: 12px; padding: 8px 20px; }
+#sub-04 .quiz-box { background: #f7f7f7; border-radius: 20px; padding: 8px 20px; }
 #sub-04 .quiz-box hr { border: none; border-top: 0.5px solid #000000; margin: 0; }
 #sub-04 .quiz-item { display: flex; align-items: center; gap: 14px; padding: 10px 0; cursor: pointer; }
 #sub-04 .quiz-circle { width: 20px; height: 20px; border-radius: 50%; border: 1px solid #222222; flex-shrink: 0; position: relative; transition: border-color 0.2s, background-color 0.2s; }
@@ -85,14 +85,20 @@
 #sub-04 .quiz-text { font-size: 18px; }
 #sub-04 .note-title { font-size: 21px; font-weight: 700; margin-bottom: 40px; }
 #sub-04 .note-desc { font-size: 18px; line-height: 1.8; padding-bottom:20px; }
-#sub-04 .note-highlight { color: #F692D0; }
+#sub-04 .note-highlight { color: #F692D0; font-weight: 500;}
 
 @media (max-width: 768px) {
   #sub-04 .check-grid { grid-template-columns: 1fr; }
-  #sub-04 .check-card { align-items: center; text-align: center; }
+  #sub-04 .check-card { align-items: center; text-align: center; min-height: 230px; }
   #sub-04 .content-item { flex-direction: column; gap: 24px; }
   #sub-04 .content-left { flex: none; width: 100%; }
   #sub-04 .content-section { gap:25px; margin-bottom: 40px;}
+  #sub-04 .content-title { font-size: 21px; }
+  #sub-04 .content-desc { font-size: 16px; }
+  #sub-04 .quiz-text { font-size: 15px; }
+  #sub-04 .step-num { margin-bottom: 10px; }
+  #sub-04 .note-title { font-size: 20px; margin-bottom: 5px; }
+  #sub-04 .note-desc { font-size: 16px; line-height: 1.7; }
 }
  
 #sub-04 .outro-wrap { background-color: #FFE4EA;  text-align: center; padding: 100px 50px 100px; }
@@ -100,10 +106,10 @@
 #sub-04 .outro-title { font-size: 25px; font-weight: 700; }
 #sub-04 .outro-sub { font-size: 18px; line-height: 1.7; }
 
-#sub-04 .outro-video { max-width: 360px; margin: 0 auto 60px; overflow: hidden; aspect-ratio: 9 / 16; box-shadow: 20px 20px 0px -2px #000; position: relative;}
+#sub-04 .outro-video { max-width: 350px; margin: 0 auto 60px; overflow: hidden; aspect-ratio: 9 / 16; box-shadow: 15px 15px 0px -2px #000; position: relative;}
 #sub-04 .outro-video iframe { width: 100%; height: 100%; display: block; }
 #sub-04 .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; }
-#sub-04 .play-btn { width: 70px; height: 70px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 26px; padding-left: 5px; }
+#sub-04 .play-btn { width: 140px; height: 140px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 80px; padding-left: 5px; }
 
 #sub-04 .outro-note { max-width: 950px; margin: 0 auto; position: relative; }
 #sub-04 .memo-top { width: 100%; display: block; }
@@ -121,6 +127,7 @@
   #sub-04 .memo-bottom { content: url('img/sub/04/memo-mob-bottom.png'); }
   #sub-04 .memo-content { background: url('img/sub/04/memo-mob-middle.png') repeat-y center top / 100%; padding: 0px 20px 0px; }
   #sub-04 .thumb-section { padding: 70px 20px 30px; }
+  #sub-04 .play-btn { width: 115px; height: 115px; font-size: 50px; }
 }
 
 </style>
@@ -261,7 +268,7 @@
       </div>
         
       <div class="check-wrap nps-wrap-inner">
-        <h2 class="check-title">지금 내 연금 상태, 바로 체크해보자</h2>
+        <h2 class="check-title">지금 내 연금 상태, <br class="mob-br"> 바로 체크해보자</h2>
         <div class="check-grid">
 
           <div class="check-card">
@@ -335,7 +342,7 @@
               <label class="quiz-item">
                 <input type="checkbox" name="q1">
                 <span class="quiz-circle"></span>
-                <span class="quiz-text">납부이력 생성은 이후 '추후납부'에 용이하다</span>
+                <span class="quiz-text">납부이력 생성은 이후 <br class="mob-br">'추후납부'에 용이하다</span>
               </label>
             </div>
           </div>
@@ -353,13 +360,13 @@
               <label class="quiz-item">
                 <input type="checkbox" name="q1">
                 <span class="quiz-circle"></span>
-                <span class="quiz-text">현재 실직, 사업중단, 휴직 등으로 소득이 없는 상태이다</span>
+                <span class="quiz-text">현재 실직, 사업중단, <br class="mob-br">휴직 등으로 소득이 없는 상태이다</span>
               </label>
               <hr>
               <label class="quiz-item">
                 <input type="checkbox" name="q1">
                 <span class="quiz-circle"></span>
-                <span class="quiz-text">납부예외 기간은 가입기간에 포함되지 않는 사실을 알고 있다</span>
+                <span class="quiz-text">납부예외 기간은 가입기간에 <br class="mob-br">포함되지 않는 사실을 알고 있다</span>
               </label>
               <hr>
               <label class="quiz-item">
@@ -395,7 +402,7 @@
               <label class="quiz-item">
                 <input type="checkbox" name="q1">
                 <span class="quiz-circle"></span>
-                <span class="quiz-text">연금 청구 시 크레딧 대상인지 확인해야 한다는 사실을 알고 있다</span>
+                <span class="quiz-text">연금 청구 시 크레딧 대상인지 <br class="mob-br">확인해야 한다는 사실을 알고 있다</span>
               </label>
             </div>
           </div>
@@ -413,7 +420,7 @@
               <label class="quiz-item">
                 <input type="checkbox" name="q1">
                 <span class="quiz-circle"></span>
-                <span class="quiz-text">소득 공백기간에는 국민연금 가입/탈퇴를 선택할 수 있다</span>
+                <span class="quiz-text">소득 공백기간에는 <br class="mob-br">국민연금 가입/탈퇴를 선택할 수 있다</span>
               </label>
               <hr>
               <label class="quiz-item">

@@ -26,6 +26,7 @@
 #sub-03 .nps-desc { max-width: 530px; font-size: 18px; color: #2215C9; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 600; text-align: left;}
 #sub-03 .nps-desc strong { font-weight: 700; }
 #sub-03 .body-wrap { }
+#sub-03 .thumb-section { padding: 0 0 100px; }
 
 /* ====== 반응형 ====== */
 @media (max-width: 768px) {
@@ -38,12 +39,13 @@
   #sub-03 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%;}
   #sub-03 .nps-desc-wrap { text-align: left; padding: 20px 0 40px 0; }
   #sub-03 .section-divider { display: none; }
+  #sub-03 .thumb-section { padding: 0 0 30px; }
 }
  
 
  
 /* ====== 키워드 다이어그램 ====== */
-#sub-03 .keyword-diagram { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 130px 5px; padding: 20px 0 80px; align-items: center; justify-items: center; }
+#sub-03 .keyword-diagram { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 130px 5px; padding: 20px 0 170px; align-items: center; justify-items: center; }
  
 /* 센터 원 */
 #sub-03 .keyword-center-wrap { grid-column: 2; grid-row: 1 / 4; position: relative; display: flex; align-items: center; justify-content: center; width: 365px; height: 365px;}
@@ -95,7 +97,7 @@
   #sub-03 .keyword-center-ring.ring--lg { width: 280px; height: 280px; }
   #sub-03 .keyword-center-ring.ring--md { width: 230px; height: 230px; }
   #sub-03 .keyword-center { width: 180px; height: 180px; font-size: 32px; }
-  #sub-03 .keyword-diagram { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 20px 0 50px; }
+  #sub-03 .keyword-diagram { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 20px 0 100px; }
   #sub-03 .keyword-bubble { transform: translateX(0px) !important; max-width: 100%; width: 100%; font-size: 21px; padding: 14px 18px 14px 22px; }
   #sub-03 .kw-late, #sub-03 .kw-strategy, #sub-03 .kw-max5, #sub-03 .kw-rate, #sub-03 .kw-work, #sub-03 .kw-check { grid-column: unset; grid-row: unset; }
   #sub-03 .kw-work-wrap { max-width: 100%;  transform: translateX(0px); }
@@ -105,7 +107,7 @@
 
 /* ====== 반응형: 모바일 ====== */
 @media (max-width: 768px) {
-
+  #sub-03 .keyword-diagram { padding: 20px 0 60px; }
 }
  
 /* ====== 모달 오버레이 ====== */
@@ -132,7 +134,7 @@
  
 
 /* 색상별 모달 카드 배경 */
-#sub-03 .modal-card.bg-center { background: linear-gradient(160deg, #ffefef 0%, #ffb2c5 90%); padding: 50px 0 30px; }
+#sub-03 .modal-card.bg-center { background: linear-gradient(160deg, #ffefef 15%, #ffb2c5 90%); padding: 50px 0 30px; }
 #sub-03 .modal-card.bg-pink { background: linear-gradient(120deg, #ffefef 0%, #d0798f 100%); }
 #sub-03 .modal-card.bg-green01 { 
     background: linear-gradient(
@@ -145,7 +147,7 @@
   background: linear-gradient(
     90deg,
     #b1ebc3 20%,
-    #85cf6e 95%); 
+    #86c772 95%); 
 }
 #sub-03 .modal-card.bg-blue {  
   background: linear-gradient(
@@ -157,8 +159,8 @@
 #sub-03 .modal-card.bg-purple { 
     background: linear-gradient(
     120deg,
-    #d4c4fc 0%,
-    #ae5ec5 80%); 
+    #cbc3e0 15%,
+    #b056ca 80%);
 }
 #sub-03 .modal-card.bg-sky { background-color: #B5EEFE ; padding: 50px 0 40px; max-width: 450px !important;} 
 #sub-03 .modal-card.bg-sky .modal-img { border-radius: 30px; margin: 20px 0; width: 100%; }
@@ -170,7 +172,7 @@
 #sub-03 .modal-checklist { list-style: none; padding: 0; margin: 14px 0 0 0; }
 #sub-03 .modal-checklist li { display: flex; gap: 10px; align-items: flex-start; font-size: 18px; line-height: 1.75; margin-bottom: 12px; letter-spacing: -0.5px; }
 #sub-03 .modal-checklist li::before { content: ''; flex-shrink: 0; width: 26px; height: 23px; border-radius: 4px; background-image: url("img/sub/03/check.png");background-size: contain; background-position: center; background-repeat: no-repeat; margin-top: 5px; }
-#sub-03 .modal-notice { background: #FFFFFF; border-radius: 10px; padding: 20px 15px; font-size: 17px; line-height: 1.6; margin: 30px 0 0 0; font-weight: 600;  text-align: center; letter-spacing: -0.5px;}
+#sub-03 .modal-notice { background: #FFFFFF; border-radius: 10px; padding: 12px 15px; font-size: 17px; line-height: 1.6; margin: 30px 0 0 0; font-weight: 600;  text-align: center; letter-spacing: -0.5px;}
  
 /* 연기연금 센터 모달 */
 #sub-03 .modal-card.bg-center .modal-accent { display: inline-block; background: linear-gradient(120deg, #ffb8c4, #f07090); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 20px; margin-bottom: 12px; }
