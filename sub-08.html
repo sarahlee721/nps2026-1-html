@@ -28,6 +28,7 @@
 #sub-08 .nps-desc { max-width: 530px; font-size: 18px; color: #25B4F9; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 500; text-align: left;}
 #sub-08 .nps-desc strong { font-weight: 700; }
 #sub-08 .body-wrap { }
+#sub-08 .section-divider.two {margin: 85px auto 65px; }
 
 /* ====== 반응형 ====== */
 @media (max-width: 768px) {
@@ -42,6 +43,7 @@
   #sub-08 .section-divider { display: none; }
   #sub-08 .nps-wrap-inner { padding: 0 20px;}
   #sub-08 .title-wrap { padding: 10px 20px 5px 20px; }
+  #sub-08 .section-divider.two { display: none; }
 }
  
 #sub-08 .investment-box { background-color: #00B5FC; border-radius: 24px; overflow: hidden; width: 100%; padding:0 50px; }
@@ -49,41 +51,119 @@
 #sub-08 .txt { padding: 30px 0 40px; }
 #sub-08 .txt p { font-size: 18px; line-height: 1.8; color: #fff; font-weight: 500;  }
 
-#sub-08 .etf-title { font-size: 28px; font-weight: 700; color: #222; line-height: 1.4; margin: 0 0 8px; }
-#sub-08 .etf-subtitle { font-size: 16px; color: #555; margin: 0 0 10px; }
+#sub-08 .etf-title { font-size: 24px; font-weight: 600; line-height: 1.4; margin: 0 0 8px; }
+#sub-08 .etf-subtitle { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
 
-#sub-08 .etf-list { padding: 10px 0 40px; list-style: none; margin: 0; }
+#sub-08 .etf-list { padding: 20px 0 40px; list-style: none; margin: 0; }
 #sub-08 .etf-item { display: flex; align-items: stretch; gap: 36px; }
 #sub-08 .etf-marker { width: 88px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
 
 /* 선: 마커의 ::before(위) / ::after(아래) */
-#sub-08 .etf-marker::before,
-#sub-08 .etf-marker::after { content: ''; flex: 1; width: 2px; background: #ccc; }
-#sub-08 .etf-item:first-child .etf-marker::before { background: transparent; }
-#sub-08 .etf-item:last-child  .etf-marker::after  { background: transparent; }
+#sub-08 .etf-marker::before { content: ''; flex: 0; width: 3px; background: transparent; }
+#sub-08 .etf-marker::after  { content: ''; flex: 1; width: 3px; background: #25B4F9; }
+#sub-08 .etf-item:last-child .etf-marker::after { background: transparent; }
+
 
 /* ETF 동전 + 원 배지 묶음 */
 #sub-08 .etf-coin-wrap { display: flex; flex-direction: column; align-items: center; }
-#sub-08 .etf-icon { width: 48px; height: 48px; object-fit: contain; position: relative; z-index: 2; margin-bottom: -14px; }
-#sub-08 .etf-badge { width: 68px; height: 68px; border-radius: 50%; border: 2px solid #25B4F9; background: #fff; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
-#sub-08 .etf-num { font-size: 17px; font-weight: 700; color: #222; }
-
-#sub-08 .etf-body { flex: 1; font-size: 15px; line-height: 1.85; color: #333; padding: 30px 0 30px; }
+#sub-08 .etf-icon { width: 40px; height: 40px; object-fit: contain; position: relative; z-index: 2; margin-bottom: -25px; }
+#sub-08 .etf-badge { width: 75px; height: 125px; border-radius: 85px; border: 3px solid #25B4F9; background: #fff; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);  display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+#sub-08 .etf-num { font-size: 24px; font-weight: 700; color: #222; }
+#sub-08 .etf-body { flex: 1; font-size: 18px; line-height: 1.9; padding: 10px 0 80px; }
 
 @media (max-width: 768px) {
-  #sub-08 .investment-box { padding:0 20px; }
-  #sub-08 .investment-box { border-radius: 0; max-width: 100%; }
+  #sub-08 .investment-box { padding: 0 20px; max-width: 100%; }
   #sub-08 .investment-box picture img { padding: 30px 0 0; }
   #sub-08 .txt { padding: 20px 0 20px; }
   #sub-08 .txt p { font-size: 13.5px; line-height: 1.85; }
-  #sub-08 .etf-title { font-size: 20px; }
-  #sub-08 .etf-subtitle { font-size: 14px; }
+  #sub-08 .etf-title { font-size: 21px;  text-align: center; margin-top: 40px;}
+  #sub-08 .etf-subtitle { font-size: 16px; text-align: center; }
   #sub-08 .etf-item { gap: 20px; }
   #sub-08 .etf-marker { width: 68px; }
-  #sub-08 .etf-icon { width: 38px; height: 38px; margin-bottom: -11px; }
-  #sub-08 .etf-badge { width: 54px; height: 54px; }
-  #sub-08 .etf-num { font-size: 14px; }
-  #sub-08 .etf-body { font-size: 14px; padding: 20px 0; }
+  #sub-08 .etf-icon { margin-bottom: -15px; }
+  #sub-08 .etf-badge { width: 55px; height: 95px; }
+  #sub-08 .etf-num { font-size: 16px; }
+  #sub-08 .etf-body { font-size: 14px; padding: 0 0 30px; }
+}
+
+
+#sub-08 .blue-box { background-color: #00B5FC; padding: 60px 40px; box-sizing: border-box; overflow: visible; }
+ 
+/* flex 제거, relative 유지 */
+#sub-08 .etf-intro { position: relative; max-width: 1100px; margin: 0 auto 50px; }
+
+/* 텍스트는 일반 흐름, 이미지 뒤로 가도록 z-index */
+#sub-08 .etf-intro__text { position: relative; z-index: 1; }
+
+/* 제목+본문만 오른쪽 여백 (이미지 영역 침범 방지) */
+#sub-08 .etf-intro .section-title { padding-right: 420px; }
+#sub-08 .etf-intro .section-desc { padding-right: 420px; }
+
+/* 표는 이미지 위로 */
+#sub-08 .table-wrap { position: relative; z-index: 1; }
+
+/* 이미지: 우측 상단 배경으로 */
+#sub-08 .etf-intro__image { position: absolute; top: 10%; right: 0; width: 60%; z-index: 0; pointer-events: none; }
+#sub-08 .etf-intro__image img { width: 100%; height: auto; display: block; }
+ 
+/* 타이틀 */
+#sub-08 .section-title { font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 16px; letter-spacing: -0.3px; }
+#sub-08 .section-desc { font-size: 15px; line-height: 1.8; color: #fff; margin: 0 0 30px; }
+ 
+/* 비교 테이블 */
+#sub-08 .etf-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 0; }
+#sub-08 .etf-table th { padding: 12px 20px; font-size: 14px; font-weight: 700; text-align: center; }
+#sub-08 .etf-table td { padding: 12px 20px; font-size: 14px; text-align: center; }
+#sub-08 .etf-table tr { margin-bottom: 6px; }
+ 
+/* 테이블 헤더 행 */
+#sub-08 .etf-table .col-label { width: 130px; }
+#sub-08 .etf-table .col-stock { }
+#sub-08 .etf-table .col-etf { }
+ 
+/* 테이블 셀 스타일 */
+#sub-08 .cell-label { background: transparent; color: #fff; font-weight: 700; font-size: 14px; }
+#sub-08 .cell-stock { background: #fff; color: #333; border-radius: 30px; font-size: 14px; }
+#sub-08 .cell-etf { background: #ff5c6e; color: #fff; border-radius: 30px; font-size: 14px; font-weight: 700; }
+ 
+/* 헤더 셀 */
+#sub-08 .th-label { background: transparent; color: transparent; }
+#sub-08 .th-stock { background: #fff; color: #333; border-radius: 30px; font-weight: 700; }
+#sub-08 .th-etf { background: #ff5c6e; color: #fff; border-radius: 30px; font-weight: 800; font-size: 16px; }
+ 
+/* 테이블 래퍼 - 행간격 처리 */
+#sub-08 .table-wrap { display: flex; flex-direction: column; gap: 8px; }
+#sub-08 .table-row { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 8px; align-items: center; }
+#sub-08 .table-row .cell { padding: 11px 16px; border-radius: 30px; text-align: center; font-size: 14px; line-height: 1.4; }
+#sub-08 .table-row .cell.label { background: transparent; color: #fff; font-weight: 700; border-radius: 30px; border: 2px solid rgba(255,255,255,0.5); }
+#sub-08 .table-row .cell.stock { background: #fff; color: #444; }
+#sub-08 .table-row .cell.etf { background: #ff5c6e; color: #fff; font-weight: 700; }
+#sub-08 .table-row.head .cell.label { background: transparent; border: none; }
+#sub-08 .table-row.head .cell.stock { font-weight: 700; color: #222; }
+#sub-08 .table-row.head .cell.etf { font-size: 15px; font-weight: 800; }
+ 
+/* 분산투자 섹션 */
+#sub-08 .etf-disperse { max-width: 1100px; margin: 0 auto; }
+#sub-08 .etf-disperse .section-desc { margin: 0; }
+ 
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  #sub-08 .blue-box { padding: 40px 20px; }
+  #sub-08 .etf-intro { flex-direction: column; gap: 24px; }
+  #sub-08 .etf-intro__image img { max-width: 240px; }
+  #sub-08 .section-title { font-size: 19px; }
+  #sub-08 .section-desc { font-size: 14px; line-height: 1.75; }
+  #sub-08 .table-row { grid-template-columns: 90px 1fr 1fr; gap: 5px; }
+  #sub-08 .table-row .cell { padding: 9px 8px; font-size: 12px; }
+  #sub-08 .table-row.head .cell.etf { font-size: 13px; }
+  #sub-08 .table-wrap { gap: 5px; }
+  #sub-08 .etf-intro__image { position: static; transform: none; width: 100%; }
+  #sub-08 .etf-intro__text { padding-right: 0; }
+}
+ 
+@media (max-width: 420px) {
+  #sub-08 .table-row { grid-template-columns: 72px 1fr 1fr; gap: 4px; }
+  #sub-08 .table-row .cell { padding: 8px 6px; font-size: 11px; border-radius: 20px; }
 }
  
 </style>
@@ -234,6 +314,8 @@
         </div>
       </div>
 
+      <hr class="section-divider two">
+
       <div class="nps-wrap-inner">
     
         <p class="etf-title">투자는 더 이상 어렵지 않다</p>
@@ -244,7 +326,7 @@
           <li class="etf-item">
             <div class="etf-marker">
               <div class="etf-coin-wrap">
-                <img src="/img/sub/08/etf.png" alt="ETF" class="etf-icon">
+                <img src="img/sub/08/etf.png" alt="ETF" class="etf-icon">
                 <div class="etf-badge"><strong class="etf-num">첫째</strong></div>
               </div>
             </div>
@@ -254,7 +336,7 @@
           <li class="etf-item">
             <div class="etf-marker">
               <div class="etf-coin-wrap">
-                <img src="/img/sub/08/etf.png" alt="ETF" class="etf-icon">
+                <img src="img/sub/08/etf.png" alt="ETF" class="etf-icon">
                 <div class="etf-badge"><strong class="etf-num">둘째</strong></div>
               </div>
             </div>
@@ -264,15 +346,74 @@
           <li class="etf-item">
             <div class="etf-marker">
               <div class="etf-coin-wrap">
-                <img src="/img/sub/08/etf.png" alt="ETF" class="etf-icon">
+                <img src="img/sub/08/etf.png" alt="ETF" class="etf-icon">
                 <div class="etf-badge"><strong class="etf-num">셋째</strong></div>
               </div>
             </div>
             <p class="etf-body">'소수점 투자' 제도의 확산이다. 엔비디아 주식 한 주에 165달러, 테슬라 한 주에 355달러가 넘는 지금, 소액 투자자에게 해외 우량주는 그림의 떡이었다. 하지만 소수점 매매 서비스가 도입되면서 단 1달러로도 해외 대형 우량 기업의 주주가 될 수 있게 됐다. 매달 정해진 금액을 꾸준히 쌓아가는 '적립식 투자'와 결합되면서, 소수점 투자는 직장인 소액 투자자의 핵심 전략으로 자리 잡았다.</p>
           </li>
-    
         </ul>
+
       </div>
+
+
+        <div class="blue-box">
+          <div class="nps-wrap-inner">
+            <!-- ETF란 무엇인가? -->
+            <div class="etf-intro">
+              <div class="etf-intro__text">
+                <p class="section-title">ETF란 무엇인가?</p>
+                <p class="section-desc">
+                  ETF(Exchange Traded Fund, 상장지수펀드)는 특정 지수나 자산 바구니를 추종하는 펀드를 주식처럼 거래소에서 사고팔 수 있는 상품이다. 예를 들어 'KODEX 미국 S&P500 ETF' 한 주를 매수하면, 애플·마이크로소프트·아마존 등 미국 대표 기업 500곳에 한꺼번에 투자하는 효과를 낸다. ETF는 '묶음 투자 상품'을 주식처럼 쉽게 사고파는 방법이다.<br>
+                  쉽게 말해 ETF는 여러 주식이 묶여 있는 '보따리'다.<br>
+                  그 보따리를 실시간으로 사고팔 수 있는 방식이 바로 ETF다.
+                </p>
+        
+                <!-- 비교표 -->
+                <div class="table-wrap">
+                  <div class="table-row head">
+                    <div class="cell label"></div>
+                    <div class="cell stock">일반 주식</div>
+                    <div class="cell etf">ETF</div>
+                  </div>
+                  <div class="table-row">
+                    <div class="cell label">투자 대상</div>
+                    <div class="cell stock">개별 종목 1개</div>
+                    <div class="cell etf">수십~수백 종목 묶음</div>
+                  </div>
+                  <div class="table-row">
+                    <div class="cell label">분산 효과</div>
+                    <div class="cell stock">낮음</div>
+                    <div class="cell etf">높음</div>
+                  </div>
+                  <div class="table-row">
+                    <div class="cell label">관리 방법</div>
+                    <div class="cell stock">직접 선택</div>
+                    <div class="cell etf">운용사 자동 관리</div>
+                  </div>
+                  <div class="table-row">
+                    <div class="cell label">거래 방법</div>
+                    <div class="cell stock">증권사 앱</div>
+                    <div class="cell etf">증권사 앱</div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="etf-intro__image">
+                <img src="img/sub/08/02.png" alt="ETF 3D 일러스트">
+              </div>
+            </div>
+        
+            <!-- 분산 투자, 왜 효과적일까? -->
+            <div class="etf-disperse">
+              <p class="section-title">분산 투자, 왜 효과적일까?</p>
+              <p class="section-desc">
+                많은 사람들이 '분산 투자, 분산 투자' 이야기한다. 왜 분산 투자를 하는 걸까?<br>
+                분산 투자의 핵심 원리는 '하나가 흔들려도 전체가 무너지지 않는 구조'를 만드는 것이다. 주식 투자에서 신경 써야 할 것은 크게 두 가지다. 하나는 수익률, 다른 하나는 위험성이다. 분산 투자는 위험성을 크게 낮춰주는 역할을 한다. 개별 종목의 급락이 전체 포트폴리오에 미치는 영향을 줄인다. 개별주에 투자했는데 그 회사가 파산한다면, 내 주식은 천만 원을 들고 있든, 1억을 들고 있든 0이 된다. 반면, 100개의 기업에 나눠 투자한다면, 1개의 기업이 망해도 99개의 회사가 멀쩡하니 훨씬 덜 위험하다. 그에 따라 단기 등락에 흔들리지 않고 투자를 지속하는 힘이 생기며, 배당 재투자와 결합 시, 장기적으로 원금 대비 수익이 기하급수적으로 성장한다.
+              </p>
+            </div>
+          </div>
+        </div>
     </div>
 
  </div>
