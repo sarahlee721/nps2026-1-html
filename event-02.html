@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>초성 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- AOS 라이브러리 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="css/common.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+
+  /* ── WRAPPER ── */
+#event-02 { background: #94E4FE; padding: 0 !important;}
+/* Quiz Section */
+#event-02 .e02-inner { max-width: 1440px; margin: 0 auto; padding: 100px 50px 90px; position: relative; }
+#event-02 .e02-label { display: block; font-size: 22px; font-weight: 600; text-align: center; color: #222; letter-spacing: 0.02em; margin-bottom: 70px; }
+#event-02 .e02-label::after { content: ''; display: block; width: 36px; height: 1px; background: #222; margin: 12px auto 0; }
+#event-02 .e02-title { font-size: 50px; font-weight: 600; text-align: center; line-height: 1.5; color: #111; margin-bottom: 32px; }
+#event-02 .e02-d01 { position: absolute; width: 150px; top: 150px; right: 150px; }
+#event-02 .e02-d02 { position: absolute; width: 150px; left: 150px; top: 400px; }
+#event-02 .e02-d03 { position: absolute; width: 150px; left: 280px; bottom: 500px; z-index: 2; }
+#event-02 .e02-desc { font-size: 18px; text-align: center; line-height: 1.8; margin-bottom: 130px; font-weight: 600; }
+#event-02 .e02-quiz-head { font-size: 56px; font-weight: 600; text-align: center; margin-bottom: 30px; }
+#event-02 .e02-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 50px; padding: 70px 0 55px; border: 1px solid #000000; text-align: center; position: relative; z-index: 1; }
+#event-02 .e02-cons-row { display: flex; justify-content: center; align-items: center; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+#event-02 .e02-c { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: #5848E0; color: #fff; font-size: 50px; font-weight: 700; flex-shrink: 0; }
+#event-02 .e02-cs { display: inline-block; width: 14px; }
+#event-02 .e02-csub { font-size: 18px; margin-bottom: 50px; font-weight: 600;}
+#event-02 .e02-cq { font-size: 20px; line-height: 1.8; margin-bottom: 80px; font-weight: 500;}
+#event-02 .e02-hint { font-size: 18px;}
+#event-02 .e02-hint span { display: inline-block; font-size: 18px; font-weight: 600; }
+#event-02 .e02-stu1 { position: absolute; right: -150px; bottom: -200px; width: 275px; }
+ 
+/* Prize Section */
+#event-02 .e02-prize .e02-inner { max-width: 760px; margin: 0 auto; padding: 0px 0 120px; position: relative; }
+#event-02 .e02-stu2 { position: absolute; left: -200px; top: -100px; width: 300px; }
+#event-02 .e02-stu2-col { position: relative; flex: 0 0 auto; text-align: center; }
+#event-02 .e02-chagok { position: absolute; left: 14px; top: 0; font-size: 18px; font-weight: 800; color: #111; transform: rotate(-8deg); white-space: nowrap; }
+#event-02 .e02-coffee-col { text-align: center; }
+#event-02 .e02-coffee { width: 220px; }
+#event-02 .e02-d04-col { flex: 0 0 auto; align-self: center; }
+#event-02 .e02-d04 { position: absolute; right: -150px; top: 170px; width: 160px; }
+#event-02 .e02-prize-nm { font-size: 17px; font-weight: 700; text-align: center; margin-bottom: 100px; }
+#event-02 .e02-tbl { max-width: 580px; margin: 0 auto 130px; }
+#event-02 .e02-tr { display: flex; align-items: center; border: 1px solid #222; border-radius: 40px; overflow: hidden; margin-bottom: 10px; background: #fff; }
+#event-02 .e02-th { flex: 0 0 160px; padding: 7px 16px; font-size: 20px; font-weight: 700; text-align: center; }
+#event-02 .e02-td { flex: 1; padding: 7px 16px; font-size: 20px; text-align: center; font-weight: 400;}
+#event-02 .e02-btns { display: flex; justify-content: center; gap: 30px; margin-bottom: 80px; }
+#event-02 .e02-d05 { position: absolute; left: -200px; bottom: 270px; width: 130px; }
+#event-02 .e02-d06 { position: absolute; right: -200px; bottom: 100px; width: 120px; }
+#event-02 .e02-btn { padding: 12px 70px; border-radius: 50px; font-size: 27px; font-weight: 400; cursor: pointer; border: none; font-family: inherit; transition: opacity 0.2s; }
+#event-02 .e02-btn:hover { opacity: 0.84; }
+#event-02 .e02-sub { background: #424242; color: #fff; }
+#event-02 .e02-join { background: #5848E0; color: #fff; }
+#event-02 .e02-notice { list-style: none; border-top: 1px solid #000;  padding-top: 20px; }
+#event-02 .e02-notice li { font-size: 15px; line-height: 1.6; }
+ 
+@media (max-width: 640px) {
+  #event-02 .e02-inner { padding: 50px 22px 60px; }
+  #event-02 .e02-title { font-size: 24px; }
+  #event-02 .e02-d01 { width: 68px; top: 44px; right: 10px; }
+  #event-02 .e02-d02 { width: 80px; left: 0; top: 120px; }
+  #event-02 .e02-d03 { width: 68px; left: 10px; bottom: 90px; }
+  #event-02 .e02-quiz-head { font-size: 38px; }
+  #event-02 .e02-card { padding: 32px 22px 50px; }
+  #event-02 .e02-c { width: 42px; height: 42px; font-size: 18px; }
+  #event-02 .e02-cq { font-size: 14px; }
+  #event-02 .e02-stu1 { width: 110px; right: -10px; }
+  #event-02 .e02-prize .e02-inner { padding: 20px 22px 50px; }
+  #event-02 .e02-chagok { font-size: 15px; }
+  #event-02 .e02-stu2 { width: 100px; }
+  #event-02 .e02-coffee { width: 88px; }
+  #event-02 .e02-d04 { width: 66px; }
+  #event-02 .e02-th { flex: 0 0 95px; font-size: 13px; padding: 11px 10px; }
+  #event-02 .e02-td { font-size: 13px; padding: 11px 10px; }
+  #event-02 .e02-btn { padding: 12px 28px; font-size: 14px; }
+  #event-02 .e02-d05, #event-02 .e02-d06 { width: 50px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-bar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="img/logo.png" alt="국민연금 로고">
+      </div>
+      <div class="logo-meta">
+        <span>2026 상반기</span>
+        <span>VOL.205</span>
+      </div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+
+      <!-- 지난호 보기 드롭다운 -->
+      <div class="prev-issue-wrap">
+        <button class="btn-prev-issue" id="prevIssueBtn">
+          지난호 보기
+        </button>
+        <div class="prev-issue-dropdown" id="prevIssueDropdown">
+          <ul>
+            <li><a href="#">2025 하반기 VOL.204</a></li>
+            <li><a href="#">2025 상반기 VOL.203</a></li>
+            <li><a href="#">2024 하반기 VOL.202</a></li>
+            <li><a href="#">2024 상반기 VOL.201</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="searchBtn" aria-label="검색">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" id="menuIcon">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="12" x2="19" y2="12"/>
+        <line x1="3" y1="18" x2="19" y2="18"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar" id="searchBar">
+  <div class="search-bar-inner">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+    </div>
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- NAV SIDEBAR -->
+<nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+  <div class="nav-sidebar-head">
+    <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <div class="nav-body">
+    <div class="nav-col">
+      <h3>우리의 연금</h3>
+      <ul>
+        <li><a href="sub-01.html">NPS 뉴스</a></li>
+        <li><a href="sub-02.html">NPS 칼럼</a></li>
+        <li><a href="sub-03.html">NPS 키워드 돋보기</a></li>
+        <li><a href="sub-04.html">연금 생애 설계 가이드</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>트렌드 뷰</h3>
+      <ul>
+        <li><a href="sub-05.html">모두의 여행</a></li>
+        <li><a href="sub-06.html">꼬리에 꼬리를 무는 문화탐구</a></li>
+        <li><a href="sub-07.html">그린 시그널</a></li>
+        <li><a href="sub-08.html">지갑의 온도</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>열린 마당</h3>
+      <ul>
+        <li><a href="event-01.html">오픈 이벤트</a></li>
+        <li><a href="event-02.html">독자의 목소리</a></li>
+        <li><a href="event-03.html">초성 퀴즈</a></li>
+        <li><a href="event-04.html">OX 퀴즈</a></li>
+      </ul>
+    </div>
+    <div class="nav-footer">
+      <button class="btn-subscribe-outline">웹진 구독하기</button>
+      <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+      <button class="btn-prev">지난호 보기</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+
+<div class="page" id="event-02">
+
+
+  <!-- ① Quiz Section -->
+  <div class="e02-quiz">
+    <div class="e02-inner">
+      <p class="e02-label">초성 퀴즈</p>
+      <img src="img/event/02/01.png" class="e02-d01" alt="">
+      <h2 class="e02-title">웹진을 읽고<br>초성에 맞는 단어를 맞혀 주세요!</h2>
+      <img src="img/event/02/02.png" class="e02-d02" alt="">
+      <img src="img/event/02/03.png" class="e02-d03" alt="">
+      <p class="e02-desc">
+        &lt;내 곁에 국민연금&gt; 2026년 상반기호를 읽고 초성 퀴즈를 맞혀 주세요!<br>
+        웹진 곳곳에 정답이 숨어 있습니다.<br>
+        정답을 맞히신 분들 중 추첨을 통해 선물을 드립니다.
+      </p>
+      <p class="e02-quiz-head">Quiz</p>
+      <div class="e02-card">
+        <div class="e02-cons-row">
+          <span class="e02-c">ㅊ</span><span class="e02-c">ㄴ</span>
+          <span class="e02-cs"></span>
+          <span class="e02-c">ㅅ</span><span class="e02-c">ㅇ</span>
+          <span class="e02-cs"></span>
+          <span class="e02-c">ㅊ</span>
+          <span class="e02-cs"></span>
+          <span class="e02-c">ㅂ</span><span class="e02-c">ㅎ</span><span class="e02-c">ㄹ</span>
+        </div>
+        <p class="e02-csub">지원 제도</p>
+        <p class="e02-cq">
+          2027년부터 국민연금 납부이력이 없는 만 18세 청년은<br>
+          생애 첫 1개월분 연금보험료를 지원받을 수있으며,<br>
+          이미 납부이력이 있는 경우 보험료 지원 대신<br>
+          1개월의 가입기간을 추가로 산입해주는 제도가 있습니다.<br>
+          이 제도의 이름은 무엇일까요?
+        </p>
+        <p class="e02-hint"><span>힌트</span> 연금 생애 설계 가이드</p>
+        <img src="img/event/02/student01.png" class="e02-stu1" alt="">
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ② Prize Section -->
+<div class="e02-prize">
+  <div class="e02-inner">
+    <img src="img/event/02/student02.png" class="e02-stu2" alt="">
+    <span class="e02-chagok">차곡차곡</span>
+    <div class="e02-coffee-col">
+      <img src="img/event/02/coffee.png" class="e02-coffee" alt="커피 기프티콘">
+    </div>
+    <img src="img/event/02/04.png" class="e02-d04" alt="">
+    <p class="e02-prize-nm">커피 기프티콘(15명)</p>
+      <div class="e02-tbl">
+        <div class="e02-tr">
+          <span class="e02-th">응모 기간</span>
+          <span class="e02-td">6월 1일 오전 9시 ~ 8월 1일 오후 11시 30분</span>
+        </div>
+        <div class="e02-tr">
+          <span class="e02-th">당첨 발표</span>
+          <span class="e02-td">8월 10일 오후 5시</span>
+        </div>
+      </div>
+    <div class="e02-btns">
+      <button class="e02-btn e02-sub">구독하기</button>
+      <button class="e02-btn e02-join">참여하기</button>
+    </div>
+    <img src="img/event/02/05.png" class="e02-d05" alt="">
+    <img src="img/event/02/06.png" class="e02-d06" alt="">
+
+      <ul class="e02-notice">
+        <li>·&lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
+        <li>·본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
+        <li>·이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</li>
+        <li>·부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</li>
+        <li>·같은 분에 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루집니다.</li>
+        <li>·당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기됩니다.</li>
+        <li>·정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <!-- THUMB CARDS -->
+  <div class="thumb-section">
+    <div class="thumb-card thumb-bg-1">
+      <div class="thumb-card-inner">
+        <div class="thumb-arrow">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+            <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+            <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="thumb-text">
+          <p class="thumb-title">연금 생에 설계 가이드</p>
+          <p class="thumb-tag">자동가입 여부 확인</p>
+          <p class="thumb-tag">자동가입 여부 확인</p>
+        </div>
+      </div>
+    </div>
+    <div class="thumb-card thumb-bg-2">
+      <div class="thumb-card-inner right">
+        <div class="thumb-text">
+          <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
+          <p class="thumb-tag">자동가입 여부 확인</p>
+          <p class="thumb-tag">자동가입 여부 확인</p>
+        </div>
+        <div class="thumb-arrow">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+            <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+            <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<!-- 푸터 -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="내곁에 국민연금">
+    </div>
+    <div class="footer-info">
+      국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+      국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+      등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+      205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+      © nps.or.kr. All rights reserved.
+    </div>
+    <div class="footer-sns">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>AOS.init({ once: true });</script>
+<script>
+// ── 모달 헬퍼 ──
+function showModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'flex';
+}
+function hideModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+
+// ── 모달 버튼 연결 ──
+const eventModal              = document.getElementById('eventModal');
+const infoModal               = document.getElementById('infoModal');
+const registrationCompleteModal = document.getElementById('registrationCompleteModal');
+const unluckyModal            = document.getElementById('unluckyModal');
+const alreadyAppliedModal     = document.getElementById('alreadyAppliedModal');
+const eventEndedModal         = document.getElementById('eventEndedModal');
+
+// eventModal "클릭!" → infoModal
+eventModal.querySelector('.submit-button').addEventListener('click', () => {
+  hideModal('eventModal'); showModal('infoModal');
+});
+// eventModal 닫기 버튼
+eventModal.querySelector('.close-button').addEventListener('click', () => hideModal('eventModal'));
+
+// infoModal "등록!" → registrationCompleteModal
+document.querySelector('#infoModal .submit-button').addEventListener('click', () => {
+  hideModal('infoModal'); showModal('registrationCompleteModal');
+});
+document.querySelector('#infoModal .close-button').addEventListener('click', () => hideModal('infoModal'));
+
+// 모달 바깥 클릭 / ESC
+const modals = [eventModal, infoModal, registrationCompleteModal, unluckyModal, alreadyAppliedModal, eventEndedModal];
+window.addEventListener('click', e => {
+  modals.forEach(m => { if (e.target === m) m.style.display = 'none'; });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') modals.forEach(m => { if (m.style.display === 'flex') m.style.display = 'none'; });
+});
+
+// 전화번호 숫자만
+document.getElementById('phone-mid').addEventListener('input', function() { this.value = this.value.replace(/[^0-9]/g,''); });
+document.getElementById('phone-last').addEventListener('input', function() { this.value = this.value.replace(/[^0-9]/g,''); });
+
+// ── STAGE CONTROLLER ──
+(function () {
+  const stageOne   = document.getElementById('stage-one');
+  const stageTwo   = document.getElementById('stage-two');
+  const stageThree = document.getElementById('stage-three');
+  const boyangTitle = document.getElementById('boyang-title');
+  let pendingModal = null;
+
+  // 재료 클릭 이벤트
+  stageOne.querySelectorAll('[data-modal]').forEach(img => {
+  img.addEventListener('click', function () {
+    pendingModal = this.dataset.modal;
+    const clicked = this;
+
+    // 냄비 위치 계산
+    const pot = stageOne.querySelector('.illust-pot');
+    const potRect = pot.getBoundingClientRect();
+    const imgRect = clicked.getBoundingClientRect();
+
+    const tx = (potRect.left + potRect.width  / 2) - (imgRect.left + imgRect.width  / 2);
+    const ty = (potRect.top  + potRect.height / 2) - (imgRect.top  + imgRect.height / 2);
+
+    // CSS 변수로 목적지 전달 후 애니메이션
+    clicked.style.setProperty('--tx', tx + 'px');
+    clicked.style.setProperty('--ty', ty + 'px');
+    clicked.style.position = 'absolute'; // transform 기준 고정
+    clicked.classList.add('ingredient-to-pot');
+
+    // 0.5초 후 stage one 퇴장 + stage two 즉시 등장 (겹치게)
+    setTimeout(() => {
+      stageOne.classList.add('exit-up');
+
+      // stage two를 fade-out 시작과 동시에 표시
+      playStageTwo();
+
+      setTimeout(() => {
+        stageOne.style.display = 'none';
+      }, 600);
+    }, 500);
+  });
+});
+
+function playStageTwo() {
+  stageTwo.style.display = 'block';
+  stageTwo.style.opacity = '0';
+
+  const pot = stageTwo.querySelector('.illust-pot');
+  const others = [...stageTwo.querySelectorAll('img')].filter(img => !img.classList.contains('illust-pot'));
+
+  stageTwo.querySelectorAll('img').forEach(img => {
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.4s ease';
+  });
+
+  // stage two 전체를 즉시 페이드인
+  requestAnimationFrame(() => {
+    stageTwo.style.transition = 'opacity 0.3s ease';
+    stageTwo.style.opacity = '1';
+  });
+
+  setTimeout(() => { pot.style.opacity = '1'; }, 50);
+  others.forEach((img, i) => {
+    setTimeout(() => { img.style.opacity = '1'; }, 200 + i * 150);
+  });
+
+  setTimeout(() => {
+    stageTwo.classList.add('fade-out');
+    setTimeout(() => {
+      stageTwo.style.display = 'none';
+      playStageThree();
+    }, 600);
+  }, 4000);
+}
+
+  function playStageThree() {
+    boyangTitle.style.display = 'block';
+    stageThree.style.display  = 'block';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        stageThree.classList.add('show');
+      });
+    });
+
+    // ← setTimeout 딱 하나만!
+    setTimeout(() => {
+      stageThree.classList.remove('show'); // zajan 룰 비활성화
+
+      const floatMap = {
+        'illust-pot':    'float-slow',
+        // illust-steam 없음! → slideOutUpFade 유지
+        'illust-kimchi': 'float-mid',
+        'illust-person': 'float-fast',
+      };
+      stageThree.querySelectorAll('img').forEach(img => {
+        img.style.opacity = '1';
+        const floatClass = Object.entries(floatMap).find(([cls]) => img.classList.contains(cls))?.[1];
+        if (floatClass) img.classList.add(floatClass);
+      });
+
+      setTimeout(() => { showModal(pendingModal); }, 50);
+    }, 750);
+  }
+})();
+</script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
