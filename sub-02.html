@@ -15,28 +15,9 @@
 #sub-02 .mob-br { display: none; }
 #sub-02 { width: 100%; box-sizing: border-box; }
 #sub-02 .nps-wrap { max-width: 980px; margin: 0 auto; position: relative; display: grid; grid-template-columns: 2fr 3fr; grid-template-rows: auto auto auto; margin: 0 auto; }
-#sub-02.page {
-  position: relative;
-  max-width: 1280px;
-}
-
-#sub-02.page::before {
-  content: '';
-  position: absolute;
-  left: 40%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: #6A6A6A;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-#sub-02 .nps-wrap,
-#sub-02 .thumb-wrap {
-  position: relative;
-  z-index: 1;
-}
+#sub-02.page { position: relative; max-width: 1280px; }
+#sub-02.page::before { content: ''; position: absolute; left: 40%; top: 0; bottom: 0; width: 1px; background: #6A6A6A; transform: translateX(-50%); z-index: 0;}
+#sub-02 .nps-wrap,#sub-02 .thumb-wrap { position: relative; z-index: 1;}
 #sub-02 .nps-label-wrap { grid-column: 2; grid-row: 1; padding: 100px 0 150px 50px; }
 #sub-02 .nps-label { font-size: 17px; font-weight: 700; color: #222222; letter-spacing: 0.05em; margin: 0 0 4px 0; }
 #sub-02 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
@@ -313,43 +294,43 @@
 
  <div class="nps-wrap">
  
-    <div class="nps-label-wrap">
+    <div class="nps-label-wrap" data-aos="fade-right" data-aos-duration="700" data-aos-delay="300">
       <p class="nps-label">NPS 칼럼</p>
       <div class="nps-label-line"></div>
       <p class="nps-author">write. 서한기 연합뉴스 기자</p>
     </div>
  
     <div class="title-wrap">
-      <h2 class="title">
+      <h2 class="title" data-aos="fade-up" data-aos-duration="800">
         퇴사 후 멈춰 선 <br class="mob-br">당신의 연금에<br>
         다시 숨을 불어넣는 법
       </h2>
     </div>
  
-    <div class="body-wrap one">
+    <div class="body-wrap one" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
       <p class="text pink">
         사직서를 던지고 회사를 나오던 날의 공기를 기억하는가. 시원하기도 하고 한편으로는 앞날에 대한 걱정으로 마음이 무거웠을 것이다. 퇴사라는 큰 변화를 맞이하면 우리 삶의 많은 것들이 바뀌지만, 그중에서도 가장 먼저, 그리고 조용히 바뀌는 것이 바로 국민연금이다. 보이지 않는 곳에서 우리 노후를 지탱하는 이 소중한 권리를 어떻게 관리해야 할지 하나씩 짚어본다.
       </p>
     </div>
 
-    <div class="img-wrap">
+    <div class="img-wrap" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
       <img src="img/sub/02/01.png" alt="퇴사 후 연금 관리 이미지">
     </div>
 
-    <div class="quote-wrap one pc">
+    <div class="quote-wrap one pc" data-aos="fade-left" data-aos-duration="700" data-aos-delay="1000">
       <img class="quote-mark" src="img/sub/quotes-left.png" alt="">
       <p class="quote-text">
         회사 지원이 사라지니 체감하는 무게는 두 배가 된다. 퇴사 후 건강보험료 고지서와 함께 날아온 연금보험료 고지서를 보고 당황하는 이유가 여기에 있다.
       </p>
     </div>
 
-    <div class="body-wrap two">
+    <div class="body-wrap two" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
       <div class="text">
         <b>‘사업장에서 지역으로’ 이름표가 바뀐다</b><br>
         직장에 다닐 때는 매달 월급봉투에서 연금이 알아서 빠져나갔다. 이때 당신의 이름표는 사업장가입자였다. 회사가 보험료의 절반을 부담해 주니 큰 부담을 느끼지 못했을 수도 있다. 하지만 퇴사하면 상황이 달라진다. 이제는 지역가입자라는 새 이름표를 달게 된다.<br>
         가장 큰 변화는 보험료를 오롯이 본인이 모두 부담해야 한다는 점이다. 국민연금법 제9조에 따르면 국내에 거주하는 18세 이상 60세 미만의 국민 중 사업장가입자가 아닌 사람은 지역가입자가 된다. 소득의 9.5%(2026년 현재)를 보험료로 내야 하는데, 회사 지원이 사라지니 체감하는 무게는 두 배가 된다. 퇴사 후 건강보험료 고지서와 함께 날아온 연금보험료 고지서를 보고 당황하는 이유가 여기에 있다. 하지만 이것은 누군가를 괴롭히기 위한 고지서가 아니라 노후가 끊기지 않도록 보내는 국가의 신호로 이해할 필요가 있다.
        <br><br class="pc-br"><br class="pc-br">
-       <div class="quote-mob">
+       <div class="quote-mob" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
         <img class="quote-mark" src="img/sub/quotes-left.png" alt="">
         <p class="quote-text">
           회사 지원이 사라지니 체감하는 무게는 두 배가 된다. 퇴사 후 건강보험료 고지서와 함께 날아온 연금보험료 고지서를 보고 당황하는 이유가 여기에 있다.
@@ -367,14 +348,14 @@
       </p>
     </div>
 
-    <div class="quote-wrap two">
+    <div class="quote-wrap two" data-aos="fade-left" data-aos-duration="700" data-aos-delay="300">
       <img class="quote-mark" src="img/sub/quotes-left.png" alt="">
       <p class="quote-text">
         만 60세가 되었지만 최소 가입기간 10년(120개월)을 채우지 못했거나 연금액을 더 늘리고 싶다면 <br class="pc-br">임의계속가입 제도를 활용할 수 있다. 
       </p>
     </div>
 
-    <div class="body-wrap three">
+    <div class="body-wrap three" data-aos="fade-in" data-aos-duration="900" data-aos-delay="300">
       <p class="text">
         <b>공백을 메우는 마법, 추후납부 전략</b><br>
         퇴사 후 한동안 보험료를 내지 못해 가입기간에 공백이 생겼다면 어떻게 해야 할까. 너무 낙심할 필요는 없다. 추후납부(추납)라는 비장의 카드가 있다. 과거 납부예외 기간의 보험료를 나중에 소득이 생겼을 때 한꺼번에 내는 제도다. 마치 멈췄던 시계를 다시 돌리는 것과 같다. <br>
@@ -382,11 +363,11 @@
       </p>
     </div>
 
-    <div class="quote-wrap three">
+    <div class="quote-wrap three" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
       <img src="img/sub/02/03.png" alt="" style="width: 100%;">
     </div>
 
-    <div class="body-wrap four">
+    <div class="body-wrap four" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
       <p class="text">
         <b>연금은 돈이 아니라 시간이다</b><br>
         연금은 단순한 금융 상품이 아니다. 연금은 우리가 젊은 날에 흘린 땀방울을 미래의 나에게 보내는 가장 따뜻한 편지다. 퇴사 후 찾아오는 연금의 변화를 귀찮은 행정 절차나 부담스러운 고지서 문제로만 치부하지 말자. 그것은 당신이 우리 사회의 일원으로서 당당히 노후를 준비하고 있다는 증거다. 많은 사람이 연금의 수익률이나 고갈론을 걱정한다. 하지만 국민연금만큼 물가 상승률을 정확히 반영해 내 돈의 가치를 지켜주는 제도는 드물다.<br>
@@ -399,11 +380,11 @@
     <div class="table-wrap">
       
       <!-- 타이틀 -->
-      <div class="roadmap-title">퇴사 후, 연금 관리 로드맵</div>
+      <div class="roadmap-title" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">퇴사 후, 연금 관리 로드맵</div>
     
       <div class="step-wrap">
         <!-- STEP 1 -->
-        <div class="step-row">
+        <div class="step-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" >
           <div class="step-wrapper">
             <div class="step-badge">STEP 1</div>
             <div class="step-label">가입자 전환</div>
@@ -419,7 +400,7 @@
         </div>
       
         <!-- STEP 2 -->
-        <div class="step-row">
+        <div class="step-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
           <div class="step-wrapper">
             <div class="step-badge">STEP 2</div>
             <div class="step-label">선택의 갈림길</div>
@@ -485,7 +466,7 @@
         </div>
       
         <!-- STEP 3 -->
-        <div class="step-row">
+        <div class="step-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
           <div class="step-wrapper">
             <div class="step-badge">STEP 3</div>
             <div class="step-label">공백 복구 방법</div>
@@ -509,7 +490,7 @@
         </div>
       
         <!-- STEP 4 -->
-        <div class="step-row">
+        <div class="step-row" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
           <div class="step-wrapper">
             <div class="step-badge">STEP 4</div>
             <div class="step-label">핵심 기준</div>
@@ -544,7 +525,10 @@
   <div class="thumb-wrap">
     <!-- THUMB CARDS -->
     <div class="thumb-section">
-      <div class="thumb-card thumb-bg-1">
+      <div class="thumb-card thumb-bg-1" 
+         data-aos="fade-right"
+         data-aos-duration="800"
+         data-aos-delay="0">
         <div class="thumb-card-inner">
           <div class="thumb-arrow">
             <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
@@ -559,7 +543,10 @@
           </div>
         </div>
       </div>
-      <div class="thumb-card thumb-bg-2">
+      <div class="thumb-card thumb-bg-2"
+         data-aos="fade-left"
+         data-aos-duration="800"
+         data-aos-delay="150">
         <div class="thumb-card-inner right">
           <div class="thumb-text">
             <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
