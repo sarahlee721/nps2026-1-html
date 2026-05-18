@@ -17,7 +17,7 @@
 #sub-08 { width: 100%; box-sizing: border-box; }
 #sub-08 .nps-wrap { }
 #sub-08 .nps-wrap-inner { max-width: 1080px; margin: 0 auto; padding: 0 50px; }
-#sub-08 .nps-label-wrap { padding: 140px 0 60px 0; max-width: 250px; margin: 0 auto; }
+#sub-08 .nps-label-wrap { padding: 140px 0 60px 100px; max-width: 280px; margin: 0 auto; }
 #sub-08 .nps-label { font-size: 17px; font-weight: 700; color: #222222; letter-spacing: 0.05em; margin: 0 0 4px 0; }
 #sub-08 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
 #sub-08 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
@@ -89,15 +89,16 @@
 
 #sub-08 .blue-box { background-color: #00B5FC; padding: 60px 40px; box-sizing: border-box; overflow: visible; }
 
-#sub-08 .etf-intro { position: relative; max-width: 1100px; margin: 0 auto 50px; }
+#sub-08 .etf-intro { position: relative; max-width: 1100px; margin: 0 auto 80px; }
 #sub-08 .etf-intro__text { position: relative; z-index: 1; }
 #sub-08 .etf-intro .section-title { padding-right: 420px; }
-#sub-08 .etf-intro .section-desc { padding-right: 420px; }
+#sub-08 .etf-intro .section-desc { padding-right: 280px; }
 #sub-08 .table-wrap { position: relative; z-index: 1; }
-#sub-08 .etf-intro__image { position: absolute; top: 10%; right: 0; width: 60%; z-index: 0; pointer-events: none; }
+#sub-08 .etf-intro__image { position: absolute; top: 5%; right: -35%; width: 90%; z-index: 0; pointer-events: none; }
 #sub-08 .etf-intro__image img { width: 100%; height: auto; display: block; }
-#sub-08 .section-title { font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 16px; letter-spacing: -0.3px; }
-#sub-08 .section-desc { font-size: 15px; line-height: 1.8; color: #fff; margin: 0 0 30px; }
+#sub-08 .section-title { font-size: 24px; font-weight: 700; color: #F2FF00; margin: 0 0 16px; letter-spacing: -0.3px; }
+#sub-08 .black { color: #000000 !important; }
+#sub-08 .section-desc { font-size: 18px; line-height: 1.8; color: #fff; margin: 0 0 70px; }
  
 /* 비교 테이블 */
 #sub-08 .etf-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 0; }
@@ -113,26 +114,25 @@
 /* 테이블 셀 스타일 */
 #sub-08 .cell-label { background: transparent; color: #fff; font-weight: 700; font-size: 14px; }
 #sub-08 .cell-stock { background: #fff; color: #333; border-radius: 30px; font-size: 14px; }
-#sub-08 .cell-etf { background: #ff5c6e; color: #fff; border-radius: 30px; font-size: 14px; font-weight: 700; }
+#sub-08 .cell-etf { background: #F92553; color: #fff; border-radius: 30px; font-size: 14px; font-weight: 700; }
  
 /* 헤더 셀 */
 #sub-08 .th-label { background: transparent; color: transparent; }
 #sub-08 .th-stock { background: #fff; color: #333; border-radius: 30px; font-weight: 700; }
-#sub-08 .th-etf { background: #ff5c6e; color: #fff; border-radius: 30px; font-weight: 800; font-size: 16px; }
+#sub-08 .th-etf { background: #F92553; color: #fff; border-radius: 30px; font-weight: 800; font-size: 16px; }
  
 /* 테이블 래퍼 - 행간격 처리 */
-#sub-08 .table-wrap { display: flex; flex-direction: column; gap: 8px; }
-#sub-08 .table-row { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 8px; align-items: center; }
-#sub-08 .table-row .cell { padding: 11px 16px; border-radius: 30px; text-align: center; font-size: 14px; line-height: 1.4; }
-#sub-08 .table-row .cell.label { background: transparent; color: #fff; font-weight: 700; border-radius: 30px; border: 2px solid rgba(255,255,255,0.5); }
-#sub-08 .table-row .cell.stock { background: #fff; color: #444; }
-#sub-08 .table-row .cell.etf { background: #ff5c6e; color: #fff; font-weight: 700; }
-#sub-08 .table-row.head .cell.label { background: transparent; border: none; }
-#sub-08 .table-row.head .cell.stock { font-weight: 700; color: #222; }
-#sub-08 .table-row.head .cell.etf { font-size: 15px; font-weight: 800; }
+#sub-08 .table-wrap { display: flex; flex-direction: column; gap: 8px; margin-left: 70px;}
+#sub-08 .table-row { display: grid; grid-template-columns: 180px 1fr 1fr; gap: 8px; align-items: center; }
+#sub-08 .table-row .cell { padding: 3px 10px; border-radius: 30px; text-align: center; font-size: 19px; line-height: 1.4; }
+#sub-08 .table-row .cell.label { background: #fff; color: #000000; font-weight: 700; border-radius: 30px; border: 2px solid rgba(255,255,255,0.5); }
+#sub-08 .table-row .cell.stock { background: #fff; color: #000000; }
+#sub-08 .table-row .cell.etf { background: #F92553; color: #fff; font-weight: 400; }
+#sub-08 .table-row.head .cell.stock { font-weight: 600; color: #000000; }
+#sub-08 .table-row.head .cell.etf { font-size: 19px; font-weight: 800; }
  
 /* 분산투자 섹션 */
-#sub-08 .etf-disperse { max-width: 1100px; margin: 0 auto; }
+#sub-08 .etf-disperse { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 #sub-08 .etf-disperse .section-desc { margin: 0; }
  
 /* 모바일 반응형 */
@@ -155,6 +155,15 @@
   #sub-08 .table-row .cell { padding: 8px 6px; font-size: 11px; border-radius: 20px; }
 }
  
+ /* 아티클 섹션 */
+#sub-08 .article-wrap { }
+#sub-08 .article-img-wrap { width: 100%; overflow: hidden; margin-bottom: 28px; }
+#sub-08 .article-img-wrap img { width: 100%; height: auto; display: block; }
+#sub-08 .article-content { padding: 0; }
+#sub-08 .article-subtitle { font-size: 24px; font-weight: 600; color: #222222; margin-top: 75px; line-height: 1.5; }
+#sub-08 .article-body p { font-size: 18px; color: #222222; line-height: 1.85; margin-bottom: 16px;  }
+#sub-08 .article-body p:last-child { margin-bottom: 0; }
+
 </style>
 </head>
 <body>
@@ -346,63 +355,96 @@
       </div>
 
 
-        <div class="blue-box">
-          <div class="nps-wrap-inner">
-            <!-- ETF란 무엇인가? -->
-            <div class="etf-intro">
-              <div class="etf-intro__text">
-                <p class="section-title">ETF란 무엇인가?</p>
-                <p class="section-desc">
-                  ETF(Exchange Traded Fund, 상장지수펀드)는 특정 지수나 자산 바구니를 추종하는 펀드를 주식처럼 거래소에서 사고팔 수 있는 상품이다. 예를 들어 'KODEX 미국 S&P500 ETF' 한 주를 매수하면, 애플·마이크로소프트·아마존 등 미국 대표 기업 500곳에 한꺼번에 투자하는 효과를 낸다. ETF는 '묶음 투자 상품'을 주식처럼 쉽게 사고파는 방법이다.<br>
-                  쉽게 말해 ETF는 여러 주식이 묶여 있는 '보따리'다.<br>
-                  그 보따리를 실시간으로 사고팔 수 있는 방식이 바로 ETF다.
-                </p>
-        
-                <!-- 비교표 -->
-                <div class="table-wrap">
-                  <div class="table-row head">
-                    <div class="cell label"></div>
-                    <div class="cell stock">일반 주식</div>
-                    <div class="cell etf">ETF</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="cell label">투자 대상</div>
-                    <div class="cell stock">개별 종목 1개</div>
-                    <div class="cell etf">수십~수백 종목 묶음</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="cell label">분산 효과</div>
-                    <div class="cell stock">낮음</div>
-                    <div class="cell etf">높음</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="cell label">관리 방법</div>
-                    <div class="cell stock">직접 선택</div>
-                    <div class="cell etf">운용사 자동 관리</div>
-                  </div>
-                  <div class="table-row">
-                    <div class="cell label">거래 방법</div>
-                    <div class="cell stock">증권사 앱</div>
-                    <div class="cell etf">증권사 앱</div>
-                  </div>
+      <div class="blue-box">
+        <div class="nps-wrap-inner">
+          <!-- ETF란 무엇인가? -->
+          <div class="etf-intro">
+            <div class="etf-intro__text">
+              <p class="section-title">ETF란 무엇인가?</p>
+              <p class="section-desc">
+                ETF(Exchange Traded Fund, 상장지수펀드)는 특정 지수나 자산 바구니를 추종하는 
+                <br class="pc-br"> 펀드를 주식처럼 거래소에서 사고팔 수 있는 상품이다. 예를 들어 'KODEX 미국 S&P500 ETF'
+                <br class="pc-br"> 한 주를 매수하면, 애플·마이크로소프트·아마존 등 미국 대표 기업 500곳에 한꺼번에 
+                <br class="pc-br"> 투자하는 효과를 낸다. ETF는 '묶음 투자 상품'을 주식처럼 쉽게 사고파는 방법이다.<br>
+                쉽게 말해 ETF는 여러 주식이 묶여 있는 '보따리'다.<br>
+                그 보따리를 실시간으로 사고팔 수 있는 방식이 바로 ETF다.
+              </p>
+      
+              <!-- 비교표 -->
+              <div class="table-wrap">
+                <div class="table-row head">
+                  <div class="cell label">구분</div>
+                  <div class="cell stock">일반 주식</div>
+                  <div class="cell etf">ETF</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell label">투자 대상</div>
+                  <div class="cell stock">개별 종목 1개</div>
+                  <div class="cell etf">수십~수백 종목 묶음</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell label">분산 효과</div>
+                  <div class="cell stock">낮음</div>
+                  <div class="cell etf">높음</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell label">관리 방법</div>
+                  <div class="cell stock">직접 선택</div>
+                  <div class="cell etf">운용사 자동 관리</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell label">거래 방법</div>
+                  <div class="cell stock">증권사 앱</div>
+                  <div class="cell etf">증권사 앱</div>
                 </div>
               </div>
-        
-              <div class="etf-intro__image">
-                <img src="img/sub/08/02.png" alt="ETF 3D 일러스트">
-              </div>
             </div>
-        
-            <!-- 분산 투자, 왜 효과적일까? -->
-            <div class="etf-disperse">
-              <p class="section-title">분산 투자, 왜 효과적일까?</p>
-              <p class="section-desc">
-                많은 사람들이 '분산 투자, 분산 투자' 이야기한다. 왜 분산 투자를 하는 걸까?<br>
-                분산 투자의 핵심 원리는 '하나가 흔들려도 전체가 무너지지 않는 구조'를 만드는 것이다. 주식 투자에서 신경 써야 할 것은 크게 두 가지다. 하나는 수익률, 다른 하나는 위험성이다. 분산 투자는 위험성을 크게 낮춰주는 역할을 한다. 개별 종목의 급락이 전체 포트폴리오에 미치는 영향을 줄인다. 개별주에 투자했는데 그 회사가 파산한다면, 내 주식은 천만 원을 들고 있든, 1억을 들고 있든 0이 된다. 반면, 100개의 기업에 나눠 투자한다면, 1개의 기업이 망해도 99개의 회사가 멀쩡하니 훨씬 덜 위험하다. 그에 따라 단기 등락에 흔들리지 않고 투자를 지속하는 힘이 생기며, 배당 재투자와 결합 시, 장기적으로 원금 대비 수익이 기하급수적으로 성장한다.
-              </p>
+      
+            <div class="etf-intro__image">
+              <img src="img/sub/08/02.png" alt="ETF 3D 일러스트">
             </div>
           </div>
+      
+          <!-- 분산 투자, 왜 효과적일까? -->
+          <div class="etf-disperse">
+            <p class="section-title black">분산 투자, 왜 효과적일까?</p>
+            <p class="section-desc black">
+              많은 사람들이 '분산 투자, 분산 투자' 이야기한다. 왜 분산 투자를 하는 걸까?<br>
+              분산 투자의 핵심 원리는 '하나가 흔들려도 전체가 무너지지 않는 구조'를 만드는 것이다. 주식 투자에서 신경 써야 할 것은 크게 두 가지다. 하나는 수익률, 다른 하나는 위험성이다. 분산 투자는 위험성을 크게 낮춰주는 역할을 한다. 개별 종목의 급락이 전체 포트폴리오에 미치는 영향을 줄인다. 개별주에 투자했는데 그 회사가 파산한다면, 내 주식은 천만 원을 들고 있든, 1억을 들고 있든 0이 된다. 반면, 100개의 기업에 나눠 투자한다면, 1개의 기업이 망해도 99개의 회사가 멀쩡하니 훨씬 덜 위험하다. 그에 따라 단기 등락에 흔들리지 않고 투자를 지속하는 힘이 생기며, 배당 재투자와 결합 시, 장기적으로 원금 대비 수익이 기하급수적으로 성장한다.
+            </p>
+          </div>
         </div>
+      </div>
+
+
+      <div class="article-wrap nps-wrap-inner">
+        <div class="article-content" data-aos="fade-up" data-aos-duration="700">
+          <h3 class="article-subtitle">‘한 방’에서 ‘흐름’으로 </h3>
+          <div class="article-body">
+            <p>이 세 가지 변화가 만들어낸 가장 큰 흐름은 투자 심리의 변화다. ‘한 방’을 노리던 투자자들이 ‘꾸준한 복리 성장’과 ‘안정적인 현금 흐름’으로 목표를 바꾸고 있다.
+              <br> 분산 투자의 철학도 진화하고 대중화되었다. 과거의 분산이 ‘여러 종목에 나눠 담는 것’이었다면, 지금의 분산은 계좌 구조 자체를 다각화
+  하거나 대표 지수 추종 ETF로 분산하는 시각이 보편화되었다. 일반 계좌, ISA(개인종합자산관리계좌), 연금저축, IRP(개인형 퇴직연금)를 각 계좌의 세제 혜택에 맞게 설계하고, 그 안에서 ETF를 선별·배분하는 방식이다. 단순히 ‘리스크를 줄이는 분산’이 아니라 ‘세금과 수익률을 동시에 설계하는 분산’이 새로운 기준으로 자리 잡고 있다.
+              <br> 커뮤니티에서 ‘배당 투자’가 화두로 떠오른 것도 같은 맥락이다. 높은 수익률보다 ‘매달 들어오는 배당금’을 선호하는 투자자가 늘고 있다. 
+  배당 ETF는 분산과 현금 흐름이라는 두 마리 토끼를 동시에 잡는 수단으로 주목받고 있다. 월급처럼 매달 배당금을 지급하는 월 배당 ETF의 경우, 2023년 이후 국내 출시 상품 수가 급격히 늘었고 30·40대 직장인뿐 아니라 사회초년생인 20대까지도 배당 투자로 ‘직장’과 ‘투자’의 분산을 시도하고 있다.
+            </p>
+          </div>
+        </div>
+
+        <div class="article-content" data-aos="fade-up" data-aos-duration="700">
+          <h3 class="article-subtitle">유행이 아니라 구조다</h3>
+          <div class="article-body">
+            <p>이렇게 투자의 방식이 ‘나눠서 꾸준히 투자’하는 흐름으로 변화하고 있으며, 그저 지나가는 유행은 아니다. 정년의 소멸과 AI의 역습으로 인한 노후의 불안을 넘어 현금 흐름의 불확정성, 대출 규제와 이미 높아진 부동산 진입 장벽의 심화, 금리 변동성의 확대 등 구조적 요인이 복합적으로 작용한 결과다.
+              <br> 분산 투자의 철학도 진화하고 대중화되었다. 과거의 분산이 ‘여러 종목에 나눠 담는 것’이었다면, 지금의 분산은 계좌 구조 자체를 다각화
+  하거나 대표 지수 추종 ETF로 분산하는 시각이 보편화되었다. 일반 계좌, ISA(개인종합자산관리계좌), 연금저축, IRP(개인형 퇴직연금)를 각 계좌의 세제 혜택에 맞게 설계하고, 그 안에서 ETF를 선별·배분하는 방식이다. 단순히 ‘리스크를 줄이는 분산’이 아니라 ‘세금과 수익률을 동시에 설계하는 분산’이 새로운 기준으로 자리 잡고 있다.
+              <br> ‘작은 돈을 꾸준히, 넓게 분산해서’라는 원칙은 더 이상 특정 투자자의 전유물이 아니다. SNS, 주식 커뮤니티, 독서 모임, 재테크 서적의 확산으로 보다 현명해진 직장인의 지갑에서 시작된 작은 씨앗들이 차곡차곡 쌓여 스스로 소득을 만들어내는 자산으로 바뀌고 있다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+
     </div>
 
  </div>
