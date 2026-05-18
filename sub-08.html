@@ -88,25 +88,14 @@
 
 
 #sub-08 .blue-box { background-color: #00B5FC; padding: 60px 40px; box-sizing: border-box; overflow: visible; }
- 
-/* flex 제거, relative 유지 */
+
 #sub-08 .etf-intro { position: relative; max-width: 1100px; margin: 0 auto 50px; }
-
-/* 텍스트는 일반 흐름, 이미지 뒤로 가도록 z-index */
 #sub-08 .etf-intro__text { position: relative; z-index: 1; }
-
-/* 제목+본문만 오른쪽 여백 (이미지 영역 침범 방지) */
 #sub-08 .etf-intro .section-title { padding-right: 420px; }
 #sub-08 .etf-intro .section-desc { padding-right: 420px; }
-
-/* 표는 이미지 위로 */
 #sub-08 .table-wrap { position: relative; z-index: 1; }
-
-/* 이미지: 우측 상단 배경으로 */
 #sub-08 .etf-intro__image { position: absolute; top: 10%; right: 0; width: 60%; z-index: 0; pointer-events: none; }
 #sub-08 .etf-intro__image img { width: 100%; height: auto; display: block; }
- 
-/* 타이틀 */
 #sub-08 .section-title { font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 16px; letter-spacing: -0.3px; }
 #sub-08 .section-desc { font-size: 15px; line-height: 1.8; color: #fff; margin: 0 0 30px; }
  
