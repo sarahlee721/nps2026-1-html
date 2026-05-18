@@ -316,7 +316,7 @@
     </div>
     <hr class="section-divider">
     <div class="body-wrap">
-       <div class="nps-desc-wrap">
+       <div class="nps-desc-wrap" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
           <p class="nps-desc">
             똑똑하게 미루면 연금액이 최대 36%까지 늘어난다. 지금 당장 받는 것보다
             더 큰 내일을 설계하고 싶다면 '연기연금'의 5가지 핵심 키워드에서 그 해답을 찾을 수 있다.
@@ -326,7 +326,7 @@
         <div class="keyword-diagram">
         
           <!-- 센터 원 -->
-         <div class="keyword-center-wrap">
+         <div class="keyword-center-wrap" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="200">
             <div class="keyword-center-ring ring--lg"></div>
             <div class="keyword-center-ring ring--md"></div>
             <button class="keyword-center" onclick="openModal('modal-center')">
@@ -335,62 +335,74 @@
           </div>
         
           <!-- 늦게 받기 -->
-          <button class="keyword-bubble kw-late" onclick="openModal('modal-late')">
-            <span>늦게 받기</span>
-            <span class="kw-icons">
-              <img src="img/sub/03/mini01.png" alt="">
-              <img src="img/sub/03/mini02.png" alt="">
-            </span>
-          </button>
+          <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="300">
+            <button class="keyword-bubble kw-late" onclick="openModal('modal-late')" >
+              <span>늦게 받기</span>
+              <span class="kw-icons">
+                <img src="img/sub/03/mini01.png" alt="">
+                <img src="img/sub/03/mini02.png" alt="">
+              </span>
+            </button>
+          </div>
         
           <!-- 수령 전략 -->
-          <button class="keyword-bubble kw-strategy" onclick="openModal('modal-strategy')">
-            <span>수령 전략</span>
-            <span class="kw-icons">
-              <img src="img/sub/03/mini03.png" alt="">
-              <img src="img/sub/03/mini04.png" alt="">
-            </span>
-          </button>
-        
+          <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="300">
+            <button class="keyword-bubble kw-strategy" onclick="openModal('modal-strategy')" >
+              <span>수령 전략</span>
+              <span class="kw-icons">
+                <img src="img/sub/03/mini03.png" alt="">
+                <img src="img/sub/03/mini04.png" alt="">
+              </span>
+            </button>
+          </div>
+
           <!-- 최대 5년 -->
-          <button class="keyword-bubble kw-max5" onclick="openModal('modal-max5')">
-            <span>최대 5년</span>
-            <span class="kw-icons">
-              <img src="img/sub/03/mini05.png" alt="">
-              <img src="img/sub/03/mini06.png" alt="">
-            </span>
-          </button>
-        
+          <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="300">
+            <button class="keyword-bubble kw-max5" onclick="openModal('modal-max5')" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
+              <span>최대 5년</span>
+              <span class="kw-icons">
+                <img src="img/sub/03/mini05.png" alt="">
+                <img src="img/sub/03/mini06.png" alt="">
+              </span>
+            </button>
+          </div>
+
           <!-- 증가율 -->
-          <button class="keyword-bubble kw-rate" onclick="openModal('modal-rate')">
-            <span>증가율</span>
-            <span class="kw-icons">
-              <img src="img/sub/03/mini07.png" alt="">
-              <img src="img/sub/03/mini08.png" alt="">
-            </span>
-          </button>
+          <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="300">
+             <button class="keyword-bubble kw-rate" onclick="openModal('modal-rate')" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+              <span>증가율</span>
+              <span class="kw-icons">
+                <img src="img/sub/03/mini07.png" alt="">
+                <img src="img/sub/03/mini08.png" alt="">
+              </span>
+            </button>
+          </div>
         
           <!-- 근로 병행 -->
-          <div class="kw-work-wrap">
-            <button class="keyword-bubble kw-work" onclick="openModal('modal-work')">
+          <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="300">
+           <div class="kw-work-wrap">
+            <button class="keyword-bubble kw-work" onclick="openModal('modal-work')" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
               <span>근로 병행</span>
               <span class="kw-icons">
                 <img src="img/sub/03/mini09.png" alt="">
                 <img src="img/sub/03/mini10.png" alt="">
               </span>
             </button>
-            <img class="kw-work-extra" src="img/sub/03/mini10-1.png" alt="">
+            <img class="kw-work-extra" src="img/sub/03/mini10-1.png" alt="" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
           </div>
 
-          
-        
+          </div>
+         
+
           <!-- 3가지 체크포인트 -->
-          <button class="keyword-bubble kw-check" onclick="openModal('modal-check')">
-            <span>3가지 체크포인트</span>
-            <span class="kw-icons">
-              <img src="img/sub/03/mini11.png" alt="">
-            </span>
-          </button>
+          <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+            <button class="keyword-bubble kw-check" onclick="openModal('modal-check')">
+              <span>3가지 체크포인트</span>
+              <span class="kw-icons">
+                <img src="img/sub/03/mini11.png" alt="">
+              </span>
+            </button>
+          </div>
         
         </div>
     </div>
@@ -527,7 +539,10 @@
       <div class="thumb-wrap">
       <!-- THUMB CARDS -->
       <div class="thumb-section">
-        <div class="thumb-card thumb-bg-1">
+        <div class="thumb-card thumb-bg-1"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-delay="0">
           <div class="thumb-card-inner">
             <div class="thumb-arrow">
               <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
@@ -542,7 +557,10 @@
             </div>
           </div>
         </div>
-        <div class="thumb-card thumb-bg-2">
+        <div class="thumb-card thumb-bg-2"
+          data-aos="fade-left"
+          data-aos-duration="800"
+          data-aos-delay="150">
           <div class="thumb-card-inner right">
             <div class="thumb-text">
               <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
