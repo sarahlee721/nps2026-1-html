@@ -11,17 +11,18 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <style>
-
+#event-02 .thumb-section { padding: 0 50px 100px; }
   /* ── WRAPPER ── */
 #event-02 { background: #94E4FE; padding: 0 !important;}
+#event-02 .mob-br { display: none; }
 /* Quiz Section */
 #event-02 .e02-inner { max-width: 1440px; margin: 0 auto; padding: 100px 50px 90px; position: relative; }
-#event-02 .e02-label { display: block; font-size: 22px; font-weight: 600; text-align: center; color: #222; letter-spacing: 0.02em; margin-bottom: 70px; }
+#event-02 .e02-label { display: block; font-size: 22px; font-weight: 600; text-align: center;letter-spacing: 0.02em; margin-bottom: 70px; }
 #event-02 .e02-label::after { content: ''; display: block; width: 36px; height: 1px; background: #222; margin: 12px auto 0; }
-#event-02 .e02-title { font-size: 50px; font-weight: 600; text-align: center; line-height: 1.5; color: #111; margin-bottom: 32px; }
+#event-02 .e02-title { font-size: 50px; font-weight: 600; text-align: center; line-height: 1.5; margin-bottom: 30px; }
 #event-02 .e02-d01 { position: absolute; width: 150px; top: 150px; right: 150px; }
 #event-02 .e02-d02 { position: absolute; width: 150px; left: 150px; top: 400px; }
-#event-02 .e02-d03 { position: absolute; width: 150px; left: 280px; bottom: 500px; z-index: 2; }
+#event-02 .e02-d03 { position: absolute; width: 150px; left: -70px; bottom: 455px; z-index: 2; }
 #event-02 .e02-desc { font-size: 18px; text-align: center; line-height: 1.8; margin-bottom: 130px; font-weight: 600; }
 #event-02 .e02-quiz-head { font-size: 56px; font-weight: 600; text-align: center; margin-bottom: 30px; }
 #event-02 .e02-card { max-width: 760px; margin: 0 auto; background: #fff; border-radius: 50px; padding: 70px 0 55px; border: 1px solid #000000; text-align: center; position: relative; z-index: 1; }
@@ -35,7 +36,7 @@
 #event-02 .e02-stu1 { position: absolute; right: -150px; bottom: -200px; width: 275px; }
  
 /* Prize Section */
-#event-02 .e02-prize .e02-inner { max-width: 760px; margin: 0 auto; padding: 0px 0 120px; position: relative; }
+#event-02 .e02-prize .e02-inner { max-width: 760px; margin: 0 auto; padding: 0px 40px 120px; position: relative; }
 #event-02 .e02-stu2 { position: absolute; left: -200px; top: -100px; width: 300px; }
 #event-02 .e02-stu2-col { position: relative; flex: 0 0 auto; text-align: center; }
 #event-02 .e02-chagok { position: absolute; left: 14px; top: 0; font-size: 18px; font-weight: 800; color: #111; transform: rotate(-8deg); white-space: nowrap; }
@@ -58,27 +59,67 @@
 #event-02 .e02-notice { list-style: none; border-top: 1px solid #000;  padding-top: 20px; }
 #event-02 .e02-notice li { font-size: 15px; line-height: 1.6; }
  
-@media (max-width: 640px) {
-  #event-02 .e02-inner { padding: 50px 22px 60px; }
-  #event-02 .e02-title { font-size: 24px; }
-  #event-02 .e02-d01 { width: 68px; top: 44px; right: 10px; }
-  #event-02 .e02-d02 { width: 80px; left: 0; top: 120px; }
-  #event-02 .e02-d03 { width: 68px; left: 10px; bottom: 90px; }
-  #event-02 .e02-quiz-head { font-size: 38px; }
-  #event-02 .e02-card { padding: 32px 22px 50px; }
-  #event-02 .e02-c { width: 42px; height: 42px; font-size: 18px; }
-  #event-02 .e02-cq { font-size: 14px; }
-  #event-02 .e02-stu1 { width: 110px; right: -10px; }
-  #event-02 .e02-prize .e02-inner { padding: 20px 22px 50px; }
-  #event-02 .e02-chagok { font-size: 15px; }
-  #event-02 .e02-stu2 { width: 100px; }
-  #event-02 .e02-coffee { width: 88px; }
-  #event-02 .e02-d04 { width: 66px; }
-  #event-02 .e02-th { flex: 0 0 95px; font-size: 13px; padding: 11px 10px; }
-  #event-02 .e02-td { font-size: 13px; padding: 11px 10px; }
-  #event-02 .e02-btn { padding: 12px 28px; font-size: 14px; }
-  #event-02 .e02-d05, #event-02 .e02-d06 { width: 50px; }
+@media (max-width: 1280px) {
+  #event-02 .e02-d01 { width: 120px; right: 100px; }
+  #event-02 .e02-d02 { width: 130px; top: 550px; }
+  #event-02 .e02-d03 { width: 130px; left: -30px; }
+  #event-02 .e02-stu1 { width: 200px; right: -20px; bottom: -60px; }
+  #event-02 .e02-stu2 { width:210px; left: 15px; top: -30px; }
+  #event-02 .e02-d04 { width: 140px; top: 170px; right: 25px; }
+  #event-02 .e02-d05 { width: 110px; left: 0px; bottom: 400px; }
+  #event-02 .e02-d06 { width: 110px; right: 50px; bottom: 160px; }
 }
+
+@media (max-width: 768px) {
+  #event-02 .thumb-section { padding: 0 20px 20px; }
+  #event-02 .pr-br { display: none; }
+  #event-02 .mob-br { display: block; }
+  #event-02 .e02-inner { padding: 50px 20px 60px; }
+  #event-02 .e02-title { font-size: 26px; font-weight: 500;}
+  #event-02 .e02-label { font-size: 16px; letter-spacing: -0.5px; }
+  #event-02 .e02-label::after { margin: 8px auto 0; }
+  #event-02 .e02-desc { font-size: 17px; font-weight: 500; line-height: 1.7; margin-bottom: 50px;}
+  #event-02 .e02-d01 { top: 70px; right: -30px; }
+  #event-02 .e02-d02 { left: -20px; top: 460px; }
+  #event-02 .e02-d03 { width: 100px; left: 400px; bottom: -1160px; }
+  #event-02 .e02-d04 { width: 100px; top: 360px; right: 60px; }
+  #event-02 .e02-prize-nm { margin-bottom: 20px; }
+  #event-02 .e02-quiz-head { font-size: 38px; }
+  #event-02 .e02-cons-row { gap: 2px; }
+  #event-02 .e02-card { padding: 60px 15px; }
+  #event-02 .e02-c { width: 30px; height: 30px; font-size: 25px; }
+  #event-02 .e02-cq { font-size: 16px; }
+  #event-02 .e02-stu1 { width: 280px; top: 560px; left: 50%; transform: translateX(-50%); }
+  #event-02 .e02-prize .e02-inner { padding: 270px 20px 50px; }
+  #event-02 .e02-chagok { font-size: 15px; }
+  #event-02 .e02-stu2 { width: 200px; top: 760px; left: 50%; transform: translateX(-50%); }
+  #event-02 .e02-tbl { margin: 0 auto 400px; }
+  #event-02 .e02-tr { flex-direction: column; }
+  /* #event-02 .e02-coffee { width: 88px; } */
+  #event-02 .e02-th { flex: 0 0 auto; font-size: 16px; padding: 10px 10px 0; }
+  #event-02 .e02-td { font-size: 16px; padding: 5px 10px 10px; }
+  #event-02 .e02-btn { font-size: 20px; padding: 8px 40px; }
+  #event-02 .e02-btns { margin-bottom: 40px; }
+  #event-02 .e02-d05{ display: none; }
+  #event-02 .e02-d06 { width: 80px; right: 400px; bottom: 630px; }
+}
+
+@media (max-width: 560px) {
+  #event-02 .e02-d03 { width: 90px; left: 320px; }
+  #event-02 .e02-d06 { width: 70px; right: 340px; bottom: 700px; }
+  #event-02 .e02-d04 { right: 40px; }
+}
+
+@media (max-width: 460px) {
+  #event-02 .e02-d06 { right: 320px; bottom: 760px; }
+  #event-02 .e02-d03 { left: 270px; }
+}
+
+@media (max-width: 390px) {
+  #event-02 .e02-d06 { right: 280px; }
+  #event-02 .e02-d03 { left: 230px; }
+}
+
 </style>
 </head>
 <body>
@@ -196,17 +237,17 @@
   <div class="e02-quiz">
     <div class="e02-inner">
       <p class="e02-label">초성 퀴즈</p>
-      <img src="img/event/02/01.png" class="e02-d01" alt="">
-      <h2 class="e02-title">웹진을 읽고<br>초성에 맞는 단어를 맞혀 주세요!</h2>
-      <img src="img/event/02/02.png" class="e02-d02" alt="">
-      <img src="img/event/02/03.png" class="e02-d03" alt="">
+      <img src="img/event/02/01.png" class="e02-d01" alt="ㄹ">
+      <h2 class="e02-title">웹진을 읽고<br>초성에 맞는 단어를 <br class="mob-br"> 맞혀 주세요!</h2>
+      <img src="img/event/02/02.png" class="e02-d02" alt="ㅁ">
       <p class="e02-desc">
-        &lt;내 곁에 국민연금&gt; 2026년 상반기호를 읽고 초성 퀴즈를 맞혀 주세요!<br>
+        &lt;내 곁에 국민연금&gt;<br class="mob-br"> 2026년 상반기호를 읽고 <br class="mob-br"> 초성 퀴즈를 맞혀 주세요!<br>
         웹진 곳곳에 정답이 숨어 있습니다.<br>
-        정답을 맞히신 분들 중 추첨을 통해 선물을 드립니다.
+        정답을 맞히신 분들 중 추첨을 통해 <br class="mob-br"> 선물을 드립니다.
       </p>
       <p class="e02-quiz-head">Quiz</p>
       <div class="e02-card">
+        <img src="img/event/02/03.png" class="e02-d03" alt="ㅊ">
         <div class="e02-cons-row">
           <span class="e02-c">ㅊ</span><span class="e02-c">ㄴ</span>
           <span class="e02-cs"></span>
@@ -218,14 +259,14 @@
         </div>
         <p class="e02-csub">지원 제도</p>
         <p class="e02-cq">
-          2027년부터 국민연금 납부이력이 없는 만 18세 청년은<br>
-          생애 첫 1개월분 연금보험료를 지원받을 수있으며,<br>
-          이미 납부이력이 있는 경우 보험료 지원 대신<br>
-          1개월의 가입기간을 추가로 산입해주는 제도가 있습니다.<br>
+          2027년부터 국민연금 납부이력이 없는<br class="mob-br"> 만 18세 청년은<br class="pc-br">
+          생애 첫 1개월분<br class="mob-br"> 연금보험료를 지원받을 수 있으며,<br>
+          이미 납부이력이 있는 경우<br class="mob-br"> 보험료 지원 대신<br>
+          1개월의 가입기간을<br class="mob-br"> 추가로 산입해주는 제도가 있습니다.<br>
           이 제도의 이름은 무엇일까요?
         </p>
         <p class="e02-hint"><span>힌트</span> 연금 생애 설계 가이드</p>
-        <img src="img/event/02/student01.png" class="e02-stu1" alt="">
+        <img src="img/event/02/student01.png" class="e02-stu1" alt="차곡차곡 외치고 있는 여자 학생">
       </div>
     </div>
   </div>
@@ -233,12 +274,11 @@
   <!-- ② Prize Section -->
 <div class="e02-prize">
   <div class="e02-inner">
-    <img src="img/event/02/student02.png" class="e02-stu2" alt="">
-    <span class="e02-chagok">차곡차곡</span>
+    <img src="img/event/02/student02.png" class="e02-stu2" alt="퀴즈를 가르키고 있는 남자 학생">
     <div class="e02-coffee-col">
       <img src="img/event/02/coffee.png" class="e02-coffee" alt="커피 기프티콘">
     </div>
-    <img src="img/event/02/04.png" class="e02-d04" alt="">
+    <img src="img/event/02/04.png" class="e02-d04" alt="ㅌ">
     <p class="e02-prize-nm">커피 기프티콘(15명)</p>
       <div class="e02-tbl">
         <div class="e02-tr">
@@ -254,17 +294,17 @@
       <button class="e02-btn e02-sub">구독하기</button>
       <button class="e02-btn e02-join">참여하기</button>
     </div>
-    <img src="img/event/02/05.png" class="e02-d05" alt="">
-    <img src="img/event/02/06.png" class="e02-d06" alt="">
+    <img src="img/event/02/05.png" class="e02-d05" alt="ㅑ">
+    <img src="img/event/02/06.png" class="e02-d06" alt="ㅇ">
 
       <ul class="e02-notice">
-        <li>·&lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
-        <li>·본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
-        <li>·이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</li>
-        <li>·부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</li>
-        <li>·같은 분에 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루집니다.</li>
-        <li>·당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기됩니다.</li>
-        <li>·정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</li>
+        <li>•  &lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
+        <li>•  본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
+        <li>•  이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</li>
+        <li>•  부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</li>
+        <li>•  같은 분에 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루집니다.</li>
+        <li>•  당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기됩니다.</li>
+        <li>•  정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</li>
       </ul>
     </div>
   </div>
