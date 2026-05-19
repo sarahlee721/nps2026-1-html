@@ -11,31 +11,104 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <style>
-#event-04 .thumb-section { padding: 0 50px 100px; }
-  /* ── WRAPPER ── */
-#event-04 { background: #E9F9CA; padding: 0 !important;}
+/* ── BASE ── */
+#event-04 { background: #E9F9CA; padding: 0 !important; overflow: hidden; }
 #event-04 .mob-br { display: none; }
-/* Quiz Section */
-#event-04 .inner { max-width: 1440px; margin: 0 auto; padding: 100px 50px 90px; position: relative; }
-#event-04 .label { display: block; font-size: 22px; font-weight: 600; text-align: center;letter-spacing: 0.02em; margin-bottom: 70px; }
+#event-04 .pr-br { display: block; }
+#event-04 .thumb-section { padding: 80px 50px 100px; }
+/* ── TOP SECTION ── */
+#event-04 .top-section { position: relative; padding: 80px 20px 0; text-align: center; background: #E9F9CA; overflow: visible; }
+ 
+/* ── LABEL ── */
+#event-04 .label { display: block; font-size: 22px; font-weight: 600; text-align: center; letter-spacing: 0.02em; margin-bottom: 56px; position: relative; z-index: 2; }
 #event-04 .label::after { content: ''; display: block; width: 36px; height: 1px; background: #222; margin: 12px auto 0; }
-#event-04 .title { font-size: 50px; font-weight: 600; text-align: center; line-height: 1.5; margin-bottom: 30px; }
-#event-04 .d01 { position: absolute; width: 150px; top: 150px; right: 150px; }
-#event-04 .d02 { position: absolute; width: 150px; left: 150px; top: 400px; }
-#event-04 .d03 { position: absolute; width: 150px; left: -70px; bottom: 455px; z-index: 2; }
-#event-04 .desc { font-size: 18px; text-align: center; line-height: 1.8; margin-bottom: 130px; font-weight: 600; }
+ 
+/* ── MAIN CIRCLE (PC: title + desc + illust 전부 원 안) ── */
+#event-04 .main-circle { width: min(1000px, 92vw); height: min(1000px, 92vw); border-radius: 50%; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; box-sizing: border-box; padding: 50px clamp(40px, 8%, 80px); position: relative; z-index: 2; }
+#event-04 .title { font-size: clamp(26px, 3vw, 50px); font-weight: 600; text-align: center; line-height: 1.5; margin: 100px 0 50px; }
+#event-04 .intro-desc { font-size: clamp(14px, 1.3vw, 18px); text-align: center; line-height: 1.8; font-weight: 600; margin: 0 0 24px; }
+#event-04 .illust-wrap { display: flex; justify-content: center; align-items: center; width: 100%; flex: 1 0 auto; }
+#event-04 .illust { width: min(550px, 78%); display: block; margin:  70px 0 0 130px; }
+#event-04 .illust.mob { display: none; }
 
+
+/* ── DECORATIVES ── */
+#event-04 .d01 { position: absolute; width: 5%; top: 400px; right: 155px; z-index: 3; pointer-events: none; }
+#event-04 .d02 { position: absolute; width: 22%; top: 350px; left: -25px; z-index: 3; pointer-events: none; }
+/* #event-04 .d03 { position: absolute; width: clamp(44px, 4.5vw, 76px); bottom: 260px; left: clamp(10px, 5vw, 90px); z-index: 3; pointer-events: none; } */
+#event-04 .d04 { position: absolute; width:10%; bottom: 100px; right: 50px; z-index: 3; pointer-events: none; }
+ 
+#event-04 .scallop { display: none; }
+ 
+/* ── BODY SECTION ── */
+#event-04 .body-section { position: relative; left: 50%; transform: translateX(-50%); background: #fff; width: 1600px; max-width: none; margin: -120px 0 0; padding: 130px 20px 140px; text-align: center; border-radius: 999px; box-sizing: border-box; overflow: visible; }
+#event-04 .body-desc, #event-04 .divider, #event-04 .coupon-card { max-width: 680px; margin-left: auto; margin-right: auto; }
+#event-04 .body-desc { font-size: 19px; line-height: 1.6; margin: 70px auto 50px; max-width: 680px; }
+#event-04 .divider { border: none; border-top: 1px solid #000000; max-width: 680px; margin: 0 auto 80px; }
+ 
+/* ── COUPON CARD ── */
+#event-04 .coupon-card { padding-bottom: 80px; }
+#event-04 .coupon-img { width: 200px; display: block; margin: 0 auto 12px; }
+#event-04 .prize-name { font-size: 17px; font-weight: 600; margin: 0 auto 60px; }
+ 
+/* ── PERIOD INFO ── */
+#event-04 .prize-info { max-width: 580px; margin: 0 auto 80px; display: flex; flex-direction: column; gap: 14px; }
+#event-04 .prize-row { display: flex; align-items: center; background: #fff; border-radius: 50px; padding: 8px 35px; gap: 60px; border: 1px solid; }
+#event-04 .prize-lbl { font-size: 20px; font-weight: 700; white-space: nowrap; min-width: 80px; }
+#event-04 .prize-val { font-size: 20px; font-weight: 500; }
+ 
+/* ── BUTTONS ── */
+#event-04 .e04-btns { display: flex; justify-content: center; gap: 30px; margin-bottom: 80px; }
+#event-04 .e04-btn { padding: 12px 70px; border-radius: 50px; font-size: 27px; font-weight: 400; cursor: pointer; border: none; font-family: inherit; transition: opacity 0.2s; }
+#event-04 .e04-btn:hover { opacity: 0.84; }
+#event-04 .e04-sub { background: #424242; color: #fff; }
+#event-04 .e04-join { background: #FF8EA8; color: #fff; }
+ 
+/* ── FINE PRINT ── */
+#event-04 .e04-notice { list-style: none; border-top: 1px solid #000;  padding-top: 20px; }
+#event-04 .e04-notice li { font-size: 15px; line-height: 1.6; text-align: left;}
+ 
+ 
+/* ══════════════════════════════════
+   MOBILE
+══════════════════════════════════ */
 @media (max-width: 768px) {
-  #event-04 .thumb-section { padding: 0 20px 20px; }
-  #event-04 .pr-br { display: none; }
   #event-04 .mob-br { display: block; }
-  #event-04 .inner { padding: 50px 20px 60px; }
-  #event-04 .title { font-size: 26px; font-weight: 500;}
-  #event-04 .label { font-size: 16px; letter-spacing: -0.5px; }
+  #event-04 .pr-br { display: none; }
+  #event-04 .top-section { padding: 50px 0 0; overflow: hidden; }
+  #event-04 .label { font-size: 16px; letter-spacing: -0.3px; margin-bottom: 15px; }
   #event-04 .label::after { margin: 8px auto 0; }
-  #event-04 .desc { font-size: 17px; font-weight: 500; line-height: 1.7; margin-bottom: 50px;}
+  #event-04 .main-circle { width: 360px; height: 360px; border-radius: 50%; background: #fff; margin-left: 50%; transform: translateX(-50%); padding: 50px 5px 0; justify-content: flex-start; }
+  #event-04 .title { font-size: 26px; font-weight: 500; line-height: 1.45; margin: 0 0 30px; }
+  #event-04 .intro-desc { font-size: 15px; font-weight: 600; line-height: 1.8; margin: 0 0 26px; }
+  #event-04 .illust-wrap { width: 100%; height: auto; border-radius: 0; background: none; margin: 0 auto; flex: none; }
+  #event-04 .illust.pc { display: none; }
+  #event-04 .illust.mob { display: block; }
+  #event-04 .illust { max-width: 300px; margin: 0 auto; }
+  #event-04 .d01 { width: 52px; top: 330px; right: 8px; bottom: auto; left: auto; }
+  #event-04 .d02 { display: none; }
+  #event-04 .d03 { width: 46px; left: 20px; bottom: -15px; right: auto; }
+  #event-04 .d04 { width: 58px; right: 18px; bottom: -30px; top: auto; left: auto; }
+  #event-04 .body-section { background: #fff; width: 1000px; margin: 50px 0 0; }
+  /* #event-04 .body-section { position: relative; background: #fff; width: calc(100% - 24px); margin: -55px auto 0; padding: 90px 24px 90px; border-radius: 999px; box-sizing: border-box; overflow: visible; } */
+  #event-04 .body-desc { font-size: 15px; line-height: 1.95; margin-bottom: 48px; word-break: keep-all; }
+  #event-04 .divider { display: none; }
+  #event-04 .coupon-card { background: #fff; border-radius: 0; padding: 0 20px 60px; margin-top: 0; }
+  #event-04 .coupon-img { width: 150px; }
+  #event-04 .prize-name { font-size: 18px; margin-bottom: 30px; }
+  #event-04 .prize-row { flex-direction: column; padding: 10px 5px; gap: 4px; border-radius: 300px; text-align: center; align-items: center; letter-spacing: -0.5px;}
+  #event-04 .prize-lbl { font-size: 16px; min-width: auto; }
+  #event-04 .prize-val { font-size: 16px; }
+  #event-04 .prize-terms { font-size: 15px; line-height: 1.6; }
+  #event-04 .e04-btn { font-size: 20px; padding: 8px 40px; }
+  #event-04 .e04-btns { margin-bottom: 40px; }
+  #event-04 .btn-wrap { gap: 12px; margin-bottom: 45px; }
+  #event-04 .btn-sub, #event-04 .btn-join { width: 126px; padding: 14px 0; font-size: 15px; }
+  #event-04 .fine-print { max-width: 100%; padding: 24px 0 0; }
+  #event-04 .fine-print li { font-size: 12px; line-height: 1.75; }
+  #event-04 .body-desc, #event-04 .coupon-card { width: min(100vw, 420px); max-width: 420px; margin-left: auto; margin-right: auto; }
+  #event-04 .thumb-section { padding: 20px; }
 }
-
 
 </style>
 </head>
@@ -147,29 +220,75 @@
 <div class="backdrop" id="backdrop"></div>
 
 
+ 
 <div class="page" id="event-04">
-
-  <div class="quiz">
-    <div class="inner">
-      <p class="label">OX 퀴즈</p>
-      <img src="img/event/03/01.png" class="d01" alt="별">
-      <h2 class="title">국민연금을 맞혀라! <br> OX 퀴즈</h2>
-      <img src="img/event/03/02.png" class="d02" alt="불빛2">
-      <p class="desc">
-        &lt;내 곁에 국민연금&gt;<br class="mob-br">2026년 상반기호를 읽고 <br class="mob-br"> OX퀴즈를 맞혀 주세요!<br>
-        웹진 곳곳에 정답이 숨어 있습니다.<br>
-        정답을 모두 맞히신 분들 중 추첨을 통해 <br class="mob-br"> 선물을 드립니다.
+ 
+  <div class="top-section">
+    <span class="label">독자 목소리</span>
+    <div class="main-circle">
+        <img src="img/event/04/03.png" class="d01" alt="">
+        <img src="img/event/04/02.png" class="d02" alt="">
+        <img src="img/event/04/04.png" class="d04" alt="">
+      <h2 class="title">
+        &lt;내 곁에 국민연금&gt;<br>
+        독자의 목소리, 오히려 좋아!
+      </h2>
+      <p class="intro-desc">
+        잘 읽었다는 칭찬도,<br class="mob-br"> 따끔한 충고도 다 좋습니다.<br>
+        독자님의 솔직한 목소리라면<br class="mob-br"> 저희는 '오히려 좋아'요!
       </p>
-      <img src="img/event/03/03.png" class="d03" alt="불빛3">
+      <div class="illust-wrap">
+        <img src="img/event/04/01.png" class="illust pc" alt="독자 일러스트">
+      </div>
+    </div>
+
+  </div>
+ 
+  <div class="scallop"></div>
+ 
+  <div class="body-section">
+    <img src="img/event/04/01.png" class="illust mob" alt="독자 일러스트">
+    <p class="body-desc">
+      &lt;내 곁에 국민연금&gt; 웹진을 아껴 주시는 독자 여러분께 감사의 말씀을 전합니다.<br>
+      2026년 상반기호에 대한 리뷰, 국민연금 제도에 대한 희망이 담긴 조언과 기대감 등<br class="pr-br">
+      독자 여러분의 목소리를 들려주세요. 추첨을 통해 선물을 드립니다.<br>
+      들려주신 목소리에 귀 기울여 성장하는 &lt;내 곁에 국민연금&gt;을 만들어 가겠습니다.
+    </p>
+    <hr class="divider">
+    <div class="coupon-card">
+      <img src="img/event/04/coupon.png" class="coupon-img" alt="베이커리 기프티콘 20,000원">
+      <p class="prize-name">베이커리 기프티콘(10명)</p>
+      <div class="prize-info">
+        <div class="prize-row">
+          <span class="prize-lbl">응모 기간</span>
+          <span class="prize-val">6월 1일 오전 9시 ~ 8월 1일 오후 11시 30분</span>
+        </div>
+        <div class="prize-row">
+          <span class="prize-lbl">당첨 발표</span>
+          <span class="prize-val">8월 10일 오후 5시</span>
+        </div>
+      </div>
+      <div class="e04-btns">
+        <button class="e04-btn e04-sub">구독하기</button>
+        <button class="e04-btn e04-join">참여하기</button>
+      </div>
+      <ul class="e04-notice">
+        <li>•  &lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
+        <li>•  본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
+        <li>•  이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</li>
+        <li>•  부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</li>
+        <li>•  같은 분에 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루집니다.</li>
+        <li>•  당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기됩니다.</li>
+        <li>•  정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</li>
+      </ul>
     </div>
   </div>
-
-  <!-- THUMB CARDS -->
+ 
   <div class="thumb-section">
     <div class="thumb-card thumb-bg-1">
       <div class="thumb-card-inner">
         <div class="thumb-arrow">
-          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
             <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
             <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -189,7 +308,7 @@
           <p class="thumb-tag">자동가입 여부 확인</p>
         </div>
         <div class="thumb-arrow">
-          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
             <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
             <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -197,8 +316,9 @@
       </div>
     </div>
   </div>
-
+ 
 </div>
+ 
 
 
 
