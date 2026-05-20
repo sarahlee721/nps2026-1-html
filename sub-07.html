@@ -17,7 +17,7 @@
 #sub-07 { width: 100%; box-sizing: border-box; }
 #sub-07 .nps-wrap { }
 #sub-07 .nps-wrap-inner { max-width: 1080px; margin: 0 auto; padding: 0 50px; }
-#sub-07 .nps-label-wrap { padding: 140px 0 60px 0; max-width: 250px; margin: 0 auto; }
+#sub-07 .nps-label-wrap { padding: 140px 0 60px 115px; max-width: 300px; margin: 0 auto; }
 #sub-07 .nps-label { font-size: 17px; font-weight: 700; color: #222222; letter-spacing: 0.05em; margin: 0 0 4px 0; }
 #sub-07 .nps-label-line { width: 15px; height: 1px; background: #717171; margin: 8px 0 2px 0; }
 #sub-07 .nps-author { font-size: 17px; color: #222222; margin: 0; letter-spacing: 0.02em; }
@@ -25,9 +25,10 @@
 #sub-07 .title { text-align: left; font-size: 50px; font-weight: 700; color: #000000; line-height: 1.4; letter-spacing: -0.02em; margin: 0; }
 #sub-07 .section-divider { border: none; border-top: 1px solid #222; margin: 30px auto; width: calc(100% - 100px); max-width: 980px; }
 #sub-07 .nps-desc-wrap { text-align: right; padding: 0 50px 60px 50px; }
-#sub-07 .nps-desc { max-width: 530px; font-size: 18px; color: #2215C9; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 500; text-align: left;}
+#sub-07 .nps-desc { max-width: 530px; font-size: 18px; color: #0F6AA6; line-height: 1.7; letter-spacing: 0.01em; margin: 0 0 0 auto; font-weight: 600; text-align: left;}
 #sub-07 .nps-desc strong { font-weight: 700; }
 #sub-07 .body-wrap { }
+#sub-07 .thumb-section { padding: 170px 50px 100px; }
 
 /* ====== 반응형 ====== */
 @media (max-width: 768px) {
@@ -37,15 +38,236 @@
   #sub-07 .nps-label { font-size: 16px;}
   #sub-07 .nps-author { font-size: 16px; }
   #sub-07 .title { font-size: 26px; font-weight: 500; }
-  #sub-07 .nps-desc { font-size: 17px; font-weight: 500; max-width: 100%;}
+  #sub-07 .nps-desc { font-size: 17px; max-width: 100%; padding: 20px 0 30px; }
   #sub-07 .nps-desc-wrap { text-align: left; padding: 20px 0 40px 0; }
   #sub-07 .section-divider { display: none; }
   #sub-07 .nps-wrap-inner { padding: 0 20px;}
   #sub-07 .title-wrap { padding: 10px 20px 5px 20px; }
+  #sub-07 .thumb-section { padding: 30px 20px 20px; }
 }
  
+#sub-07 .img-section { position: relative; width: 100%; overflow: hidden; }
+#sub-07 .img-bg { width: 100%; display: block; object-fit: cover; }
+#sub-07 .img-illust-wrap { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; }
+#sub-07 .img-illust { width: 65%; max-width: 1100px; display: block; }
 
- 
+#sub-07 .article-wrap { }
+#sub-07 .article-img-wrap { width: 100%; overflow: hidden; margin-bottom: 28px; }
+#sub-07 .article-img-wrap img { width: 100%; height: auto; display: block; }
+#sub-07 .article-content { padding: 0; }
+#sub-07 .article-content.center { text-align: center; }
+#sub-07 .article-subtitle { font-size: 24px; font-weight: 600; margin-top: 75px; line-height: 1.5; }
+#sub-07 .article-body p { font-size: 18px; line-height: 1.85; margin-bottom: 16px;  }
+
+@media (max-width: 768px) {
+  #sub-07 .nps-wrap-inner { padding: 0 20px;}
+  #sub-07 .title-wrap { padding: 10px 20px 5px 20px; }
+  #sub-07 .article-subtitle { font-size: 21px; margin-top: 50px; }
+  #sub-07 .img-bg { width: 140%; margin-left: -20%; }
+  #sub-07 .img-illust { width: calc(100% - 20px); max-width: none; }
+  #sub-07 .article-body p { font-size: 16px; }
+}
+
+ /* === Section 02 === */
+#sub-07 .article-num-wrap { display: flex; align-items: center; gap: 14px; margin: 80px 0 6px; }
+#sub-07 .article-num { width: 50px; height: 50px; border-radius: 50%; background: #C8F5F5; color: #000; border: 1px solid; font-size: 26px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+#sub-07 .article-subtitle-num { font-size: 24px; font-weight: 700; color: #222; margin: 0; line-height: 1.4; }
+#sub-07 .sec02-body { margin: 0 0 50px; padding-left: 64px; }
+#sub-07 .sec02-body p { font-size: 18px; line-height: 1.7; margin: 0; font-weight: 600; }
+
+#sub-07 .sec02-img-section { width: 100%; padding: 0 0 60px; max-width: 1200px; margin: 0 auto; }
+#sub-07 .sec02-img-row { display: flex; align-items: self-start; justify-content: center; gap: 50px; }
+#sub-07 .sec02-col { position: relative; flex: 0 0 26%; display: flex; justify-content: center; }
+#sub-07 .sec02-col img { width: 100%; height: auto; display: block; }
+
+#sub-07 .machine { max-width: 240px; position: relative; z-index: 3; }
+#sub-07 .cloud { max-width: 530px; }
+
+#sub-07 .cloud-wrap { position: absolute; bottom: -95%; left: -38%; width: 190%; z-index: 2; }
+#sub-07 .cloud-wrap img { width: 95%; display: block; }
+#sub-07 .cloud-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 15% 17% 10% 25%; color: #fff; pointer-events: none; line-height: 1; }
+#sub-07 .cloud-text .c-top { font-size: 1.1vw; font-weight: 400; margin: 0 0 2px 150px; }
+#sub-07 .cloud-text .c-top em { font-size: 3.8vw; font-weight: 400; font-style: normal; }
+#sub-07 .cloud-text .c-mid { font-size: 1.1vw; font-weight: 500; margin: 0 0 2px; }
+#sub-07 .cloud-text .c-big { font-size: 1.1vw; font-weight: 500; margin: 0 0 2px; letter-spacing: -0.02em; }
+#sub-07 .cloud-text .c-big em { font-size: 3.8vw; font-weight: 400; font-style: normal; vertical-align: super; }
+#sub-07 .cloud-text .c-sub { margin: 12px 0; font-size: 1.1vw; font-weight: 500; }
+
+#sub-07 .sec02-col-shirt { display: flex; flex-direction: column; align-items: center; padding-bottom: 0; }
+#sub-07 .sec02-col-shirt .img-shirt { width: 110%; }
+#sub-07 .shirt-label-top { font-size: 1.1vw; text-align: center; margin: 0 0 2px; line-height: 1.5; letter-spacing: -0.5px; }
+#sub-07 .shirt-stat { font-size: 1.1vw; text-align: center; margin: 0 0 10px; line-height: 1.4; letter-spacing: -0.5px; }
+#sub-07 .shirt-stat em { font-size: 3.8vw; font-weight: 500; color: #0F6AA6; font-style: normal; letter-spacing: -0.02em; }
+
+#sub-07 .globe { width: 90% !important; }
+#sub-07 .sec02-col-globe { position: relative; }
+#sub-07 .globe-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; line-height: 1.4; pointer-events: none; }
+#sub-07 .globe-text .g-small { font-size: 1.1vw; font-weight: 500; margin: 0; }
+#sub-07 .globe-text .g-big { font-size: 3.8vw; font-weight: 400; margin: 0; letter-spacing: -0.02em; }
+#sub-07 .globe-text .g-big em { font-size: 1.1vw; font-weight: 500; font-style: normal; vertical-align: super; }
+#sub-07 .globe-text .g-sub { font-size: 1.1vw; font-weight: 500; margin: 0; }
+
+@media (max-width: 1200px) {
+  #sub-07 .cloud { max-width: none; }
+  #sub-07 .sec02-col { flex: 0 0 20%; }
+  #sub-07 .cloud-wrap { bottom: -73%; }
+  /* #sub-07 .cloud-wrap img { width: 80%; } */
+}
+@media (max-width: 768px) {
+  #sub-07 .article-num-wrap { flex-direction: column; align-items: center; gap: 30px; margin: 50px 0 15px; }
+  #sub-07 .article-subtitle-num { font-size: 18px; align-self: flex-start; }
+  #sub-07 .sec02-body { padding-left: 0; }
+  #sub-07 .sec02-body p { font-size: 16px; font-weight: 400; }
+
+  #sub-07 .sec02-img-section { padding: 10px 0 40px; }
+  #sub-07 .sec02-img-row { flex-direction: column; align-items: center; gap: 30px; }
+
+  /* 컬럼 너비 키움 */
+  #sub-07 .sec02-col { width: 95%; flex: none; }
+
+  /* 세탁기+구름 컬럼: column으로 세탁기 아래 구름 */
+  #sub-07 .sec02-col-machine { flex-direction: column; align-items: center; }
+  #sub-07 .machine { width: 75%; max-width: 320px; }
+  #sub-07 .cloud-wrap {  position: relative; width: 100%; margin-top: -15%; left: 0;  }
+  #sub-07 .cloud-wrap img { width: 100%; }
+  #sub-07 .cloud-text { padding: 12% 8% 8% 8%; align-items: center; }
+  #sub-07 .cloud-text .c-top { font-size: 18px; }
+  #sub-07 .cloud-text .c-top em { font-size: 70px; }
+  #sub-07 .cloud-text .c-big { font-size: 18px; }
+  #sub-07 .cloud-text .c-big em { font-size: 70px; }
+  #sub-07 .cloud-text .c-sub { font-size: 18px; margin: 6px 0; }
+
+  /* 셔츠 */
+  #sub-07 .sec02-col-shirt .img-shirt { width: 110%; padding-left: 10px; }
+  #sub-07 .sec02-col-shirt { align-items: flex-start; padding: 0 10px; }
+  #sub-07 .shirt-label-top { font-size: 18px; margin: 0 0 -10px; }
+  #sub-07 .shirt-stat { font-size: 18px; }
+  #sub-07 .shirt-stat em { font-size: 70px; }
+
+  /* 지구본 */
+  #sub-07 .globe { width: 95% !important; margin-top:-110px; }
+  #sub-07 .globe-text { margin-bottom: 110px; }
+  #sub-07 .globe-text .g-small { font-size: 18px; }
+  #sub-07 .globe-text .g-big { font-size: 70px; }
+  #sub-07 .globe-text .g-big em { font-size: 18px; }
+  #sub-07 .globe-text .g-sub { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  #sub-07 .cloud-wrap { width: 150%; }
+  /* #sub-07 .cloud-text { padding: 12% 8% 8% 25%; } */
+  #sub-07 .machine { max-width: 270px; }
+}
+@media (max-width: 360px) {
+  /* #sub-07 .cloud-text { padding: 12% 8% 8% 20%; } */
+}
+
+#sub-07 .sec03-wrap { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 50px; padding: 0 50px; max-width: 1200px; margin: 0 auto; }
+#sub-07 .sec03-group-a { grid-column: 1; grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: flex-end; }
+#sub-07 .sec03-group-b { grid-column: 2; grid-row: 1 / 3; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+#sub-07 .sec03-group-c { grid-column: 1 / 3; grid-row: 3; display: flex; align-items: center; justify-content: center; gap: 40px; padding: 20px 0 0; }
+#sub-07 .sec03-group img { width: 100%; height: auto; display: block; }
+#sub-07 .sec03-group-b img { margin-top: -90px; }
+#sub-07 .sec03-group-c img { width: 42%; max-width: 300px; }
+
+#sub-07 .sec03-stat .s-label { font-size: 1.1vw; color: #333; margin: 0 0 4px; font-weight: 500; }
+#sub-07 .sec03-stat .s-big { font-size: 4.5vw; font-weight: 400; margin: 0 0 6px; line-height: 1; color: #0F6AA6;}
+#sub-07 .sec03-stat .s-big em { font-size: 1.1vw; font-weight: 500; font-style: normal; color: #000; }
+#sub-07 .sec03-stat .s-sub { font-size: 1.1vw; color: #333; margin: 0; font-weight: 500; }
+
+#sub-07 .sec03-flow { display: flex; align-items: center; margin-top: 20px; letter-spacing: 0.5px; }
+#sub-07 .sec03-flow-item { line-height: 1.8; }
+#sub-07 .sec03-flow-item .s-label { font-size: 1vw; margin: 0 0 2px; font-weight: 500; }
+#sub-07 .sec03-flow-item .s-big { font-size: 3.8vw; font-weight: 400; color: #0F6AA6; margin: 0; line-height: 1; }
+#sub-07 .sec03-flow-item .s-big em { font-size: 1vw; font-weight: 500; font-style: normal; color: #000; letter-spacing: 0.3px; }
+#sub-07 .sec03-flow-item .s-sub { font-size: 1vw; margin: 0; font-weight: 500; }
+#sub-07 .sec03-arrow { display: flex; justify-content: center; align-items: center; padding: 100px 20px 0 20px; }
+#sub-07 .sec03-arrow .arrow { width: clamp(30px, 3vw, 50px); height: auto; }
+
+@media (max-width: 768px) {
+  #sub-07 .sec03-wrap { grid-template-columns: 1fr; grid-template-rows: auto; gap: 30px; padding: 0 20px; }
+  #sub-07 .sec03-group-a { grid-column: 1; grid-row: auto; order: 1; }
+  #sub-07 .sec03-group-c { grid-column: 1; grid-row: auto; order: 2; flex-direction: column; align-items: center; }
+  #sub-07 .sec03-group-b { grid-column: 1; grid-row: auto; order: 3; }
+  #sub-07 .sec03-group-b img { margin-top: 0; }
+  #sub-07 .sec03-group-c img { width: 70%; max-width: none; }
+  #sub-07 .sec03-stat .s-label { font-size: 18px; }
+  #sub-07 .sec03-stat .s-big { font-size: 70px; }
+  #sub-07 .sec03-stat .s-big em { font-size: 18px; }
+  #sub-07 .sec03-stat .s-sub { font-size: 18px; }
+  #sub-07 .sec03-flow { flex-direction: column; align-items: stretch; gap: 10px; width: 90%; margin: 0 auto; }
+  #sub-07 .sec03-flow .sec03-flow-item:first-child { text-align: left; margin-bottom: 10px; }
+  #sub-07 .sec03-flow .sec03-arrow { justify-content: center; }
+  #sub-07 .sec03-flow .sec03-flow-item:last-child { text-align: right; }
+  #sub-07 .sec03-flow-item .s-label { font-size: 18px; }
+  #sub-07 .sec03-flow-item .s-big { font-size: 70px; }
+  #sub-07 .sec03-flow-item .s-big em { font-size: 18px; }
+  #sub-07 .sec03-flow-item .s-sub { font-size: 18px; }
+  #sub-07 .sec03-arrow { padding: 0 20px; }
+  #sub-07 .sec03-group .wave { width: 70%; margin-left: 85px; }
+  #sub-07 .sec03-group .treatment { width: 70%; margin-top: -75px; margin-left: 120px; }
+}
+
+#sub-07 .sec04-wrap { display: flex; align-items: flex-end; justify-content: center; padding: 0 50px 80px; max-width: 1200px; margin: 0 auto; }
+#sub-07 .sec04-col { position: relative; flex: 1; display: flex; justify-content: flex-end; align-items: flex-end; }
+#sub-07 .sec04-col.shark { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+#sub-07 .sec04-col img { width: 100%; height: auto; display: block; }
+#sub-07 .sec04-col .person { max-height: 400px; width: auto; }
+
+#sub-07 .sec04-stat .s-label { font-size: 1vw; color: #333; margin: 0 0 4px; font-weight: 500; }
+#sub-07 .sec04-stat .s-big { font-size: 4.5vw; font-weight: 400; color: #0F6AA6; margin: 0 0 4px; line-height: 1; }
+#sub-07 .sec04-col.shark .sec04-stat .s-big { margin: 0 0 4px 10px; }
+#sub-07 .sec04-stat .s-big em { font-size: 1vw; font-weight: 500; font-style: normal; color: #000; }
+#sub-07 .sec04-stat .s-sub { font-size: 1vw; color: #333; margin: 0; font-weight: 500; }
+
+#sub-07 .sec04-col-right { align-items: flex-start; justify-content: flex-end; }
+#sub-07 .sec04-circle-wrap { position: relative; width: 100%; }
+#sub-07 .sec04-circle { width: 75%; background: #83BEEA; border-radius: 50%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0; box-sizing: border-box; margin: 0 auto; }
+#sub-07 .sec04-circle.small { width: 60px; height: 60px; margin: -31px auto 0; }
+#sub-07 .sec04-circle p { font-size: 1.1vw; font-weight: 500; color: #fff; line-height: 1.6; margin: 0; text-align: left; }
+#sub-07 .seafood { width: 90%; margin: -20% auto 0; position: relative; z-index: 2; max-width: 200px; }
+/* 
+@media (max-width: 1200px) {
+  #sub-07 .sec04-col .person { max-height: 330px; }
+} */
+
+@media (max-width: 768px) {
+  #sub-07 .sec04-wrap { flex-direction: column; align-items: flex-start; gap: 30px; padding: 0 20px 50px; }
+  #sub-07 .sec04-col { width: 100%; }
+  #sub-07 .sec04-col.shark { align-items: start; }
+  #sub-07 .sec04-stat .s-label { font-size: 18px; }
+  #sub-07 .sec04-stat .s-big { font-size: 70px; }
+  #sub-07 .sec04-stat .s-big em { font-size: 18px; }
+  #sub-07 .sec04-stat .s-sub { font-size: 18px; }
+  #sub-07 .sec04-circle-wrap { margin-top: -50px; }
+  #sub-07 .sec04-circle { width: 65%; margin-left: 0; max-width: 260px; }
+  #sub-07 .sec04-circle p { font-size: 21px; }
+  #sub-07 .sec04-seafood { width: 80%; margin: -15% auto 0; }
+  #sub-07 .sec04-col { justify-content: center; align-items: center; flex-direction: row-reverse; }
+  #sub-07 .nps-wrap-inner.num04 { margin-top: -65px; }
+}
+
+#sub-07 .sec05-wrap { display: flex; align-items: center; justify-content: center; gap: 30px; padding: 0 50px 80px; max-width: 1200px; margin: 0 auto; }
+#sub-07 .sec05-img { flex: 0 0 42%; }
+#sub-07 .sec05-img picture img { width: 100%; height: auto; display: block; }
+#sub-07 .sec05-text-left { flex: 1; text-align: right; }
+#sub-07 .sec05-text-right { flex: 1; text-align: left; }
+#sub-07 .sec05-label { font-size: 1.1vw; color: #333; margin: 0 0 6px; font-weight: 500; }
+#sub-07 .sec05-big { font-size: 1.6vw; font-weight: 700; color: #0F6AA6; margin: 0; line-height: 1.4; }
+#sub-07 .gray-text { padding-left: 1.2em; text-indent: -1.2em; color: #535353; font-size: 18px; font-weight: 400; word-break: keep-all; }
+
+@media (max-width: 768px) {
+  #sub-07 .sec05-wrap { flex-direction: column; align-items: stretch; gap: 24px; padding: 0 20px 50px; }
+  #sub-07 .sec05-img { order: 1; flex: none; width: 100%; }
+  #sub-07 .sec05-text-left { order: 2; flex: none; text-align: left; }
+  #sub-07 .sec05-text-right { order: 3; flex: none; text-align: right; }
+  #sub-07 .sec05-label { font-size: 18px; }
+  #sub-07 .sec05-big { font-size: 22px; }
+  #sub-07 .gray-text { padding-left: 0; text-indent: 0; font-size: 18px; }
+}
+
+
+
 </style>
 </head>
 <body>
@@ -168,19 +390,225 @@
  
     <div class="title-wrap nps-wrap-inner">
       <h2 class="title">
-        클래식? <br class="mob-br">이젠 가장 트렌디한 취향! <br>
-        조용함이 트렌드가 되는 순간
+        깨끗함의 역설 <br>
+        우리가 몰랐던 세탁기 속<br class="mob-br"> 비밀
       </h2>
     </div>
     <hr class="section-divider">
     <div class="body-wrap">
        <div class="nps-desc-wrap nps-wrap-inner">
           <p class="nps-desc">
-            똑똑하게 미루면 연금액이 최대 36%까지 늘어난다. 지금 당장 받는 것보다
-            더 큰 내일을 설계하고 싶다면 '연기연금'의 5가지 핵심 키워드에서 그 해답을 찾을 수 있다.
+            매일 반복되는 세탁. 옷은 깨끗해지지만, 보이지 않는 오염은 물과 함께 흘러간다. 섬유는 잘게 부서져 ‘미세 플라스틱’이 되고, 하수를 지나 바다에 닿는다. 그리고 결국 우리의 식탁 위로 다시 돌아온다. 깨끗함의 기준을 다시 생각해야 할 때다.
           </p>
         </div>
-        
+
+      <div class="img-section">
+        <img class="img-bg" src="img/sub/07/01-bg.png" alt="">
+        <div class="img-illust-wrap">
+          <img class="img-illust" src="img/sub/07/01.png" alt="세탁기와 미세플라스틱 일러스트">
+        </div>
+      </div>
+
+      <div class="article-wrap nps-wrap-inner">
+        <div class="article-content center" data-aos="fade-up" data-aos-duration="700">
+          <h3 class="article-subtitle">한 번의 세탁이 남기는 것</h3>
+          <div class="article-body">
+            <p>우리는 세탁을 ‘깨끗해지는 과정’으로만 인식한다. 하지만 그 과정은 동시에 아주 작은 단위의 오염을 만들어낸다. 
+                <br>눈에 보이지 않을 만큼 잘게 부서진 섬유들은 물을 따라 흘러가고, 결국 바다에 닿는다. 사라진 것처럼 보이지만 
+                <br>이 조각들은 사라지지 않는다. 축적되고, 순환하며, 다시 우리의 일상으로 되돌아온다. 문제는 크기가 아니라, 반복과 축적에 있다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nps-wrap-inner">
+        <div data-aos="fade-up" data-aos-duration="600">
+          <div class="article-num-wrap">
+            <span class="article-num">1</span>
+            <h3 class="article-subtitle-num">사라지지 않는 조각들</h3>
+          </div>
+          <div class="sec02-body">
+            <p>세탁기 안에서 옷은 깨끗해지지만, 동시에 미세한 섬유가 떨어져 나온다.<br>
+            우리가 인지하지 못하는 사이, 이 작은 조각들은 이미 물속으로 흘러들어가고 있다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec02-img-section">
+        <div class="sec02-img-row">
+
+          <div class="sec02-col sec02-col-machine" data-aos="fade-left" data-aos-duration="600" data-aos-delay="0">
+            <img class="machine" src="img/sub/07/02-01.png" alt="세탁기">
+            <div class="cloud-wrap">
+              <img class="cloud" src="img/sub/07/02-cloud.png" alt="">
+              <div class="cloud-text">
+                <p class="c-top">세탁 <em>1</em>회당 최대</p>
+                <p class="c-big">약 <em>70</em>만~ <em>100</em>만 개</p>
+                <p class="c-sub">미세 섬유 방출</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec02-col sec02-col-shirt" data-aos="fade-left" data-aos-duration="600" data-aos-delay="250">
+            <p class="shirt-label-top">폴리에스터 의류 1벌 기준</p>
+            <p class="shirt-stat">약 <em>1,900</em>개 이상 배출</p>
+            <img class="img-shirt" src="img/sub/07/02-02.png" alt="폴리에스터 의류">
+          </div>
+
+          <div class="sec02-col sec02-col-globe" data-aos="fade-left" data-aos-duration="600" data-aos-delay="500">
+            <img class="globe" src="img/sub/07/02-03.png" alt="전 세계 합성섬유 비율">
+            <div class="globe-text">
+              <p class="g-small">전 세계 의류의</p>
+              <p class="g-big"><em>약 </em>60%</p>
+              <p class="g-sub">이상이 합성섬유</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="nps-wrap-inner">
+        <div data-aos="fade-up" data-aos-duration="600">
+          <div class="article-num-wrap" style="margin-top: 0 !important;">
+            <span class="article-num">2</span>
+            <h3 class="article-subtitle-num">바다로 이어지는 흐름</h3>
+          </div>
+          <div class="sec02-body">
+            <p>이 미세 섬유들은 하수처리 과정을 거치지만 완전히 제거되지는 않는다.<br>
+            일부는 그대로 남아 물의 흐름을 따라 이동한다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec03-wrap nps-wrap-inner">
+
+        <!-- Group A: 30~35% + 파도 -->
+        <div class="sec03-group sec03-group-a" data-aos="fade-right" data-aos-duration="600">
+          <div class="sec03-stat">
+            <p class="s-label">해양 미세 플라스틱의</p>
+            <p class="s-big"><em>약</em> 30~35%<em>가</em></p>
+            <p class="s-sub">세탁에서 발생</p>
+          </div>
+          <img class="wave" src="img/sub/07/03-02.png" alt="파도">
+        </div>
+
+        <!-- Group B: 하수처리장 + 90%→10% -->
+        <div class="sec03-group sec03-group-b" data-aos="fade-left" data-aos-duration="600">
+          <img src="img/sub/07/03-01.png" alt="하수처리장" class="treatment">
+          <div class="sec03-flow">
+            <div class="sec03-flow-item">
+              <p class="s-label">하수처리장에서</p>
+              <p class="s-big"><em>약</em> 90%<em>제거</em></p>
+            </div>
+            <div class="sec03-arrow"><img class="arrow" src="img/sub/07/right-arrow.png" alt="오른쪽 화살표"></div>
+            <div class="sec03-flow-item">
+              <p class="s-big"><em>나머지</em>10%<em>는</em></p>
+              <p class="s-sub">하천·바다로 유입</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group C: 50만 톤 + 하수구 -->
+        <div class="sec03-group sec03-group-c" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          <div class="sec03-stat">
+            <p class="s-big"><em>매년 약</em> 50<em>만 톤 이상의</em></p>
+            <p class="s-sub">미세 섬유가 바다로 유입</p>
+          </div>
+          <img src="img/sub/07/03-03.png" alt="바다로 유입">
+        </div>
+
+      </div>
+
+
+      <div class="nps-wrap-inner">
+        <div data-aos="fade-up" data-aos-duration="600">
+          <div class="article-num-wrap">
+            <span class="article-num">3</span>
+            <h3 class="article-subtitle-num">다시 돌아오는 오염</h3>
+          </div>
+          <div class="sec02-body">
+            <p>바다에 쌓인 미세 플라스틱은 생물의 몸속으로 들어가고, 먹이사슬을 따라 다시 인간에게<br>
+            도달한다. 보이지 않을 뿐, 이미 우리의 일상과 연결되어 있다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec04-wrap">
+
+        <!-- Group A: 고래 + 90% -->
+        <div class="sec04-col shark" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+          <img src="img/sub/07/04-01.png" alt="해양 생물">
+          <div class="sec04-stat" style="margin-top: 20px;">
+            <p class="s-label">해양 생물</p>
+            <p class="s-big">90%<em>이상에서</em></p>
+            <p class="s-sub">미세 플라스틱 검출</p>
+          </div>
+        </div>
+
+        <!-- Group B: 사람 + 5만 개 -->
+        <div class="sec04-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          <img class="person" src="img/sub/07/04-02.png" alt="물 마시는 사람">
+          <div class="sec04-stat" style="margin-top: 20px;">
+            <p class="s-label">인간은 연간</p>
+            <p class="s-big"><em>약 </em>5<em>만 개 이상의</em></p>
+            <p class="s-sub">미세 플라스틱 섭취</p>
+          </div>
+        </div>
+
+        <!-- Group C: 파란 원 + 해산물 -->
+        <div class="sec04-col sec04-col-right" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          <div class="sec04-circle-wrap">
+            <div class="sec04-circle">
+              <p>해산물, 식수,<br>공기를 통해 인체 유입</p>
+            </div>
+            <img class="seafood" src="img/sub/07/04-03.png" alt="해산물">
+            <div class="sec04-circle small">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nps-wrap-inner num04">
+        <div data-aos="fade-up" data-aos-duration="600">
+          <div class="article-num-wrap">
+            <span class="article-num">4</span>
+            <h3 class="article-subtitle-num">반복이 만드는 변화</h3>
+          </div>
+          <div class="sec02-body">
+            <p>바다에 쌓인 미세 플라스틱은 생물의 몸속으로 들어가고, 먹이사슬을 따라 다시 인간에게<br>
+            도달한다. 보이지 않을 뿐, 이미 우리의 일상과 연결되어 있다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec05-wrap">
+        <div class="sec05-text-left" data-aos="fade-right" data-aos-duration="600">
+          <p class="sec05-label">세탁 빈도 증가 →</p>
+          <p class="sec05-big">미세 섬유 배출 증가</p>
+        </div>
+
+        <div class="sec05-img" data-aos="fade-up" data-aos-duration="600">
+          <picture>
+            <source media="(max-width: 768px)" srcset="img/sub/07/05-mob.png">
+            <img src="img/sub/07/05-pc.png" alt="반복이 만드는 변화">
+          </picture>
+        </div>
+
+        <div class="sec05-text-right" data-aos="fade-left" data-aos-duration="600">
+          <p class="sec05-label">합성섬유 의류 증가 →</p>
+          <p class="sec05-big">구조적 배출 확대</p>
+        </div>
+      </div>
+
+      <div class="nps-wrap-inner">
+        <div class="gray-text" data-aos="fade-up" data-aos-duration="600">
+          ※ 참고 및 출처: IUCN(국제자연보전연맹, 2017), UNEP(유엔환경계획, 2021), WWF(세계자연기금, 2019), <br class="pc-br">
+          University of Plymouth(영국 플리머스 대학교) Napper & Thompson 연구(2016), Textile Exchange(텍스타일 익스체인지, 2022) 등
+        </div>
+      </div>
+
+
+
     </div>
 
  </div>
