@@ -75,33 +75,43 @@
 @media (max-width: 768px) {
   #event-04 .mob-br { display: block; }
   #event-04 .pr-br { display: none; }
-  #event-04 .top-section { padding: 50px 0 0; overflow: hidden; }
+  #event-04 .top-section { padding: 50px 0 0; }
   #event-04 .label { font-size: 16px; letter-spacing: -0.3px; margin-bottom: 15px; }
   #event-04 .label::after { margin: 8px auto 0; }
-  #event-04 .main-circle { width: 360px; height: 360px; border-radius: 50%; background: #fff; margin-left: 50%; transform: translateX(-50%); padding: 50px 5px 0; justify-content: flex-start; }
+  #event-04 .main-circle { width: 360px; height: 360px; border-radius: 50%; background: #fff; margin-left: 50%; transform: translateX(-50%); padding: 70px 5px 0; justify-content: flex-start; }
   #event-04 .title { font-size: 26px; font-weight: 500; line-height: 1.45; margin: 0 0 30px; }
-  #event-04 .intro-desc { font-size: 15px; font-weight: 600; line-height: 1.8; margin: 0 0 26px; }
+  #event-04 .intro-desc { font-size: 17px; font-weight: 500; line-height: 1.8; margin: 0 0 26px; }
   #event-04 .illust-wrap { width: 100%; height: auto; border-radius: 0; background: none; margin: 0 auto; flex: none; }
   #event-04 .illust.pc { display: none; }
   #event-04 .illust.mob { display: block; }
   #event-04 .illust { max-width: 300px; margin: 0 auto; }
-  #event-04 .d01 { width: 52px; top: 330px; right: 8px; bottom: auto; left: auto; }
-  #event-04 .d02 { display: none; }
+  #event-04 .d01 { width: 50px; top: 700px; right: 320px; bottom: auto; left: auto; }
+  #event-04 .d02 { width: 140px; top:320px; left:230px; }
   #event-04 .d03 { width: 46px; left: 20px; bottom: -15px; right: auto; }
-  #event-04 .d04 { width: 58px; right: 18px; bottom: -30px; top: auto; left: auto; }
-  #event-04 .body-section { background: #fff; width: 1000px; margin: 50px 0 0; }
+  #event-04 .d04 { width: 80px; right: 18px; bottom: -830px; top: auto; left: auto; }
+  #event-04 .body-section { background: transparent; overflow: visible; }
   /* #event-04 .body-section { position: relative; background: #fff; width: calc(100% - 24px); margin: -55px auto 0; padding: 90px 24px 90px; border-radius: 999px; box-sizing: border-box; overflow: visible; } */
-  #event-04 .body-desc { font-size: 15px; line-height: 1.95; margin-bottom: 48px; word-break: keep-all; }
+  
+  #event-04 .body-section { padding: 50px 20px 0; }
+  #event-04 .circle-desc { display: flex; flex-direction: column; align-items: center; width: 800px; height: 800px; border-radius: 50%; background: #fff; overflow: hidden; box-sizing: border-box; padding: 28px 20px 0; margin: 30px auto 0; }
+  #event-04 .circle-desc .body-desc { font-size: 18px; line-height: 1.65; margin: 0; width: 100%; max-width: none; }
+  #event-04 .circle-desc .illust { max-width: 280px; margin: 50px 0; }
+  #event-04 .circle-coupon { position: relative; width: min(100vw, 650px); margin: -70px auto 0; }
+  #event-04 .circle-coupon::before { content: ''; position: absolute; width: 1500px; height: 1000px; border-radius: 50%; background: #fff; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0; }
+  #event-04 .circle-coupon .coupon-card { position: relative; z-index: 1; background: transparent; width: 100%; max-width: none; border-radius: 0; padding: 180px 20px 200px; }
+
+  #event-04 .body-desc { font-size: 15px; line-height: 1.95; margin-bottom: 48px;  }
   #event-04 .divider { display: none; }
   #event-04 .coupon-card { background: #fff; border-radius: 0; padding: 0 20px 60px; margin-top: 0; }
-  #event-04 .coupon-img { width: 150px; }
-  #event-04 .prize-name { font-size: 18px; margin-bottom: 30px; }
-  #event-04 .prize-row { flex-direction: column; padding: 10px 5px; gap: 4px; border-radius: 300px; text-align: center; align-items: center; letter-spacing: -0.5px;}
+  #event-04 .coupon-img { width: 160px; }
+  #event-04 .prize-name { font-size: 16px; margin-bottom: 50px; }
+  #event-04 .prize-row { flex-direction: column; padding: 12px 5px; gap: 4px; border-radius: 300px; text-align: center; align-items: center; letter-spacing: -0.5px;}
   #event-04 .prize-lbl { font-size: 16px; min-width: auto; }
   #event-04 .prize-val { font-size: 16px; }
   #event-04 .prize-terms { font-size: 15px; line-height: 1.6; }
-  #event-04 .e04-btn { font-size: 20px; padding: 8px 40px; }
-  #event-04 .e04-btns { margin-bottom: 40px; }
+  #event-04 .prize-info { margin: 0 auto 60px; }
+  #event-04 .e04-btn { font-size: 20px; padding: 9px 38px; white-space: nowrap; }
+  #event-04 .e04-btns { margin-bottom: 60px; }
   #event-04 .btn-wrap { gap: 12px; margin-bottom: 45px; }
   #event-04 .btn-sub, #event-04 .btn-join { width: 126px; padding: 14px 0; font-size: 15px; }
   #event-04 .fine-print { max-width: 100%; padding: 24px 0 0; }
@@ -109,7 +119,12 @@
   #event-04 .body-desc, #event-04 .coupon-card { width: min(100vw, 420px); max-width: 420px; margin-left: auto; margin-right: auto; }
   #event-04 .thumb-section { padding: 20px; }
 }
-
+@media (max-width: 430px) {
+  #event-04 .circle-coupon { margin: -190px auto -170px; }
+  #event-04 .circle-coupon .coupon-card { padding: 210px 20px 270px; }
+  #event-04 .e04-btns { gap: 20px; }
+  #event-04 .coupon-img { margin: 50px auto 12px; }
+}
 </style>
 </head>
 <body>
@@ -247,40 +262,44 @@
   <div class="scallop"></div>
  
   <div class="body-section">
-    <img src="img/event/04/01.png" class="illust mob" alt="독자 일러스트">
-    <p class="body-desc">
-      &lt;내 곁에 국민연금&gt; 웹진을 아껴 주시는 독자 여러분께 감사의 말씀을 전합니다.<br>
-      2026년 상반기호에 대한 리뷰, 국민연금 제도에 대한 희망이 담긴 조언과 기대감 등<br class="pr-br">
-      독자 여러분의 목소리를 들려주세요. 추첨을 통해 선물을 드립니다.<br>
-      들려주신 목소리에 귀 기울여 성장하는 &lt;내 곁에 국민연금&gt;을 만들어 가겠습니다.
-    </p>
+    <div class="circle-desc">
+      <img src="img/event/04/01.png" class="illust mob" alt="독자 일러스트">
+      <p class="body-desc">
+        &lt;내 곁에 국민연금&gt;<br class="mob-br"> 웹진을 아껴 주시는 독자 여러분께<br class="mob-br"> 감사의 말씀을 전합니다.<br>
+        2026년 상반기호에 대한 리뷰,<br class="mob-br"> 국민연금 제도에 대한 희망이 담긴<br class="mob-br"> 조언과 기대감 등<br>
+        독자 여러분의 목소리를 들려주세요.<br class="mob-br"> 추첨을 통해 선물을 드립니다.<br>
+        들려주신 목소리에 귀 기울여<br class="mob-br"> 성장하는 &lt;내 곁에 국민연금&gt;을<br class="mob-br"> 만들어 가겠습니다.
+      </p>
+    </div>
     <hr class="divider">
-    <div class="coupon-card">
-      <img src="img/event/04/coupon.png" class="coupon-img" alt="베이커리 기프티콘 20,000원">
-      <p class="prize-name">베이커리 기프티콘(10명)</p>
-      <div class="prize-info">
-        <div class="prize-row">
-          <span class="prize-lbl">응모 기간</span>
-          <span class="prize-val">6월 1일 오전 9시 ~ 8월 1일 오후 11시 30분</span>
+    <div class="circle-coupon">
+      <div class="coupon-card">
+        <img src="img/event/04/coupon.png" class="coupon-img" alt="베이커리 기프티콘 20,000원">
+        <p class="prize-name">베이커리 기프티콘(10명)</p>
+        <div class="prize-info">
+          <div class="prize-row">
+            <span class="prize-lbl">응모 기간</span>
+            <span class="prize-val">6월 1일 오전 9시 ~ 8월 1일 오후 11시 30분</span>
+          </div>
+          <div class="prize-row">
+            <span class="prize-lbl">당첨 발표</span>
+            <span class="prize-val">8월 10일 오후 5시</span>
+          </div>
         </div>
-        <div class="prize-row">
-          <span class="prize-lbl">당첨 발표</span>
-          <span class="prize-val">8월 10일 오후 5시</span>
+        <div class="e04-btns">
+          <button class="e04-btn e04-sub">구독하기</button>
+          <button class="e04-btn e04-join">참여하기</button>
         </div>
+        <ul class="e04-notice">
+          <li>•  &lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
+          <li>•  본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
+          <li>•  이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</li>
+          <li>•  부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</li>
+          <li>•  같은 분에 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루집니다.</li>
+          <li>•  당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기됩니다.</li>
+          <li>•  정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</li>
+        </ul>
       </div>
-      <div class="e04-btns">
-        <button class="e04-btn e04-sub">구독하기</button>
-        <button class="e04-btn e04-join">참여하기</button>
-      </div>
-      <ul class="e04-notice">
-        <li>•  &lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
-        <li>•  본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
-        <li>•  이벤트 응모 시 개인정보 활용에 동의한 것으로 간주됩니다.</li>
-        <li>•  부정 행위를 통해 이벤트 참여 시 제재를 받으며, 당첨 경품도 취소됩니다.</li>
-        <li>•  같은 분에 이벤트 혜택을 드리기 위해 중복 당첨 시 경품 지급은 한 번만 이루집니다.</li>
-        <li>•  당첨자에 한해 개인정보가 경품 발송 대행사에 전달되며 경품 발송 후 즉시 폐기됩니다.</li>
-        <li>•  정확하지 않은 개인정보로 인해 당첨자 연락이 되지 않거나 확인이 불가능할 경우, 당첨 취소됩니다.</li>
-      </ul>
     </div>
   </div>
  
