@@ -254,7 +254,7 @@
 #sub-07 .sec05-text-right { flex: 1; text-align: left; }
 #sub-07 .sec05-label { font-size: 1.1vw; color: #333; margin: 0 0 6px; font-weight: 500; }
 #sub-07 .sec05-big { font-size: 1.6vw; font-weight: 700; color: #0F6AA6; margin: 0; line-height: 1.4; }
-#sub-07 .gray-text { padding-left: 1.2em; text-indent: -1.2em; color: #535353; font-size: 18px; font-weight: 400; word-break: keep-all; }
+#sub-07 .gray-text { padding-left: 1.2em; text-indent: -1.2em; color: #535353; font-size: 18px; font-weight: 400; word-break: keep-all; margin-bottom: 80px; }
 
 @media (max-width: 768px) {
   #sub-07 .sec05-wrap { flex-direction: column; align-items: stretch; gap: 24px; padding: 0 20px 50px; }
@@ -263,10 +263,36 @@
   #sub-07 .sec05-text-right { order: 3; flex: none; text-align: right; }
   #sub-07 .sec05-label { font-size: 18px; }
   #sub-07 .sec05-big { font-size: 22px; }
-  #sub-07 .gray-text { padding-left: 0; text-indent: 0; font-size: 18px; }
+  #sub-07 .gray-text { padding-left: 0; text-indent: 0; font-size: 18px; margin-bottom: 60px; }
 }
 
+#sub-07 .sec06 { background: url('img/sub/07/middle-bg-pc.png') center bottom / cover no-repeat; padding: 80px 0 160px; }
+#sub-07 .sec06-wrap {  }
+#sub-07 .sec06-intro { text-align: center; margin-bottom: 70px; }
+#sub-07 .sec06-intro.mob { display: none; }
+#sub-07 .sec06-title { font-size: 25px; font-weight: 600; margin-bottom: 5px; }
+#sub-07 .sec06-desc { font-size: 18px; line-height: 1.9; }
+#sub-07 .sec06-item { display: flex; flex-direction: row; align-items: center; gap: 40px; margin-bottom: 60px; }
+#sub-07 .sec06-item.reverse { flex-direction: row-reverse; }
+#sub-07 .sec06-img { flex: 0 0 160px; }
+#sub-07 .sec06-img img { width: 100%; height: auto; }
+#sub-07 .sec06-text { flex: 1; }
+#sub-07 .sec06-text h3 { font-size: 1.1vw; font-weight: 700; margin-bottom: 10px; }
+#sub-07 .sec06-text p { font-size: 0.9vw; line-height: 1.8; color: #333; }
 
+@media (max-width: 768px) {
+  #sub-07 .sec06 { background: #7CCBFF; padding: 50px 0 80px; }
+  #sub-07 .sec06-wrap { padding: 0 20px; }
+  #sub-07 .sec06-intro.mob { display: block; }
+  #sub-07 .sec06-intro.pc { display: none; }
+  #sub-07 .sec06-title { font-size: 21px; }
+  #sub-07 .sec06-desc { font-size: 16px; }
+  #sub-07 .sec06-item { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 40px; }
+  #sub-07 .sec06-item.reverse { flex-direction: column; }
+  #sub-07 .sec06-img { flex: none; width: 120px; }
+  #sub-07 .sec06-text h3 { font-size: 17px; }
+  #sub-07 .sec06-text p { font-size: 14px; }
+}
 
 </style>
 </head>
@@ -607,6 +633,61 @@
         </div>
       </div>
 
+      <div class="sec06-intro mob" data-aos="fade-up" data-aos-duration="600">
+        <h2 class="sec06-title">지금 당장 줄일 수 있는 방법</h2>
+        <p class="sec06-desc">세탁을 완전히 멈출 수는 없다. 하지만 방식은 바꿀 수 있다. 미세 섬유의 발생은 대부분 '마찰'과 '방북'에서 비롯된다.<br class="pc-br">즉, 세탁 과정의 강도를 낮추고 빈도를 줄이는 것만으로도 배출량은 눈에 띄게 줄어든다. 거창한 변화가 아니어도 괜찮다.<br class="pc-br">일상의 작은 선택들이 모이면, 흘려보내는 양 역시 달라진다.</p>
+      </div>
+
+      <div class="sec06">
+        <div class="sec06-wrap nps-wrap-inner">
+
+          <div class="sec06-intro pc" data-aos="fade-up" data-aos-duration="600">
+            <h2 class="sec06-title">지금 당장 줄일 수 있는 방법</h2>
+            <p class="sec06-desc">세탁을 완전히 멈출 수는 없다. 하지만 방식은 바꿀 수 있다. 미세 섬유의 발생은 대부분 '마찰'과 '방북'에서 비롯된다.<br class="pc-br">즉, 세탁 과정의 강도를 낮추고 빈도를 줄이는 것만으로도 배출량은 눈에 띄게 줄어든다. 거창한 변화가 아니어도 괜찮다.<br class="pc-br">일상의 작은 선택들이 모이면, 흘려보내는 양 역시 달라진다.</p>
+          </div>
+
+          <div class="sec06-item" data-aos="fade-up" data-aos-duration="600">
+            <div class="sec06-img"><img src="img/sub/07/06-01.png" alt="세탁망"></div>
+            <div class="sec06-text">
+              <h3>세탁망 사용하기</h3>
+              <p>세탁망은 옷을 보호하는 도구이기도 하지만, 동시에 미세 섬유의 배출을 줄이는 역할을 한다. 섬유 간 마찰을 완화하고, 떨어져 나온 입자가 바로 물로 흘러가지 않도록 일부를 잡아준다. 특히 합성섬유 의류를 세탁할 때는 효과가 더 크다.</p>
+            </div>
+          </div>
+
+          <div class="sec06-item reverse" data-aos="fade-up" data-aos-duration="600">
+            <div class="sec06-img"><img src="img/sub/07/06-02.png" alt="찬물세탁"></div>
+            <div class="sec06-text">
+              <h3>찬물 세탁 &amp; 저속 코스 선택</h3>
+              <p>높은 온도와 강한 회전은 옷을 더 깨끗하게 만드는 대신, 섬유를 더 빠르게 손상시킨다. 찬물과 저속 코스를 선택하면 섬유의 마모를 줄일 수 있고, 그만큼 미세 섬유의 발생도 감소한다.</p>
+            </div>
+          </div>
+
+          <div class="sec06-item" data-aos="fade-up" data-aos-duration="600">
+            <div class="sec06-img"><img src="img/sub/07/06-03.png" alt="고농축 세제"></div>
+            <div class="sec06-text">
+              <h3>고농축 세제 사용</h3>
+              <p>세제의 양과 헹굼 횟수는 생각보다 중요한 요소다. 고농축 세제를 사용하면 적은 양으로도 충분한 세탁 효과를 낼 수 있고, 헹굼 횟수를 줄일 수 있다. 이는 전체 세탁 과정의 길이를 줄이고, 마찰을 감소시키는 데 도움이 된다.</p>
+            </div>
+          </div>
+
+          <div class="sec06-item reverse" data-aos="fade-up" data-aos-duration="600">
+            <div class="sec06-img"><img src="img/sub/07/06-04.png" alt="세탁기"></div>
+            <div class="sec06-text">
+              <h3>세탁 횟수 줄이기</h3>
+              <p>가장 효과적인 방법은 단순하다. 세탁 횟수를 줄이는 것이다. 꼭 필요한 경우에만 세탁하고, 청기나 부분 세척으로 관리하는 습관을 들이면 불필요한 배출을 줄일 수 있다. '깨끗함'의 기준을 조금만 유연하게 조정하는 것, 그것이 시작이다.</p>
+            </div>
+          </div>
+
+          <div class="sec06-item" data-aos="fade-up" data-aos-duration="600">
+            <div class="sec06-img"><img src="img/sub/07/06-05.png" alt="천연섬유"></div>
+            <div class="sec06-text">
+              <h3>천연섬유 선택하기</h3>
+              <p>옷을 고르는 단계에서도 선택은 달라질 수 있다. 합성섬유는 세탁 시 미세 플라스틱을 발생시키지만, 면이나 울과 같은 천연섬유는 자연 분해가 가능하다. 소재를 바꾸는 것만으로도 구조적인 배출을 줄일 수 있다.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
 
     </div>
