@@ -57,7 +57,7 @@
 #sub-08 .txt { padding: 30px 0 40px; }
 #sub-08 .txt p { font-size: 18px; line-height: 1.8; color: #fff; font-weight: 500;  }
 
-#sub-08 .etf-title { font-size: 24px; font-weight: 600; line-height: 1.4; margin: 0 0 8px; }
+#sub-08 .etf-title { font-size: 24px; font-weight: 600; line-height: 1.4; margin: 0 0 6px; }
 #sub-08 .etf-subtitle { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
 
 #sub-08 .etf-list { padding: 20px 0 40px; list-style: none; margin: 0; }
@@ -86,10 +86,10 @@
   #sub-08 .etf-subtitle { font-size: 16px; text-align: center; }
   #sub-08 .etf-item { gap: 15px; }
   #sub-08 .etf-marker { width: 68px; }
-  #sub-08 .etf-icon { margin-bottom: -15px; }
-  #sub-08 .etf-badge { width: 55px; height: 95px; }
+  #sub-08 .etf-icon { margin-bottom: -25px; }
+  #sub-08 .etf-badge { width: 55px; height: 85px; }
   #sub-08 .etf-num { font-size: 16px; }
-  #sub-08 .etf-body { font-size: 14px; padding: 0 0 30px; }
+  #sub-08 .etf-body { font-size: 16px; padding: 0 0 40px; line-height: 1.75;}
   #sub-08 .etf-list { padding: 20px 0 10px; }
 }
 
@@ -156,18 +156,19 @@
 
 /* 모바일 반응형 */
 @media (max-width: 768px) {
-  #sub-08 .blue-box { padding: 20px 0; }
-  #sub-08 .etf-intro { flex-direction: column; gap: 24px; }
+  #sub-08 .blue-box { padding: 20px 0 40px; }
+  #sub-08 .etf-intro { margin: 0 auto 40px; }
   #sub-08 .section-title { font-size: 21px; }
   #sub-08 .section-desc { font-size: 16px; line-height: 1.75; }
+  #sub-08 .etf-intro__text { padding-right: 0; }
+}
+@media (max-width: 670px) {
   #sub-08 .table-row { grid-template-columns: 90px 1fr 1fr; gap: 5px; }
   #sub-08 .table-row .cell { font-size: 10px; }
   #sub-08 .table-row.head .cell.etf { font-size: 10px; }
   #sub-08 .table-wrap { gap: 5px; margin-left: 0;}
-  #sub-08 .etf-intro__text { padding-right: 0; }
 }
- 
- 
+
  /* 아티클 섹션 */
 #sub-08 .article-wrap { }
 #sub-08 .article-img-wrap { width: 100%; overflow: hidden; margin-bottom: 28px; }
@@ -230,15 +231,15 @@
 /* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
   #sub-08 .section-divider.mob-block { display: block; margin: 20px auto; width: calc(100% - 40px); }
-  #sub-08 .s08-head { text-align: center; margin-bottom: 40px; }
-  #sub-08 .s08-head__title { justify-content: center; font-size: 21px; flex-wrap: wrap; }
+  #sub-08 .s08-head { text-align: center; margin: 40px 0 50px; }
+  #sub-08 .s08-head__title { justify-content: center; font-size: 21px; flex-wrap: wrap; flex-direction: column; }
   #sub-08 .s08-head__desc { padding-left: 0; font-size: 16px; color: #000000; font-weight: 600; line-height: 1.9; }
-  #sub-08 .s08-item { flex-direction: column; align-items: center; gap: 16px; padding: 0 0 28px 0; }
+  #sub-08 .s08-item { flex-direction: column; align-items: center; gap: 20px; padding: 0 0 28px 0; }
   #sub-08 .s08-badge { width: 150px; }
   #sub-08 .s08-badge__img { width: 150px; margin: 0 auto; }
   #sub-08 .s08-cont { width: 100%; padding-top: 0; }
   #sub-08 .s08-cont__title { font-size: 21px; }
-  #sub-08 .s08-cont__text { font-size: 16px; }
+  #sub-08 .s08-cont__text { font-size: 16px; line-height: 1.75; } 
   #sub-08 .s08-item::before { left: -20px; right: -20px; background: url(img/sub/08/shadow.png) no-repeat center top / 120% 100%;}
 }
 
@@ -256,9 +257,9 @@
 #sub-08 .s08-profile__link span { background-color: #25B4F9; padding: 2px 10px; border-radius: 16px; font-weight: 500; font-size: 15px; } 
 /* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
-  #sub-08 .s08-profile { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  #sub-08 .s08-profile { flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 40px 30px; }
   #sub-08 .s08-profile__img-wrap { width: 150px; height: 150px; }
-  #sub-08 .s08-profile__desc { font-size: 16px; text-align: left; border: none; margin-bottom: 10px; }
+  #sub-08 .s08-profile__desc { font-size: 16px; text-align: left; border: none; margin-bottom: 10px; padding-bottom: 20px; }
   #sub-08 .s08-profile__name { font-size: 21px; text-align: left; }
 }
  
@@ -578,7 +579,7 @@
         <!-- 포인트 리스트 -->
         <ol class="s08-list">
 
-          <li class="s08-item" data-aos="fade-right" data-aos-duration="700" data-aos-delay="0">
+          <li class="s08-item" data-aos="fade-right" data-aos-duration="700" data-aos-delay="300">
             <div class="s08-badge">
               <img src="img/sub/08/04-01.png" alt="" class="s08-badge__img">
               <div class="s08-badge__label">
@@ -592,7 +593,7 @@
             </div>
           </li>
 
-          <li class="s08-item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="0">
+          <li class="s08-item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="400">
             <div class="s08-badge">
               <img src="img/sub/08/04-02.png" alt="" class="s08-badge__img">
               <div class="s08-badge__label">
@@ -606,7 +607,7 @@
             </div>
           </li>
 
-          <li class="s08-item" data-aos="fade-right" data-aos-duration="700" data-aos-delay="0">
+          <li class="s08-item" data-aos="fade-right" data-aos-duration="700" data-aos-delay="500">
             <div class="s08-badge">
               <img src="img/sub/08/04-03.png" alt="" class="s08-badge__img">
               <div class="s08-badge__label">
@@ -620,7 +621,7 @@
             </div>
           </li>
 
-          <li class="s08-item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="0">
+          <li class="s08-item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="600">
             <div class="s08-badge">
               <img src="img/sub/08/04-04.png" alt="" class="s08-badge__img">
               <div class="s08-badge__label">
@@ -634,7 +635,7 @@
             </div>
           </li>
 
-          <li class="s08-item" data-aos="fade-right" data-aos-duration="700" data-aos-delay="0">
+          <li class="s08-item" data-aos="fade-right" data-aos-duration="700" data-aos-delay="700">
             <div class="s08-badge">
               <img src="img/sub/08/04-05.png" alt="" class="s08-badge__img">
               <div class="s08-badge__label">
