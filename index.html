@@ -16,15 +16,15 @@
     main .sec { width: 100%; margin: 100px auto 0 !important; max-width: 1440px; padding: 0 80px 0}
 
     main .sec01-card { background: #FDEFEF; display: flex; align-items: stretch; overflow: hidden; min-height: 380px; position: relative; }
-    main .sec01-card-left { position: relative; width: 35%; flex-shrink: 0; display: flex; flex-direction: column; padding: 40px 0 40px 30px; overflow: hidden; }
+    main .sec01-card-left { position: relative; width: 35%; flex-shrink: 0; display: flex; flex-direction: column; padding: 40px 0 40px 40px; overflow: hidden; }
     main .sec01-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.3px; margin-bottom: 40px; flex-shrink: 0; }
-    main .sec01-nps-grid { position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap:20px; padding-left:30px; }
+    main .sec01-nps-grid { position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px 40px; }
     main .sec01-nps-grid img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
     main .sec01-photo { position: absolute; top: 0; left: 0; width: 50%; height: 50%; border-radius: 10px; overflow: hidden; z-index: 2; }
     main .sec01-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     main .sec01-card-right { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px 44px 40px 100px; gap: 16px; }
-    main .sec01-badge { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #333; border-radius: 999px; padding: 1px 18px; font-family: 'Jost', sans-serif; font-weight: 700; font-size: 20px; background-color: #FEFEFE; color: #333; letter-spacing: -1.5px; width: fit-content; }
-    main .sec01-title { font-size: 30px; font-weight: 700; color: #111; line-height: 1.4; letter-spacing: -0.5px; }
+    main .sec01-badge { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #333; border-radius: 999px; padding: 1px 18px; font-family: 'Jost', sans-serif; font-weight: 700; font-size: 23px; background-color: #FEFEFE; color: #333; letter-spacing: -1.5px; width: fit-content; }
+    main .sec01-title { font-size: 38px; font-weight: 700; color: #111; line-height: 1.4; letter-spacing: -0.5px; }
 
     main .sec02-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; padding-right: 80px; }
     main .sec02 { width: 100%; margin-left: -80px; padding-left: 80px; width: calc(100% + 80px); }
@@ -34,23 +34,23 @@
     main .sec02-card { position: relative; flex-shrink: 0; width: calc((100% - 28px - 48px) / 3); height: 500px; border-radius: 30px; overflow: hidden; cursor: pointer; scroll-snap-align: start; }
     main .sec02-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     main .sec02-card:hover .sec02-card-img { transform: scale(1.05); }
-    main .sec02-card-circle { position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%); width: 280px; height: 280px; border-radius: 50%; background: #F4A6B3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: bottom 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease; z-index: 2; opacity: 1; }
-    main .sec02-card:hover .sec02-card-circle { bottom: 60px; opacity: 1; }
+    main .sec02-card-circle { position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%); width: 280px; height: 280px; border-radius: 50%; background: #F4A6B3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: bottom 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease; z-index: 2; opacity: 0.9; }
+    main .sec02-card:hover .sec02-card-circle { bottom: 60px; opacity: 0.95; }
     main .sec02-card-circle-text { font-size: 20px; font-weight: 600; color: #fff; text-align: center; line-height: 1.55; letter-spacing: -0.3px; max-width: 200px; padding-bottom: 40px;}
     main .sec02-card-btn { font-weight: 600; font-size: 12px; color: #F4A6B3; background-color: #FFF; border: 1.5px solid #fff; border-radius: 999px; padding: 2% 12px; cursor: pointer; letter-spacing:-1px; opacity: 0; transform: translateY(6px); transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; }
-    main .sec02-card:hover .sec02-card-btn { opacity: 1; transform: translateY(0); }
+    main .sec02-card:hover .sec02-card-btn { opacity: 0.95; transform: translateY(0); }
     main .sec02-card:hover .sec02-card-circle-text {padding-bottom: 0px;}
     main .sec02-card-deco { position: absolute; left: 50%; bottom: -270px; transform: translateX(-50%); width: 380px; height: 380px; border-radius: 50%; background: #F4A6B3; z-index: 1; opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
-    main .sec02-card:hover .sec02-card-deco { opacity: 1; }
+    main .sec02-card:hover .sec02-card-deco { opacity: 0.95; }
     main .sec02-progress-wrap { margin-top: 4px; padding-right: 80px; height: 3px; background: #ddd; border-radius: 99px; overflow: hidden; }
     main .sec02-progress-bar { height: 100%; width: 0%; background: #333; border-radius: 99px; transition: width 0.15s linear; }
 
     main .sec03 { margin-top: 100px !important; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
     main .sec03-track { display: flex; gap: 20px; width: max-content; }
     main .sec03-row1 { overflow: hidden; }
-    main .sec03-row1 .sec03-track { animation: sec03-left 28s linear infinite; }
+    main .sec03-row1 .sec03-track { animation: sec03-left 60s linear infinite; }
     main .sec03-row2 { overflow: hidden; }
-    main .sec03-row2 .sec03-track { animation: sec03-right 32s linear infinite; }
+    main .sec03-row2 .sec03-track { animation: sec03-right 70s linear infinite; }
     @keyframes sec03-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @keyframes sec03-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
     main .sec03-pill { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 10px 40px; white-space: nowrap; flex-shrink: 0; text-decoration: none;}
@@ -518,7 +518,7 @@
         <img class="bottom-banner-overlay-m" src="img/main/bottom-right-m.png" alt="">
       </picture>
       <!-- 모바일 a링크 - 오른쪽 30%만 -->
-      <a class="bottom-banner-link-m" href="https://www.nps.or.kr/jsppage/cyber_pr/subscribe/intro.jsp" target="_blank" rel="noopener noreferrer" aria-label="구독하기"  onclick="window.open(this.href, '_blank', 'noopener,noreferrer,width=700,height=500'); return false;"></a>
+      <a class="bottom-banner-link-m" href="https://www.nps.or.kr/pbcpgdnc/pbtycntr/getOHAG0051M0List.do?menuId=MN24001597" target="_blank" rel="noopener noreferrer" aria-label="구독하기"  onclick="window.open(this.href, '_blank', 'noopener,noreferrer,width=700,height=500'); return false;"></a>
 
       <!-- 데스크탑 내부 -->
       <div class="bottom-banner-inner">
@@ -529,7 +529,7 @@
           <span class="bottom-banner-title">내 곁에 국민연금</span>
           <span class="bottom-banner-desc">국민연금의 새로운 소식을 가장 먼저 받아보세요!</span>
         </div>
-        <a class="bottom-banner-btn-link" href="https://www.nps.or.kr/jsppage/cyber_pr/subscribe/intro.jsp"  onclick="window.open(this.href, '_blank', 'noopener,noreferrer,width=700,height=500'); return false;" target="_blank" rel="noopener noreferrer" aria-label="구독하기">
+        <a class="bottom-banner-btn-link" href="https://www.nps.or.kr/pbcpgdnc/pbtycntr/getOHAG0051M0List.do?menuId=MN24001597"  onclick="window.open(this.href, '_blank', 'noopener,noreferrer,width=700,height=500'); return false;" target="_blank" rel="noopener noreferrer" aria-label="구독하기">
           <img class="bottom-banner-btn-img" src="img/main/bottom-right.png" alt="구독하기">
         </a>
       </div>
@@ -774,37 +774,36 @@
 
     })();
 
-    /* ── section03 ── */
+    /* ── section03 무한 루프 (빈 공간 없이) ── */
     ['sec03Track1', 'sec03Track2'].forEach(id => {
       const track = document.getElementById(id);
-      track.innerHTML += track.innerHTML;
-    });
+      const container = track.parentElement; // sec03-row1 / sec03-row2
 
-    /* ── 하단 배너 고정/해제 ── */
-    const bottomBanner = document.getElementById('bottomBanner');
-    const footer       = document.getElementById('footer');
+      // 원본 HTML 저장
+      const originalHTML = track.innerHTML;
 
-    function checkBannerPos() {
-      const footerRect = footer.getBoundingClientRect();
-      const bannerH    = bottomBanner.offsetHeight;
-      if (footerRect.top < window.innerHeight) {
-        bottomBanner.style.position = 'absolute';
-        bottomBanner.style.bottom   = 'auto';
-        bottomBanner.style.top      = (footer.offsetTop - bannerH) + 'px';
-        bottomBanner.style.left     = '0';
-      } else {
-        bottomBanner.style.position = 'fixed';
-        bottomBanner.style.top      = 'auto';
-        bottomBanner.style.bottom   = '0';
-        bottomBanner.style.left     = '0';
+      // 컨테이너 너비의 최소 2배가 될 때까지 복제
+      function fillTrack() {
+        // 현재 track 너비가 container 너비 * 2 보다 작으면 계속 추가
+        while (track.scrollWidth < container.offsetWidth * 2 + 1) {
+          track.innerHTML += originalHTML;
+        }
+
+        // 마지막으로 한 번 더 붙여서 seamless 루프 보장
+        track.innerHTML += originalHTML;
       }
-    }
-    window.addEventListener('scroll', checkBannerPos);
-    window.addEventListener('resize', () => {
-      clearTimeout(window._resizeTimer);
-      window._resizeTimer = setTimeout(checkBannerPos, 100);
+
+      fillTrack();
+
+      // 리사이즈 시 재계산
+      window.addEventListener('resize', () => {
+        clearTimeout(track._fillTimer);
+        track._fillTimer = setTimeout(() => {
+          track.innerHTML = originalHTML;
+          fillTrack();
+        }, 200);
+      });
     });
-    checkBannerPos();
 
   
   </script>

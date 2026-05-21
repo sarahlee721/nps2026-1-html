@@ -49,6 +49,7 @@
   #event-01 .boyang-title { margin-bottom: 10px; max-width: 350px; margin: 0 auto; animation: pulse 2s ease-in-out infinite; }
   #event-01 .boyang-title img { width: 100%; padding:0 60px;}
   #event-01 .illust-container { position: relative; height: min(500px, 70vw); display: flex; justify-content: center; align-items: flex-end; max-width: 700px; margin: 0 auto; }
+  #event-01 .illust-container.two, #event-01 .illust-container.three { margin: 0 auto 100px; }
   #event-01 .illust-section.one .illust-pot { position: absolute; bottom: 15%; left: 51%; transform: translateX(-50%); width: 62%; z-index: 2; }
 
   #event-01 .illust-section .illust-garlic { position: absolute; bottom: 80%; left: 32%; width: 31%; z-index: 3; }
@@ -185,6 +186,7 @@
 
   #event-01 .thumb-section {padding: 0 25px 32px;}
   @media (max-width: 768px) {
+    #event-01 .illust-container.two, #event-01 .illust-container.three { margin: 0 auto; }
     #event-01 .top-pill-wrap {justify-content: center; padding: 50px 50px 10px; }
     #event-01 .steps-grid { display: grid; grid-template-columns: repeat(2, 130px); justify-content: center; gap:15px; }
     #event-01 .step-item { width: 120px;}
@@ -393,7 +395,7 @@
   
     <!-- illust-section.one: 처음에만 보임 -->
     <div class="illust-section one" id="stage-one">
-    <div class="illust-container">
+    <div class="illust-container one">
         <img class="illust-garlic float-so"    src="img/event/01/01-05.png" data-modal="eventEndedModal" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000">
         <img class="illust-abalone float-mid"    src="img/event/01/01-04.png" data-modal="alreadyAppliedModal" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000">
         <img class="illust-ginseng float-mid"    src="img/event/01/01-03.png" data-modal="unluckyModal" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000">
@@ -405,7 +407,7 @@
 
     <!-- illust-section.two: 처음엔 숨김 -->
     <div class="illust-section two" id="stage-two" style="display:none;">
-      <div class="illust-container">
+      <div class="illust-container two">
           <img class="illust-smoke slideOutUpFade"      src="img/event/01/02-07.png">
           <img class="illust-women float-sofast"      src="img/event/01/02-05.png">
           <img class="illust-abalone2 float-mid"    src="img/event/01/02-03.png">
@@ -421,7 +423,7 @@
       <img src="img/event/01/boyang.png" alt="보양이닭">
     </div>
     <div class="illust-section three" id="stage-three" style="display:none;">
-      <div class="illust-container">
+      <div class="illust-container three">
           <img class="illust-steam slideOutUpFade"  src="img/event/01/03-04.png">
           <img class="illust-kimchi float-mid"  src="img/event/01/03-03.png">
           <img class="illust-pot float-slow"    src="img/event/01/03-01.png">
