@@ -29,10 +29,11 @@
 #sub-07 .nps-desc strong { font-weight: 700; }
 #sub-07 .body-wrap { }
 #sub-07 .thumb-section { padding: 170px 50px 100px; }
-
+@media (max-width: 1000px) {
+  #sub-07 .pc-br { display: none; }
+}
 /* ====== 반응형 ====== */
 @media (max-width: 768px) {
-  #sub-07 .pc-br { display: none; }
   #sub-07 .mob-br { display: block; }
   #sub-07 .nps-label-wrap { margin: 70px auto 40px; }
   #sub-07 .nps-label { font-size: 16px;}
@@ -65,7 +66,7 @@
   #sub-07 .article-subtitle { font-size: 21px; margin-top: 50px; }
   #sub-07 .img-bg { width: 140%; margin-left: -20%; }
   #sub-07 .img-illust { width: calc(100% - 20px); max-width: none; }
-  #sub-07 .article-body p { font-size: 16px; }
+  #sub-07 .article-body p { font-size: 16px; letter-spacing: -0.5px; }
 }
 
  /* === Section 02 === */
@@ -86,7 +87,7 @@
 #sub-07 .cloud-wrap { position: absolute; bottom: -95%; left: -38%; width: 190%; z-index: 2; }
 #sub-07 .cloud-wrap img { width: 95%; display: block; }
 #sub-07 .cloud-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 15% 17% 10% 25%; color: #fff; pointer-events: none; line-height: 1; }
-#sub-07 .cloud-text .c-top { font-size: 1.1vw; font-weight: 400; margin: 0 0 2px 150px; }
+#sub-07 .cloud-text .c-top { font-size: 1.1vw; font-weight: 400;  }
 #sub-07 .cloud-text .c-top em { font-size: 3.8vw; font-weight: 400; font-style: normal; }
 #sub-07 .cloud-text .c-mid { font-size: 1.1vw; font-weight: 500; margin: 0 0 2px; }
 #sub-07 .cloud-text .c-big { font-size: 1.1vw; font-weight: 500; margin: 0 0 2px; letter-spacing: -0.02em; }
@@ -115,6 +116,7 @@
 }
 @media (max-width: 768px) {
   #sub-07 .article-num-wrap { flex-direction: column; align-items: center; gap: 30px; margin: 50px 0 15px; }
+  #sub-07 .article-num-wrap.two { margin: 0px 0 15px; } 
   #sub-07 .article-subtitle-num { font-size: 18px; align-self: flex-start; }
   #sub-07 .sec02-body { padding-left: 0; }
   #sub-07 .sec02-body p { font-size: 16px; font-weight: 400; }
@@ -131,7 +133,7 @@
   #sub-07 .cloud-wrap {  position: relative; width: 100%; margin-top: -15%; left: 0;  }
   #sub-07 .cloud-wrap img { width: 100%; }
   #sub-07 .cloud-text { padding: 12% 8% 8% 8%; align-items: center; }
-  #sub-07 .cloud-text .c-top { font-size: 18px; }
+  #sub-07 .cloud-text .c-top { font-size: 18px; margin: 0 0 2px 150px;}
   #sub-07 .cloud-text .c-top em { font-size: 70px; }
   #sub-07 .cloud-text .c-big { font-size: 18px; }
   #sub-07 .cloud-text .c-big em { font-size: 70px; }
@@ -162,7 +164,7 @@
   /* #sub-07 .cloud-text { padding: 12% 8% 8% 20%; } */
 }
 
-#sub-07 .sec03-wrap { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 50px; padding: 0 50px; max-width: 1200px; margin: 0 auto; }
+#sub-07 .sec03-wrap { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 45px; padding: 0 50px; max-width: 1200px; margin: 0 auto; }
 #sub-07 .sec03-group-a { grid-column: 1; grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: flex-end; }
 #sub-07 .sec03-group-b { grid-column: 2; grid-row: 1 / 3; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; }
 #sub-07 .sec03-group-c { grid-column: 1 / 3; grid-row: 3; display: flex; align-items: center; justify-content: center; gap: 40px; padding: 20px 0 0; }
@@ -176,7 +178,7 @@
 #sub-07 .sec03-stat .s-sub { font-size: 1.1vw; color: #333; margin: 0; font-weight: 500; }
 
 #sub-07 .sec03-flow { display: flex; align-items: center; margin-top: 20px; letter-spacing: 0.5px; }
-#sub-07 .sec03-flow-item { line-height: 1.8; }
+#sub-07 .sec03-flow-item { line-height: 2; }
 #sub-07 .sec03-flow-item .s-label { font-size: 1vw; margin: 0 0 2px; font-weight: 500; }
 #sub-07 .sec03-flow-item .s-big { font-size: 3.8vw; font-weight: 400; color: #0F6AA6; margin: 0; line-height: 1; }
 #sub-07 .sec03-flow-item .s-big em { font-size: 1vw; font-weight: 500; font-style: normal; color: #000; letter-spacing: 0.3px; }
@@ -206,6 +208,7 @@
   #sub-07 .sec03-arrow { padding: 0 20px; }
   #sub-07 .sec03-group .wave { width: 70%; margin-left: 85px; }
   #sub-07 .sec03-group .treatment { width: 70%; margin-top: -75px; margin-left: 120px; }
+  #sub-07 .sec03-arrow .arrow { transform: rotate(90deg); }
 }
 
 #sub-07 .sec04-wrap { display: flex; align-items: flex-end; justify-content: center; padding: 0 50px 80px; max-width: 1200px; margin: 0 auto; }
@@ -219,6 +222,7 @@
 #sub-07 .sec04-col.shark .sec04-stat .s-big { margin: 0 0 4px 10px; }
 #sub-07 .sec04-stat .s-big em { font-size: 1vw; font-weight: 500; font-style: normal; color: #000; }
 #sub-07 .sec04-stat .s-sub { font-size: 1vw; color: #333; margin: 0; font-weight: 500; }
+#sub-07 .sec04-stat.plastic { margin-bottom: 40px; }
 
 #sub-07 .sec04-col-right { align-items: flex-start; justify-content: flex-end; }
 #sub-07 .sec04-circle-wrap { position: relative; width: 100%; }
@@ -235,19 +239,20 @@
   #sub-07 .sec04-wrap { flex-direction: column; align-items: flex-start; gap: 30px; padding: 0 20px 50px; max-width: 500px; }
   #sub-07 .sec04-col { width: 100%; }
   #sub-07 .sec04-col.shark { align-items: start; }
+  #sub-07 .sec04-stat.plastic { margin-bottom: -100px; }
   #sub-07 .sec04-stat .s-label { font-size: 18px; }
   #sub-07 .sec04-stat .s-big { font-size: 70px; }
   #sub-07 .sec04-stat .s-big em { font-size: 18px; }
   #sub-07 .sec04-stat .s-sub { font-size: 18px; }
-  #sub-07 .sec04-circle-wrap { margin-top: -50px; }
-  #sub-07 .sec04-circle { width: 65%; margin-left: 0; max-width: 260px; }
+  #sub-07 .sec04-circle-wrap { margin-top: -80px; transform: translateX(-25px); }
+  #sub-07 .sec04-circle { width: 80%; margin-left: 0; max-width: 270px; }
   #sub-07 .sec04-circle p { font-size: 21px; }
   #sub-07 .sec04-seafood { width: 80%; margin: -15% auto 0; }
   #sub-07 .sec04-col { justify-content: center; align-items: center; flex-direction: row-reverse; }
   #sub-07 .nps-wrap-inner.num04 { margin-top: -65px; }
 }
 
-#sub-07 .sec05-wrap { display: flex; align-items: center; justify-content: center; gap: 30px; padding: 0 50px 80px; max-width: 1200px; margin: 0 auto; }
+#sub-07 .sec05-wrap { display: flex; align-items: center; justify-content: center; gap: 30px; padding: 0 50px 80px; max-width: 1000px; margin: 0 auto; }
 #sub-07 .sec05-img { flex: 0 0 42%; }
 #sub-07 .sec05-img picture img { width: 100%; height: auto; display: block; }
 #sub-07 .sec05-text-left { flex: 1; text-align: right; }
@@ -261,9 +266,10 @@
   #sub-07 .sec05-img { order: 1; flex: none; width: 100%; }
   #sub-07 .sec05-text-left { order: 2; flex: none; text-align: left; }
   #sub-07 .sec05-text-right { order: 3; flex: none; text-align: right; }
+  #sub-07 .sec04-col .shark-img { transform: translateX(-50px); }
   #sub-07 .sec05-label { font-size: 18px; }
   #sub-07 .sec05-big { font-size: 22px; }
-  #sub-07 .gray-text { padding-left: 0; text-indent: 0; font-size: 18px; margin-bottom: 60px; }
+  #sub-07 .gray-text { padding-left: 0; text-indent: 0; font-size: 16px; margin-bottom: 60px; }
 }
 
 #sub-07 .sec06 { background: url('img/sub/07/middle-bg-pc.png') center bottom / cover no-repeat; padding: 80px 0 160px; }
@@ -281,7 +287,7 @@
 #sub-07 .sec06-text p { font-size: 18px; line-height: 1.8; }
 
 @media (max-width: 768px) {
-  #sub-07 .sec06 { background: #7CCBFF; padding: 50px 0 80px; }
+  #sub-07 .sec06 { background: #7CCBFF; padding: 50px 0 20px; }
   #sub-07 .sec06-wrap { padding: 0 20px; }
   #sub-07 .sec06-intro.mob { display: block; padding: 0 20px; }
   #sub-07 .sec06-intro.pc { display: none; }
@@ -289,9 +295,10 @@
   #sub-07 .sec06-desc { font-size: 16px; }
   #sub-07 .sec06-item { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 40px; }
   #sub-07 .sec06-item.reverse { flex-direction: column; }
-  #sub-07 .sec06-img { flex: none; width: 120px; margin: 0 auto; }
-  #sub-07 .sec06-text h3 { font-size: 18px; color: #000; }
+  #sub-07 .sec06-img { flex: none; width: 160px; margin: 0 auto; }
+  #sub-07 .sec06-text h3 { font-size: 18px; color: #222; }
   #sub-07 .sec06-text p { font-size: 16px; }
+  #sub-07 .sec06-intro { margin-bottom: 70px; }
 }
 
 /* === Section 07 === */
@@ -301,12 +308,12 @@
 #sub-07 .sec07-title { font-size: 25px; font-weight: 600; margin-bottom: 10px; }
 #sub-07 .sec07-desc { font-size: 18px; line-height: 1.9; }
 #sub-07 .sec07-list { display: flex; flex-direction: column; align-items: center; }
-#sub-07 .sec07-card-header { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; }
+#sub-07 .sec07-card-header { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; }
 #sub-07 .sec07-card-num { font-size: 20px; font-weight: 500; margin: 0; flex-shrink: 0; }
 #sub-07 .sec07-card-title { font-size: 20px; font-weight: 500; margin: 0; line-height: 1.4; }
 #sub-07 .sec07-card { min-height: 370px; width: 100%; max-width: 970px; background: url('img/sub/07/blueBox-top-pc.png') center / 100% 100% no-repeat; padding: 60px 50px; display: flex; align-items: center; gap: 40px; box-sizing: border-box; }
 #sub-07 .sec07-card:first-child { min-height: 320px; }
-#sub-07 .sec07-card + .sec07-card { background-image: url('img/sub/07/blueBox-middle-pc.png'); margin-top: -12px; padding: 200px 50px 60px; }
+#sub-07 .sec07-card + .sec07-card { background-image: url('img/sub/07/blueBox-middle-pc.png'); margin-top: -12px; padding: 120px 50px 60px; }
 #sub-07 .sec07-card-img { flex: 0 0 180px; }
 #sub-07 .sec07-card-img img { width: 100%; height: auto; display: block; }
 #sub-07 .sec07-card-text { flex: 1; color: #fff; }
@@ -473,9 +480,9 @@
         <div class="article-content center" data-aos="fade-up" data-aos-duration="700">
           <h3 class="article-subtitle">한 번의 세탁이 남기는 것</h3>
           <div class="article-body">
-            <p>우리는 세탁을 ‘깨끗해지는 과정’으로만 인식한다. 하지만 그 과정은 동시에 아주 작은 단위의 오염을 만들어낸다. 
-                <br>눈에 보이지 않을 만큼 잘게 부서진 섬유들은 물을 따라 흘러가고, 결국 바다에 닿는다. 사라진 것처럼 보이지만 
-                <br>이 조각들은 사라지지 않는다. 축적되고, 순환하며, 다시 우리의 일상으로 되돌아온다. 문제는 크기가 아니라, 반복과 축적에 있다.</p>
+            <p>우리는 세탁을 ‘깨끗해지는 과정’으로만 인식한다.<br class="mob-br"> 하지만 그 과정은 동시에<br class="mob-br"> 아주 작은 단위의 오염을 만들어낸다. 
+                <br>눈에 보이지 않을 만큼 잘게 부서진<br class="mob-br"> 섬유들은 물을 따라 흘러가고, 결국 바다에 닿는다.<br class="mob-br"> 사라진 것처럼 보이지만 
+                <br>이 조각들은 사라지지 않는다. 축적되고,<br class="mob-br"> 순환하며, 다시 우리의 일상으로 되돌아온다.<br class="mob-br"> 문제는 크기가 아니라, 반복과 축적에 있다.</p>
           </div>
         </div>
       </div>
@@ -528,7 +535,7 @@
 
       <div class="nps-wrap-inner">
         <div data-aos="fade-up" data-aos-duration="600">
-          <div class="article-num-wrap" >
+          <div class="article-num-wrap two" >
             <span class="article-num">2</span>
             <h3 class="article-subtitle-num">바다로 이어지는 흐름</h3>
           </div>
@@ -596,7 +603,7 @@
 
         <!-- Group A: 고래 + 90% -->
         <div class="sec04-col shark" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
-          <img src="img/sub/07/04-01.png" alt="해양 생물">
+          <img src="img/sub/07/04-01.png" alt="해양 생물" class="shark-img">
           <div class="sec04-stat" style="margin-top: 20px;">
             <p class="s-label">해양 생물</p>
             <p class="s-big">90%<em>이상에서</em></p>
@@ -607,7 +614,7 @@
         <!-- Group B: 사람 + 5만 개 -->
         <div class="sec04-col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
           <img class="person" src="img/sub/07/04-02.png" alt="물 마시는 사람">
-          <div class="sec04-stat" style="margin-top: 20px;">
+          <div class="sec04-stat plastic" >
             <p class="s-label">인간은 연간</p>
             <p class="s-big"><em>약 </em>5<em>만 개 이상의</em></p>
             <p class="s-sub">미세 플라스틱 섭취</p>
@@ -635,8 +642,8 @@
             <h3 class="article-subtitle-num">반복이 만드는 변화</h3>
           </div>
           <div class="sec02-body">
-            <p>바다에 쌓인 미세 플라스틱은 생물의 몸속으로 들어가고, 먹이사슬을 따라 다시 인간에게<br>
-            도달한다. 보이지 않을 뿐, 이미 우리의 일상과 연결되어 있다.</p>
+            <p>세탁은 일상적인 행위지만, 반복될수록 영향은 누적된다. <br>
+            더 자주, 더 많이 이루어질수록 배출 역시 함께 증가한다.</p>
           </div>
         </div>
       </div>

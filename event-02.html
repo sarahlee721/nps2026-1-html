@@ -44,6 +44,7 @@
 #event-02 .e02-coffee { width: 220px; }
 #event-02 .e02-d04-col { flex: 0 0 auto; align-self: center; }
 #event-02 .e02-d04 { position: absolute; right: -150px; top: 170px; width: 160px; }
+#event-02 .e02-d07 { position: absolute; right: -140px; top: 340px; width: 45px; z-index: 10; }
 #event-02 .e02-prize-nm { font-size: 17px; font-weight: 700; text-align: center; margin-bottom: 100px; }
 #event-02 .e02-tbl { max-width: 580px; margin: 0 auto 130px; }
 #event-02 .e02-tr { display: flex; align-items: center; border: 1px solid #222; border-radius: 40px; overflow: hidden; margin-bottom: 10px; background: #fff; }
@@ -52,7 +53,7 @@
 #event-02 .e02-btns { display: flex; justify-content: center; gap: 30px; margin-bottom: 80px; }
 #event-02 .e02-d05 { position: absolute; left: -200px; bottom: 270px; width: 130px; }
 #event-02 .e02-d06 { position: absolute; right: -200px; bottom: 100px; width: 120px; }
-#event-02 .e02-btn { padding: 12px 70px; border-radius: 50px; font-size: 27px; font-weight: 400; cursor: pointer; border: none; font-family: inherit; transition: opacity 0.2s; }
+#event-02 .e02-btn { white-space: nowrap; padding: 12px 70px; border-radius: 50px; font-size: 27px; font-weight: 400; cursor: pointer; border: none; font-family: inherit; transition: opacity 0.2s; }
 #event-02 .e02-btn:hover { opacity: 0.84; }
 #event-02 .e02-sub { background: #424242; color: #fff; }
 #event-02 .e02-join { background: #5848E0; color: #fff; }
@@ -68,6 +69,7 @@
   #event-02 .e02-d04 { width: 140px; top: 170px; right: 25px; }
   #event-02 .e02-d05 { width: 110px; left: 0px; bottom: 400px; }
   #event-02 .e02-d06 { width: 110px; right: 50px; bottom: 160px; }
+  #event-02 .e02-d07 { width: 30px; top: 360px; right: 0; }
 }
 
 @media (max-width: 768px) {
@@ -99,9 +101,10 @@
   #event-02 .e02-th { flex: 0 0 auto; font-size: 16px; padding: 10px 10px 0; }
   #event-02 .e02-td { font-size: 16px; padding: 5px 10px 10px; }
   #event-02 .e02-btn { font-size: 20px; padding: 8px 40px; }
-  #event-02 .e02-btns { margin-bottom: 40px; }
+  #event-02 .e02-btns { margin-bottom: 40px; gap: 20px; }
   #event-02 .e02-d05{ display: none; }
   #event-02 .e02-d06 { width: 80px; right: 400px; bottom: 630px; }
+  #event-02 .e02-d07 { width: 40px; top: 590px; left: 72%; transform: translateX(-50%); }
 }
 
 @media (max-width: 560px) {
@@ -116,8 +119,9 @@
 }
 
 @media (max-width: 390px) {
-  #event-02 .e02-d06 { right: 280px; }
+  #event-02 .e02-d06 { right: 280px; bottom: 815px; }
   #event-02 .e02-d03 { left: 230px; }
+  #event-02 .e02-d07 { left: 85%; }
 }
 
 </style>
@@ -266,7 +270,8 @@
           이 제도의 이름은 무엇일까요?
         </p>
         <p class="e02-hint" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700"><span>힌트</span> 연금 생애 설계 가이드</p>
-        <img src="img/event/02/student01.png" class="e02-stu1" alt="차곡차곡 외치고 있는 여자 학생" data-aos="fade-left" data-aos-duration="700" data-aos-delay="800">
+        <img src="img/event/02/student01.png" class="e02-stu1" alt="퀴즈를 가리키는 남자 학생"  data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
+        <img src="img/event/02/07.png" class="e02-d07" alt="반짝" data-aos="zoom-in-up" data-aos-duration="600" data-aos-delay="800">
       </div>
     </div>
   </div>
@@ -274,7 +279,7 @@
   <!-- ② Prize Section -->
 <div class="e02-prize">
   <div class="e02-inner">
-    <img src="img/event/02/student02.png" class="e02-stu2" alt="퀴즈를 가르키고 있는 남자 학생" data-aos="fade-right" data-aos-duration="700">
+    <img src="img/event/02/student02.png" class="e02-stu2" alt="퀴즈를 가르키고 있는 남자 학생" data-aos="fade-right" data-aos-duration="500">
     <div class="e02-coffee-col" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200">
       <img src="img/event/02/coffee.png" class="e02-coffee" alt="커피 기프티콘">
     </div>
@@ -296,7 +301,6 @@
     </div>
     <img src="img/event/02/05.png" class="e02-d05" alt="ㅑ" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
     <img src="img/event/02/06.png" class="e02-d06" alt="ㅇ" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
-
       <ul class="e02-notice" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
         <li>•  &lt;내 곁에 국민연금&gt; 웹진 이벤트 4종에 대한 중복 당첨은 불가합니다.</li>
         <li>•  본 이벤트 경품은 당사 사정에 따라 변경될 수 있습니다.</li>
