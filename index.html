@@ -34,8 +34,9 @@
     main .sec02-card { position: relative; flex-shrink: 0; width: calc((100% - 28px - 48px) / 3); height: 500px; border-radius: 30px; overflow: hidden; cursor: pointer; scroll-snap-align: start; }
     main .sec02-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     main .sec02-card:hover .sec02-card-img { transform: scale(1.05); }
-    main .sec02-card-circle { position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%); width: 280px; height: 280px; border-radius: 50%; background: #F4A6B3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: bottom 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease; z-index: 2; opacity: 0.9; }
-    main .sec02-card:hover .sec02-card-circle { bottom: 60px; opacity: 0.95; }
+    main .sec02-card-overlay {  position: absolute; inset: 0; opacity: 0.9;  pointer-events: none; }
+    main .sec02-card-circle { position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%); width: 280px; height: 280px; border-radius: 50%; background: #F4A6B3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: bottom 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease; z-index: 2; }
+    main .sec02-card:hover .sec02-card-circle { bottom: 60px; }
     main .sec02-card-circle-text { font-size: 20px; font-weight: 600; color: #fff; text-align: center; line-height: 1.55; letter-spacing: -0.3px; max-width: 200px; padding-bottom: 40px;}
     main .sec02-card-btn { font-weight: 600; font-size: 12px; color: #F4A6B3; background-color: #FFF; border: 1.5px solid #fff; border-radius: 999px; padding: 2% 12px; cursor: pointer; letter-spacing:-1px; opacity: 0; transform: translateY(6px); transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; }
     main .sec02-card:hover .sec02-card-btn { opacity: 0.95; transform: translateY(0); }
@@ -316,38 +317,48 @@
   
         <div class="sec02-card">
           <img class="sec02-card-img" src="img/main/sec02-01.jpg" alt="">
-          <div class="sec02-card-circle">
-            <p class="sec02-card-circle-text">국민연금공단, <br> 공공기관 경영실적평가 <br>'우수(A)' 등급 획득</p>
-            <button class="sec02-card-btn">NOTICE</button>
+          <div class="sec02-card-overlay">
+            <div class="sec02-card-circle">
+              <p class="sec02-card-circle-text">국민연금공단, <br> 공공기관 경영실적평가 <br>'우수(A)' 등급 획득</p>
+              <button class="sec02-card-btn">NOTICE</button>
+            </div>
+            <div class="sec02-card-deco"></div>
           </div>
-          <div class="sec02-card-deco"></div>
         </div>
   
         <div class="sec02-card">
           <img class="sec02-card-img" src="img/main/sec02-02.jpg" alt="">
-          <div class="sec02-card-circle">
-            <p class="sec02-card-circle-text">퇴사 후, <br>연금은 어떻게 <br>달라질까</p>
-            <button class="sec02-card-btn">NOTICE</button>
+          <div class="sec02-card-overlay">
+            <div class="sec02-card-circle">
+              <p class="sec02-card-circle-text">퇴사 후, <br>연금은 어떻게 <br>달라질까</p>
+              <button class="sec02-card-btn">NOTICE</button>
+            </div>
+            <div class="sec02-card-deco"></div>
           </div>
-          <div class="sec02-card-deco"></div>
+          
         </div>
   
         <div class="sec02-card">
           <img class="sec02-card-img" src="img/main/sec02-03.jpg" alt="">
-          <div class="sec02-card-circle">
-            <p class="sec02-card-circle-text">연기연금 <br>키워드 <br>알아보기</p>
-            <button class="sec02-card-btn">NOTICE</button>
+          <div class="sec02-card-overlay">
+            <div class="sec02-card-circle">
+              <p class="sec02-card-circle-text">연기연금 <br>키워드 <br>알아보기</p>
+              <button class="sec02-card-btn">NOTICE</button>
+            </div>
+            <div class="sec02-card-deco"></div>
           </div>
-          <div class="sec02-card-deco"></div>
+          
         </div>
   
         <div class="sec02-card">
           <img class="sec02-card-img" src="img/main/sec02-04.jpg" alt="">
-          <div class="sec02-card-circle">
-            <p class="sec02-card-circle-text">노후 준비, 지금 시작해도 늦지 않아요</p>
-            <button class="sec02-card-btn">NOTICE</button>
+          <div class="sec02-card-overlay">
+            <div class="sec02-card-circle">
+              <p class="sec02-card-circle-text">노후 준비, 지금 시작해도 늦지 않아요</p>
+              <button class="sec02-card-btn">NOTICE</button>
+            </div>
+            <div class="sec02-card-deco"></div>
           </div>
-          <div class="sec02-card-deco"></div>
         </div>
 
   
