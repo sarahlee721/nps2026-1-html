@@ -20,7 +20,7 @@ ul, ol { list-style: none; }
 
 /* ───── HEADER ───── */
 .header { position: fixed; top: 0; left: 0; width: 100%; background: #E1E1E1; z-index: 1000; border-bottom: 1px solid #d8d5d0; }
-.header-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 80px; height: 120px; max-width: 1440px; margin: 0 auto; }
+.header-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 80px; height: 100px; max-width: 1440px; margin: 0 auto; }
 /* @media (max-width: 1440px) {
     .header-bar { padding: 0 160px 0 80px; }
 } */
@@ -197,5 +197,5 @@ ul, ol { list-style: none; }
     .thumb-section { grid-template-columns: 1fr; gap: 25px;}
   }
   @media (max-width: 480px) {
-    .thumb-section { padding: 0 0 24px; gap: 8px; }
+    .thumb-section { padding: 0 0 20px; gap: 12px; }
   }

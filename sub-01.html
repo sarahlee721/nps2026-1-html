@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPS 뉴스</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- AOS 라이브러리 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="css/common.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+#sub-01 { width: 100%; padding: 0; box-sizing: border-box; }
+#sub-01 .mob-br { display: none; }
+#sub-01 .nps-wrap { padding: 140px 0 0; }
+#sub-01 .nps-wrap-inner { max-width: 1080px; margin: 0 auto; padding: 0 50px; box-sizing: border-box; }
+#sub-01 .title-wrap { text-align: left; position: relative; z-index: 1; background: #fff; }
+#sub-01 .title { font-size: 60px; font-weight: 600; color: #3C3C3C; line-height: 1.3; letter-spacing: -0.03em; margin: 0; }
+#sub-01 .desc { margin: 28px 0 0; font-size: 21px; font-weight: 500; color: #575757; line-height: 1.85; letter-spacing: -0.04em;  }
+#sub-01 .news-tab-wrap { margin: 140px 0 0; display: flex; justify-content: center; align-items: center; gap: 0; }
+#sub-01 .news-tab { min-width: 143px; height: 57px; padding: 0 24px; border: 0; border-radius: 999px; background: #f0f0f0; font-size: 21px; font-weight: 600; color: #666; line-height: 57px; text-align: center; cursor: pointer; box-sizing: border-box; }
+#sub-01 .news-tab + .news-tab { margin-left: -2px; }
+#sub-01 .news-tab.active { background: #ff85a4; color: #fff; position: relative; z-index: 1; }
+#sub-01 .dot-wrap { margin: 28px 0 0; display: flex; justify-content: center; align-items: center; gap: 10px; }
+#sub-01 .dot { width: 16px; height: 16px; border-radius: 50%; background: #f0f0f0; display: block; }
+#sub-01 .dot.active { background: #ff85a4; }
+#sub-01 .news-content-wrap { margin: 50px auto 0; }
+#sub-01 .news-content .article-01 { background: #FFFED9; border-radius: 30px; padding: 100px 80px 70px; box-sizing: border-box;  }
+
+
+#sub-01 .news-content { display: none; }
+#sub-01 .news-content.active { display: block; }
+#sub-01 .news-title { font-size: 50px; font-weight: 600; line-height: 1.45; letter-spacing: -0.05em; color: #000000; text-align: center; margin: 0;  }
+#sub-01 .news-sub { margin: 28px 0 0; font-size: 30px; font-weight: 600; line-height: 1.5; letter-spacing: -0.04em; color: #111; text-align: center;  }
+#sub-01 .news-sub span { display: block; }
+#sub-01 .news-img { margin: 70px auto 0; text-align: center; }
+#sub-01 .news-img img { width: 100%; max-width: 750px; display: inline-block; }
+#sub-01 .news-text { margin: 120px 0 0; font-size: 18px; font-weight: 500; line-height: 2; letter-spacing: -0.03em; color: #333;  }
+
+/* ====== 반응형 ====== */
+@media (max-width: 768px) {
+  #sub-01 .pc-br { display: none; }
+  #sub-01 .mob-br { display: block; }
+  #sub-01 .mob-br2 { display: block; }
+  #sub-01 .nps-wrap { padding: 60px 0 0; }
+  #sub-01 .nps-wrap-inner { padding: 0 20px; }
+  #sub-01 .title { font-size: 20px; font-weight: 700; }
+  #sub-01 .desc { margin: 30px 0 0; font-size: 16px; font-weight: 600; line-height: 1.7; }
+  #sub-01 .news-tab-wrap { margin: 55px 0 0; }
+  #sub-01 .news-tab { min-width: 100px; height: 40px; padding: 0 20px; font-size: 16px; line-height: 40px; }
+  #sub-01 .dot-wrap { margin: 30px 0 0; }
+  #sub-01 .news-content-wrap { margin: 45px auto 0; }
+  #sub-01 .news-content { border-radius: 0; padding: 10px 0 0; }
+  #sub-01 .news-content .article-01 {  padding: 40px 20px 30px; border-radius: 0; }
+  #sub-01 .news-title { font-size: 26px; line-height: 1.45; font-weight: 500; }
+  #sub-01 .news-sub { margin: 28px 0 0; font-size: 15px; line-height: 1.75; }
+  #sub-01 .news-img { margin: 42px auto 0; }
+  #sub-01 .news-img img { max-width: 240px; }
+  #sub-01 .news-text { margin: 40px 0 0; font-size: 17px; font-weight: 500; line-height: 1.9; }
+}
+
+#sub-01 .qa-section { position: relative; margin: 70px auto 0; }
+#sub-01 .qa-top { position: relative; height: 150px; padding: 0; }
+#sub-01 .qa-man { position: absolute; right: -45px; top: 0; width: 170px; display: block; z-index: 2; }
+#sub-01 .qa-question { position: absolute; right: 115px; bottom: 35px; min-width: 350px; height: 50px; padding: 0 50px 0 30px; border: 1px solid #111; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 600; line-height: 49px; text-align: center; box-sizing: border-box; z-index: 1; }
+#sub-01 .qa-question::after { content: ""; position: absolute; right: -15px; bottom: -1px; width: 40px; height: 43px; border-right: 1px solid #111; border-bottom: 1px solid #111; border-radius: 0 0 1px 0; background: #fff; transform: skewX(18deg); transform-origin: left bottom; }
+#sub-01 .qa-box {  position: relative; margin: 35px 0 0; padding: 30px 50px 60px 100px; border: 0; box-sizing: border-box; background: transparent; }
+#sub-01 .qa-box::before { content: ""; position: absolute; inset: 0; background: #fff; clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%); z-index: 0; }
+#sub-01 .qa-box::after { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 820 900' preserveAspectRatio='none'%3E%3Cpath d='M84 1 Q74 1 74 11 L1 889 Q1 899 11 899 H809 Q819 899 819 889 V11 Q819 1 809 1 Z' fill='none' stroke='%23111' stroke-width='1'/%3E%3C/svg%3E") center/100% 100% no-repeat;  z-index: 1; pointer-events: none; }
+#sub-01 .qa-box > * { position: relative; z-index: 2; }
+#sub-01 .qa-bot { position: absolute; left: -40px; top: -55px; width: 145px; z-index: 3; }
+#sub-01 .qa-text { margin: 0 0 0 100px; font-size: 18px; font-weight: 400; line-height: 1.8; letter-spacing: -0.04em; }
+#sub-01 .chart-title { margin: 50px 0 20px; font-size: 18px; font-weight: 600; letter-spacing: -0.04em; }
+#sub-01 .chart-img { margin: 0; padding: 20px; border-radius: 10px; background-color: #FFFED9; display: block; }
+#sub-01 .chart-img img { width: 100%; display: block; border-radius: 8px; }
+#sub-01 .chart-note { margin: 20px 0 0; font-size: 15px; font-weight: 400; line-height: 1.4; letter-spacing: -0.04em; }
+
+#sub-01 .qa-section.short .qa-box { padding: 45px 60px 45px 110px; }
+#sub-01 .qa-section.short .qa-box::before { clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%); }
+#sub-01 .qa-section.short .qa-box::after { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 820 280' preserveAspectRatio='none'%3E%3Cpath d='M66 1 Q56 1 55 11 L1 269 Q1 279 11 279 H809 Q819 279 819 269 V11 Q819 1 809 1 Z' fill='none' stroke='%23111' stroke-width='1'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
+#sub-01 .qa-section.short .qa-bot { left: -65px; top: -55px; width: 145px; }
+#sub-01 .qa-section.short .qa-text { margin: 0 0 0 100px; }
+
+
+@media (max-width: 768px) {
+  #sub-01 .qa-section { margin: 50px auto 0; max-width: 100%; }
+  #sub-01 .qa-top { height: auto; display: flex; flex-direction: column; align-items: center; padding: 0; text-align: center; }
+  #sub-01 .qa-man { position: static; width: 150px; margin: 0 auto 28px; }
+  #sub-01 .qa-question { position: relative; right: auto; bottom: auto; display: block; min-width: auto; width: 100%; height: auto; margin: 0 auto; padding: 12px 18px; border-radius: 20px; font-size: 16px; line-height: 1.5; }
+  #sub-01 .qa-question::after { display: none; }
+  #sub-01 .qa-box::before { clip-path: none; border-radius: 18px; }
+  #sub-01 .qa-box::after { display: none; }
+  #sub-01 .qa-box { margin: 0; padding: 40px 0 0; border: none; }
+  #sub-01 .qa-bot { margin: 50px 0 -30px; position: relative; left: 50%; transform: translateX(-50%); width: 125px; display: block; }
+  #sub-01 .qa-text { border:1px solid #000; border-radius: 15px; margin: 0; font-size: 16px; line-height: 1.8; padding: 20px; }
+  #sub-01 .chart-title { margin: 50px 0 20px; font-size: 16px; line-height: 1.6; }
+  #sub-01 .chart-img img { margin: 0 auto; }
+  #sub-01 .chart-img .grape01 { max-width: 400px; }
+  #sub-01 .qa-section.short .qa-box { padding: 40px 0 40px; }
+  #sub-01 .qa-section.short .qa-bot { left: 50%; top: auto; transform: translateX(-50%); width: 125px; margin: 0 0 25px; }
+  #sub-01 .qa-section.short .qa-text { margin: 0; }
+  #sub-01 .chart-note { font-size: 12px; }
+
+}
+
+#sub-01 .fund-card { margin: 0; padding: 45px 50px 40px; border-radius: 10px; background: #FFFED9; box-sizing: border-box; }
+#sub-01 .fund-list { display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 36px; column-gap: 38px; }
+#sub-01 .fund-item { display: flex; align-items: center; gap: 16px; }
+#sub-01 .fund-flag { width: 58px; height: 58px; flex-shrink: 0; }
+#sub-01 .fund-flag img { width: 100%; display: block; }
+#sub-01 .fund-name { font-size: 16px; font-weight: 500; line-height: 1.4; letter-spacing: -0.04em; }
+#sub-01 .fund-rate { display: block; margin-top: 3px; font-size: 21px; font-weight: 600; color: #747678; line-height: 1.2; }
+#sub-01 .fund-note { margin: 45px 0 0; font-size: 15px; font-weight: 400; line-height: 1.4; letter-spacing: -0.04em; color: #222; }
+
+@media (max-width: 768px) {
+  #sub-01 .fund-card { padding: 28px 24px 30px; border-radius: 5px; }
+  #sub-01 .fund-list { display: flex; flex-direction: column; align-items: flex-start; width: fit-content; margin: 0 auto; row-gap: 23px; }
+  #sub-01 .fund-flag { width: 58px; height: 58px; }
+  #sub-01 .fund-name { font-size: 16px; }
+  #sub-01 .fund-rate { font-size: 20px; }
+  #sub-01 .fund-note { margin: 42px 0 0; font-size: 14px; line-height: 1.6; }
+}
+
+#sub-01 .bottom-box { margin-top: 80px; width: 100%; padding: 130px 0 100px; background: #FFFED9; box-sizing: border-box; }
+#sub-01 .bottom-video { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; }
+#sub-01 .bottom-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#sub-01 .thumb-wrap { background-color: #FFFED9; }
+#sub-01 .thumb-section { padding: 0 50px 100px; }
+
+
+@media (max-width: 768px) {
+  #sub-01 .bottom-box { margin-top: 0px; padding: 80px 0 70px; }
+  #sub-01 .thumb-section { padding: 0 20px 20px; }
+}
+
+@media (max-width: 355px) {
+  #sub-01 .mob-br2 { display: none; }
+}
+</style>
+
+
+ 
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-bar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="img/logo.png" alt="국민연금 로고">
+      </div>
+      <div class="logo-meta">
+        <span>2026 상반기</span>
+        <span>VOL.205</span>
+      </div>
+    </a>
+
+    <!-- ICONS -->
+    <div class="header-icons">
+
+      <!-- 지난호 보기 드롭다운 -->
+      <div class="prev-issue-wrap">
+        <button class="btn-prev-issue" id="prevIssueBtn">
+          지난호 보기
+        </button>
+        <div class="prev-issue-dropdown" id="prevIssueDropdown">
+          <ul>
+            <li><a href="#">2025 하반기 VOL.204</a></li>
+            <li><a href="#">2025 상반기 VOL.203</a></li>
+            <li><a href="#">2024 하반기 VOL.202</a></li>
+            <li><a href="#">2024 상반기 VOL.201</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="searchBtn" aria-label="검색">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" id="menuIcon">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="12" x2="19" y2="12"/>
+        <line x1="3" y1="18" x2="19" y2="18"/>
+      </svg>
+    </button>
+    </div>
+  </div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar" id="searchBar">
+  <div class="search-bar-inner">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="검색어를 입력해 주세요" autocomplete="off">
+    </div>
+    <button class="search-close-btn" id="searchCloseBtn" aria-label="검색 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- NAV SIDEBAR -->
+<nav class="nav-sidebar" id="navSidebar" aria-hidden="true">
+  <div class="nav-sidebar-head">
+    <button class="nav-close-btn" id="navCloseBtn" aria-label="메뉴 닫기">
+      <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <div class="nav-body">
+    <div class="nav-col">
+      <h3>우리의 연금</h3>
+      <ul>
+        <li><a href="sub-01.html">NPS 뉴스</a></li>
+        <li><a href="sub-02.html">NPS 칼럼</a></li>
+        <li><a href="sub-03.html">NPS 키워드 돋보기</a></li>
+        <li><a href="sub-04.html">연금 생애 설계 가이드</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>트렌드 뷰</h3>
+      <ul>
+        <li><a href="sub-05.html">모두의 여행</a></li>
+        <li><a href="sub-06.html">꼬리에 꼬리를 무는 문화탐구</a></li>
+        <li><a href="sub-07.html">그린 시그널</a></li>
+        <li><a href="sub-08.html">지갑의 온도</a></li>
+      </ul>
+    </div>
+    <div class="nav-col">
+      <h3>열린 마당</h3>
+      <ul>
+        <li><a href="event-01.html">행복의 보양식 만들기</a></li>
+        <li><a href="event-02.html">초성 퀴즈</a></li>
+        <li><a href="event-03.html">OX 퀴즈</a></li>
+        <li><a href="event-04.html">독자 목소리</a></li>
+      </ul>
+    </div>
+    <div class="nav-footer">
+      <button class="btn-subscribe-outline">웹진 구독하기</button>
+      <button class="btn-subscribe-outline">뉴스레터 구독하기</button>
+      <button class="btn-prev">지난호 보기</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+
+
+<div class="page" id="sub-01">
+  <div class="nps-wrap">
+
+    <div class="title-wrap nps-wrap-inner">
+      <h2 class="title">NPS NEWS</h2>
+
+      <p class="desc">
+        국민연금을 둘러싼 주요 이슈와 정책, 기금운용 소식까지.
+        복잡하고 어렵게 느껴졌던 NPS 뉴스를 ChatNPS가 직관적이고 쉽게 풀어준다.
+        헤드라인만으로는 이해하기 어려웠던 핵심 내용부터 사람들이 가장 궁금해하는 질문까지.
+        AI와의 질의응답 형식으로 한눈에 이해할 수 있도록 정리했다.
+      </p>
+
+      <div class="news-tab-wrap">
+        <button type="button" class="news-tab active">NEWS 1</button>
+        <button type="button" class="news-tab">NEWS 2</button>
+        <button type="button" class="news-tab">NEWS 3</button>
+      </div>
+
+      <div class="dot-wrap">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="news-content-wrap">
+      <div class="news-content active">
+        <div class="article-01">
+          <h3 class="news-title">
+            불확실성 시대의 승자…<br>
+            NPS에 쏠리는<br class="mob-br"> 세계 금융시장의 시선
+          </h3>
+
+          <div class="news-sub">
+            <span>- 국민연금 2025년 한 해 231조<br class="mob-br"> 6,000억 원 벌어</span>
+            <span>- 역대 최고 수익률 18.82%,<br class="mob-br"> 기금설치 이후 누적수익률 8.04%</span>
+          </div>
+
+          <div class="news-img">
+            <img src="img/sub/01/01-01.png" alt="증가하는 수익률을 보여주는 일러스트">
+          </div>
+
+          <p class="news-text">
+            2026년, 국민연금(NPS)이 글로벌 금융시장의 주목을 받고 있다.
+            세계 경제의 불확실성이 확대되는 가운데, 국민연금은 안정적인 운용 성과를
+            바탕으로 글로벌 핵심 투자자로 존재감을 키우고 있다.
+            국민연금이 글로벌 자산배분과 국내 증시 방향성 등에 크게 영향을 미치는
+            ‘메가 플레이어’로 자리매김하고 있다는 평가가 나온다.
+          </p>
+        </div>
+        <div class="nps-wrap-inner">
+          <div class="qa-section">
+            <div class="qa-top">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">지난해 국민연금 성과가 그렇게 좋았어?</div>
+            </div>
+
+            <div class="qa-box">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                2025년 국민연금은 약 231조 6,000억 원의 운용수익을 기록했어.<br>
+                수익률은 18.82%로, 1988년 기금 설치 이후 가장 높은 수준이야.<br>
+                기금 적립금도 2025년 말 기준 1,458조 원까지 늘어나면서
+                글로벌 연기금 가운데서도 존재감이 더욱 커졌다는 평가가 나오고 있어.<br>
+                참고로 운용수익금 231.6조 원은 국민연금의 한해 연금지급액인 약 49.7조 원의
+                4배 이상이야. 운용수익 규모가 상당했다는 걸 알 수 있지.
+              </p>
+
+              <h4 class="chart-title">2025년 말 기준 국민연금기금 적립금의 구성</h4>
+
+              <picture class="chart-img">
+                <source media="(max-width: 768px)" srcset="img/sub/01/grape01-01-mob.png">
+                <img class="grape01" src="img/sub/01/grape01-01-pc.png" alt="2025년 말 기준 국민연금기금 적립금의 그래프">
+                <p class="chart-note">
+                  *각 수치는 반올림돼 단수 차이가 발생할 수 있음
+                </p>
+              </picture>
+
+              
+              <h4 class="chart-title">연도별 기금수익률 현황<br class="mob-br">(금액가중수익률, 2000년 이후)</h4>
+
+              <div class="chart-img">
+                <img src="img/sub/01/grape01-02.png" alt="연도별 기금수익률 현황">
+              </div>
+            </div>
+          </div>
+          <div class="qa-section">
+            <div class="qa-top">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">국내가 아니라 세계 기준으로 봐도 <br class="mob-br2"> 의미 있는 성과야?</div>
+            </div>
+
+            <div class="qa-box">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                핵심적인 질문이야.<br>
+                국민연금은 지난해 일본 GPIF(12.3%), 캐나다 CPPIB(7.7%) 등<br>
+                주요 해외 연기금과 비교해도 높은 수준의 수익률을 기록했어.
+              </p>
+
+              <h4 class="chart-title">해외 주요 연기금 수익률 현황<br class="mob-br">(금액가중수익률, 2000년 이후)</h4>
+              <div class="fund-card">
+                <div class="fund-list">
+                  <div class="fund-item">
+                    <div class="fund-flag"><img src="img/sub/01/flag01.png" alt="한국"></div>
+                    <div class="fund-info">
+                      <div class="fund-name">한국(NPS)</div>
+                      <strong class="fund-rate">19.0%*</strong>
+                    </div>
+                  </div>
+
+                  <div class="fund-item">
+                    <div class="fund-flag"><img src="img/sub/01/flag02.png" alt="일본"></div>
+                    <div class="fund-info">
+                      <div class="fund-name">일본(GPIF)</div>
+                      <strong class="fund-rate">12.3%</strong>
+                    </div>
+                  </div>
+
+                  <div class="fund-item">
+                    <div class="fund-flag"><img src="img/sub/01/flag03.png" alt="노르웨이"></div>
+                    <div class="fund-info">
+                      <div class="fund-name">노르웨이(GPFG)</div>
+                      <strong class="fund-rate">15.1%</strong>
+                    </div>
+                  </div>
+
+                  <div class="fund-item">
+                    <div class="fund-flag"><img src="img/sub/01/flag04.png" alt="네덜란드"></div>
+                    <div class="fund-info">
+                      <div class="fund-name">네덜란드(ABP)</div>
+                      <strong class="fund-rate">-1.6%</strong>
+                    </div>
+                  </div>
+
+                  <div class="fund-item">
+                    <div class="fund-flag"><img src="img/sub/01/flag05.png" alt="캐나다"></div>
+                    <div class="fund-info">
+                      <div class="fund-name">캐나다(CPPIB)</div>
+                      <strong class="fund-rate">7.7%</strong>
+                    </div>
+                  </div>
+
+                  <div class="fund-item">
+                    <div class="fund-flag"><img src="img/sub/01/flag06.png" alt="미국"></div>
+                    <div class="fund-info">
+                      <div class="fund-name">미국(CalPERS)</div>
+                      <strong class="fund-rate">12.2%</strong>
+                      <span class="fund-small">‘25.3분기까지</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="fund-note">
+                  * 해외 연기금의 동일한 비교를 위해 국민연금 수익률도 시간가중수익률 기준으로 작성하였으며<br class="pc-br">
+                  공시되는 금액가중수익률 18.8%와 소폭 차이가 존재함<br><br>
+                  ** 국가별 수익률은 각 연기금 공시자료를 기준으로 추정함
+                </p>
+              </div>
+            
+            </div>
+          </div>
+          <div class="qa-section">
+            <div class="qa-top">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">그럼 국민연금이 높은 성과를 낼 수 있었던<br class="mob-br2"> 이유는 뭐야?</div>
+            </div>
+
+            <div class="qa-box">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                가장 큰 요인은 철저한 리스크관리와 자산배분 다변화야.<br>
+                해외주식·대체투자·국내 전략자산 등을 유연하게 조정하면서<br class="pc-br">
+                안정성과 수익성을 동시에 확보했다는 평가를 받고 있어.<br>
+                특히 인공지능(AI)·반도체 중심 기술주 강세와 국내 증시 상승 흐름이<br class="pc-br">
+                수익률 개선에 긍정적인 영향을 미쳤어.
+              </p>
+
+              <h4 class="chart-title">국민연금기금 수익률현황<br class="mob-br"><span style="font-weight: 400;">(금액가중수익률 기준, 단위: 조 원, %)</span></h4>
+
+              <picture class="chart-img">
+                <source media="(max-width: 768px)" srcset="img/sub/01/grape01-03-mob.png">
+                <img class="grape01" src="img/sub/01/grape01-03-pc.png" alt="국민연금기금 수익률현황 그래프">
+                <p class="chart-note">
+                  * 2025년 및 설립이후 수치는 잠정치
+                </p>
+              </picture>
+
+                
+            </div>
+          </div>
+          <div class="qa-section short">
+            <div class="qa-top">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">최근 들어 NPS의 영향력이 <br class="mob-br2"> 더 커졌다는 얘기도 나오던데?</div>
+            </div>
+
+            <div class="qa-box">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                맞아. 최근 글로벌 자본시장은 장기 투자자와 <br class="pc-br">
+                초대형 기관 자금의 영향력에 주목하고 있어.<br class="pc-br">
+                국민연금은 기금 규모 확대와 함께 글로벌 시장에서 <br class="pc-br">
+                전략적 가치도 더욱 커지고 있는 상황이야.
+              </p>
+                
+            </div>
+          </div>
+          <div class="qa-section short">
+            <div class="qa-top">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">앞으로도 이런 성과를 계속 낼 수 있을까?</div>
+            </div>
+
+            <div class="qa-box">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                시장에서는 장기적으로 운용 역량 강화와 투자 다변화가 중요해질 것으로 보고 있어. <br>
+                국민연금 역시 지역·자산군 다변화와 리스크 관리 체계를 지속적으로 강화하고 있고, 장기 안정적 수익 기반 확보에 집중하고 있어.<br>
+                기금 규모가 계속 커지는 만큼, 앞으로의 전략과 운용 방향성에도 관심이 쏠리고 있어.
+              </p>
+                
+            </div>
+          </div>
+        </div>
+        <div class="bottom-box">
+          <div class="nps-wrap-inner">
+
+            <div class="bottom-video">
+              <iframe 
+                src="https://www.youtube.com/embed/AMb0J89V0gM?si=EVvtMakyna5F5Hkr"
+                title="국민연금 영상"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="news-content">
+        <h3 class="news-title">NEWS 2 제목을 넣어주세요</h3>
+        <p class="news-text">NEWS 2 내용을 넣어주세요.</p>
+      </div>
+
+      <div class="news-content">
+        <h3 class="news-title">NEWS 3 제목을 넣어주세요</h3>
+        <p class="news-text">NEWS 3 내용을 넣어주세요.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="thumb-wrap">
+    <!-- THUMB CARDS -->
+    <div class="thumb-section">
+      <div class="thumb-card thumb-bg-1" data-aos="fade-right" data-aos-duration="800" data-aos-delay="0">
+        <div class="thumb-card-inner">
+          <div class="thumb-arrow">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+              <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+              <polyline points="215,158 95,158 135,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="thumb-text">
+            <p class="thumb-title">연금 생에 설계 가이드</p>
+            <p class="thumb-tag">자동가입 여부 확인</p>
+            <p class="thumb-tag">자동가입 여부 확인</p>
+          </div>
+        </div>
+      </div>
+      <div class="thumb-card thumb-bg-2" data-aos="fade-left" data-aos-duration="800" data-aos-delay="0">
+        <div class="thumb-card-inner right">
+          <div class="thumb-text">
+            <p class="thumb-title">꼬리에 꼬리를 무는 문화탐구</p>
+            <p class="thumb-tag">자동가입 여부 확인</p>
+            <p class="thumb-tag">자동가입 여부 확인</p>
+          </div>
+          <div class="thumb-arrow">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+              <circle cx="150" cy="150" r="110" fill="none" stroke="white" stroke-width="5"/>
+              <polyline points="85,158 205,158 165,120" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 푸터 -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="내곁에 국민연금">
+    </div>
+    <div class="footer-info">
+      국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
+      국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
+      등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
+      205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
+      © nps.or.kr. All rights reserved.
+    </div>
+    <div class="footer-sns">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#fff"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.51"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8z"/><polygon fill="#93979A" points="10,8.5 10,15.5 16,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>AOS.init({ once: true });</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('#sub-01 .news-tab');
+  const dots = document.querySelectorAll('#sub-01 .dot');
+  const contents = document.querySelectorAll('#sub-01 .news-content');
+
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      dots.forEach(function (dot) {
+        dot.classList.remove('active');
+      });
+
+      contents.forEach(function (content) {
+        content.classList.remove('active');
+      });
+
+      tab.classList.add('active');
+      dots[index].classList.add('active');
+      contents[index].classList.add('active');
+    });
+  });
+});
+</script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
