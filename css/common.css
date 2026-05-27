@@ -184,9 +184,10 @@ img {
 
   /* ── THUMB CARDS ── */
 .thumb-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 0 0 32px; max-width: 1280px; margin: 0 auto; }
-.thumb-card { border-radius: 0; overflow: hidden; aspect-ratio: 16/4; background-size: cover; background-position: center; }
-.thumb-card-inner { width: 100%; height: 100%; display: flex; align-items: center; gap:20px; padding: 16px 24px; background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2)); }
-.thumb-card-inner.right {justify-content: flex-end;}
+.thumb-card { border-radius: 0; overflow: hidden; aspect-ratio: 16/4; background-size: cover; background-position: center; display: flex; }
+.thumb-card-inner { width: 100%; display: flex; align-items: center; gap: 20px; padding: 16px 24px; background: rgba(0,0,0,0.6); text-decoration: none; }
+.thumb-card-inner.right { justify-content: flex-end; }
+.thumb-card-inner.right .thumb-text { align-items: self-end; }
 .thumb-text { display: flex; flex-direction: column; gap: 4px; }
 .thumb-title { font-size: 19px; font-weight: 700; color: #FFFFFF; line-height: 1.4; }
 .thumb-tag { font-size: 15px; color: #FFFFFF; }
@@ -204,3 +205,40 @@ img {
   @media (max-width: 480px) {
     .thumb-section { padding: 0 0 20px; gap: 12px; }
   }
+
+
+#sub-01 .thumb-bg-1 { background-image: url('../img/nav/event-04.png'); }
+#sub-01 .thumb-bg-2 { background-image: url('../img/nav/sub-02.png'); }
+
+#sub-02 .thumb-bg-1 { background-image: url('../img/nav/sub-01.png'); }
+#sub-02 .thumb-bg-2 { background-image: url('../img/nav/sub-03.png'); }
+
+#sub-03 .thumb-bg-1 { background-image: url('../img/nav/sub-02.png'); }
+#sub-03 .thumb-bg-2 { background-image: url('../img/nav/sub-04.png'); }
+
+#sub-04 .thumb-bg-1 { background-image: url('../img/nav/sub-03.png'); }
+#sub-04 .thumb-bg-2 { background-image: url('../img/nav/sub-05.png'); }
+
+#sub-05 .thumb-bg-1 { background-image: url('../img/nav/sub-04.png'); }
+#sub-05 .thumb-bg-2 { background-image: url('../img/nav/sub-06.png'); }
+
+#sub-06 .thumb-bg-1 { background-image: url('../img/nav/sub-05.png'); }
+#sub-06 .thumb-bg-2 { background-image: url('../img/nav/sub-07.png'); }
+
+#sub-07 .thumb-bg-1 { background-image: url('../img/nav/sub-06.png'); }
+#sub-07 .thumb-bg-2 { background-image: url('../img/nav/sub-08.png'); }
+
+#sub-08 .thumb-bg-1 { background-image: url('../img/nav/sub-07.png'); }
+#sub-08 .thumb-bg-2 { background-image: url('../img/nav/event-01.png'); }
+
+#event-01 .thumb-bg-1 { background-image: url('../img/nav/sub-08-1.png'); }
+#event-01 .thumb-bg-2 { background-image: url('../img/nav/event-02.png'); }
+
+#event-02 .thumb-bg-1 { background-image: url('../img/nav/event-01-1.png'); }
+#event-02 .thumb-bg-2 { background-image: url('../img/nav/event-03.png'); }
+
+#event-03 .thumb-bg-1 { background-image: url('../img/nav/event-02-1.png'); }
+#event-03 .thumb-bg-2 { background-image: url('../img/nav/event-04-1.png'); }
+
+#event-04 .thumb-bg-1 { background-image: url('../img/nav/event-03-1.png'); }
+#event-04 .thumb-bg-2 { background-image: url('../img/nav/sub-01-1.png'); }

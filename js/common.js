@@ -149,3 +149,42 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const pageOrder = [
+    'sub-01', 'sub-02', 'sub-03', 'sub-04',
+    'sub-05', 'sub-06', 'sub-07', 'sub-08',
+    'event-01', 'event-02', 'event-03', 'event-04'
+  ];
+
+  const pageFiles = {
+    'sub-01': 'sub-01.html',
+    'sub-02': 'sub-02.html',
+    'sub-03': 'sub-03.html',
+    'sub-04': 'sub-04.html',
+    'sub-05': 'sub-05.html',
+    'sub-06': 'sub-06.html',
+    'sub-07': 'sub-07.html',
+    'sub-08': 'sub-08.html',
+    'event-01': 'event-01.html',
+    'event-02': 'event-02.html',
+    'event-03': 'event-03.html',
+    'event-04': 'event-04.html'
+  };
+
+  const currentId = document.querySelector('.page').id;
+  const currentIndex = pageOrder.indexOf(currentId);
+
+  if (currentIndex !== -1) {
+    const prevId = pageOrder[(currentIndex - 1 + pageOrder.length) % pageOrder.length];
+    const nextId = pageOrder[(currentIndex + 1) % pageOrder.length];
+
+    const prevLink = document.querySelector('.thumb-link-prev');
+    const nextLink = document.querySelector('.thumb-link-next');
+
+    if (prevLink) prevLink.href = pageFiles[prevId];
+    if (nextLink) nextLink.href = pageFiles[nextId];
+  }
+});
