@@ -14,6 +14,7 @@
 <style>
 #sub-01 { width: 100%; padding: 0; box-sizing: border-box; }
 #sub-01 .mob-br { display: none; }
+#sub-01 .mob-br2 { display: none; }
 #sub-01 .nps-wrap { padding: 140px 0 0; }
 #sub-01 .nps-wrap-inner { max-width: 1080px; margin: 0 auto; padding: 0 50px; box-sizing: border-box; }
 #sub-01 .title-wrap { text-align: left; position: relative; z-index: 1; background: #fff; }
@@ -27,7 +28,7 @@
 #sub-01 .dot { width: 16px; height: 16px; border-radius: 50%; background: #f0f0f0; display: block; }
 #sub-01 .dot.active { background: #ff85a4; }
 #sub-01 .news-content-wrap { margin: 50px auto 0; }
-#sub-01 .news-content .article-01 { background: #FFFED9; border-radius: 30px; padding: 100px 80px 70px; box-sizing: border-box;  }
+#sub-01 .news-content .article-01 { background: #FFFED9; border-radius: 30px; padding: 100px 50px 70px; max-width: 1080px; margin: 0 auto; box-sizing: border-box;  }
 
 
 #sub-01 .news-content { display: none; }
@@ -61,10 +62,10 @@
   #sub-01 .news-text { margin: 40px 0 0; font-size: 17px; font-weight: 500; line-height: 1.9; }
 }
 
-#sub-01 .qa-section { position: relative; margin: 70px auto 0; }
+#sub-01 .qa-section { position: relative; margin: 70px auto 0; padding: 0 50px; }
 #sub-01 .qa-top { position: relative; height: 150px; padding: 0; }
 #sub-01 .qa-man { position: absolute; right: -45px; top: 0; width: 170px; display: block; z-index: 2; }
-#sub-01 .qa-question { position: absolute; right: 115px; bottom: 35px; min-width: 350px; height: 50px; padding: 0 50px 0 30px; border: 1px solid #111; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 600; line-height: 49px; text-align: center; box-sizing: border-box; z-index: 1; }
+#sub-01 .qa-question { white-space: nowrap; position: absolute; right: 115px; bottom: 35px; min-width: 350px; height: 50px; padding: 0 50px 0 30px; border: 1px solid #111; border-radius: 10px; background: #fff; font-size: 16px; font-weight: 600; line-height: 49px; text-align: center; box-sizing: border-box; z-index: 1; }
 #sub-01 .qa-question::after { content: ""; position: absolute; right: -15px; bottom: -1px; width: 40px; height: 43px; border-right: 1px solid #111; border-bottom: 1px solid #111; border-radius: 0 0 1px 0; background: #fff; transform: skewX(18deg); transform-origin: left bottom; }
 #sub-01 .qa-box {  position: relative; margin: 35px 0 0; padding: 30px 50px 60px 100px; border: 0; box-sizing: border-box; background: transparent; }
 #sub-01 .qa-box::before { content: ""; position: absolute; inset: 0; background: #fff; clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%); z-index: 0; }
@@ -85,16 +86,16 @@
 
 
 @media (max-width: 768px) {
-  #sub-01 .qa-section { margin: 50px auto 0; max-width: 100%; }
+  #sub-01 .qa-section { margin: 50px auto 0; max-width: 100%; padding: 0;}
   #sub-01 .qa-top { height: auto; display: flex; flex-direction: column; align-items: center; padding: 0; text-align: center; }
   #sub-01 .qa-man { position: static; width: 150px; margin: 0 auto 28px; }
   #sub-01 .qa-question { position: relative; right: auto; bottom: auto; display: block; min-width: auto; width: 100%; height: auto; margin: 0 auto; padding: 12px 18px; border-radius: 20px; font-size: 16px; line-height: 1.5; }
   #sub-01 .qa-question::after { display: none; }
   #sub-01 .qa-box::before { clip-path: none; border-radius: 18px; }
   #sub-01 .qa-box::after { display: none; }
-  #sub-01 .qa-box { margin: 0; padding: 40px 0 0; border: none; }
+  #sub-01 .qa-box { margin: 0 !important; padding: 40px 0 0 !important; border: none; }
   #sub-01 .qa-bot { margin: 50px 0 -30px; position: relative; left: 50%; transform: translateX(-50%); width: 125px; display: block; }
-  #sub-01 .qa-text { border:1px solid #000; border-radius: 15px; margin: 0; font-size: 16px; line-height: 1.8; padding: 20px; }
+  #sub-01 .qa-text { border:1px solid #000; border-radius: 15px; margin: 0 !important; font-size: 16px; line-height: 1.8; padding: 20px; }
   #sub-01 .chart-title { margin: 50px 0 20px; font-size: 16px; line-height: 1.6; }
   #sub-01 .chart-img img { margin: 0 auto; }
   #sub-01 .chart-img .grape01 { max-width: 400px; }
@@ -131,7 +132,7 @@
 
 
 @media (max-width: 768px) {
-  #sub-01 .bottom-box { margin-top: 0px; padding: 80px 0 70px; }
+  #sub-01 .bottom-box { margin-top: 40px; padding: 80px 0 70px; }
   #sub-01 .thumb-section { padding: 0 20px 20px; }
 }
 
@@ -139,42 +140,129 @@
   #sub-01 .mob-br2 { display: none; }
 }
 
-#sub-01 .yellow-box { padding: 100px 0; background: #FFFED9; box-sizing: border-box; }
+
+#sub-01 .second-01 .qa-box { margin: 25px 170px 0 0; }
+#sub-01 .second-01 .news-text { margin: 30px 0 0; }
+#sub-01 .second-01 .qa-text {  margin: 0 0 0 10px; }
+#sub-01 .second-01 .news-img { margin: 50px auto 0; }
+#sub-01 .second-01 .qa-box { padding: 30px 50px 30px 100px; }
+#sub-01 .second-02 .qa-text { margin: 0 0 0 50px; }
+
+#sub-01 .yellow-box { padding: 80px 0 120px; background: #FFFED9; box-sizing: border-box; margin-top: 70px; }
 #sub-01 .case-wrap { max-width: 860px; margin: 0 auto; }
-#sub-01 .case-title { margin: 0 0 40px; font-size: 34px; font-weight: 700; line-height: 1.45; letter-spacing: -0.04em; color: #222; text-align: center; }
-#sub-01 .case-top-box { padding: 32px 36px; border: 1px solid #111; border-radius: 18px; background: #fff; }
-#sub-01 .case-top-box strong { display: block; margin-bottom: 20px; font-size: 20px; font-weight: 700; color: #FF7B9C; }
-#sub-01 .case-top-box p { margin: 0; font-size: 18px; font-weight: 500; line-height: 2; letter-spacing: -0.04em; color: #333; }
+#sub-01 .case-title { margin: 0 0 20px; font-size: 18px; font-weight: 700; line-height: 1.45; letter-spacing: -0.04em; }
+#sub-01 .case-top-box { padding: 36px 40px; border: 1px solid #000000; border-radius: 20px; background: #fff; }
+#sub-01 .case-top-box strong { display: block; margin-bottom: 10px; font-size: 19px; font-weight: 600; color: #DB6480; }
+#sub-01 .case-top-box p { margin: 0; font-size: 18px; font-weight: 400; line-height: 2; letter-spacing: -0.04em; }
 #sub-01 .case-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 70px; row-gap: 70px; margin-top: 70px; }
 #sub-01 .case-item.full { grid-column: 1 / 3; }
 #sub-01 .case-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
-#sub-01 .case-num { font-size: 22px; font-weight: 700; line-height: 1.5; letter-spacing: -0.04em; color: #FF7B9C; }
-#sub-01 .case-icon { width: 88px; flex-shrink: 0; }
+#sub-01 .case-num { font-size: 19px; font-weight: 600; line-height: 1.5; letter-spacing: -0.04em; color: #DB6480; }
+#sub-01 .case-icon { width: 120px; flex-shrink: 0; }
 #sub-01 .case-icon img { width: 100%; display: block; }
-#sub-01 .case-text { margin: 24px 0 0; padding-top: 24px; border-top: 1px solid #F6A6B7; font-size: 17px; font-weight: 500; line-height: 1.9; letter-spacing: -0.04em; color: #FF7B9C; }
-#sub-01 .case-bottom-box { margin-top: 80px; padding: 32px 36px; border: 1px solid #111; border-radius: 18px; background: #fff; }
-#sub-01 .case-bottom-box strong { display: block; margin-bottom: 20px; font-size: 20px; font-weight: 700; color: #FF7B9C; }
-#sub-01 .case-bottom-box p { margin: 0; font-size: 18px; font-weight: 500; line-height: 2; letter-spacing: -0.04em; color: #333; }
+#sub-01 .case-text { margin: 15px 0 0; padding-top: 5px; border-top: 1px solid #DB6480; font-size: 18px; font-weight: 400; line-height: 1.5; letter-spacing: -0.04em; color: #DB6480; }
+#sub-01 .case-bottom-box { margin-top: 70px; padding: 35px 40px; border: 1px solid #000000; border-radius: 18px; background: #fff; }
+#sub-01 .case-bottom-box strong { display: block; margin-bottom: 10px; font-size: 19px; font-weight: 600; color: #DB6480; }
+#sub-01 .case-bottom-box p { margin: 0; font-size: 18px; font-weight: 400; line-height: 1.8; letter-spacing: -0.04em; color: #333; }
 
 @media (max-width: 768px) {
-  #sub-01 .yellow-box { padding: 70px 0; }
+  #sub-01 .second .yellow-box { padding: 20px 0 30px; margin-top: 50px; }
   #sub-01 .case-wrap { max-width: 100%; }
-  #sub-01 .case-title { margin-bottom: 34px; font-size: 22px; line-height: 1.5; }
+  #sub-01 .case-title { margin-bottom: 15px; font-size: 16px; line-height: 1.5; text-align: center; }
   #sub-01 .case-top-box { padding: 24px 20px; border-radius: 18px; }
   #sub-01 .case-top-box strong { margin-bottom: 16px; font-size: 16px; }
   #sub-01 .case-top-box p { font-size: 16px; line-height: 2; }
-  #sub-01 .case-list { display: block; margin-top: 50px; }
+  #sub-01 .case-list { display: block; margin-top: 40px; }
   #sub-01 .case-item { margin-top: 55px; }
   #sub-01 .case-item:first-child { margin-top: 0; }
-  #sub-01 .case-head { display: block; }
-  #sub-01 .case-icon { width: 90px; margin: 18px auto 0; }
+  #sub-01 .case-icon { width: 120px; }
   #sub-01 .case-num { font-size: 18px; }
-  #sub-01 .case-text { margin-top: 20px; padding-top: 18px; font-size: 15px; line-height: 1.9; }
+  #sub-01 .case-text { margin-top: 10px; padding-top: 10px; font-size: 16px; line-height: 1.8; }
   #sub-01 .case-bottom-box { margin-top: 55px; padding: 24px 20px; border-radius: 18px; }
-  #sub-01 .case-bottom-box strong { margin-bottom: 16px; font-size: 16px; }
-  #sub-01 .case-bottom-box p { font-size: 15px; line-height: 1.9; }
+  #sub-01 .case-bottom-box strong { margin-bottom: 15px; font-size: 16px; }
+  #sub-01 .case-bottom-box p { font-size: 16px; line-height: 1.8; }
 }
 
+#sub-01 .pink-card { width: 100%; margin: 0 auto; padding: 115px 0 30px; box-sizing: border-box; }
+#sub-01 .proc-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+#sub-01 .proc-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+#sub-01 .proc-item { background: #FF8EA8; border-radius: 24px; padding: 25px 25px 15px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+#sub-01 .proc-item .step-label { font-size: 28px; font-weight: 400; color: #fff; align-self: center; }
+#sub-01 .proc-item .step-icon { width: 125px; height: 120px; object-fit: contain; }
+#sub-01 .proc-item .step-org { font-size: 20px; color: #fff; text-align: center; line-height: 1.5; }
+
+#sub-01 .second-01 .qa-section.short .qa-box { padding: 30px 60px 30px 100px; margin: 30px 170px 0 0; }
+#sub-01 .second-01 .qa-section.short .qa-text { margin: 0; }
+#sub-01 .third .second-01 .qa-box { padding: 32px 60px 30px 100px; }
+
+#sub-01 .table-img { width: 100%; }
+
+@media (max-width: 1080px) { #sub-01 .proc-list { grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 768px) {
+  #sub-01 .proc-title { font-size: 16px; text-align: center; }
+  #sub-01 .proc-list { grid-template-columns: 2fr; justify-items: center;  }
+  #sub-01 .proc-item { padding: 35px 25px; width: 250px; gap: 30px !important; }
+  #sub-01 .pink-card { padding: 50px 0 10px; }
+}
+
+#sub-01 .circle .qa-box { padding: 30px 0px 30px 60px; }
+#sub-01 .circle .qa-text { margin: 0 0 0 100px; }
+#sub-01 .circle-grid { display: flex; flex-wrap: wrap; max-width: 750px; margin: 50px auto 0; justify-content: center; }
+#sub-01 .circle-item { position: relative; width: 360px; height: 360px; flex-shrink: 0; border-radius: 50%; border: 1px solid #000000; background: #fff; display: flex; flex-direction: column; align-items: center;text-align: center; padding: 35px; box-sizing: border-box; }
+#sub-01 .circle-item:nth-child(1) { z-index: 4; }
+#sub-01 .circle-item:nth-child(2) { z-index: 1; margin-left: -20px; }
+#sub-01 .circle-item:nth-child(3) { z-index: 1; margin-top: -20px; }
+#sub-01 .circle-item:nth-child(4) { z-index: 4; margin-left: -20px; margin-top: -20px; }
+#sub-01 .circle-icon { width: 75px; height: 75px; object-fit: contain; margin-bottom: 12px; flex-shrink: 0; }
+#sub-01 .circle-name { font-size: 23px; font-weight: 600; margin: 0 0 10px; }
+#sub-01 .circle-desc { font-size: 18px; font-weight: 400; line-height: 1.7; letter-spacing: -0.03em; margin: 0; word-break: keep-all; }
+#sub-01 .second .bottom-box { margin-top: 110px; }
+/* @media (max-width: 1080px) {
+  #sub-01 .circle-grid { max-width: 700px; }
+  #sub-01 .circle-item { width: 330px; height: 330px; padding: 20px 35px 35px; }
+} */
+@media (max-width: 768px) {
+  #sub-01 .circle-grid { flex-direction: column; align-items: center; }
+  #sub-01 .circle-item { width: 360px; height: 360px; margin: 0 !important; margin-top: -30px !important; padding: 50px 40px; }
+  #sub-01 .circle-item:nth-child(1) { z-index: 1; }
+  #sub-01 .circle-item:nth-child(2) { z-index: 2; }
+  #sub-01 .circle-item:nth-child(3) { z-index: 3; }
+  #sub-01 .circle-item:nth-child(4) { z-index: 4; }
+  #sub-01 .circle-item:first-child { margin-top: 0 !important; }
+  #sub-01 .circle-icon { width: 70px; height: 70px; }
+  #sub-01 .circle-name { font-size: 19px; }
+  #sub-01 .circle-desc { font-size: 16px; }
+  #sub-01 .second .bottom-box { margin-top: 30px; }
+}
+@media (max-width: 360px) {
+  #sub-01 .circle-item { width: 100%; aspect-ratio: 1 / 1; height: auto; }
+}
+
+#sub-01 .qa-question.twoline { height: 80px; padding: 12px 50px 0 30px; line-height: 25px; }
+#sub-01 .qa-question.twoline::after { height: 75px; right: -25px; }
+#sub-01 .third .qa-section.short .qa-box { margin: 30px 130px 0 0; }
+#sub-01 .third .proc-list { grid-template-columns: repeat(2, 1fr); } 
+#sub-01 .third .pink-card { padding: 30px 0 10px; max-width: 530px; }
+#sub-01 .third .full .qa-box { margin: 30px 100px 0 0; }
+#sub-01 .third .check-flex { display: flex; align-items: flex-end; margin-top: -70px; justify-content: space-between; }
+#sub-01 .third .check-flex.two { margin-top: 0px; }
+#sub-01 .third .check-flex img { width: 85px; }
+
+@media (max-width: 1080px) {
+  #sub-01 .third .check-flex { margin-top: 0px; }
+  #sub-01 .third .full .qa-box { margin: 35px 0 0 0; }
+  #sub-01 .third .check-flex { flex-direction: column; align-items: flex-start; gap: 20px; }
+  #sub-01 .third .check-flex img { display: block; margin: 0 auto;  }
+}
+
+@media (max-width: 768px) {
+  #sub-01 .third .proc-item { gap: 20px !important; width: 260px; padding: 20px 10px 40px; }
+  #sub-01 .proc-item .step-org { font-size: 18px; padding: 0; }
+}
+@media (max-width: 630px) {
+  #sub-01 .third .proc-list { grid-template-columns: 1fr; }
+}
 </style>
 
 
@@ -293,23 +381,23 @@
 <div class="page" id="sub-01">
   <div class="nps-wrap">
 
-    <div class="title-wrap nps-wrap-inner">
-      <h2 class="title">NPS NEWS</h2>
+    <div class="title-wrap nps-wrap-inner ">
+      <h2 class="title" data-aos="fade-up" data-aos-duration="800">NPS NEWS</h2>
 
-      <p class="desc">
+      <p class="desc" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
         국민연금을 둘러싼 주요 이슈와 정책, 기금운용 소식까지.
         복잡하고 어렵게 느껴졌던 NPS 뉴스를 ChatNPS가 직관적이고 쉽게 풀어준다.
         헤드라인만으로는 이해하기 어려웠던 핵심 내용부터 사람들이 가장 궁금해하는 질문까지.
         AI와의 질의응답 형식으로 한눈에 이해할 수 있도록 정리했다.
       </p>
 
-      <div class="news-tab-wrap">
+      <div class="news-tab-wrap" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
         <button type="button" class="news-tab active">NEWS 1</button>
         <button type="button" class="news-tab">NEWS 2</button>
         <button type="button" class="news-tab">NEWS 3</button>
       </div>
 
-      <div class="dot-wrap">
+      <div class="dot-wrap" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
         <span class="dot active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -317,38 +405,39 @@
     </div>
 
     <div class="news-content-wrap">
-      <div class="news-content active">
-        <div class="article-01">
-          <h3 class="news-title">
-            불확실성 시대의 승자…<br>
-            NPS에 쏠리는<br class="mob-br"> 세계 금융시장의 시선
-          </h3>
+      <div class="news-content first active">
 
-          <div class="news-sub">
-            <span>- 국민연금 2025년 한 해 231조<br class="mob-br"> 6,000억 원 벌어</span>
-            <span>- 역대 최고 수익률 18.82%,<br class="mob-br"> 기금설치 이후 누적수익률 8.04%</span>
-          </div>
-
-          <div class="news-img">
-            <img src="img/sub/01/01-01.png" alt="증가하는 수익률을 보여주는 일러스트">
-          </div>
-
-          <p class="news-text">
-            2026년, 국민연금(NPS)이 글로벌 금융시장의 주목을 받고 있다.
-            세계 경제의 불확실성이 확대되는 가운데, 국민연금은 안정적인 운용 성과를
-            바탕으로 글로벌 핵심 투자자로 존재감을 키우고 있다.
-            국민연금이 글로벌 자산배분과 국내 증시 방향성 등에 크게 영향을 미치는
-            ‘메가 플레이어’로 자리매김하고 있다는 평가가 나온다.
-          </p>
-        </div>
         <div class="nps-wrap-inner">
+          <div class="article-01">
+            <h3 class="news-title" data-aos="fade-up" data-aos-duration="800">
+              불확실성 시대의 승자…<br>
+              NPS에 쏠리는<br class="mob-br"> 세계 금융시장의 시선
+            </h3>
+
+            <div class="news-sub" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <span>- 국민연금 2025년 한 해 231조<br class="mob-br"> 6,000억 원 벌어</span>
+              <span>- 역대 최고 수익률 18.82%,<br class="mob-br"> 기금설치 이후 누적수익률 8.04%</span>
+            </div>
+
+            <div class="news-img" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="200">
+              <img src="img/sub/01/01-01.png" alt="증가하는 수익률을 보여주는 일러스트">
+            </div>
+
+            <p class="news-text" data-aos="fade-up" data-aos-duration="700">
+              2026년, 국민연금(NPS)이 글로벌 금융시장의 주목을 받고 있다.
+              세계 경제의 불확실성이 확대되는 가운데, 국민연금은 안정적인 운용 성과를
+              바탕으로 글로벌 핵심 투자자로 존재감을 키우고 있다.
+              국민연금이 글로벌 자산배분과 국내 증시 방향성 등에 크게 영향을 미치는
+              ‘메가 플레이어’로 자리매김하고 있다는 평가가 나온다.
+            </p>
+          </div>
           <div class="qa-section">
-            <div class="qa-top">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">지난해 국민연금 성과가 그렇게 좋았어?</div>
             </div>
 
-            <div class="qa-box">
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -379,12 +468,12 @@
             </div>
           </div>
           <div class="qa-section">
-            <div class="qa-top">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">국내가 아니라 세계 기준으로 봐도 <br class="mob-br2"> 의미 있는 성과야?</div>
             </div>
 
-            <div class="qa-box">
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -394,9 +483,9 @@
               </p>
 
               <h4 class="chart-title">해외 주요 연기금 수익률 현황<br class="mob-br">(금액가중수익률, 2000년 이후)</h4>
-              <div class="fund-card">
+              <div class="fund-card" data-aos="fade-up" data-aos-duration="700">
                 <div class="fund-list">
-                  <div class="fund-item">
+                  <div class="fund-item" data-aos="flip-up" data-aos-duration="500" data-aos-delay="100">
                     <div class="fund-flag"><img src="img/sub/01/flag01.png" alt="한국"></div>
                     <div class="fund-info">
                       <div class="fund-name">한국(NPS)</div>
@@ -404,7 +493,7 @@
                     </div>
                   </div>
 
-                  <div class="fund-item">
+                  <div class="fund-item" data-aos="flip-up" data-aos-duration="500" data-aos-delay="200">
                     <div class="fund-flag"><img src="img/sub/01/flag02.png" alt="일본"></div>
                     <div class="fund-info">
                       <div class="fund-name">일본(GPIF)</div>
@@ -412,7 +501,7 @@
                     </div>
                   </div>
 
-                  <div class="fund-item">
+                  <div class="fund-item" data-aos="flip-up" data-aos-duration="500" data-aos-delay="300">
                     <div class="fund-flag"><img src="img/sub/01/flag03.png" alt="노르웨이"></div>
                     <div class="fund-info">
                       <div class="fund-name">노르웨이(GPFG)</div>
@@ -420,7 +509,7 @@
                     </div>
                   </div>
 
-                  <div class="fund-item">
+                  <div class="fund-item" data-aos="flip-up" data-aos-duration="500" data-aos-delay="400">
                     <div class="fund-flag"><img src="img/sub/01/flag04.png" alt="네덜란드"></div>
                     <div class="fund-info">
                       <div class="fund-name">네덜란드(ABP)</div>
@@ -428,7 +517,7 @@
                     </div>
                   </div>
 
-                  <div class="fund-item">
+                  <div class="fund-item" data-aos="flip-up" data-aos-duration="500" data-aos-delay="500">
                     <div class="fund-flag"><img src="img/sub/01/flag05.png" alt="캐나다"></div>
                     <div class="fund-info">
                       <div class="fund-name">캐나다(CPPIB)</div>
@@ -436,7 +525,7 @@
                     </div>
                   </div>
 
-                  <div class="fund-item">
+                  <div class="fund-item" data-aos="flip-up" data-aos-duration="500" data-aos-delay="600">
                     <div class="fund-flag"><img src="img/sub/01/flag06.png" alt="미국"></div>
                     <div class="fund-info">
                       <div class="fund-name">미국(CalPERS)</div>
@@ -456,12 +545,12 @@
             </div>
           </div>
           <div class="qa-section">
-            <div class="qa-top">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">그럼 국민연금이 높은 성과를 낼 수 있었던<br class="mob-br2"> 이유는 뭐야?</div>
             </div>
 
-            <div class="qa-box">
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -486,12 +575,12 @@
             </div>
           </div>
           <div class="qa-section short">
-            <div class="qa-top">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">최근 들어 NPS의 영향력이 <br class="mob-br2"> 더 커졌다는 얘기도 나오던데?</div>
             </div>
 
-            <div class="qa-box">
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -504,12 +593,12 @@
             </div>
           </div>
           <div class="qa-section short">
-            <div class="qa-top">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">앞으로도 이런 성과를 계속 낼 수 있을까?</div>
             </div>
 
-            <div class="qa-box">
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -524,7 +613,7 @@
         <div class="bottom-box">
           <div class="nps-wrap-inner">
 
-            <div class="bottom-video">
+            <div class="bottom-video" data-aos="fade-up" data-aos-duration="800">
               <iframe 
                 src="https://www.youtube.com/embed/AMb0J89V0gM?si=EVvtMakyna5F5Hkr"
                 title="국민연금 영상"
@@ -538,37 +627,37 @@
         </div>
       </div>
 
-      <div class="news-content">
-        <div class="article-01">
-          <h3 class="news-title">
-            치매 어르신의<br class="mob-br"> 새로운 노후 안전망, <br>
-            ‘치매안심재산관리서비스’
-          </h3>
+      <div class="news-content second">
+        <div class="nps-wrap-inner second-01">
+          <div class="article-01">
+            <h3 class="news-title" data-aos="fade-up" data-aos-duration="800">
+              치매 어르신의<br class="mob-br"> 새로운 노후 안전망, <br>
+              ‘치매안심재산관리서비스’
+            </h3>
 
-          <div class="news-sub">
-            <span>- 치매공공신탁제도 <br class="mob-br">‘치매안심재산관리서비스’ 시범사업 실시</span>
-            <span>- 경제적 학대 예방부터 재산관리 <br class="mob-br">사각지대 해소까지 기대감 확대</span>
+            <div class="news-sub" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <span>- 치매공공신탁제도 <br class="mob-br">‘치매안심재산관리서비스’ 시범사업 실시</span>
+              <span>- 경제적 학대 예방부터 재산관리 <br class="mob-br">사각지대 해소까지 기대감 확대</span>
+            </div>
+
+            <div class="news-img" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="200">
+              <img src="img/sub/01/02-01.png" alt="증가하는 수익률을 보여주는 일러스트">
+            </div>
+
+            <p class="news-text" data-aos="fade-up" data-aos-duration="700">
+              초고령사회 진입과 함께 치매 환자의 재산관리 문제가 새로운 사회적 과제로 떠오르고 있다. 
+              정부는 치매 등으로 재산관리에 어려움이 있는 어르신들이 재산을 보다 안전하게 보호할 수 있도록 ‘치매안심재산관리서비스’ 시범사업을 본격 추진한다. 
+              전문가들은 이번 제도가 단순한 재산관리 지원을 넘어 치매 환자의 경제적 자기결정권 보호와 가족 부담 완화, 
+              재산관리 사각지대 해소를 위한 새로운 공공 안전망으로 자리잡을 수 있을지 주목하고 있다.
+            </p>
           </div>
-
-          <div class="news-img">
-            <img src="img/sub/01/02-01.png" alt="증가하는 수익률을 보여주는 일러스트">
-          </div>
-
-          <p class="news-text">
-            초고령사회 진입과 함께 치매 환자의 재산관리 문제가 새로운 사회적 과제로 떠오르고 있다. 
-            정부는 치매 등으로 재산관리에 어려움이 있는 어르신들이 재산을 보다 안전하게 보호할 수 있도록 ‘치매안심재산관리서비스’ 시범사업을 본격 추진한다. 
-            전문가들은 이번 제도가 단순한 재산관리 지원을 넘어 치매 환자의 경제적 자기결정권 보호와 가족 부담 완화, 
-            재산관리 사각지대 해소를 위한 새로운 공공 안전망으로 자리잡을 수 있을지 주목하고 있다.
-          </p>
-        </div>
-        <div class="nps-wrap-inner">
           <div class="qa-section">
-            <div class="qa-top">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">치매안심재산관리서비스가 정확히 어떤 제도야?</div>
             </div>
 
-            <div class="qa-box">
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -581,10 +670,9 @@
               </p>
             </div>
           </div>
-
         </div>
 
-        <div class="yellow-box">
+        <div class="yellow-box" data-aos="fade-up" data-aos-duration="800">
           <div class="nps-wrap-inner">
 
             <div class="case-wrap">
@@ -598,8 +686,7 @@
                 <strong>○ 상황</strong>
 
                 <p>
-                  경도치매 판정(CDR 1점)을 받은 A씨와 그의 배우자 B씨는 ‘부부치매’ 가구이며,
-                  떨어져서 사는 자녀가 1명(C) 있습니다.<br>
+                  경도치매 판정(CDR 1점)을 받은 A씨와 그의 배우자 B씨는 ‘부부치매’ 가구이며, 떨어져서 사는 자녀가 1명(C) 있습니다. 
                   두 사람은 매달 들어오는 연금과 예금 등 노후 자산을 생활비·의료비로 제대로 쓰는 데 어려움이 있으며,
                   자녀 C씨는 직접 곁에서 부모님의 재산을 일일이 챙기기 어려운 상황입니다.
                 </p>
@@ -607,7 +694,7 @@
 
               <div class="case-list">
 
-                <div class="case-item">
+                <div class="case-item" data-aos="fade-right" data-aos-duration="700">
                   <div class="case-head">
                     <span class="case-num">① 신청 · 의뢰</span>
 
@@ -622,7 +709,7 @@
                   </p>
                 </div>
 
-                <div class="case-item">
+                <div class="case-item" data-aos="fade-left" data-aos-duration="700">
                   <div class="case-head">
                     <span class="case-num">② 접수 · 상담</span>
 
@@ -637,12 +724,12 @@
                   </p>
                 </div>
 
-                <div class="case-item">
+                <div class="case-item" data-aos="fade-right" data-aos-duration="700">
                   <div class="case-head">
                     <span class="case-num">③ 수립 · 계약</span>
 
                     <div class="case-icon">
-                      <img src="img/sub/01/02-mini03.png" alt="">
+                      <img src="img/sub/01/02-mini03.png" alt="" >
                     </div>
                   </div>
 
@@ -653,12 +740,12 @@
                   </p>
                 </div>
 
-                <div class="case-item">
+                <div class="case-item" data-aos="fade-left" data-aos-duration="700">
                   <div class="case-head">
                     <span class="case-num">④ 관리 · 지급</span>
 
                     <div class="case-icon">
-                      <img src="img/sub/01/02-mini04.png" alt="">
+                      <img src="img/sub/01/02-mini04.png" alt="" style="height: 120px; width: 140px;">
                     </div>
                   </div>
 
@@ -670,7 +757,7 @@
                   </p>
                 </div>
 
-                <div class="case-item full">
+                <div class="case-item full" data-aos="fade-right" data-aos-duration="700">
                   <div class="case-head">
                     <span class="case-num">⑤ 점검 · 감독</span>
 
@@ -703,27 +790,381 @@
 
           </div>
         </div>
+        <div class="nps-wrap-inner second-02">
+          <div class="qa-section">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">어떤 사람들이 이용할 수 있어?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                기본적으로는 기초연금을 받는 65세 이상 어르신 가운데, 치매나 경도인지장애 등으로 재산관리에 어려움이 있는 경우를 대상으로 해.<br>
+                다만 예외적으로 65세 미만 조기치매 환자이거나 저소득층에 해당하는 경우에도 재산관리 위험도를 고려해 지원받을 수 있어. <br>
+                참고로 기초연금수급권이 없는 어르신(65세 이상)이 서비스 이용을 희망할 경우 일정 수준의 이용료(위탁재산의 연 0.5%)를 부담해야해.
+              </p>
+              <div class="pink-card">
+                <p class="proc-title">이용 방법 및 절차</p>
+                <ul class="proc-list">
+                  <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0" style="gap:10px;">
+                    <span class="step-label">① 신청·의뢰</span>
+                    <img class="step-icon" src="img/sub/01/02-icon01.png" alt="신청·의뢰 아이콘">
+                    <span class="step-org">-국민연금공단<br>-치매안심센터</span>
+                  </li>
+                  <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0">
+                    <span class="step-label">② 접수·상담</span>
+                    <img class="step-icon" src="img/sub/01/02-icon02.png" alt="접수·상담 아이콘">
+                    <span class="step-org">국민연금공단</span>
+                  </li>
+                  <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0">
+                    <span class="step-label">③ 수립·계약</span>
+                    <img class="step-icon" src="img/sub/01/02-icon03.png" alt="수립·계약 아이콘">
+                    <span class="step-org">국민연금공단</span>
+                  </li>
+                  <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0">
+                    <span class="step-label">④ 관리·지출</span>
+                    <img class="step-icon" src="img/sub/01/02-icon04.png" alt="관리·지출 아이콘">
+                    <span class="step-org">국민연금공단</span>
+                  </li>
+                  <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0">
+                    <span class="step-label">⑤ 서비스 연계</span>
+                    <img class="step-icon" src="img/sub/01/02-icon05.png" alt="서비스 연계 아이콘">
+                    <span class="step-org">치매안심센터<br>통합돌봄팀</span>
+                  </li>
+                  <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0">
+                    <span class="step-label">⑥ 점검·감독</span>
+                    <img class="step-icon" src="img/sub/01/02-icon06.png" alt="점검·감독 아이콘">
+                    <span class="step-org">국민연금공단</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+           
+
+          </div>
+
+        </div>
+
+        <div class="nps-wrap-inner second-01">
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">모든 재산을 다 맡겨야 하는 거야?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                상담을 통해서 본인이 원하는 수준의 재산을 위탁할 수 있어.<br>
+                위탁 가능한 재산은 현금, 주택연금 등 현금성 자산 중심으로 보면 돼.
+              </p>
+            </div>
+          </div>
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">가장 기대되는 효과는 뭐라고 볼 수 있어?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                가장 큰 목적은 치매 환자의 재산을 안전하게 보호하는 거야. <br>
+                경제적 학대나 재산관리 공백을 줄이고, 치매 이후에도 본인의 의사가 존중될 수 있도록 돕는 새로운 노후 안전망이라는 점에서 의미가 있어. <br>
+                정부는 이번 시범사업을 시작으로 2년 간의 점검을 거쳐 2028년 본사업을 도입할 계획이야.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="yellow-box">
+          <div class="nps-wrap-inner">
+              <h3 class="case-title">국민연금공단 지역본부</h3>
+              <img class="table-img" src="img/sub/01/02-table.png" alt="국민연금공단 지역본부 주소표" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+          </div>
+        </div>
+        <div class="nps-wrap-inner second-02 circle">
+          <div class="qa-section">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">좋아. 마지막으로 ‘치매안심재산관리서비스’로 달라지는 점을 보기 좋게 요약해줘.</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                대상자/가족/지역사회/국가 4가지로 분류하여 요약해줄게.
+              </p>
+              <div class="circle-grid">
+                <div class="circle-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="0">
+                  <img class="circle-icon" src="img/sub/01/02-circle01.png" alt="대상자 아이콘">
+                  <p class="circle-name">대상자</p>
+                  <p class="circle-desc">개인별 재정지원계획에 따라 월별 자금지출을 체계적으로 관리할 수 있기 때문에, 내 재산을 내 노후를 위해 안전하고 계획적으로 사용할 수 있어.</p>
+                </div>
+                <div class="circle-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
+                  <img class="circle-icon" src="img/sub/01/02-circle02.png" alt="가족 아이콘" style="width: 100px;">
+                  <p class="circle-name">가족</p>
+                  <p class="circle-desc">신뢰할 수 있는 공공기관이 함께 재산을 관리하고 모니터링을 하기 때문에 경제적 학대나 부정 사용 위험을 예방할 수 있어.</p>
+                </div>
+                <div class="circle-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+                  <img class="circle-icon" src="img/sub/01/02-circle03.png" alt="지역사회 아이콘" style="width: 100px;">
+                  <p class="circle-name">지역사회</p>
+                  <p class="circle-desc">경제적 학대와 부정 사용을 미연에 방지하여 재산관리 사각지대를 해소할 수 있고, 더 나아가 지역사회 복지안전망에 기여할 수 있어.</p>
+                </div>
+                <div class="circle-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="450">
+                  <img class="circle-icon" src="img/sub/01/02-circle04.png" alt="국가 아이콘">
+                  <p class="circle-name">국가</p>
+                  <p class="circle-desc">재산관리 안전망이 구축되고 사회보장급여 절감으로 재정건전성이 확보될 수 있어.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
 
         <div class="bottom-box">
           <div class="nps-wrap-inner">
 
-            <div class="bottom-video">
-              <iframe 
-                src="https://www.youtube.com/embed/AMb0J89V0gM?si=EVvtMakyna5F5Hkr"
-                title="국민연금 영상"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+            <div class="bottom-video" data-aos="zoom-in" data-aos-duration="800">
+              <div class="yt-cover" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/t6wR9Ro3kUI?autoplay=1\' frameborder=\'0\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;\'></iframe>'">
+                <img src="https://img.youtube.com/vi/t6wR9Ro3kUI/maxresdefault.jpg" alt="국민연금 영상"
+                  onerror="this.src='https://img.youtube.com/vi/t6wR9Ro3kUI/hqdefault.jpg'"
+                  style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+                <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                  <svg viewBox="0 0 68 48" width="68" height="48">
+                    <path d="M66.5 7.7A8.5 8.5 0 0 0 60.2 1.4C54.9 0 34 0 34 0S13.1 0 7.8 1.4A8.5 8.5 0 0 0 1.5 7.7C0 13 0 24 0 24s0 11 1.5 16.3A8.5 8.5 0 0 0 7.8 46.6C13.1 48 34 48 34 48s20.9 0 26.2-1.4a8.5 8.5 0 0 0 6.3-6.3C68 35 68 24 68 24s0-11-1.5-16.3z" fill="red"/>
+                    <path d="M27 34l18-10-18-10v20z" fill="white"/>
+                  </svg>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
 
-      <div class="news-content">
-        <h3 class="news-title">NEWS 3 제목을 넣어주세요</h3>
-        <p class="news-text">NEWS 3 내용을 넣어주세요.</p>
+      <div class="news-content third">
+        <div class="nps-wrap-inner second-01">
+          <div class="article-01">
+            <h3 class="news-title" data-aos="fade-up" data-aos-duration="800">
+              국민연금 첫 보험료 지원… <br>
+              만 18세 청년부터
+            </h3>
+
+            <div class="news-sub" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <span>- 2027년부터 만 18세 청년 첫 1개월분 <br class="mob-br">국민연금 보험료 지원</span>
+              <span>- 2009년생부터 기준소득월액 하한액에 해당하는 <br class="mob-br">연금보험료 전액 지원</span>
+            </div>
+
+            <div class="news-img" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="200">
+              <img src="img/sub/01/03-01.png" alt="청년이 엄지를 올리고 있는 일러스트">
+            </div>
+
+            <p class="news-text" data-aos="fade-up" data-aos-duration="700">
+              청년들의 국민연금 가입 문턱을 낮추기 위한 새 제도가 도입된다. 정부는 2027년부터 만 18세가 되는 2009년생부터 생애 첫 1개월분 국민연금 보험료를 지원하기로 했다. 
+              학업·군 복무 등으로 가입이 늦어지는 청년 현실을 고려해 조기 가입 이력을 형성하고, 안정적인 노후 준비를 지원하겠다는 취지다. 
+              전문가들은 이번 정책이 단순 보험료 지원을 넘어 청년 세대의 장기적인 연금 수급 기반을 강화하는 계기가 될 것으로 보고 있다.
+            </p>
+          </div>
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question twoline">국가가 내년부터 만 18세가 되는 청년들에게<br>첫 보험료를 지원해준다는 건 무슨 의미야?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <div class="qa-text">
+                쉽게 말하면 국민연금에 ‘일찍 들어올 수 있는 <br class="pc-br"> 첫 문을 열어주는 제도’라고 보면 돼. <br>
+                핵심은 금액이 아니라 첫 가입 이력을 만들어주는 데 있어.<br>
+                즉 이건 단순히 보험료 지원을 넘어<br><br>
+                <div class="check-flex">
+                  <strong>👉 연금 시스템 안으로 먼저 들어오게 만드는 장치에 가깝다고 보면 돼.</strong>
+                  <img src="img/sub/01/03-mini01.png" alt="체크 말풍선">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">근데 1개월만 지원하는 게 실제로 큰 의미가 있어?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                당연하지. <br>
+                국민연금은 ‘얼마 냈냐’보다 ‘언제 시작하고, 얼마나 오래냈냐’가 <br>
+                더 크게 작용하는 구조이기 때문이야.<br>
+                한 번이라도 납부 이력이 생기면<br>
+                이후에 학업이나 군 복무로 가입기간에 공백이 생겨도<br>
+                추후납부 제도를 통해 이어갈 수 있어.<br>
+                쉽게 말하면, 나중에 소득이 생겼을 때<br>
+                예전에 비어 있던 기간을 채우면서 가입기간을 늘릴 수 있는 거야.<br>
+                결국 1개월 지원은 금액 자체보다<br>
+                제도 안으로 들어가는 ‘시작점’을 만들어준다는 의미가 더 커.<br>
+              </p>
+            </div>
+          </div>
+
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">그럼 누구나 자동으로 지원받는 거야?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                아니야. 보험료 지원을 받으려면 18세부터 26세 사이에 직접 신청해야 해.<br>
+                신청은 2027년부터 국민연금공단 지사나 모바일 앱, 홈페이지에서 할 수 있어.<br>
+                정부에서는 이러한 지원 내용을 청년들이 충분히 인지하고 활용할 수 있도록<br>
+                학교와 군부대 등을 중심으로 적극 안내할 예정이야.<br>
+              </p>
+            </div>
+          </div>
+
+          <div class="qa-section full">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">지금까지 내용들을 간단하게 정리해줘.</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <div class="qa-text">
+                좋아. 주요 내용을 한 눈에 볼 수 있도록 요약해줄게.
+
+                <div class="pink-card">
+                  <ul class="proc-list">
+                    <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="0">
+                      <span class="step-label">적용 대상</span>
+                      <img class="step-icon" src="img/sub/01/03-icon01.png" alt="적용 대상 아이콘">
+                      <span class="step-org">2027년 이후<br>만 18세가 되는 청년<br>(2009년생부터)</span>
+                    </li>
+                    <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="100">
+                      <span class="step-label">지원 대상</span>
+                      <img class="step-icon" src="img/sub/01/03-icon02.png" alt="지원 대상 아이콘">
+                      <span class="step-org">18~26세 중<br>국민연금 보험료 지원을<br>신청한 청년</span>
+                    </li>
+                    <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="200">
+                      <span class="step-label">지원 내용</span>
+                      <img class="step-icon" src="img/sub/01/03-icon03.png" alt="지원 내용 아이콘">
+                      <span class="step-org">기준소득월액 하한액에<br>해당하는 1개월의<br>연금보험료 전액 지원<br>(26.7월~27.6월까지 4만 1천 원)</span>
+                    </li>
+                    <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="300">
+                      <span class="step-label">신청 방법</span>
+                      <img class="step-icon" src="img/sub/01/03-icon04.png" alt="신청 방법 아이콘">
+                      <span class="step-org">국민연금공단<br>지사 방문 또는<br>모바일 앱·홈페이지 신청</span>
+                    </li>
+                    <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="400">
+                      <span class="step-label">기대 효과</span>
+                      <img class="step-icon" src="img/sub/01/03-icon05.png" alt="기대 효과 아이콘">
+                      <span class="step-org">조기 가입 이력 형성<br>및 추후납부 활용<br>기반 마련</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+
+            </div>
+            
+
+          </div>
+
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">이미 국민연금 보험료를 낸 적 있는 <br class="mob-br">청년은 어떻게 되는 거야?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                이미 연금보험료 납부 이력이 있다면<br>
+                보험료 지원 대신 1개월의 가입기간을 추가로 인정해줘.<br>
+              </p>
+            </div>
+          </div>
+
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">이번에 보험료 지원을 받으면 앞으로 <br class="mob-br">국민연금을 계속 내야하는 거야?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <p class="qa-text">
+                아니야. 1개월만 가입한 것으로 처리되기 때문에 더 내지 않아도 돼.<br>
+                다만 더 납부해서 가입기간을 늘리고 싶다면 국민연금 가입 신청을 통해<br>
+                계속해서 가입할 수 있어.
+              </p>
+            </div>
+          </div>
+
+          <div class="qa-section short">
+            <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
+              <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
+              <div class="qa-question">정부가 청년들의 국민연금 가입을 <br class="mob-br">이렇게 강조하는 이유가 있어?</div>
+            </div>
+
+            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+              <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
+
+              <div class="qa-text">
+                핵심은 간단해. 국민연금은 가입기간이 길수록 유리한 구조이기 때문이야. <br>
+                다만 청년층은 학업이나 취업 준비, 군 복무 때문에 <br class="pc-br">
+                가입 시기가 늦어지는 경우가 많거든. <br class="pc-br">
+                그래서 정부는 ‘초반 가입 이력’을 만드는 걸 중요하게 보고 있는 거야.
+                <br><br>
+                <div class="check-flex two">
+                  <strong>👉 무엇보다도 이번 지원 제도는 청년이라면 누구나 공평하게 <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;노후 준비를 시작할 수 있게 되었다는 데 큰 의의가 있지.</strong>
+                  <img src="img/sub/01/03-mini02.png" alt="두사람 일러스트">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bottom-box">
+          <div class="nps-wrap-inner">
+
+           <div class="bottom-video" data-aos="zoom-in" data-aos-duration="800">
+            <div class="yt-cover" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/NZNGSw0vcbU?autoplay=1\' frameborder=\'0\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;\'></iframe>'">
+              <img src="https://img.youtube.com/vi/NZNGSw0vcbU/maxresdefault.jpg" alt="국민연금 영상"
+                onerror="this.src='https://img.youtube.com/vi/NZNGSw0vcbU/hqdefault.jpg'"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <svg viewBox="0 0 68 48" width="68" height="48">
+                  <path d="M66.5 7.7A8.5 8.5 0 0 0 60.2 1.4C54.9 0 34 0 34 0S13.1 0 7.8 1.4A8.5 8.5 0 0 0 1.5 7.7C0 13 0 24 0 24s0 11 1.5 16.3A8.5 8.5 0 0 0 7.8 46.6C13.1 48 34 48 34 48s20.9 0 26.2-1.4a8.5 8.5 0 0 0 6.3-6.3C68 35 68 24 68 24s0-11-1.5-16.3z" fill="red"/>
+                  <path d="M27 34l18-10-18-10v20z" fill="white"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+
       </div>
     </div>
 
@@ -806,21 +1247,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   tabs.forEach(function (tab, index) {
     tab.addEventListener('click', function () {
-      tabs.forEach(function (item) {
-        item.classList.remove('active');
-      });
-
-      dots.forEach(function (dot) {
-        dot.classList.remove('active');
-      });
-
-      contents.forEach(function (content) {
-        content.classList.remove('active');
-      });
+      tabs.forEach(function (item) { item.classList.remove('active'); });
+      dots.forEach(function (dot) { dot.classList.remove('active'); });
+      contents.forEach(function (content) { content.classList.remove('active'); });
 
       tab.classList.add('active');
       dots[index].classList.add('active');
       contents[index].classList.add('active');
+
+      // ✅ 여기 안에 있어야 함
+      contents[index].querySelectorAll('[data-aos]').forEach(el => {
+        el.classList.remove('aos-animate');
+      });
+
+      setTimeout(() => AOS.refreshHard(), 50);
     });
   });
 });

@@ -3,6 +3,11 @@ body { font-family: 'Noto Sans KR', sans-serif; color: #222222; }
 a { color: inherit;text-decoration: none; }
 button { cursor: pointer; border: none; background: none; font: inherit;}
 ul, ol { list-style: none; }
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none; /* 클릭까지 막고 싶을 때 */
+}
 
 @font-face { font-family: 'SCDream'; src: url('font/SCDream1.otf') format('opentype'); font-weight: 100; }
 @font-face { font-family: 'SCDream'; src: url('font/SCDream2.otf') format('opentype'); font-weight: 200; }
