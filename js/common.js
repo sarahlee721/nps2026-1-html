@@ -49,9 +49,21 @@ searchBtn.addEventListener('click', () => {
     if (menuOpen) { closeAll(); return; }
     searchOpen = !searchOpen;
     searchBar.classList.toggle('open', searchOpen);
-    backdrop.classList.toggle('show', searchOpen);
+    // ❌ backdrop.classList.toggle('show', searchOpen);  ← 이 줄 삭제
     searchBtn.setAttribute('aria-expanded', searchOpen);
     if (searchOpen) { setTimeout(() => searchInput.focus(), 300); }
+});
+
+/* ── 검색 이동 ── */
+function goSearch(query) {
+    if (!query.trim()) return;
+    window.location.href = 'search.html?q=' + encodeURIComponent(query.trim());
+}
+searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') goSearch(searchInput.value);
+});
+document.querySelector('.search-input-icon').addEventListener('click', () => {
+    goSearch(searchInput.value);
 });
 
 /* ── menu toggle ── */
@@ -71,6 +83,9 @@ navCloseBtn.addEventListener('click', closeAll);
 /* ── backdrop / ESC close ── */
 backdrop.addEventListener('click', closeAll);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+
+
 
 // ✅ 떠있는 아이콘: 공유 클릭시 아이콘 등장, Top버튼
 document.addEventListener('DOMContentLoaded', function () {
