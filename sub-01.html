@@ -72,7 +72,7 @@
 #sub-01 .qa-box::after { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 820 900' preserveAspectRatio='none'%3E%3Cpath d='M84 1 Q74 1 74 11 L1 889 Q1 899 11 899 H809 Q819 899 819 889 V11 Q819 1 809 1 Z' fill='none' stroke='%23111' stroke-width='1'/%3E%3C/svg%3E") center/100% 100% no-repeat;  z-index: 1; pointer-events: none; }
 #sub-01 .qa-box > * { position: relative; z-index: 2; }
 #sub-01 .qa-bot { position: absolute; left: -40px; top: -55px; width: 145px; z-index: 3; }
-#sub-01 .qa-text { margin: 0 0 0 100px; font-size: 18px; font-weight: 400; line-height: 1.8; letter-spacing: -0.04em; }
+#sub-01 .qa-text { margin: 0 0 0 50px; font-size: 18px; font-weight: 400; line-height: 1.8; letter-spacing: -0.04em; }
 #sub-01 .chart-title { margin: 50px 0 20px; font-size: 18px; font-weight: 600; letter-spacing: -0.04em; }
 #sub-01 .chart-img { margin: 0; padding: 20px; border-radius: 10px; background-color: #FFFED9; display: block; }
 #sub-01 .chart-img img { width: 100%; display: block; border-radius: 8px; }
@@ -264,6 +264,8 @@
   #sub-01 .third .proc-list { grid-template-columns: 1fr; }
 }
 
+#sub-01 .qa-box.thin-top { padding-top: 30px; }
+#sub-01 .qa-box.thin-top::after {  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 820 900' preserveAspectRatio='none'%3E%3Cpath d='M84 1 Q74 1 74 11 L1 889 Q1 899 11 899 H809 Q819 899 819 889 V11 Q819 1 809 1 Z' fill='none' stroke='%23111' stroke-width='0.5'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
 
 </style>
 
@@ -433,13 +435,13 @@
               ‘메가 플레이어’로 자리매김하고 있다는 평가가 나온다.
             </p>
           </div>
-          <div class="qa-section">
+          <div class="qa-section ">
             <div class="qa-top" data-aos="fade-left" data-aos-duration="600">
               <img src="img/sub/01/02.png" alt="인터뷰하는 남자" class="qa-man">
               <div class="qa-question">지난해 국민연금 성과가 그렇게 좋았어?</div>
             </div>
 
-            <div class="qa-box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+            <div class="qa-box thin-top" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
               <img src="img/sub/01/03.png" alt="대답해주는 로봇" class="qa-bot">
 
               <p class="qa-text">
@@ -1065,7 +1067,7 @@
                     <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="200">
                       <span class="step-label">지원 내용</span>
                       <img class="step-icon" src="img/sub/01/03-icon03.png" alt="지원 내용 아이콘">
-                      <span class="step-org">기준소득월액 하한액에<br>해당하는 1개월의<br>연금보험료 전액 지원<br>(26.7월~27.6월 기준 4만 1천 원)</span>
+                      <span class="step-org">기준소득월액 하한액에<br>해당하는 1개월의<br>연금보험료 전액 지원<br><span style="font-size: 16px;">(26.7월~27.6월 기준 4만 1천 원)</span></span>
                     </li>
                     <li class="proc-item" data-aos="flip-up" data-aos-duration="600"  data-aos-delay="300">
                       <span class="step-label">신청 방법</span>
