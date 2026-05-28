@@ -150,7 +150,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function updateBannerPosition() {
+    const banner = document.getElementById('bottomBanner');
+    const footer = document.getElementById('footer');
+    if (!banner || !footer) return;
 
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    const bannerHeight = banner.offsetHeight;
+
+    if (footerTop <= windowHeight) {
+        // 푸터가 화면에 들어오면: absolute로 전환, 푸터 바로 위에 고정
+        banner.style.position = 'absolute';
+        banner.style.bottom = 'auto';
+        banner.style.top = (footer.offsetTop - bannerHeight) + 'px';
+        banner.style.left = '0';
+        banner.style.width = '100%';
+    } else {
+        // 푸터가 안 보이면: 화면 하단에 fixed 고정
+        banner.style.position = 'fixed';
+        banner.style.bottom = '0';
+        banner.style.top = 'auto';
+        banner.style.left = '0';
+        banner.style.width = '100%';
+    }
+}
+
+window.addEventListener('scroll', updateBannerPosition);
+window.addEventListener('resize', updateBannerPosition);
+updateBannerPosition(); // 초기 실행
 
 document.addEventListener('DOMContentLoaded', function () {
   const pageOrder = [
