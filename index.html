@@ -12,10 +12,20 @@
 
     /* ───── CONTENT ───── */
     main { padding-top: 100px; margin: 0 auto; color: #888; font-size: 14px; overflow-x: hidden;}
-
     main .sec { width: 100%; margin: 100px auto 0 !important; max-width: 1440px; padding: 0 80px 0}
 
-    main .sec01-card { background: #FDEFEF; display: flex; align-items: stretch; overflow: hidden; min-height: 380px; position: relative; }
+    main .sec01-slide {  display: none; opacity: 0; text-decoration: none; color: inherit; background: #FDEFEF; align-items: stretch; overflow: hidden; min-height: 380px; transition: opacity 0.5s ease;}
+    main .sec01-slide.active { display: flex; opacity: 1; animation: sec01FadeIn 0.5s ease forwards; }
+
+    @keyframes sec01FadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    main .sec01-dots { position: absolute; bottom: 20px; right: 30px; display: flex; gap: 8px; z-index: 10; display: none; }
+    main .sec01-dot {  width: 8px; height: 8px;  border-radius: 50%;  background: #ccc; cursor: pointer; transition: background 0.3s; }
+    main .sec01-dot.active { background: #111; }
+    main .sec01-card { position: relative; background: #FDEFEF; display: flex; align-items: stretch; overflow: hidden; min-height: 380px; position: relative; }
     main .sec01-card-left { position: relative; width: 35%; flex-shrink: 0; display: flex; flex-direction: column; padding: 40px 0 40px 30px; overflow: hidden; }
     main .sec01-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.3px; margin-bottom: 40px; flex-shrink: 0; margin-left: 30px;}
     main .sec01-nps-grid { position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px 30px; }
@@ -29,6 +39,7 @@
 
     main .sec02-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; padding-right: 80px; }
     main .sec02 { width: 100%; margin-left: -80px; padding-left: 80px; width: calc(100% + 80px); }
+    main .sec02-card-link { display: block; width: 100%; height: 100%; text-decoration: none; color: inherit; }
     main .sec02-label { font-size: 30px; font-weight: 700; color: #111; letter-spacing: -0.5px; margin-bottom: 30px; padding-right: 80px; padding-left: 0; }
     main .sec02-slider { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 24px; padding-right: 80px; }
     main .sec02-slider::-webkit-scrollbar { display: none; }
@@ -301,90 +312,141 @@
   <!-- DEMO CONTENT -->
   <main>
     <div class="sec sec01">
-      <div class="sec01-card">
+      <div class="sec01-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200">
 
-        <!-- 왼쪽: 라벨 + NPS 레터 스택 + 포토 -->
-        <div class="sec01-card-left">
-
-          <p class="sec01-label">NPS 뉴스</p>
-
-          <div class="sec01-nps-grid">
-            <img src="img/main/n.png" alt="N" style="width: 110%;">
-            <img src="img/main/p.png" alt="P">
-            <img src="img/main/s.png" alt="S" style="margin-left: 15px;">
-            <img src="img/main/o.png" alt="O" style="width: 90%;">
-  
+        <!-- 슬라이드 1 -->
+        <a class="sec01-slide active" href="sub-01.html#tab1">
+          <div class="sec01-card-left">
+            <p class="sec01-label">NPS 뉴스</p>
+            <div class="sec01-nps-grid">
+              <img src="img/main/n.png" alt="N" style="width:110%;">
+              <img src="img/main/p.png" alt="P">
+              <img src="img/main/s.png" alt="S" style="margin-left:15px;">
+              <img src="img/main/o.png" alt="O" style="width:90%;">
+            </div>
           </div>
+          <div class="sec01-card-right">
+            <span class="sec01-badge">NEWS 1</span>
+            <h3 class="sec01-title">불확실성 시대의 승자…<br>NPS에 쏠리는 세계 금융시장의 시선</h3>
+            <p class="sec01-desc">
+              - 국민연금 2025년 한 해 231조 6,000억 원 벌어<br>
+              - 역대 최고 수익률 18.82%, 기금설치 이후 누적수익률 8.04%
+            </p>
+          </div>
+        </a>
+
+        <!-- 슬라이드 2 -->
+        <a class="sec01-slide" href="sub-01.html#tab2">
+          <div class="sec01-card-left">
+            <p class="sec01-label">NPS 뉴스</p>
+            <div class="sec01-nps-grid">
+              <img src="img/main/n-2.png" alt="N" style="width:110%;">
+              <img src="img/main/p-2.png" alt="P">
+              <img src="img/main/s.png" alt="S" style="margin-left:15px;">
+              <img src="img/main/o.png" alt="O" style="width:90%;">
+            </div>
+          </div>
+          <div class="sec01-card-right">
+            <span class="sec01-badge">NEWS 2</span>
+            <h3 class="sec01-title">치매 어르신의 새로운 노후 안전망,<br>'치매안심재산관리서비스'</h3>
+            <p class="sec01-desc">
+              - 치매공공신탁제도 '치매안심재산관리서비스' 시범사업 실시<br>
+              - 경제적 학대 예방부터 재산관리 사각지대 해소까지 기대감 확대
+            </p>
+          </div>
+        </a>
+
+        <!-- 슬라이드 3 -->
+        <a class="sec01-slide" href="sub-01.html#tab3">
+          <div class="sec01-card-left">
+            <p class="sec01-label">NPS 뉴스</p>
+            <div class="sec01-nps-grid">
+              <img src="img/main/n-2.png" alt="N" style="width:110%;">
+              <img src="img/main/p.png" alt="P">
+              <img src="img/main/s-3.png" alt="S" style="margin-left:15px;">
+              <img src="img/main/o.png" alt="O" style="width:90%;">
+            </div>
+          </div>
+          <div class="sec01-card-right">
+            <span class="sec01-badge">NEWS 3</span>
+            <h3 class="sec01-title">국민연금 첫 보험료 지원…<br>만 18세 청년부터</h3>
+            <p class="sec01-desc">
+              - 2027년부터 만 18세 청년 첫 1개월분 국민연금 보험료 지원<br>
+              - 2009년생부터 기준소득월액 하한액에 해당하는 연금보험료 전액 지원
+            </p>
+          </div>
+        </a>
+
+        <!-- 점 내비게이션 -->
+        <div class="sec01-dots">
+          <span class="sec01-dot active"></span>
+          <span class="sec01-dot"></span>
+          <span class="sec01-dot"></span>
         </div>
 
-        <!-- 오른쪽: 뱃지 + 제목 -->
-        <div class="sec01-card-right">
-          <span class="sec01-badge">NEWS 1</span>
-          <h3 class="sec01-title">
-            불확실성 시대의 승자…<br>
-            NPS에 쏠리는 세계 금융시장의 시선
-          </h3>
-          <p class="sec01-desc">- 국민연금 2025년 한 해 231조 6,000억 원 벌어<br>
-            - 역대 최고 수익률 18.82%, 기금설치 이후 누적수익률 8.04%</p>
-        </div>
       </div>
     </div>
     <div class="sec sec02">
-      <p class="sec02-label">우리의 연금</p>
-  
+      <p class="sec02-label" data-aos="fade-up" data-aos-duration="600">우리의 연금</p>
+
       <div class="sec02-slider" id="sec02Slider">
-  
+
         <div class="sec02-card">
-          <img class="sec02-card-img" src="img/main/sec02-01.jpg" alt="">
-          <div class="sec02-card-overlay">
-            <div class="sec02-card-circle">
-              <div class="sec02-card-circle-text">NSP 뉴스 <br><div class="small">국민연금<br>주요 뉴스</div></div>
-              <button class="sec02-card-btn">NOTICE</button>
+          <a href="sub-01.html" class="sec02-card-link">
+            <img class="sec02-card-img" src="img/main/sec02-01.jpg" alt="">
+            <div class="sec02-card-overlay">
+              <div class="sec02-card-circle">
+                <div class="sec02-card-circle-text">NSP 뉴스 <br><div class="small">국민연금<br>주요 뉴스</div></div>
+                <button class="sec02-card-btn">NOTICE</button>
+              </div>
+              <div class="sec02-card-deco"></div>
             </div>
-            <div class="sec02-card-deco"></div>
-          </div>
-        </div>
-  
-        <div class="sec02-card">
-          <img class="sec02-card-img" src="img/main/sec02-02.jpg" alt="">
-          <div class="sec02-card-overlay">
-            <div class="sec02-card-circle">
-              <div class="sec02-card-circle-text">NPS 칼럼 <br><div class="small">퇴사 후 멈춰 선 당신의 연금에<br>다시 숨을 불어넣는 법</div></div>
-              <button class="sec02-card-btn">NOTICE</button>
-            </div>
-            <div class="sec02-card-deco"></div>
-          </div>
-          
-        </div>
-  
-        <div class="sec02-card">
-          <img class="sec02-card-img" src="img/main/sec02-03.jpg" alt="">
-          <div class="sec02-card-overlay">
-            <div class="sec02-card-circle">
-              <div class="sec02-card-circle-text">NPS 키워드 돋보기<br><div class="small">늦출수록 커지는 노후의 가치<br>연기연금</div></div>
-              <button class="sec02-card-btn">NOTICE</button>
-            </div>
-            <div class="sec02-card-deco"></div>
-          </div>
-          
-        </div>
-  
-        <div class="sec02-card">
-          <img class="sec02-card-img" src="img/main/sec02-04.jpg" alt="">
-          <div class="sec02-card-overlay">
-            <div class="sec02-card-circle">
-              <div class="sec02-card-circle-text">연금 생애 설계 가이드<br><div class="small">2030 연금 '갓생' 살기<br>사회초년생이 꼭 알아야 할 국민연금 4가지</div></div>
-              <button class="sec02-card-btn">NOTICE</button>
-            </div>
-            <div class="sec02-card-deco"></div>
-          </div>
+          </a>
         </div>
 
-  
+        <div class="sec02-card">
+          <a href="sub-02.html" class="sec02-card-link">
+            <img class="sec02-card-img" src="img/main/sec02-02.jpg" alt="">
+            <div class="sec02-card-overlay">
+              <div class="sec02-card-circle">
+                <div class="sec02-card-circle-text">NPS 칼럼 <br><div class="small">퇴사 후 멈춰 선 당신의 연금에<br>다시 숨을 불어넣는 법</div></div>
+                <button class="sec02-card-btn">NOTICE</button>
+              </div>
+              <div class="sec02-card-deco"></div>
+            </div>
+          </a>
+        </div>
+
+        <div class="sec02-card">
+          <a href="sub-03.html" class="sec02-card-link">
+            <img class="sec02-card-img" src="img/main/sec02-03.jpg" alt="">
+            <div class="sec02-card-overlay">
+              <div class="sec02-card-circle">
+                <div class="sec02-card-circle-text">NPS 키워드 돋보기<br><div class="small">늦출수록 커지는 노후의 가치<br>연기연금</div></div>
+                <button class="sec02-card-btn">NOTICE</button>
+              </div>
+              <div class="sec02-card-deco"></div>
+            </div>
+          </a>
+        </div>
+
+        <div class="sec02-card">
+          <a href="sub-04.html" class="sec02-card-link">
+            <img class="sec02-card-img" src="img/main/sec02-04.jpg" alt="">
+            <div class="sec02-card-overlay">
+              <div class="sec02-card-circle">
+                <div class="sec02-card-circle-text">연금 생애 설계 가이드<br><div class="small">2030 연금 '갓생' 살기<br>사회초년생이 꼭 알아야 할 국민연금 4가지</div></div>
+                <button class="sec02-card-btn">NOTICE</button>
+              </div>
+              <div class="sec02-card-deco"></div>
+            </div>
+          </a>
+        </div>
+
       </div>
-  
-      <div class="sec02-progress-wrap">
-        <div class="sec02-progress-bar" id="sec02ProgressBar"></div>
+
+      <div class="sec02-progress-wrap" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+      <div class="sec02-progress-bar" id="sec02ProgressBar"></div>
       </div>
     </div>
     <div class="sec03">
@@ -435,11 +497,11 @@
     </div>
     <div class="sec04">
       <div class="sec04-inner">
-        <p class="sec04-label">트렌드 뷰</p>
+        <p class="sec04-label" data-aos="fade-up" data-aos-duration="600">트렌드 뷰</p>
 
         <div class="sec04-grid">
 
-          <a href="#" class="sec04-card">
+          <a href="sub-05.html" class="sec04-card"  data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
             <div class="sec04-card-img-wrap">
               <img src="img/main/sec04-01.png" alt="">
             </div>
@@ -453,7 +515,7 @@
             </div>
           </a>
 
-          <a href="#" class="sec04-card">
+          <a href="sub-06.html" class="sec04-card"  data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
             <div class="sec04-card-img-wrap">
               <img src="img/main/sec04-02.png" alt="">
             </div>
@@ -466,7 +528,7 @@
             </div>
           </a>
 
-          <a href="#" class="sec04-card">
+          <a href="sub-07.html" class="sec04-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
             <div class="sec04-card-img-wrap">
               <img src="img/main/sec04-03.png" alt="">
             </div>
@@ -478,7 +540,7 @@
             </div>
           </a>
 
-          <a href="#" class="sec04-card">
+          <a href="sub-08.html" class="sec04-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
             <div class="sec04-card-img-wrap">
               <img src="img/main/sec04-04.png" alt="">
             </div>
@@ -495,26 +557,26 @@
         
     </div>
     <div class="sec sec05">
-      <p class="sec05-label">열린 마당</p>
+      <p class="sec05-label" data-aos="fade-up" data-aos-duration="600">열린 마당</p>
 
       <div class="sec05-grid">
 
-        <a href="#" class="sec05-card sec05-c1">
+        <a href="event-01.html" class="sec05-card sec05-c1" data-aos="flip-up" data-aos-duration="700" data-aos-delay="0">
           <img class="sec05-card-bg" src="img/main/sec05-01.png" alt="">
           <span class="sec05-card-title">행운의 보양식 만들기</span>
         </a>
 
-        <a href="#" class="sec05-card sec05-c2">
+        <a href="event-02.html" class="sec05-card sec05-c2" data-aos="flip-up" data-aos-duration="700" data-aos-delay="100">
           <img class="sec05-card-bg" src="img/main/sec05-02.png" alt="">
           <span class="sec05-card-title">초성 퀴즈</span>
         </a>
 
-        <a href="#" class="sec05-card sec05-c3">
+        <a href="event-03.html" class="sec05-card sec05-c3" data-aos="flip-up" data-aos-duration="700" data-aos-delay="200">
           <img class="sec05-card-bg" src="img/main/sec05-03.png" alt="">
           <span class="sec05-card-title">OX 퀴즈</span>
         </a>
 
-        <a href="#" class="sec05-card sec05-c4">
+        <a href="event-04.html" class="sec05-card sec05-c4" data-aos="flip-up" data-aos-duration="700" data-aos-delay="300">
           <img class="sec05-card-bg" src="img/main/sec05-04.png" alt="">
           <span class="sec05-card-title">독자 목소리</span>
         </a>
@@ -562,9 +624,9 @@
         <div class="footer-info">
           국민연금 고객센터: 국번없이 1355 (해외: +82-63-713-6900 평일 09:00 ~ 18:00)<br class="pc-br">
           국민연금공단 | 54870 전북특별자치도 전주시 덕진구 기지로 180 (만성동, 국민연금)<br class="pc-br">
-          등록번호: 전주, 사00017(2023.1.27.) | 발행인: 국민연금공단 김성주, 편집인: 이정렬<br class="pc-br">
-          205호 (연 2회간) | 발행일: 2026.6.1.<br class="pc-br">
-          © nps.or.kr. All rights reserved.
+          등록번호: 전주, 사00017(2023.1.27.) │ <br class="pc-br">
+          발행인: 국민연금공단 김성주, 편집인: 이정철 205호 (연 2회간) │.<br class="pc-br">
+          발행일: 2026.6.1. © nps.or.kr. All rights reserved.
         </div>
        <div class="footer-sns">
           <a href="#" aria-label="Facebook">
@@ -819,6 +881,40 @@
         }, 200);
       });
     });
+
+(function () {
+  const slides = document.querySelectorAll('.sec01-slide');
+  const dots   = document.querySelectorAll('.sec01-dot');
+  let current  = 0;
+  let timer;
+
+  function goTo(idx) {
+    // 이전 슬라이드 숨기기
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+
+    current = idx;
+
+    // 새 슬라이드 보이기 (display:flex + animation 트리거)
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function (e) {
+      e.preventDefault();
+      clearInterval(timer);
+      goTo(i);
+      timer = setInterval(next, 4000);
+    });
+  });
+
+  timer = setInterval(next, 4000);
+})();
 
   
   </script>

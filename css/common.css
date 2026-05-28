@@ -6,7 +6,7 @@ ul, ol { list-style: none; }
 img {
   -webkit-user-drag: none;
   user-select: none;
-  pointer-events: none; /* 클릭까지 막고 싶을 때 */
+  pointer-events: none; 
 }
 
 @font-face { font-family: 'SCDream'; src: url('font/SCDream1.otf') format('opentype'); font-weight: 100; }
@@ -95,7 +95,7 @@ img {
 
 /* ── 푸터 ── */
 .footer { background: #93979A; }
-.footer-inner { max-width: 1440px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.footer-inner { max-width: 1440px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
 .footer-sns { display: flex; align-items: center; gap: 0px; flex-shrink: 0; }
 .footer-sns a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; transition: opacity 0.2s; }
 .footer-sns a:hover { opacity: 0.7; }

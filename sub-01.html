@@ -1243,29 +1243,46 @@
 <script>AOS.init({ once: true });</script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('#sub-01 .news-tab');
-  const dots = document.querySelectorAll('#sub-01 .dot');
+  const tabs     = document.querySelectorAll('#sub-01 .news-tab');
+  const dots     = document.querySelectorAll('#sub-01 .dot');
   const contents = document.querySelectorAll('#sub-01 .news-content');
 
+  function activateTab(index) {
+    tabs.forEach(function (item) { item.classList.remove('active'); });
+    dots.forEach(function (dot)  { dot.classList.remove('active'); });
+    contents.forEach(function (content) { content.classList.remove('active'); });
+
+    tabs[index].classList.add('active');
+    dots[index].classList.add('active');
+    contents[index].classList.add('active');
+
+    contents[index].querySelectorAll('[data-aos]').forEach(function (el) {
+      el.classList.remove('aos-animate');
+    });
+
+    setTimeout(function () { AOS.refreshHard(); }, 50);
+  }
+
+  // 탭 클릭 이벤트
   tabs.forEach(function (tab, index) {
     tab.addEventListener('click', function () {
-      tabs.forEach(function (item) { item.classList.remove('active'); });
-      dots.forEach(function (dot) { dot.classList.remove('active'); });
-      contents.forEach(function (content) { content.classList.remove('active'); });
-
-      tab.classList.add('active');
-      dots[index].classList.add('active');
-      contents[index].classList.add('active');
-
-      // ✅ 여기 안에 있어야 함
-      contents[index].querySelectorAll('[data-aos]').forEach(el => {
-        el.classList.remove('aos-animate');
-      });
-
-      setTimeout(() => AOS.refreshHard(), 50);
+      activateTab(index);
     });
   });
+
+  // ✅ URL 해시로 탭 자동 활성화 (DOMContentLoaded 안에 있어야 동작)
+  const hash = window.location.hash; // '#tab1', '#tab2', '#tab3'
+  if (hash && hash.startsWith('#tab')) {
+    const idx = parseInt(hash.replace('#tab', ''), 10) - 1;
+    if (idx >= 0 && idx < tabs.length) {
+      activateTab(idx);
+      setTimeout(function () {
+        document.querySelector('#sub-01').scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
+  }
 });
+
 </script>
 <script src="js/common.js"></script>
 
