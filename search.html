@@ -47,7 +47,7 @@
 .filter-tab:hover:not(.active) { background: #d0cecb; }
 
 /* ── 결과 리스트 ── */
-.result-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 20px; padding: 32px 0; }
+.result-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 20px; padding: 32px 0; }
 .result-item { cursor: pointer; display: flex; flex-direction: column; gap: 10px; }
 .result-item:hover .result-title { color: #e8547a; }
 .result-thumb { width: 100%; aspect-ratio: 3 / 4; background: #ddd; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
@@ -56,9 +56,9 @@
 .result-body { display: flex; flex-direction: column; gap: 4px; }
 .result-category { font-size: 16px; color: #888; font-weight: 400; }
 .result-title { font-size: 21px; font-weight: 700; color: #111; line-height: 1.45; transition: color 0.15s; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.result-title mark { background: none; color: #e8547a; font-weight: 700; }
-@media (max-width: 960px) { .result-list { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .result-list { grid-template-columns: repeat(2, 1fr); gap: 20px 14px; } }
+.result-title mark { background: #ffe066; color: inherit; font-weight: inherit; }
+@media (max-width: 960px) { .result-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .result-list { grid-template-columns: repeat(1, 1fr); gap: 20px 14px; } }
 
 .result-arrow { flex-shrink: 0; opacity: 0; transition: opacity 0.15s; }
 .result-item:hover .result-arrow { opacity: 1; }
@@ -384,7 +384,7 @@ function render(query) {
 				<div class="result-thumb-placeholder"></div>
 			</div>
 			<div class="result-body">
-				<span class="result-category">${a.category}</span>
+				<span class="result-category">${highlight(a.category, query)}</span>
 				<h2 class="result-title">${highlight(a.title, query)}</h2>
 			</div>
 		</div>
